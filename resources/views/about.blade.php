@@ -32,7 +32,7 @@
             <div class="container-fluid">
                 <!-- Navbar brand -->
 
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/">
                     <img src="{{ asset('assets/img/VFD%20Group%20Logo%20PNG.png') }}" width="160" class="img-fluid" id="main_logo" alt="VFD Group Logo"></a>
 
                 <!-- Collapse button -->
@@ -1096,7 +1096,7 @@
                                     Mr. Busari is a highly resourceful legal specialist and well-versed in company management.
 
                                     He was called to the Nigerian Bar in 1989 and is a Senior Advocate of Nigeria.</p>
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <!--                                    <li class="list-inline-item"><a href="#"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>-->
@@ -1146,7 +1146,7 @@
 
                                     He was previously the Chief Financial Officer (CFO) of Heirs Holdings and is replete with vast experience in the Nigerian financial services industry garnered while working with reputable firms like KPMG, BGL and United Bank for Africa Plc (UBA).</p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <li class="list-inline-item"><a href="https://www.facebook.com/nonsokpala"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
@@ -1196,7 +1196,7 @@
 
                                     She is a lawyer with over a decade of legal experience and comes with a wealth of experience in commercial legal transactions, particularly within the finance industry, notably with Greenwich Trust Group Ltd</p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <!--                                    <li class="list-inline-item"><a href="#"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>-->
@@ -1245,7 +1245,7 @@
                                     VICTOR FAGBAMILA</h4>
                                 <p class="small"> Victor Fagbamila is a Non Executive Director at VFD Group Plc. He has over 25 years of work experience in Professional Practice, Business and Financial Analysis, Project Management, Management Consulting, Commerce and Industry.</p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <!--                                    <li class="list-inline-item"><a href="#"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>-->
@@ -1297,7 +1297,7 @@
                                     MARY-CALLISTA OZIGBO</h4>
                                 <p class="small"> Mary-Callista Ozigbo is a Non Executive Director at VFD Group Plc. She has vast experience working with top multinationals in the Oil and Gas and Information Technology sectors. Her experience working in these sectors spans African and European environments./p>
 
-                                    <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                    <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <!--                                    <li class="list-inline-item"><a href="#"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>-->
@@ -1347,7 +1347,7 @@
                                 <h4 class="font-weight-bold gotham-bold">SULEIMAN LAWAL</h4>
                                 <p class="small">Suleiman Lawal is a business strategist with vast experience in project management and proven leadership & management skills in challenging, multicultural, & fast-paced environments.</p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <li class="list-inline-item"><a href="https://www.facebook.com/suleiman.lawal"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a>
@@ -1399,7 +1399,7 @@
                                 <p class="small">Dr. Samuel Onyishi is a Non-Executive Director at VFD Group Plc.
                                     A highly resourceful entrepreneur, he chairs a number of corporate boards with diverse experience in petroleum, capital market, banking, transportation and logistics.</p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <li class="list-inline-item"><a href="https://www.facebook.com/Dr.SamuelMaduka/"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
@@ -1449,7 +1449,7 @@
                                 <p class="small">Jewel Okwechime is a Non-Executive Director at VFD Group Plc.
                                     She has over 15 years’ experience in Chemical and Environmental Engineering, developing and leading long-term strategic objectives that resulted in positive growth and innovation </p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <li class="list-inline-item"><a href="https://www.facebook.com/Allaboutjewel"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
@@ -1497,7 +1497,7 @@
                                 <p class="small">Mobolaji Adewumi holds a B.Sc. in Management and Accounting from the Obafemi Awolowo University, Ile Ife and an MBA specializing in Finance from the Judge Business School, University of Cambridge. He is a member of the Association of Chartered Certified Accountants (ACCA) with over ten years post-qualification experience.
                                     Prior to joining VFD Group Plc, he worked with the Managing Director of First Bank of Nigeria Limited. Prior to that, he was the Special Adviser to the Managing Director of ASO Savings and Loans Plc while doubling as Head of Strategy. Bolaji has deep financial services experience and expertise, having worked with regional and global leaders in the financial services sector, such as the United Bank for Africa and KPMG Nigeria.</p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <li class="list-inline-item"><a href="https://www.facebook.com/mobolaji.adewumi.9"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
@@ -1548,7 +1548,7 @@
 
                                     He has played Financial Advisory roles to numerous firms in Nigeria and in the United Kingdom, most notably with the Royal Bank of Scotland and ATOS Consulting.</p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <li class="list-inline-item"><a href="https://www.facebook.com/adeniyi.adenubi.507"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
@@ -1599,7 +1599,7 @@
 
                                     Gbenga currently oversees the strategy, technology and operations division of the group and its subsidiaries.</p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <li class="list-inline-item"><a href="https://www.facebook.com/baengah"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
@@ -1646,7 +1646,7 @@
                                 <p class="small">Azubike Emodi is the Group Commercial Director of VFD Group Plc.
                                     He is a resourceful financial service specialist with experience in retail and commercial banking and worked with Zenith Bank before joining Maxxon Pro Service Inc. in Canada where he worked as an Investment Advisor/Financial Planner.</p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <li class="list-inline-item"><a href="https://www.facebook.com/zuby.emodi"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
@@ -1696,7 +1696,7 @@
                                 <h4 class="font-weight-bold gotham-bold">AZUBIKE EMODI</h4>
                                 <p class="small">Azubike Emodi is the Managing Director of VFD Microfinance Bank. He is a resourceful and financial service specialist with experience in Retail and Commercial Banking, Investment, Financial Planning and Advisory across African and European markets.</p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <li class="list-inline-item"><a href="https://www.facebook.com/zuby.emodi"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
@@ -1744,7 +1744,7 @@
                                 <h4 class="font-weight-bold gotham-bold">Theresa Ezeh</h4>
                                 <p class="small">Theresa Ezeh is the Managing Director of Everdon Bureau de Change. She played critical roles in designing the retail banking experience for first tiers financial institutions like Ecobank and Zenith Bank.</p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <li class="list-inline-item"><a href="https://www.facebook.com/tessy.ezeh"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
@@ -1791,7 +1791,7 @@
                                 <h4 class="font-weight-bold gotham-bold">ETE OGUN</h4>
                                 <p class="small">TEte Ogun is the MD/CEO of Anchoria Asset Management Limited. She has vast experience and expertise in asset investment and practical knowledge of relationship management. She is an Associate Member, Institute of Chartered Accountant (ICAN). She also holds an M.A in Finance and Investments from University of Exeter, Exeter UK</p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <!--                                    <li class="list-inline-item"><a href="#"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>-->
@@ -1842,7 +1842,7 @@
                                 <h4 class="font-weight-bold gotham-bold">Obinna Nweke</h4>
                                 <p class="small">Obinna Nweke is the General Manager of Dynasty Real Estate. He is a member, Nigerian Institute of Management (Chartered). He has an extensive understanding of corporate real estate ownership, real estate leasing and relationship management. He is a graduate of the University of Nigeria with a degree in Business Management.</p>
 
-                                <a href="detailed_profile.html" class="text-danger mb-3">Detailed Profile</a>
+                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
 
                                 <ul class="list-inline mt-2">
                                     <li class="list-inline-item"><a href="https://www.facebook.com/obinna.nweke.52"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>

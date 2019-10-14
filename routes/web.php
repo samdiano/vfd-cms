@@ -27,7 +27,19 @@ Route::get('/investors', function () {
     return view('investors');
 });
 
-
 Route::get('/media', function () {
     return view('media');
 });
+
+Route::get('/career', function () {
+    return view('careers');
+});
+
+Route::get('/contact_us', function () {
+    return view('contact_us');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+

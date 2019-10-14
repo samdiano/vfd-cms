@@ -32,7 +32,7 @@
             <div class="container-fluid">
                 <!-- Navbar brand -->
 
-                <a class="navbar-brand" href="index">
+                <a class="navbar-brand" href="/">
                     <img src="{{ asset('assets/img/VFD%20Group%20Logo%20PNG.png') }}" width="160" class="img-fluid" id="main_logo" alt="VFD Group Logo"></a>
 
                 <!-- Collapse button -->
@@ -45,7 +45,7 @@
 
 
                         <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold  " href="index">Home</a>
+                            <a class="nav-link bold  " href="/">Home</a>
                         </li>
 
 
