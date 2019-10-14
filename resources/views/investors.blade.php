@@ -76,7 +76,7 @@
                         </li>
 
                         <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="career.html">Careers</a>
+                            <a class="nav-link bold" href="career">Careers</a>
                         </li>
 
                         <li class="nav-item px-md-3 my-2 my-md-0">
