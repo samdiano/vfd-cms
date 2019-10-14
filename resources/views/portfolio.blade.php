@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css/media-queries.css') }}">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link href="{{ asset('css/Assets/animate.min.css') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('assets/css/Assets/animate.min.css') }}" type="text/css" rel="stylesheet" />
     </head>
             <!-- {{ asset('') }} -->
 
@@ -33,7 +33,7 @@
             <div class="container-fluid">
                 <!-- Navbar brand -->
 
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index">
                     <img src="{{ asset('assets/img/VFD%20Group%20Logo%20PNG.png') }}" width="160" class="img-fluid" id="main_logo" alt="VFD Group Logo"></a>
 
                 <!-- Collapse button -->
@@ -60,23 +60,23 @@
                         </li>
 
                         <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="investor_info">Investor Information</a>
+                            <a class="nav-link bold" href="investors">Investor Information</a>
                         </li>
 
                         <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="media.html">Media</a>
+                            <a class="nav-link bold" href="media">Media</a>
                         </li>
 
                         <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="career.html">Careers</a>
+                            <a class="nav-link bold" href="career">Careers</a>
                         </li>
 
                         <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="contact_us.html">Contact Us</a>
+                            <a class="nav-link bold" href="contact_us">Contact Us</a>
                         </li>
 
                         <li class="nav-item px-md-3 pr-md-5 my-2 my-md-0">
-                            <a class="nav-link bold" href="search.html"><img src="{{ asset('assets/img/search.svg') }}" alt="search" class="img-fluid" /></a>
+                            <a class="nav-link bold" href="search"><img src="{{ asset('assets/img/search.svg') }}" alt="search" class="img-fluid" /></a>
                         </li>
                     </ul>
                 </div>
@@ -349,10 +349,10 @@
 
     </body>
 
-    <script src='js/jquery.min.js'></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/slick.js"></script>
-    <script src="js/mdb.js"></script>
-    <script src="js/utility.js"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/slick.js') }}"></script>
+    <script src="{{ asset('assets/js/mdb.js') }}"></script>
+    <script src="{{ asset('assets/js/utility.js') }}"></script>
 </html>

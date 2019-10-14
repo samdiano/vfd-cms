@@ -22,3 +22,12 @@ Route::get('/about', function () {
 Route::get('/portfolio', function () {
     return view('portfolio');
 });
+
+Route::get('/investors', function () {
+    return view('investors');
+});
+
+
+Route::get('/media', function () {
+    return view('media');
+});

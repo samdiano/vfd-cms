@@ -106,7 +106,7 @@
             <div class="row justify-content-center home-logo-top">
                 <div class="col-md-4 text-center">
                     <img src="{{ asset('assets//VFD_Group_Logo%20-%20White.png') }}" class="img-fluid my-5" alt="vfd logo white"  alt="VFD Logo"/>
-                    <a href="about_us.html" class="btn vfd-btn-red home-btn-padding font-weight-bolder">Learn More</a>
+                    <a href="about_us" class="btn vfd-btn-red home-btn-padding font-weight-bolder">Learn More</a>
                 </div>
             </div>
 

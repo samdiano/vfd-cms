@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css/media-queries.css') }}">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link href="{{ asset('css/Assets/animate.min.css') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('assets/css/Assets/animate.min.css') }}" type="text/css" rel="stylesheet" />
     </head>
 
     <body>
@@ -59,7 +59,7 @@
                         </li>
 
                         <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="investor_info.html">Investor Information</a>
+                            <a class="nav-link bold" href="investors">Investor Information</a>
                         </li>
 
                         <li class="nav-item px-md-3 my-2 my-md-0">
