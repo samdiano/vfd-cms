@@ -1,0 +1,102 @@
+/*font style*/
+
+
+.font-12{
+	font-size: 12px !important;
+}
+
+.font-13{
+	font-size: 13px;
+}
+
+.font-14{
+	font-size: 14px;
+}
+
+.font-16{
+	font-size: 16px;
+}
+
+.font-20{
+	font-size: 20px;
+}
+
+.font-28{
+	font-size: 28px;
+}
+
+.font-35{
+	font-size: 35px;
+}
+
+.font-41{
+	font-size: 41px;
+}
+
+
+.weight-semi-bold {
+	font-weight: 500;
+}
+
+
+.text_primary{
+	color: #164E35 !important;
+}
+
+.text_secondary{
+	color: #3D4241 !important;
+}
+
+.text-green-deep {
+	color: #006A5A !important;
+}
+
+.vfd-text-red {
+	color: #EB0028 !important;
+}
+
+.weight-semi-bold {
+	font-weight: 600 !important;
+}
+
+.font-weight-bolder {
+	font-weight: 800 !important;
+}
+
+.active-link {
+	background-color: #EB0028;
+	border-radius: 0px;
+	/*	padding: 0px !important;*/
+}
+
+.text-green{
+	color : #006A5A;
+}
+
+.active-link {
+	/*	padding: 0px 0px !important;*/
+	padding-left: .25rem!important;
+	padding-right: .25rem!important;
+
+}
+
+
+.active-link > a {
+	color: #fff !important;
+	font-family: Gotham;
+}
+
+.dull-bold{
+	font-weight: 600;
+}
+
+
+@media (min-width: 320px) and (max-width:720px){
+	.font-35{
+		font-size: 25px;
+	}
+
+	.text-md-left {
+		text-align: inherit !important;
+	}
+}
