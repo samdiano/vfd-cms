@@ -12,7 +12,7 @@
                             <h2 class=" m-t-0 m-b-30">About us</h2>
                             <div class="widget-chart-3">
                                 <div class="widget-detail-1 ">
-                                    <h4 class="p-t-10 m-b-0"><a href="{{ url('users/list') }}">View</a>
+                                    <h4 class="p-t-10 m-b-0"><a href="{{ url('admin/about') }}">View</a>
                                     </h4>
                                     {{-- <p class="text-muted">Registered</p> --}}
                                 </div>
@@ -22,10 +22,10 @@
 
                     <div class="col-lg-3 col-md-6">
                         <div class="card-box text-center">
-                            <h2 class="m-t-0 m-b-30">Career</h2>
+                            <h2 class="m-t-0 m-b-30">Governance</h2>
                             <div class="widget-chart-3">
                                 <div class="widget-detail-1 ">
-                                    <h4 class="p-t-10 m-b-0"><a href="{{ url('corporate-users/list') }}">View</a>
+                                    <h4 class="p-t-10 m-b-0"><a href="{{ url('admin/governance') }}">View</a>
                                     </h4>
                                     {{-- <p class="text-muted">Registered</p> --}}
                                 </div>
@@ -35,11 +35,11 @@
 
                     <div class="col-lg-3 col-md-6">
                         <div class="card-box text-center">
-                            <h2 class="m-t-0 m-b-30">Investors</h2>
+                            <h2 class="m-t-0 m-b-30">Our History</h2>
                             <div class="widget-chart-3">
                                 <div class="widget-detail-1 ">
                                     <h4 class="p-t-10 m-b-0"><a
-                                                href="{{ url('short-time/list') }}">View</a>
+                                                href="{{ url('admin/history') }}">View</a>
                                     </h4>
                                     {{-- <p class="text-muted">Registered</p> --}}
                                 </div>
@@ -49,11 +49,11 @@
 
                     <div class="col-lg-3 col-md-6">
                         <div class="card-box text-center">
-                            <h2 class="m-t-0 m-b-30">Media</h2>
+                            <h2 class="m-t-0 m-b-30">Our Impact</h2>
                             <div class="widget-chart-3">
                                 <div class="widget-detail-1 ">
                                     <h4 class="p-t-10 m-b-0"><a
-                                                href="{{ url('full-time/list') }}">View</a>
+                                                href="{{ url('admin/impact') }}">View</a>
                                     </h4>
                                     {{-- <p class="text-muted">Registered</p> --}}
                                 </div>
@@ -63,28 +63,17 @@
 
                     <div class="col-lg-3 col-md-6">
                         <div class="card-box text-center">
-                            <h2 class="m-t-0 m-b-30">Portfolio</h2>
+                            <h2 class="m-t-0 m-b-30">Our Values</h2>
                             <div class="widget-chart-3">
                                 <div class="widget-detail-1 ">
                                     <h4 class="p-t-10 m-b-0"><a
-                                                href="{{ url('uber/list') }}">View</a></h4>
+                                                href="{{ url('admin/values') }}">View</a></h4>
                                     {{-- <p class="text-muted">Registered</p> --}}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card-box text-center">
-                            <h2 class="m-t-0 m-b-30">Profile</h2>
-                            <div class="widget-chart-3">
-                                <div class="widget-detail-1 ">
-                                    <h4 class="p-t-10 m-b-0"><a
-                                                href="{{ url('vary/list') }}">View</a></h4>
-                                    {{-- <p class="text-muted">Registered</p> --}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>

@@ -45,6 +45,10 @@ Route::get('/admin', function () {
     return view('admin.dashboard');
 });
 
+Route::get('/admin/pages/about', function () {
+    return view('admin.pages.about');
+});
+
 Route::get('/admin/about', 'AdminController@about')->name('adminAbout');
 
 Route::post('/admin/about','AdminController@aboutEdit')->name('adminAboutPost');
@@ -60,4 +64,5 @@ Route::post('/admin/impact','AdminController@impactEdit')->name('adminImpactPost
 
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@home')->name('home');
+Route::get('/admin', 'HomeController@index')->name('admin');
