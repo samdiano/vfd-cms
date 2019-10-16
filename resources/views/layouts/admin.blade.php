@@ -207,7 +207,7 @@
                             <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
                             <li><a href="{{ url('admin/about') }}">About</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Governance</a></li>
+                            <li><a href="{{ url('admin/governance') }}">Governance</a></li>
                             <li><a href="{{ url('admin/history') }}">Our History</a></li>
                             {{-- <li><a href="{{ url('full-time/list') }}">Our Culture</a></li> --}}
                             <li><a href="{{ url('admin/impact') }}">Our Impact</a></li>
@@ -218,12 +218,9 @@
                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Careers</span>
                             <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="{{ url('full-time/list') }}">about us</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
+                            <li><a href="{{ url('admin/career') }}">Career</a></li>
+                            <li><a href="{{ url('admin/vacancies') }}">Vacancies</a></li>
+                            <li><a href="{{ url('admin/portfolio-vacancies') }}">Portfolio Vacancies</a></li>
                         </ul>
                         
                     </li>
@@ -231,12 +228,11 @@
                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Investors</span>
                             <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="{{ url('full-time/list') }}">about us</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
+                            <li><a href="{{ url('admin/financial-information') }}">Financial Information</a></li>
+                            <li><a href="{{ url('admin/financial-information') }}">Conference Calls</a></li>
+                            <li><a href="{{ url('admin/financial-information') }}">Press Release</a></li>
+                            <li><a href="{{ url('admin/financial-information') }}">FAQs</a></li>
+                            
                         </ul>
                         
                     </li>
@@ -244,12 +240,9 @@
                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Media</span>
                             <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="{{ url('full-time/list') }}">about us</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
+                                <li><a href="{{ url('admin/blog') }}">Blog</a></li>
+                                <li><a href="{{ url('admin/gallery') }}">Gallery</a></li>
+
                         </ul>
                         
                     </li>
@@ -257,16 +250,14 @@
                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Portfolio</span>
                             <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="{{ url('full-time/list') }}">about us</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
+                                <li><a href="{{ url('admin/gallery') }}">Portfolio</a></li>
+                                <li><a href="{{ url('admin/gallery') }}">Services</a></li>
+                                <li><a href="{{ url('admin/gallery') }}">Products</a></li>
+
                         </ul>
                         
                     </li>
-                    <li class="has_sub">
+                    {{-- <li class="has_sub">
                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Profile</span>
                             <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
@@ -278,7 +269,7 @@
                             <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
                         </ul>
                         
-                    </li>
+                    </li> --}}
                     
                     {{-- <li>
                         <a href="/" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i>
