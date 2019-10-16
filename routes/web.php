@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', 'CompanyController@about')->name('about');
 
 Route::get('/portfolio', function () {
     return view('portfolio');
@@ -43,3 +41,23 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/admin/about', 'AdminController@about')->name('adminAbout');
+
+Route::post('/admin/about','AdminController@aboutEdit')->name('adminAboutPost');
+
+Route::get('/admin/history', 'AdminController@history')->name('adminHistory');
+
+Route::post('/admin/history','AdminController@historyEdit')->name('adminHistoryPost');
+
+Route::get('/admin/impact', 'AdminController@impact')->name('adminImpact');
+
+Route::post('/admin/impact','AdminController@impactEdit')->name('adminImpactPost');
+
+
+Auth::routes();
+
+Route::get('/admin', 'HomeController@index')->name('home');

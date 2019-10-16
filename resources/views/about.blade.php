@@ -133,10 +133,13 @@
                         </div>
                     </div>
 
-
                     <div class="row justify-content-center">
                         <div class="col-md-7">
-                            <p class="text-justify slick_dark">
+                            
+                            {{-- {{$company->about}} --}}
+
+                            {!! $company->about !!}
+                            {{-- <p class="text-justify slick_dark">
                                 VFD Group is a financial services focused proprietary investment company that creates value by working within Nigeria's informal financial sector to create innovative products and solutions that are accessible to the everyday
                             </p>
 
@@ -162,7 +165,7 @@
 
                             <p class="text-justify slick_dark">Founded on the values of integrity and good governance, and built on the strength of innovation and network, the goal of VFD Group is to establish a firm foothold in various ecosystems on the continent through our subsidiary companies. Through these companies, we aim to creatively and consistently build our capacity to provide financial solutions that cater to every need an individual or small business might have, leading us to becoming the foremost financial services brand in Nigeria and on the continent.</p>
 
-                            <p class="text-justify slick_dark">VFD Group was incorporated with the Corporate Affairs Commission (CAC) on 7th July 2009 and commenced business operations effectively on the 1st of January 2011.</p>
+                            <p class="text-justify slick_dark">VFD Group was incorporated with the Corporate Affairs Commission (CAC) on 7th July 2009 and commenced business operations effectively on the 1st of January 2011.</p> --}}
                         </div>
 
 
@@ -864,7 +867,8 @@
 
                     <div class="row justify-content-center">
                         <div class="col-md-7">
-                            <p class="text-justify slick_dark">
+                                {!! $company->history !!}
+                            {{-- <p class="text-justify slick_dark">
                                 VFD Group is a financial services focused proprietary investment company that creates value by working within Nigeria's informal financial sector to create innovative products and solutions that are accessible to the everyday
                             </p>
 
@@ -890,7 +894,7 @@
 
                             <p class="text-justify slick_dark">Founded on the values of integrity and good governance, and built on the strength of innovation and network, the goal of VFD Group is to establish a firm foothold in various ecosystems on the continent through our subsidiary companies. Through these companies, we aim to creatively and consistently build our capacity to provide financial solutions that cater to every need an individual or small business might have, leading us to becoming the foremost financial services brand in Nigeria and on the continent.</p>
 
-                            <p class="text-justify slick_dark">VFD Group was incorporated with the Corporate Affairs Commission (CAC) on 7th July 2009 and commenced business operations effectively on the 1st of January 2011.</p>
+                            <p class="text-justify slick_dark">VFD Group was incorporated with the Corporate Affairs Commission (CAC) on 7th July 2009 and commenced business operations effectively on the 1st of January 2011.</p> --}}
                         </div>
 
 
@@ -1005,7 +1009,8 @@
 
                     <div class="row justify-content-center">
                         <div class="col-md-8">
-                            <p class="text_primary my-5">We understand that a sustainable business is one that continues to manage its direct and indirect operational impact on its stakeholders in order to achieve responsible growth and in our bid to improve customer engagement and service experience, we enhanced our traditional and operating channels to enrich the quality of productivity we derive from our customer engagement.</p>
+                            {!! $company->impact!!}
+                            {{-- <p class="text_primary my-5">We understand that a sustainable business is one that continues to manage its direct and indirect operational impact on its stakeholders in order to achieve responsible growth and in our bid to improve customer engagement and service experience, we enhanced our traditional and operating channels to enrich the quality of productivity we derive from our customer engagement.</p>
 
                             <p class="text_primary my-5">At VFD Group Plc, we remain focused and committed to achieving sustainable performance. This translates into takin measures to minimize harm in the communities we operate in. We would continually communicate our progress and create more awareness.
                             </p>
@@ -1018,7 +1023,7 @@
                                 <li class="my-3">Sponsorship of the Women in Successful Careers (WISCAR) annual conference</li>
                                 <li class="my-3">Sponsorship of a professional golfer to a golf tourney in Cote D’viore</li>
                                 <li class="my-3">Sponsorship of World clean-up day in celebration via JCI (Junior Chambers International) Lagos Metropolitan.</li>
-                            </ul>
+                            </ul> --}}
 
                         </div>
                     </div>
