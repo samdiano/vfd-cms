@@ -51,7 +51,7 @@ return [
             'database' => env('DB_DATABASE', 'heroku_6755c9dc3a1280f'),
             'username' => env('DB_USERNAME', 'b421b46081a298'),
             'password' => env('DB_PASSWORD', 'fb173709'),
-            'unix_socket' => env('DB_SOCKET', '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock'),
+            'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -62,7 +62,7 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-
+        // /Applications/XAMPP/xamppfiles/var/mysql/mysql.sock
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
