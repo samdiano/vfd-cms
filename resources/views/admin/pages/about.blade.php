@@ -61,7 +61,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6">
+                    {{-- <div class="col-lg-3 col-md-6">
                         <div class="card-box text-center">
                             <h2 class="m-t-0 m-b-30">Our Values</h2>
                             <div class="widget-chart-3">
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>
