@@ -84,24 +84,18 @@
             </div>
         </nav>
         <!--/.Navbar-->
-
-        <img src="{{asset('assets/img/contact_us_banner.png')}}" class="img-fluid position-absolute contact-banner" />
-
-        <div class="">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-md-4">
-                        <h3 class="text-white vertical-8 font-41 weight-semi-bold">Contact Us</h3>
+        <div class="position-relative about_top_banner" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="font-41 text-white vertical-7 weight-semi-bold">Contact Us</h3>
+                        </div>
                     </div>
                 </div>
+                <img src="{{ asset('assets/img/insert_subtract.png') }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
             </div>
-        </div>
-
-        <img src="{{asset('assets/img/favicon.png')}}" class="img-fluid position-absolute d-none" style="right: 5%; top: 20%; opacity: 0.3; width: 10%" />
-
-
         <div class="container">
-            <div class="row vertical-10">
+            <div class="row">
                 <div class="col-md-5">
                     <form>
                         <div class="form-group">

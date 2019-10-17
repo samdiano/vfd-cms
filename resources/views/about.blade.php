@@ -83,26 +83,18 @@
             </div>
         </nav>
         <!--/.Navbar-->
-
-
-        <!--        <img src="{{ asset('assets/img/inner_mask_bg.svg') }}" class="img-fluid position-relative inner-banner-1" />-->
-
-        <img src="{{ asset('assets/img/media_banner.png') }}" class="img-fluid position-absolute about-banner-img" />
-
-
-        <div class="">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-md-12">
-                        <h3 class="font-41 text-white vertical-9 weight-semi-bold">About Us</h3>
+        <div class="position-relative about_top_banner" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="font-41 text-white vertical-7 weight-semi-bold">About Us</h3>
+                        </div>
                     </div>
                 </div>
+                <img src="{{ asset('assets/img/insert_subtract.png') }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
             </div>
-        </div>
 
-        <img src="{{ asset('assets/img/favicon.png') }}" class="img-fluid position-absolute d-none" style="right: 5%; top: 20%; opacity: 0.3; width: 10%" />
-
-        <div class="container-fluid vertical-8">
+        <div class="container-fluid">
 
             <ul class="nav nav-tabs nav-justified md-tabs" id="myTabJust" role="tablist">
                 <li class="nav-item waves-effect waves-light">

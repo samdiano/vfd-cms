@@ -85,22 +85,17 @@
         </nav>
         <!--/.Navbar-->
 
-        <img src="{{ asset('assets/img/portfolio_banner.png') }}" class="img-fluid position-absolute portfolio-banner" />
-
-        <div class="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 mb-5">
-                        <h3 class="text-white font-41 vertical-8 weight-semi-bold">Our Portfolio</h3>
+        <div class="position-relative portfolio_top_banner" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="font-41 text-white vertical-7 weight-semi-bold">Portfolio</h3>
+                        </div>
                     </div>
                 </div>
+                <img src="{{ asset('assets/img/insert_subtract.png') }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
             </div>
-        </div>
-
-        <img src="{{ asset('assets/img/favicon.png') }}" class="img-fluid position-absolute d-none" style="right: 5%; top: 20%; opacity: 0.3; width: 10%" />
-
-
-        <div class="container vertical-5">
+        <div class="container">
             <div class="row">
                 <div class="col-md-8">
                     {!!$company->portfolio!!}

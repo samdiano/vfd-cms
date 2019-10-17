@@ -29,7 +29,7 @@
 
     .about-banner-img {
         min-width: 100%;
-        top: -7.5%;
+        /*        top: -7.5%;*/
     }
 
     .vertical-8{
@@ -109,6 +109,12 @@
 */
 
 @media (min-width: 481px) and (max-width: 768px) {
+    .global-image-subtract {
+        left: 0;
+        top: 70px;
+        width: 100% !important;
+        display: none !important;
+    }
 
     .slick-slide img {
         display: inline !important;
@@ -179,6 +185,20 @@
         transform: rotate(0deg);
     }
 
+    .about_top_banner {
+        background-image: url(../img/banner_1.jpg);
+        background-size: cover;
+        height: auto;
+        background-repeat: no-repeat;
+    }
+
+    .portfolio_top_banner {
+        background-image: url(../img/banner_2.jpg);
+        background-size: cover;
+        height: auto;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+    }
 }
 
 /* 
@@ -254,6 +274,37 @@
 
     .home-btn-padding {
         padding: 15px 50px !important;
+    }
+
+    .about_top_banner {
+        background-image: url(../img/banner_1.jpg);
+        background-size: cover;
+        height: auto;
+        background-repeat: no-repeat;
+    }
+
+    .portfolio_top_banner {
+        background-image: url(../img/banner_2.jpg);
+        background-size: cover;
+        height: auto;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+    }
+
+    .investor_top_banner {
+        background-image: url(../img/banner_3.jpg);
+        background-size: cover;
+        height: auto;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+    }
+
+    .career_top_banner {
+        background-image: url(../img/landing_banner.jpg);
+        background-size: cover;
+        height: auto;
+        background-repeat: no-repeat;
+        background-position: bottom center;
     }
 
     /* About us, investor tabs */

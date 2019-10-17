@@ -93,22 +93,21 @@
         </nav>
         <!--/.Navbar-->
 
-        <img src="{{ asset('assets/img/investor.png') }}" class="img-fluid position-absolute investor-banner" />
-
-        <div class="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7 mb-5">
-                        <h3 class="text-white vertical-8 weight-semi-bold font-41">Investor Information</h3>
+        <div class="position-relative investor_top_banner" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="font-41 text-white vertical-7 weight-semi-bold">Investor Information</h3>
+                        </div>
                     </div>
                 </div>
+                <img src="{{ asset('assets/img/insert_subtract.png') }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
             </div>
-        </div>
 
         <img src="{{ asset('assets/img/favicon.png') }}" class="img-fluid position-absolute d-none" style="right: 5%; top: 20%; opacity: 0.3; width: 10%" />
 
 
-        <div class="container vertical-5">
+        <div class="container">
 
 
             <ul class="nav nav-tabs nav-justified md-tabs mb-3" id="investor_tab" role="tablist">

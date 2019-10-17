@@ -67,7 +67,7 @@
                         </li>
 
                         <li class="nav-item px-md-3 my-2 my-md-0 active-link">
-                            <a class="nav-link bold" href="careers">Careers</a>
+                            <a class="nav-link bold" href="career">Careers</a>
                         </li>
 
                         <li class="nav-item px-md-3 my-2 my-md-0">
@@ -84,20 +84,20 @@
         </nav>
         <!--/.Navbar-->
 
-        <img src="{{ asset('assets/img/career_real.png') }}" class="img-fluid position-absolute career-banner" />
-
-        <div class="">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-md-4">
-                        <h3 class="text-white vertical-8 font-41 weight-semi-bold">Careers</h3>
+        <div class="position-relative career_top_banner" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="font-41 text-white vertical-7 weight-semi-bold">Careers</h3>
+                        </div>
                     </div>
                 </div>
+                <img src="{{ asset('assets/img/insert_subtract.png') }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
             </div>
-        </div>
+    
 
         <div class="container">
-            <div class="row vertical-10">
+            <div class="row mt-3">
                 <div class="col-md-6">
                     <p class="mt-md-">{!!$company->career!!}</p>
                 </div>

@@ -186,11 +186,24 @@ textarea {
     top: -25px;
 }
 
+.vertical-3{
+    margin-top: 3rem;
+}
+
 .vertical-4{
     margin-top: 4rem;
 }
+
 .vertical-5{
     margin-top: 5rem;
+}
+
+.vertical-6{
+    margin-top: 6rem;
+}
+
+.vertical-7{
+    margin-top: 7rem;
 }
 
 .vertical-8{
@@ -198,7 +211,7 @@ textarea {
 }
 
 .vertical-9{
-    margin-top: 8rem;
+    margin-top: 9rem;
 }
 
 .vertical-10{
@@ -213,8 +226,9 @@ textarea {
 .cursor {
     cursor: pointer;
 }
-/*tabs*/
 
+
+/*tabs*/
 
 .nav-tabs .nav-item .nav-link {
     -webkit-border-radius: .25rem;
@@ -351,46 +365,6 @@ li.custom-list::before {
     background-color: #F9F9F9;
 }
 
-.about-banner {
-    top: -40%;
-    left: -1rem;
-    width: 130%;
-    height: 120%;
-    transform: rotate(-7deg);
-    border-bottom-left-radius: 3rem;
-}
-.about-banner {
-    top: -61%;
-    left: -1rem;
-    width: 130%;
-    height: 86%;
-    transform: rotate(-9deg);
-    border-bottom-left-radius: 5rem;
-}
-
-.about-top-banner {
-    background-image: url(../img/about_banner.png);
-}
-
-.media-banner {
-    top: -48px;
-    transform: rotate(-1deg);
-}
-
-.portfolio-banner {
-    top: -35px;
-    transform: rotate(-1deg);
-}
-
-.contact-banner {
-    top: -28px;
-}
-
-.about-banner-img {
-    top: -52px;
-    transform: rotate(-1deg);
-}
-
 .bg-board-detail {
     background: #F5F5F5;
     border-bottom: 2px solid #EB0028;
@@ -420,6 +394,50 @@ li.custom-list::before {
     z-index: 3;
 }
 
+
+/*Banner styles*/
+
+.about-banner {
+    top: -40%;
+    left: -1rem;
+    width: 130%;
+    height: 120%;
+    transform: rotate(-7deg);
+    border-bottom-left-radius: 3rem;
+}
+
+.about-banner {
+    top: -61%;
+    left: -1rem;
+    width: 130%;
+    height: 86%;
+    transform: rotate(-9deg);
+    border-bottom-left-radius: 5rem;
+}
+
+.about-top-banner {
+    background-image: url(../img/about_banner.png);
+}
+
+.media-banner {
+    top: -48px;
+    transform: rotate(-1deg);
+}
+
+.portfolio-banner {
+    top: -35px;
+    transform: rotate(-1deg);
+}
+
+.contact-banner {
+    top: -28px;
+}
+
+.about-banner-img {
+    top: -52px;
+}
+
+
 .index-background {
     background-image: url(../img/landing_banner.jpg);
     background-size: cover;
@@ -432,7 +450,45 @@ li.custom-list::before {
 }
 
 .image-subtract {
-    bottom: 0; left: 0
+    bottom: 0; left: 0s
+}
+
+
+.global-image-subtract {
+    left: 0;
+    bottom: 0;
+    width: 100% !important;
+}
+
+.about_top_banner {
+    background-image: url(../img/banner_1.jpg);
+    background-size: cover;
+    height: 45vh;
+    background-repeat: no-repeat;
+}
+
+.portfolio_top_banner {
+    background-image: url(../img/banner_2.jpg);
+    background-size: cover;
+    height: 45vh;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.investor_top_banner {
+    background-image: url(../img/banner_3.jpg);
+    background-size: cover;
+    height: 45vh;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.career_top_banner {
+    background-image: url(../img/landing_banner.jpg);
+    background-size: cover;
+    height: 45vh;
+    background-repeat: no-repeat;
+    background-position: bottom center;
 }
 
 @media (max-width: 768px) {
