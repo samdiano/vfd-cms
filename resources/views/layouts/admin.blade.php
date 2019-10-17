@@ -280,7 +280,7 @@
                         <a href="/"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                            class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Logout </span> </a>
-                        <form id="logout-form" action="/" method="POST" style="display: none;">
+                        <form id="logout-form" action="/logout" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
                     </li>

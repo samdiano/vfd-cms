@@ -45,9 +45,28 @@ Route::get('/admin', function () {
     return view('admin.dashboard');
 });
 
+
+
 Route::get('/admin/pages/about', function () {
     return view('admin.pages.about');
 });
+
+Route::get('/admin/pages/career', function () {
+    return view('admin.pages.career');
+});
+
+Route::get('/admin/pages/investors', function () {
+    return view('admin.pages.investors');
+});
+
+Route::get('/admin/pages/media', function () {
+    return view('admin.pages.media');
+});
+
+Route::get('/admin/pages/portfolio', function () {
+    return view('admin.pages.portfolio');
+});
+
 
 Route::get('/admin/about', 'AdminController@about')->name('adminAbout');
 
@@ -64,5 +83,5 @@ Route::post('/admin/impact','AdminController@impactEdit')->name('adminImpactPost
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@home')->name('home');
+// Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/admin', 'HomeController@index')->name('admin');
