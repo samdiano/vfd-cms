@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::get('/about', 'CompanyController@about')->name('about');
 
+Route::get('/career', 'CompanyController@career')->name('career');
+
 Route::get('/portfolio', function () {
     return view('portfolio');
 });
@@ -27,10 +29,6 @@ Route::get('/investors', function () {
 
 Route::get('/media', function () {
     return view('media');
-});
-
-Route::get('/career', function () {
-    return view('careers');
 });
 
 Route::get('/contact_us', function () {
@@ -72,6 +70,10 @@ Route::get('/admin/about', 'AdminController@about')->name('adminAbout');
 
 Route::post('/admin/about','AdminController@aboutEdit')->name('adminAboutPost');
 
+Route::get('/admin/career', 'AdminController@career')->name('adminCareer');
+
+Route::post('/admin/career', 'AdminController@careerEdit')->name('adminCareerPost');
+
 Route::get('/admin/history', 'AdminController@history')->name('adminHistory');
 
 Route::post('/admin/history','AdminController@historyEdit')->name('adminHistoryPost');
@@ -79,6 +81,12 @@ Route::post('/admin/history','AdminController@historyEdit')->name('adminHistoryP
 Route::get('/admin/impact', 'AdminController@impact')->name('adminImpact');
 
 Route::post('/admin/impact','AdminController@impactEdit')->name('adminImpactPost');
+
+Route::get('/admin/vacancies', 'AdminController@vacancies')->name('adminVacancies');
+
+Route::get('/admin/vacancies/new','AdminController@vacancy')->name('adminVacancyPost');
+
+Route::post('/admin/vacancies/new','AdminController@newVacancy')->name('adminVacancyPost');
 
 
 Auth::routes();

@@ -24,7 +24,7 @@
                                                     First name
                                                 </label> --}}
                                                 <div class="col-md-9 col-sm-9">
-                                                <textarea class="form-control" name="about">{{$company->about}}</textarea>
+                                                <textarea class="form-control" name="about">{{$company->about ?? ''}}</textarea>
                                                 </div>
                                             </div>
 

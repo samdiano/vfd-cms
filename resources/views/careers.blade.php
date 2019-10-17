@@ -99,8 +99,7 @@
         <div class="container">
             <div class="row vertical-10">
                 <div class="col-md-6">
-                    <p class="mt-md-">VFD Group is a financial services focused proprietary investment company that creates value by working within Nigeria's informal financial sector to create innovative products and solutions that are accessible to the everyday Nigerian citizen and entrepreneur.
-                        VFD Group was founded by skilled professionals with diverse experience, qualifications and backgrounds. As a team, we identified the gap between both individuals and small businesses.</p>
+                    <p class="mt-md-">{!!$company->career!!}</p>
                 </div>
 
                 <div class="offset-md-1 col-md-5">
@@ -146,28 +145,15 @@
                                     <span class="col-md-5 my-2">Sort by</span> <select class="rounded-0 col-md-8 browser-default custom-select"><option>Most Recent</option></select>
                                 </div>
                             </div>
-
                             <div class="row justify-content-center">
+                                @foreach($vacancies as $vacancy)
                                 <div class="col-md-3 my-2">
                                     <div class="p-3 career-card text-center">
-                                        <h5 class="text_secondary gotham-bold mt-2">Group Accountant</h5>
-                                        <p class="text_secondary mb-1 small">Posted on 17th August, 2019</p>
+                                        <h5 class="text_secondary gotham-bold mt-2">{{$vacancy->role}}</h5>
+                                        <p class="text_secondary mb-1 small">Posted on {{date_format($vacancy->created_at,'d-m-Y')}}</p>
                                     </div>
                                 </div>
-
-                                <div class="col-md-3 offset-md-1 my-2">
-                                    <div class="p-3 career-card text-center">
-                                        <h5 class="text_secondary gotham-bold mt-2">Group Developer</h5>
-                                        <p class="text_secondary mb-1 small">Posted on 17th August, 2019</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3 offset-md-1 my-2">
-                                    <div class="p-3 career-card text-center">
-                                        <h5 class="text_secondary gotham-bold mt-2">Group Accountant</h5>
-                                        <p class="text_secondary mb-1 small">Posted on 17th August, 2019</p>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
 
