@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Vacancies')
+@section('title','Dynasty Real Estate Vacancies')
 
 @section('content')
     <div class="content-page">
@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box">
-                             <a class="btn btn-primary" href="{{ url('admin/vacancies/new/') }}">Add New Vacancy</a>
+                             <a class="btn btn-primary" href="{{ url('admin/portfolio/vacancies/new/') }}">Add New Portfolio Vacancy</a>
                             <div class="table-rep-plugin">
                                 <div class="table-responsive" data-pattern="priority-columns">
                                     {{-- @include('partial.alert') --}}
@@ -55,7 +55,7 @@
                                                                 <div class="text-center">
                                                                     <div class="text-danger"><span class="modal-main-icon mdi mdi-close-circle-o"></span></div>
                                                                     <h3>Warning!</h3>
-                                                                    <p>You are about to delete a Full-time driver request.</p>
+                                                                    <p>You are about to delete a request.</p>
                                                                     <div class="xs-mt-50">
                                                                         <button type="button" data-dismiss="modal" class="btn btn-space btn-default">Cancel</button>
                                                                         <a href="{{ url('booking/annual/')}}" class="btn btn-space btn-danger" type="submit">Delete</a>

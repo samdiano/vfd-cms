@@ -103,25 +103,16 @@
         <div class="container vertical-5">
             <div class="row">
                 <div class="col-md-8">
-                    <p>VFD Group operates through its our portfolio to provide innovative financial services – alternative funding and investment channels – that are accessible to individuals and small businesses. Our our portfolio provide the following services:</p>
-
+                    {!!$company->portfolio!!}
                     <div class="row">
+                        @foreach($services as $service)
                         <div class="col-md-6">
                             <ul>
-                                <li class="custom-list my-2">Financial Advisory</li>
-                                <li class="custom-list my-2">Currency Exchange</li>
-                                <li class="custom-list my-2">Debt services</li>
-                                <li class="custom-list my-2">Private Funds Management</li>
+                                <li class="custom-list my-2">{{$service->name}}</li>
+                                
                             </ul>
                         </div>
-
-                        <div class="col-md-6">
-                            <ul>
-                                <li class="custom-list my-2">Asset Management</li>
-                                <li class="custom-list my-2">Real Estate</li>
-                                <li class="custom-list my-2">International Remittance/ Settlement</li>
-                            </ul>
-                        </div>
+                        @endforeach
                     </div>
 
 

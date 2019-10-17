@@ -171,7 +171,7 @@
                                                 <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
                                                    aria-controls="collapseOne1">
                                                     <h5 class="mb-0 text_secondary">
-                                                        Everdon Bureau De Change <span class="gotham-bold vfd-text-red">(6)</span> <i class="fa fa-angle-down rotate-icon"></i>
+                                                        Everdon Bureau De Change <span class="gotham-bold vfd-text-red">({{count($everdon_vacancies)}})</span> <i class="fa fa-angle-down rotate-icon"></i>
                                                     </h5>
                                                 </a>
                                             </div>
@@ -180,7 +180,9 @@
                                             <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
                                                  data-parent="#accordionEx">
                                                 <div class="card-body">
-                                                    content goes here
+                                                        @foreach($everdon_vacancies as $vacancy)
+                                                        <p>{{$vacancy->role}}</p>
+                                                        @endforeach
                                                 </div>
                                             </div>
 
@@ -195,7 +197,7 @@
                                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
                                                    aria-expanded="false" aria-controls="collapseTwo2">
                                                     <h5 class="mb-0 text_secondary">
-                                                        VFD Microfinance Bank <span class="gotham-bold vfd-text-red">(6)</span> <i class="fa fa-angle-down rotate-icon"></i>
+                                                        VFD Microfinance Bank <span class="gotham-bold vfd-text-red">({{count($microfinance_vacancies)}})</span> <i class="fa fa-angle-down rotate-icon"></i>
                                                     </h5>
                                                 </a>
                                             </div>
@@ -204,7 +206,9 @@
                                             <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
                                                  data-parent="#accordionEx">
                                                 <div class="card-body">
-                                                    content goes here
+                                                        @foreach($microfinance_vacancies as $vacancy)
+                                                        <p>{{$vacancy->role}}</p>
+                                                        @endforeach
                                                 </div>
                                             </div>
 
@@ -219,7 +223,7 @@
                                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
                                                    aria-expanded="false" aria-controls="collapseThree3">
                                                     <h5 class="mb-0 text_secondary">
-                                                        VFD Bridge <span class="gotham-bold vfd-text-red">(6)</span> <i class="fa fa-angle-down rotate-icon"></i>
+                                                        VFD Bridge <span class="gotham-bold vfd-text-red">({{count($bridge_vacancies)}})</span> <i class="fa fa-angle-down rotate-icon"></i>
                                                     </h5>
                                                 </a>
                                             </div>
@@ -228,7 +232,9 @@
                                             <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
                                                  data-parent="#accordionEx">
                                                 <div class="card-body">
-                                                    content goes here
+                                                        @foreach($bridge_vacancies as $vacancy)
+                                                        <p>{{$vacancy->role}}</p>
+                                                        @endforeach
                                                 </div>
                                             </div>
 
@@ -244,7 +250,7 @@
                                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapse4"
                                                    aria-expanded="false" aria-controls="collapse4">
                                                     <h5 class="mb-0 text_secondary">
-                                                        Dynasty Real Estate <span class="gotham-bold vfd-text-red">(6)</span> <i class="fa fa-angle-down rotate-icon"></i>
+                                                        Dynasty Real Estate <span class="gotham-bold vfd-text-red">({{count($dynasty_vacancies)}})</span> <i class="fa fa-angle-down rotate-icon"></i>
                                                     </h5>
                                                 </a>
                                             </div>
@@ -253,7 +259,9 @@
                                             <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="heading4"
                                                  data-parent="#accordionEx">
                                                 <div class="card-body">
-                                                    content goes here
+                                                        @foreach($dynasty_vacancies as $vacancy)
+                                                        <p>{{$vacancy->role}}</p>
+                                                        @endforeach
                                                 </div>
                                             </div>
 
@@ -269,7 +277,7 @@
                                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapse5"
                                                    aria-expanded="false" aria-controls="collapse5">
                                                     <h5 class="mb-0 text_secondary">
-                                                        Anchoria Assets Management <span class="gotham-bold vfd-text-red">(6)</span> <i class="fa fa-angle-down rotate-icon"></i>
+                                                        Anchoria Assets Management <span class="gotham-bold vfd-text-red">({{count($anchoria_vacancies)}})</span> <i class="fa fa-angle-down rotate-icon"></i>
                                                     </h5>
                                                 </a>
                                             </div>
@@ -278,7 +286,9 @@
                                             <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="heading5"
                                                  data-parent="#accordionEx">
                                                 <div class="card-body">
-                                                    content goes here
+                                                        @foreach($anchoria_vacancies as $vacancy)
+                                                        <p>{{$vacancy->role}}</p>
+                                                        @endforeach
                                                 </div>
                                             </div>
 

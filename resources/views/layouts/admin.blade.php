@@ -250,9 +250,9 @@
                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Portfolio</span>
                             <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                                <li><a href="{{ url('admin/gallery') }}">Portfolio</a></li>
-                                <li><a href="{{ url('admin/gallery') }}">Services</a></li>
-                                <li><a href="{{ url('admin/gallery') }}">Products</a></li>
+                                <li><a href="{{ url('admin/portfolio') }}">Portfolio</a></li>
+                                <li><a href="{{ url('admin/services') }}">Services</a></li>
+                                {{-- <li><a href="{{ url('admin/products') }}">Products</a></li> --}}
 
                         </ul>
                         
