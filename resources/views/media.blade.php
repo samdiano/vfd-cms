@@ -112,58 +112,24 @@
 
                         <div class="tab-pane fade show active" id="vacancies-just" role="tabpanel" aria-labelledby="vacancies-tab-just">
                             <div class="row">
-
+                                @foreach($blog as $blog)
                                 <div class="col-md-4 my-3">
 
                                     <div class="card">
-                                        <img class="card-img-top" src="{{ asset('assets/img/post_1.png') }}" alt="post">
+                                        <img class="card-img-top" src="{{ asset($blog->image_path) }}" alt="post">
 
                                         <div class="card-body grey-bg px-3">
 
-                                            <p class="card-title weight-semi-bold"><a>PRESS RELEASE – VFD Group Concludes a Successful Business Exit of Germaine Auto Center.</a></p>
+                                            <p class="card-title weight-semi-bold"><a>{{$blog->title}}</a></p>
 
-                                            <p class="font-13">Lagos – Nigeria, 15 07 2019: — VFD Group Plc (“VFD Group”, “VFD”) announces its... </p>
+                                            <p class="font-13">{!! str_limit($blog->content, 200)!!}</p>
                                             <a href="#" class="vfd-text-red weight-semi-bold">Read More</a>
 
                                         </div>
                                     </div>
 
                                 </div>
-
-                                <div class="col-md-4 my-3">
-
-                                    <div class="card">
-                                        <img class="card-img-top" src="{{ asset('assets/img/post_2.png') }}" alt="post">
-
-                                        <div class="card-body grey-bg px-3">
-
-                                            <p class="card-title weight-semi-bold"><a>PRESS RELEASE – VFD Group Concludes a Successful Business Exit of Germaine Auto Center.</a></p>
-
-                                            <p class="font-13">Lagos – Nigeria, 15 07 2019: — VFD Group Plc (“VFD Group”, “VFD”) announces its... </p>
-                                            <a href="#" class="vfd-text-red weight-semi-bold">Read More</a>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="col-md-4 my-3">
-
-                                    <div class="card">
-                                        <img class="card-img-top" src="{{ asset('assets/img/post_1.png') }}" alt="post">
-
-                                        <div class="card-body grey-bg px-3">
-
-                                            <p class="card-title weight-semi-bold"><a>PRESS RELEASE – VFD Group Concludes a Successful Business Exit of Germaine Auto Center.</a></p>
-
-                                            <p class="font-13">Lagos – Nigeria, 15 07 2019: — VFD Group Plc (“VFD Group”, “VFD”) announces its... </p>
-                                            <a href="#" class="vfd-text-red weight-semi-bold">Read More</a>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-
+                                @endforeach
                             </div>
 
 

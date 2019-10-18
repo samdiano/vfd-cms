@@ -5,6 +5,7 @@ use App\Company;
 use App\Vacancy;
 use App\Service;
 use App\Product;
+use App\Blog;
 use App\FAQ;
 use App\FinancialInformation;
 use App\ConferenceCall;
@@ -68,6 +69,18 @@ class CompanyController extends Controller
         $company = Company::find(1);
         $services = Service::all();
         return view('portfolio',['services' => $services,'company' => $company ]);
+    }
+    
+    /**
+     * Show the company's career page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function media()
+    {
+        $company = Company::find(1);
+        $blog = Blog::all();
+        return view('media',['blog' => $blog,'company' => $company ]);
     }
     
 }

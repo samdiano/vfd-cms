@@ -23,9 +23,7 @@ Route::get('/portfolio','CompanyController@portfolio')->name('portfolio');
 
 Route::get('/investors','CompanyController@investors')->name('investors');
 
-Route::get('/media', function () {
-    return view('media');
-});
+Route::get('/media','CompanyController@media')->name('media');
 
 Route::get('/contact_us', function () {
     return view('contact_us');
