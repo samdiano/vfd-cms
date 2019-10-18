@@ -34,7 +34,7 @@
                                             @foreach($info as $info)
                                                 <tr>
                                                     <td>{{ $info->title }}</td>
-                                                    <td><img height="300" width="300" src="{{ asset('storage/'.$info->image_path) }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" /></td>
+                                                    <td><img height="300" width="300" src="{{ asset($info->image_path) }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" /></td>
                                                     <td>{{ $info->document }}</td>
                                                     <td>{{ $info->year }}</td>
                                                    
