@@ -21,9 +21,7 @@ Route::get('/career', 'CompanyController@career')->name('career');
 
 Route::get('/portfolio','CompanyController@portfolio')->name('portfolio');
 
-Route::get('/investors', function () {
-    return view('investors');
-});
+Route::get('/investors','CompanyController@investors')->name('investors');
 
 Route::get('/media', function () {
     return view('media');
@@ -147,6 +145,13 @@ Route::get('/admin/conference','AdminController@conference')->name('conference')
 Route::get('/admin/conference/new','AdminController@conferenceNew')->name('conferenceNew');
 
 Route::post('/admin/conference/new','AdminController@postConferenceNew')->name('postConferenceNew');
+
+
+Route::get('/admin/blog','AdminController@blog')->name('blog');
+
+Route::get('/admin/blog/new','AdminController@blogNew')->name('blogNew');
+
+Route::post('/admin/blog/new','AdminController@postBlogNew')->name('postBlogNew');
 
 
 Route::get('/admin/press','AdminController@press')->name('press');

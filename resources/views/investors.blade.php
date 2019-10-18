@@ -471,251 +471,53 @@
                             <div class="tab-content" id="">
                                 <div class="tab-pane fade show active" id="directors-just" role="tabpanel" aria-labelledby="directors-tab-just">
                                     <div class="accordion md-accordion" id="accordionExfaq" role="tablist" aria-multiselectable="true">
-
+                                        @foreach($generalFaq as $general)
                                         <div class="card my-3 border-0">
                                             <div class="card-header rounded" role="tab" id="faqheading1">
-                                                <a data-toggle="collapse" data-parent="#accordionExfaq" href="#faq1" aria-expanded="true"
-                                                   aria-controls="faq1">
+                                                <a data-toggle="collapse" data-parent="#accordionExfaq" href="#{{$general->id}}" aria-expanded="true"
+                                                   aria-controls="{{$general->id}}">
                                                     <h5 class="mb-0 text_secondary">
-                                                        <span class="gotham-bold">What meetings am I entitled to attend?</span> <i class="fa fa-angle-down rotate-icon"></i>
+                                                        <span class="gotham-bold">{{$general->question}}</span> <i class="fa fa-angle-down rotate-icon"></i>
                                                     </h5>
 
                                                 </a>
                                             </div>
 
-                                            <div id="faq1" class="collapse show mb-2" role="tabpanel" aria-labelledby="faqheading1"
+                                            <div id="{{$general->id}}" class="collapse show mb-2" role="tabpanel" aria-labelledby="faqheading1"
                                                  data-parent="#accordionExfaq">
                                                 <div class="card-body pt-0">
                                                     <hr class="my-2" />
-                                                    All General Meetings including an Annual General Meeting and any other Extra-ordinary General Meeting.
+                                                    {{$general->response}}.
                                                 </div>
                                             </div>
                                         </div>
-
-
-                                        <div class="card my-3 border-0">
-
-                                            <div class="card-header rounded" role="tab" id="faqheading2">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionExfaq" href="#faq2"
-                                                   aria-expanded="false" aria-controls="faq2">
-                                                    <h5 class="mb-0 text_secondary"> <span class="gotham-bold"> When will I get the notice of an Annual General Meeting?</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                                    </h5>
-                                                </a>
-                                            </div>
-
-
-                                            <div id="faq2" class="collapse mb-2" role="tabpanel" aria-labelledby="faqheading2"
-                                                 data-parent="#accordionExfaq">
-                                                <div class="card-body pt-0">
-                                                    <hr class="my-2" />
-                                                    21 days to the date of an Annual General Meeting (AGM)
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="card my-3 border-0">
-
-                                            <div class="card-header rounded" role="tab" id="faqheading3">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionExfaq" href="#faq3"
-                                                   aria-expanded="false" aria-controls="faq3">
-                                                    <h5 class="mb-0 text_secondary"> <span class="gotham-bold"> What is the content of a notice of Meeting?</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                                    </h5>
-                                                </a>
-                                            </div>
-
-
-                                            <div id="faq3" class="collapse mb-2" role="tabpanel" aria-labelledby="faqheading3"
-                                                 data-parent="#accordionExfaq">
-                                                <div class="card-body pt-0">
-                                                    <hr class="my-2" />
-                                                    A notice contains the name of the meeting, date of meeting, venue of meeting, time of meeting, agenda of meeting, and notes to the Notice.
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="card my-3 border-0">
-
-                                            <div class="card-header rounded" role="tab" id="faqheading4">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionExfaq" href="#faq4"
-                                                   aria-expanded="false" aria-controls="faq4">
-                                                    <h5 class="mb-0 text_secondary"> <span class="gotham-bold"> Can I send a proxy that is not a shareholder?</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                                    </h5>
-                                                </a>
-                                            </div>
-
-
-                                            <div id="faq4" class="collapse mb-2" role="tabpanel" aria-labelledby="faqheading4"
-                                                 data-parent="#accordionExfaq">
-                                                <div class="card-body pt-0">
-                                                    <hr class="my-2" />
-                                                    Yes, as a shareholder, you are entitled to appoint a proxy to attend and vote in your stead. A Proxy need not be a member of the Company. To be valid, a completed and duly stamped proxy must be deposited at the Registered Office, of the Company not less than forty-eight (48) hours prior to the time of the meeting.
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="card my-3 border-0">
-
-                                            <div class="card-header rounded" role="tab" id="faqheading5">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionExfaq" href="#faq5"
-                                                   aria-expanded="false" aria-controls="faq5">
-                                                    <h5 class="mb-0 text_secondary"> <span class="gotham-bold">What is an ordinary business and a special business?
-                                                        </span> <i class="fa fa-angle-down rotate-icon"></i>
-                                                    </h5>
-                                                </a>
-                                            </div>
-
-
-                                            <div id="faq5" class="collapse mb-2" role="tabpanel" aria-labelledby="faqheading5"
-                                                 data-parent="#accordionExfaq">
-                                                <div class="card-body pt-0">
-                                                    <hr class="my-2" />
-                                                    Ordinary businesses include declaration of a dividend, the presentation of the financial statements and the reports of the Directors and Auditors, the election of Directors in the place of those retiring, the appointment, and the fixing of remuneration of the Auditors and the appointment of the members of the Audit Committee. Any other business aside the above are special business.
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="card my-3 border-0">
-
-                                            <div class="card-header rounded" role="tab" id="faqheading6">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionExfaq" href="#faq6"
-                                                   aria-expanded="false" aria-controls="faq6">
-                                                    <h5 class="mb-0 text_secondary"> <span class="gotham-bold">How do I vote for or against resolutions at a General Meeting?
-                                                        </span> <i class="fa fa-angle-down rotate-icon"></i>
-                                                    </h5>
-                                                </a>
-                                            </div>
-
-
-                                            <div id="faq6" class="collapse mb-2" role="tabpanel" aria-labelledby="faqheading6"
-                                                 data-parent="#accordionExfaq">
-                                                <div class="card-body pt-0">
-                                                    <hr class="my-2" />
-                                                    At any general meeting, a resolution put to vote is decided on a show of hands unless a poll is demanded in accordance with section 224 of the Companies and Allied Matters Act (CAMA).
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="card my-3 border-0">
-
-                                            <div class="card-header rounded" role="tab" id="faqheading7">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionExfaq" href="#faq7"
-                                                   aria-expanded="false" aria-controls="faq7">
-                                                    <h5 class="mb-0 text_secondary"> <span class="gotham-bold">When and how can I ask Questions regarding the Company?
-                                                        </span> <i class="fa fa-angle-down rotate-icon"></i>
-                                                    </h5>
-                                                </a>
-                                            </div>
-
-
-                                            <div id="faq7" class="collapse mb-2" role="tabpanel" aria-labelledby="faqheading7"
-                                                 data-parent="#accordionExfaq">
-                                                <div class="card-body pt-0">
-                                                    <hr class="my-2" />
-                                                    Shareholders have a right to ask questions not only at Meetings, but also in writing prior to the Meeting, and such questions must be submitted to the Company Secretary at the registered address of the Company not later than two (2) weeks before the date of the Meeting.
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="card my-3 border-0">
-
-                                            <div class="card-header rounded" role="tab" id="faqheading8">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionExfaq" href="#faq8"
-                                                   aria-expanded="false" aria-controls="faq8">
-                                                    <h5 class="mb-0 text_secondary"> <span class="gotham-bold">How do I nominate another shareholder for appointment to the Audit Committee?
-                                                        </span> <i class="fa fa-angle-down rotate-icon"></i>
-                                                    </h5>
-                                                </a>
-                                            </div>
-
-
-                                            <div id="faq8" class="collapse mb-2" role="tabpanel" aria-labelledby="faqheading8"
-                                                 data-parent="#accordionExfaq">
-                                                <div class="card-body pt-0">
-                                                    <hr class="my-2" />
-                                                    In accordance with Section 359(5) of the Companies and Allied Matters Act 1990, any shareholder may nominate a Shareholder for appointment to the Audit Committee. Such nomination should be in writing and should reach the Company Secretary at least twenty-one (21) days before the Annual General Meeting.
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="card my-3 border-0">
-
-                                            <div class="card-header rounded" role="tab" id="faqheading8">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionExfaq" href="#faq9"
-                                                   aria-expanded="false" aria-controls="faq9">
-                                                    <h5 class="mb-0 text_secondary"> <span class="gotham-bold">Where do I channel my enquiries?
-                                                        </span> <i class="fa fa-angle-down rotate-icon"></i>
-                                                    </h5>
-                                                </a>
-                                            </div>
-
-
-                                            <div id="faq8" class="collapse mb-2" role="tabpanel" aria-labelledby="faqheading9"
-                                                 data-parent="#accordionExfaq">
-                                                <div class="card-body pt-0">
-                                                    <hr class="my-2" />
-                                                    You can send an email to shareholderservices@vfdgroup.com or call the Company Secretary on 08027543343.
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
+                                        @endforeach
+                                    </div> 
+                                </div> 
 
                                 <div class="tab-pane fade" id="portfolios-just" role="tabpanel" aria-labelledby="portfolios-tab-just">
                                     <div class="accordion md-accordion" id="careerfaq" role="tablist" aria-multiselectable="true">
-
-                                        <div class="card my-3 border-0">
-                                            <div class="card-header rounded" role="tab" id="careerfaqheading1">
-                                                <a data-toggle="collapse" data-parent="#careerfaq" href="#careerfaq1" aria-expanded="true"
-                                                   aria-controls="careerfaq11">
-                                                    <h5 class="mb-0 text_secondary">
-                                                        <span class="gotham-bold">2019</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                                    </h5>
-
-                                                </a>
-                                            </div>
-
-                                            <div id="careerfaq1" class="collapse show mb-2" role="tabpanel" aria-labelledby="careerfaqheading1"
-                                                 data-parent="#accordionEx">
-                                                <div class="card-body pt-0">
-                                                    <hr class="my-2" />
-
-                                                    Career Faqs content goes here
+                                            @foreach($careerFaq as $career)
+                                            <div class="card my-3 border-0">
+                                                <div class="card-header rounded" role="tab" id="faqheading1">
+                                                    <a data-toggle="collapse" data-parent="#accordionExfaq" href="#{{$career->id}}" aria-expanded="true"
+                                                       aria-controls="{{$career->id}}">
+                                                        <h5 class="mb-0 text_secondary">
+                                                            <span class="gotham-bold">{{$career->question}}</span> <i class="fa fa-angle-down rotate-icon"></i>
+                                                        </h5>
+    
+                                                    </a>
+                                                </div>
+    
+                                                <div id="{{$career->id}}" class="collapse show mb-2" role="tabpanel" aria-labelledby="faqheading1"
+                                                     data-parent="#accordionExfaq">
+                                                    <div class="card-body pt-0">
+                                                        <hr class="my-2" />
+                                                        {{$career->response}}.
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-
-                                        <div class="card my-3 border-0">
-
-                                            <div class="card-header rounded" role="tab" id="careerfaqheading2">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#careerfaq" href="#careerfaq2"
-                                                   aria-expanded="false" aria-controls="careerfaq2">
-                                                    <h5 class="mb-0 text_secondary"> <span class="gotham-bold">2018</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                                    </h5>
-                                                </a>
-                                            </div>
-
-
-                                            <div id="careerfaq2" class="collapse mb-2" role="tabpanel" aria-labelledby="careerfaqheading2"
-                                                 data-parent="#careerfaq">
-                                                <div class="card-body pt-0">
-                                                    <hr class="my-2" />
-                                                    content goes here
-                                                </div>
-                                            </div>
-
-                                        </div>
+                                            @endforeach
 
                                     </div>
                                 </div>
@@ -723,48 +525,27 @@
                                 <div class="tab-pane fade" id="investor-just" role="tabpanel" aria-labelledby="investor-tab-just">
                                     <div class="accordion md-accordion" id="investorfaq" role="tablist" aria-multiselectable="true">
 
-                                        <div class="card my-3 border-0">
-                                            <div class="card-header rounded" role="tab" id="investorfaqheading1">
-                                                <a data-toggle="collapse" data-parent="#investorfaq" href="#investorfaq1" aria-expanded="true"
-                                                   aria-controls="investorfaq1">
-                                                    <h5 class="mb-0 text_secondary">
-                                                        <span class="gotham-bold">2019</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                                    </h5>
-
-                                                </a>
-                                            </div>
-
-                                            <div id="investorfaq1" class="collapse show mb-2" role="tabpanel" aria-labelledby="investorfaqheading1"
-                                                 data-parent="#investorfaq">
-                                                <div class="card-body pt-0">
-                                                    <hr class="my-2" />
-
-                                                    Investor Faqs content goes here
+                                            @foreach($investorFaq as $investor)
+                                            <div class="card my-3 border-0">
+                                                <div class="card-header rounded" role="tab" id="faqheading1">
+                                                    <a data-toggle="collapse" data-parent="#accordionExfaq" href="#{{$investor->id}}" aria-expanded="true"
+                                                       aria-controls="{{$investor->id}}">
+                                                        <h5 class="mb-0 text_secondary">
+                                                            <span class="gotham-bold">{{$career->question}}</span> <i class="fa fa-angle-down rotate-icon"></i>
+                                                        </h5>
+    
+                                                    </a>
+                                                </div>
+    
+                                                <div id="{{$investor->id}}" class="collapse show mb-2" role="tabpanel" aria-labelledby="faqheading1"
+                                                     data-parent="#accordionExfaq">
+                                                    <div class="card-body pt-0">
+                                                        <hr class="my-2" />
+                                                        {{$investor->response}}.
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-
-                                        <div class="card my-3 border-0">
-
-                                            <div class="card-header rounded" role="tab" id="investorfaqheading2">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#investorfaq" href="#investorfaq2"
-                                                   aria-expanded="false" aria-controls="careerfaq2">
-                                                    <h5 class="mb-0 text_secondary"> <span class="gotham-bold">2018</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                                    </h5>
-                                                </a>
-                                            </div>
-
-
-                                            <div id="investorfaq2" class="collapse mb-2" role="tabpanel" aria-labelledby="investorfaqheading2"
-                                                 data-parent="#investorfaq">
-                                                <div class="card-body pt-0">
-                                                    <hr class="my-2" />
-                                                    content goes here
-                                                </div>
-                                            </div>
-
-                                        </div>
+                                            @endforeach
 
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Financial Information')
+@section('title','Blog')
 
 @section('content')
     <div class="content-page">
@@ -9,14 +9,14 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box">
-                             <a class="btn btn-primary" href="{{ url('admin/financial-information/new') }}">Add Financial Information</a>
+                             <a class="btn btn-primary" href="{{ url('admin/blog/new') }}">Add Article</a>
                             <div class="table-rep-plugin">
                                 <div class="table-responsive" data-pattern="priority-columns">
                                     {{-- @include('partial.alert') --}}
                                     @if(count($info) < 1)
                                         <br><br>
                                         <div class="alert alert-info text-center">
-                                            <p>There are no financial info provided at the moment</p>
+                                            <p>There are no articles posted at the moment</p>
                                         </div>
                                     @else
                                         <br><br>
@@ -25,8 +25,7 @@
                                             <tr>
                                                 <th>Title</th>
                                                 <th>Image</th>
-                                                <th>Document</th>
-                                                <th>Year</th>
+                                                <th>Content</th>
                                                 <th>Action</th>
                                             </tr>
                                             </thead>
@@ -35,8 +34,7 @@
                                                 <tr>
                                                     <td>{{ $info->title }}</td>
                                                     <td><img height="300" width="300" src="{{ asset('storage/'.$info->image_path) }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" /></td>
-                                                    <td>{{ $info->document }}</td>
-                                                    <td>{{ $info->year }}</td>
+                                                    <td>{!! $info->content !!}</td>
                                                    
                                                     <td>
                                                         {{-- <a class="btn btn-primary" href="{{ url('booking/annual/view/') }}">View</a> --}}

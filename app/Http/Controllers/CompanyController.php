@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 use App\Company;
 use App\Vacancy;
 use App\Service;
+use App\Product;
+use App\FAQ;
+use App\FinancialInformation;
+use App\ConferenceCall;
+use App\PressRelease;
 use App\PortfolioVacancy;
 
 
@@ -37,6 +42,20 @@ class CompanyController extends Controller
         $dynasty_vacancies = PortfolioVacancy::where('portfolio', '=', 'dynasty')->get();
         $anchoria_vacancies = PortfolioVacancy::where('portfolio', '=', 'anchoria')->get();
         return view('careers',['company' => $company, 'vacancies' => $vacancies, 'bridge_vacancies' => $bridge_vacancies, 'everdon_vacancies' => $everdon_vacancies, 'microfinance_vacancies' => $microfinance_vacancies, 'dynasty_vacancies' => $dynasty_vacancies, 'anchoria_vacancies' => $anchoria_vacancies, ]);
+    }
+
+    /**
+     * Show the company's career page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function investors()
+    {
+        $generalFaq = Faq::where('type', '=', 'general')->get();
+        $investorFaq = Faq::where('type', '=', 'investor')->get();
+        $careerFaq = Faq::where('type', '=', 'career')->get();
+        
+        return view('investors',['generalFaq' => $generalFaq, 'investorFaq' => $investorFaq, 'careerFaq' => $careerFaq ]);
     }
     
     /**

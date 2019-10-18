@@ -6,6 +6,7 @@ use App\Vacancy;
 use App\Service;
 use App\Product;
 use App\FAQ;
+use App\Blog;
 use App\FinancialInformation;
 use App\ConferenceCall;
 use App\PressRelease;
@@ -450,10 +451,8 @@ class AdminController extends Controller
         
         if ($request->hasFile('cover')) {
             $cover = $request->file('cover');
-            $filename = time().'.'.$cover->getClientOriginalExtension();
-            // Image::make($cover)->resize(300,300)->save(public_path('/images/'.$filename));
-            $cover->storeAs('images', $filename);
-            $finInfo->image_path =$filename;
+            $img = $cover->store('images', 'public');
+            $finInfo->image_path =$img;
         }
 
         if ($request->hasFile('document')) {
@@ -516,9 +515,8 @@ class AdminController extends Controller
         
         if ($request->hasFile('cover')) {
             $cover = $request->file('cover');
-            $filename = time().'.'.$cover->getClientOriginalExtension();
-            $cover->storeAs('images', $filename);
-            $finInfo->image_path =$filename;
+            $img = $cover->store('images', 'public');
+            $finInfo->image_path =$img;
         }
 
         if ($request->hasFile('document')) {
@@ -581,9 +579,8 @@ class AdminController extends Controller
         
         if ($request->hasFile('cover')) {
             $cover = $request->file('cover');
-            $filename = time().'.'.$cover->getClientOriginalExtension();
-            $cover->storeAs('images', $filename);
-            $finInfo->image_path =$filename;
+            $img = $cover->store('images', 'public');
+            $finInfo->image_path =$img;
         }
 
         if ($request->hasFile('document')) {
@@ -686,5 +683,63 @@ class AdminController extends Controller
             return redirect()->back()->withErrors($validator);
         }
     }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function blog()
+    {
+        $info = Blog::all();
+        return view('admin.blog.list',['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function blogNew()
+    {
+        $info = Blog::all();
+        return view('admin.blog.new',['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postBlogNew(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'cover' => 'required',
+            'title' => 'required',
+            'content' => 'required',
+        ]);
+
+        $finInfo = new Blog();
+        
+        if ($request->hasFile('cover')) {
+            $cover = $request->file('cover');
+            $img = $cover->store('images', 'public');
+            $finInfo->image_path =$img;
+        }
+
+        $finInfo->title = $request->title;
+        $finInfo->content = $request->content;
+        $finInfo->save;
+        $info = Blog::all();
+
+        if ($finInfo->save()) {
+            return redirect('admin/blog')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
 }
 
