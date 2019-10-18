@@ -229,9 +229,9 @@
                             <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
                             <li><a href="{{ url('admin/financial-information') }}">Financial Information</a></li>
-                            <li><a href="{{ url('admin/financial-information') }}">Conference Calls</a></li>
-                            <li><a href="{{ url('admin/financial-information') }}">Press Release</a></li>
-                            <li><a href="{{ url('admin/financial-information') }}">FAQs</a></li>
+                            <li><a href="{{ url('admin/conference') }}">Conference Calls</a></li>
+                            <li><a href="{{ url('admin/press') }}">Press Release</a></li>
+                            <li><a href="{{ url('admin/faq') }}">FAQs</a></li>
                             
                         </ul>
                         

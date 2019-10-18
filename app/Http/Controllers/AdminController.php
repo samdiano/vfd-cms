@@ -5,6 +5,10 @@ use App\Company;
 use App\Vacancy;
 use App\Service;
 use App\Product;
+use App\FAQ;
+use App\FinancialInformation;
+use App\ConferenceCall;
+use App\PressRelease;
 use App\PortfolioVacancy;
 use Illuminate\Http\Request;
 
@@ -366,7 +370,6 @@ class AdminController extends Controller
             return redirect()->back()->withErrors($validator);
         }
     }
-
     /**
      * Show the company's about page
      *
@@ -406,4 +409,282 @@ class AdminController extends Controller
             return redirect()->back()->withErrors($validator);
         }
     }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function financialInfo()
+    {
+        $info = FinancialInformation::all();
+        return view('admin.financial.list',['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function financialInfoNew()
+    {
+        $info = FinancialInformation::all();
+        return view('admin.financial.new',['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postFinancialInfoNew(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'cover' => 'required',
+            'document' => 'required',
+            'name' => 'required',
+            'year' => 'required',
+        ]);
+        $finInfo = new FinancialInformation();
+        
+        if ($request->hasFile('cover')) {
+            $cover = $request->file('cover');
+            $filename = time().'.'.$cover->getClientOriginalExtension();
+            // Image::make($cover)->resize(300,300)->save(public_path('/images/'.$filename));
+            $cover->storeAs('images', $filename);
+            $finInfo->image_path =$filename;
+        }
+
+        if ($request->hasFile('document')) {
+            $filename = rand(1111111, 999999) . time() . '.' . $request->document->getClientOriginalExtension();
+            $request->document->storeAs('documents', $filename);
+            $finInfo->document = $filename;
+        }
+
+
+        $finInfo->title = $request->name;
+        $finInfo->year = $request->year;
+        $finInfo->save;
+        $info = FinancialInformation::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->save()) {
+            return redirect('admin/financial-information')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function conference()
+    {
+        $info = ConferenceCall::all();
+        return view('admin.conference.list',['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function conferenceNew()
+    {
+        $info = ConferenceCall::all();
+        return view('admin.conference.new',['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postConferenceNew(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'cover' => 'required',
+            'document' => 'required',
+            'name' => 'required',
+            'year' => 'required',
+        ]);
+        $finInfo = new ConferenceCall();
+        
+        if ($request->hasFile('cover')) {
+            $cover = $request->file('cover');
+            $filename = time().'.'.$cover->getClientOriginalExtension();
+            $cover->storeAs('images', $filename);
+            $finInfo->image_path =$filename;
+        }
+
+        if ($request->hasFile('document')) {
+            $filename = rand(1111111, 999999) . time() . '.' . $request->document->getClientOriginalExtension();
+            $request->document->storeAs('documents', $filename);
+            $finInfo->document = $filename;
+        }
+
+
+        $finInfo->title = $request->name;
+        $finInfo->year = $request->year;
+        $finInfo->save;
+        $info = ConferenceCall::all();
+
+        if ($finInfo->save()) {
+            return redirect('admin/conference')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function press()
+    {
+        $info = PressRelease::all();
+        return view('admin.press.list',['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function pressNew()
+    {
+        $info = PressRelease::all();
+        return view('admin.press.new',['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postPressNew(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'cover' => 'required',
+            'document' => 'required',
+            'content' => 'required',
+            'name' => 'required',
+            'year' => 'required',
+        ]);
+        $finInfo = new PressRelease();
+        
+        if ($request->hasFile('cover')) {
+            $cover = $request->file('cover');
+            $filename = time().'.'.$cover->getClientOriginalExtension();
+            $cover->storeAs('images', $filename);
+            $finInfo->image_path =$filename;
+        }
+
+        if ($request->hasFile('document')) {
+            $filename = rand(1111111, 999999) . time() . '.' . $request->document->getClientOriginalExtension();
+            $request->document->storeAs('documents', $filename);
+            $finInfo->document = $filename;
+        }
+
+
+        $finInfo->title = $request->name;
+        $finInfo->content = $request->content;
+        $finInfo->year = $request->year;
+        $finInfo->save;
+        $info = PressRelease::all();
+
+        if ($finInfo->save()) {
+            return redirect('admin/press')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function faq()
+    {
+        $company = Company::find(1);
+        return view('admin.faq.index',['company' => $company]);
+    }
+
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function generalFaq()
+    {
+        $faq = FAQ::where('type', '=', 'general')->get();
+        return view('admin.faq.general',['faq' => $faq]);
+    }
+
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function careerFaq()
+    {
+        $faq = FAQ::where('type', '=', 'career')->get();
+        return view('admin.faq.career',['faq' => $faq]);
+    }
+
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function investorFaq()
+    {
+        $faq = FAQ::where('type', '=', 'investor')->get();
+        return view('admin.faq.investor',['faq' => $faq]);
+    }
+
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function faqNew()
+    {
+        $company = Company::find(1);
+        return view('admin.faq.new',['company' => $company]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postFaqNew(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'question' => 'required',
+            'response' => 'required',
+            'type' => 'required',
+        ]);
+        $faq = new FAQ();
+        $faq->question = $request->question;
+        $faq->response = $request->response;
+        $faq->type = $request->type;
+        $faq->save;
+        // return view('admin.about.edit',['company' => $company]);
+        if ($faq->save()) {
+            return redirect('admin/faq');
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
 }
+
