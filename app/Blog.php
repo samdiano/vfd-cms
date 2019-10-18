@@ -12,7 +12,7 @@ class Blog extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'content', 'image_path',
+        'id','title', 'content', 'image_path',
     ];
 
 }
