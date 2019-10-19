@@ -422,7 +422,6 @@
                     </div>
                 </div>
 
-                </div>
 
                 <!--                Our history Tab-->
                 <div class="tab-pane fade" id="board-just" role="tabpanel" aria-labelledby="board-tab-just">
