@@ -137,6 +137,7 @@
 
                         <div class="tab-pane fade" id="portfolios-just" role="tabpanel" aria-labelledby="portfolios-tab-just">
                             <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                                    @foreach($galYear as $gal)
 
                                 <div class="card my-3 border-0">
 
@@ -144,7 +145,7 @@
                                         <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
                                            aria-controls="collapseOne1">
                                             <h5 class="mb-0 text_secondary">
-                                                <span class="gotham-bold">2019</span> <i class="fa fa-angle-down rotate-icon"></i>
+                                                <span class="gotham-bold">{{$gal}}</span> <i class="fa fa-angle-down rotate-icon"></i>
                                             </h5>
                                         </a>
                                     </div>
@@ -153,109 +154,19 @@
                                          data-parent="#accordionEx">
 
                                         <div class="row">
+                                                @foreach($gallery as $info)
+                                                @if($gal == $info->year)
                                             <div class="col-md-3">
-                                                <img src="{{ asset('assets/img/ANNU-1.png') }}" alt="Annual general meeting" class="img-fluid" />
+                                                <img src="{{ asset($info->image_path) }}" alt="Annual general meeting" class="img-fluid" />
                                             </div>
-
-                                            <div class="col-md-3">
-                                                <img src="{{ asset('assets/img/vfd_long_service.png') }}" alt="Annual general meeting" class="img-fluid" />
-                                            </div>
-
-                                            <div class="col-md-3">
-                                                <img src="{{ asset('assets/img/vfd_cheki.png') }}" alt="Annual general meeting" class="img-fluid" />
-                                            </div>
+                                            @endif
+                                            @endforeach
                                         </div>
 
                                     </div>
 
                                 </div>
-
-
-                                <div class="card my-3 border-0">
-
-                                    <div class="card-header border rounded" role="tab" id="headingTwo2">
-                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
-                                           aria-expanded="false" aria-controls="collapseTwo2">
-                                            <h5 class="mb-0 text_secondary"> <span class="gotham-bold">2018</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                            </h5>
-                                        </a>
-                                    </div>
-
-
-                                    <div id="collapseTwo2" class="collapse my-4" role="tabpanel" aria-labelledby="headingTwo2"
-                                         data-parent="#accordionEx">
-                                        <div class="card-body">
-                                            content goes here
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="card my-3 border-0">
-
-                                    <div class="card-header border rounded" role="tab" id="headingThree3">
-                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
-                                           aria-expanded="false" aria-controls="collapseThree3">
-                                            <h5 class="mb-0 text_secondary">
-                                                <span class="gotham-bold">2017</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                            </h5>
-                                        </a>
-                                    </div>
-
-
-                                    <div id="collapseThree3" class="collapse my-4" role="tabpanel" aria-labelledby="headingThree3"
-                                         data-parent="#accordionEx">
-                                        <div class="card-body">
-                                            content goes here
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="card my-3 border-0">
-
-                                    <div class="card-header border rounded" role="tab" id="heading4">
-                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapse4"
-                                           aria-expanded="false" aria-controls="collapse4">
-                                            <h5 class="mb-0 text_secondary">
-                                                <span class="gotham-bold">2016</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                            </h5>
-                                        </a>
-                                    </div>
-
-                                    <div id="collapse4" class="collapse my-4" role="tabpanel" aria-labelledby="heading4"
-                                         data-parent="#accordionEx">
-                                        <div class="card-body">
-                                            content goes here
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="card my-3 border-0">
-
-                                    <div class="card-header border rounded" role="tab" id="heading5">
-                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapse5"
-                                           aria-expanded="false" aria-controls="collapse5">
-                                            <h5 class="mb-0 text_secondary">
-                                                <span class="gotham-bold">2015</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                            </h5>
-                                        </a>
-                                    </div>
-
-                                    <div id="collapse5" class="collapse my-4" role="tabpanel" aria-labelledby="heading5"
-                                         data-parent="#accordionEx">
-                                        <div class="card-body">
-                                            content goes here
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
+                                @endforeach
                             </div>
                         </div>
 

@@ -480,8 +480,7 @@ class AdminController extends Controller
         }
 
         if ($request->hasFile('document')) {
-            $filename = rand(1111111, 999999) . time() . '.' . $request->document->getClientOriginalExtension();
-            $request->document->storeAs('documents', $filename);
+            $filename = $request->document->store('documents', 'public');
             $finInfo->document = $filename;
         }
 
@@ -544,8 +543,7 @@ class AdminController extends Controller
         }
 
         if ($request->hasFile('document')) {
-            $filename = rand(1111111, 999999) . time() . '.' . $request->document->getClientOriginalExtension();
-            $request->document->storeAs('documents', $filename);
+            $filename = $request->document->store('documents', 'public');
             $finInfo->document = $filename;
         }
 
@@ -608,8 +606,7 @@ class AdminController extends Controller
         }
 
         if ($request->hasFile('document')) {
-            $filename = rand(1111111, 999999) . time() . '.' . $request->document->getClientOriginalExtension();
-            $request->document->storeAs('documents', $filename);
+            $filename = $request->document->store('documents', 'public');
             $finInfo->document = $filename;
         }
 

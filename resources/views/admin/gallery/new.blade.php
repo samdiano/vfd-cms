@@ -49,7 +49,7 @@
                                                     Year
                                                 </label>
                                                 <div class="col-md-9 col-sm-9">
-                                                    <input type="date" name="year" class="form-control">
+                                                    <input type="text" name="year" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="form-group">

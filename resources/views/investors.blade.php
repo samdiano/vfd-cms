@@ -129,7 +129,7 @@
             </ul>
 
             <div class="tab-content px-0 px-md-2" id="myTabContentJust">
-
+                @foreach($finYear as $fin)
                 <div class="tab-pane fade active show" id="finance-just" role="tabpanel" aria-labelledby="finance-tab-just">
                     <div class="accordion md-accordion" id="finance" role="tablist" aria-multiselectable="true">
                         <div class="card my-3 border-0">
@@ -137,7 +137,7 @@
                                 <a data-toggle="collapse" data-parent="#finance" href="#finance1" aria-expanded="true"
                                    aria-controls="finance1">
                                     <h5 class="mb-0 text_secondary">
-                                        <span class="gotham-bold">2019</span> <i class="fa fa-angle-down rotate-icon"></i>
+                                        <span class="gotham-bold">{{$fin}}</span> <i class="fa fa-angle-down rotate-icon"></i>
                                     </h5>
                                 </a>
                             </div>
@@ -148,9 +148,11 @@
                                 <div class="card-body pt-0">
                                     <hr class="my-2" />
                                     <div class="row">
-                                        <div class="col-md-4 my-2">
-                                            <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf" target="_blank">
-                                                <div class="investor-info-images" style="background-image: url({{ asset('assets/img/f1-2019.jpg') }});
+                                        @foreach($finInfo as $info)
+                                        @if($fin == $info->year)
+                                         <div class="col-md-4 my-2">
+                                            <a href="{{ asset($info->image_path) }}" target="_blank">
+                                                <div class="investor-info-images" style="background-image: url({{ asset($info->image_path) }});
                                                                                          background-size: cover;
                                                                                          background-repeat: no-repeat;
                                                                                          height: 150px;">
@@ -158,49 +160,9 @@
                                                 </div>
                                             </a>
                                         </div>
+                                        @endif
+                                        @endforeach
 
-                                        <div class="col-md-4 my-2">
-                                            <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf" target="_blank" class="">
-                                                <div class="investor-info-images" style="background-image: url({{ asset('assets/img/f2-2019.png') }});
-                                                                                         background-size: cover;
-                                                                                         background-repeat: no-repeat;
-                                                                                         height: 150px;">
-
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="card my-3 border-0">
-
-                            <div class="card-header border-0 rounded" role="tab" id="finance_heading_2">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#finance" href="#finance2"
-                                   aria-expanded="false" aria-controls="finance2">
-                                    <h5 class="mb-0 text_secondary"> <span class="gotham-bold">2018</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                    </h5>
-                                </a>
-                            </div>
-
-
-                            <div id="finance2" class="collapse mb-2" role="tabpanel" aria-labelledby="finance_heading_2"
-                                 data-parent="#finance">
-                                <div class="card-body pt-2">
-                                    <hr class="my-2" />
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf" target="_blank">
-                                                <div class="investor-info-images" style="background-image: url({{ asset('assets/img/f1-2018.png') }});
-                                                                                         background-size: cover;
-                                                                                         background-repeat: no-repeat;
-                                                                                         height: 140px;">
-                                                </div>
-                                            </a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -208,10 +170,17 @@
                         </div>
 
                     </div>
+
+                    
+                    @endforeach
                 </div>
 
 
-                <div class="tab-pane fade" id="conference-just" role="tabpanel" aria-labelledby="conference-tab-just">
+{{--                 
+            Confernce
+            Call     --}}
+            <div class="tab-pane fade" id="conference-just" role="tabpanel" aria-labelledby="conference-tab-just">
+                    @foreach($conYear as $con)
                     <div class="accordion md-accordion" id="conference" role="tablist" aria-multiselectable="true">
 
                         <div class="card my-3 border-0">
@@ -219,7 +188,7 @@
                                 <a data-toggle="collapse" data-parent="#conference" href="#conference1" aria-expanded="true"
                                    aria-controls="conference1">
                                     <h5 class="mb-0 text_secondary">
-                                        <span class="gotham-bold">2019</span> <i class="fa fa-angle-down rotate-icon"></i>
+                                        <span class="gotham-bold">{{$con}}</span> <i class="fa fa-angle-down rotate-icon"></i>
                                     </h5>
                                 </a>
                             </div>
@@ -230,98 +199,8 @@
                                 <div class="card-body pt-2">
                                     <hr class="my-2" />
                                     <div class="row">
-                                        <div class="col-md-4 my-2">
-                                            <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf" target="_blank">
-                                                <div class="investor-info-images" style="background-image: url({{ asset('assets/img/inews-2019.jpg') }});
-                                                                                         background-size: cover;
-                                                                                         background-repeat: no-repeat;
-                                                                                         height: 150px;">
-
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-md-4 my-2">
-                                            <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf" target="_blank" class="">
-                                                <div class="investor-info-images" style="background-image: url({{ asset('assets/img/inews2-2019.jpg') }});
-                                                                                         background-size: cover;
-                                                                                         background-repeat: no-repeat;
-                                                                                         height: 150px;">
-
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-md-4 my-2">
-                                            <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf" target="_blank">
-                                                <div class="investor-info-images" style="background-image: url({{ asset('assets/img/q1.png') }});
-                                                                                         background-size: cover;
-                                                                                         background-repeat: no-repeat;
-                                                                                         background-position: center center;
-                                                                                         height: 150px;">
-
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-md-4 my-2">
-                                            <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf" target="_blank">
-                                                <div class="investor-info-images" style="background-image: url({{ asset('assets/img/q1.png') }});
-                                                                                         background-size: cover;
-                                                                                         background-repeat: no-repeat;
-                                                                                         background-position: center center;
-                                                                                         height: 150px;">
-
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-md-4 my-2">
-                                            <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf" target="_blank">
-                                                <div class="investor-info-images" style="background-image: url({{ asset('assets/img/Capital-Raise-001-600x233.png') }});
-                                                                                         background-size: cover;
-                                                                                         background-repeat: no-repeat;
-                                                                                         background-position: center center;
-                                                                                         height: 150px;">
-
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-md-4 my-2">
-                                            <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf" target="_blank">
-                                                <div class="investor-info-images" style="background-image: url({{ asset('assets/img/Welcome.png') }});
-                                                                                         background-size: cover;
-                                                                                         background-repeat: no-repeat;
-                                                                                         background-position: center center;
-                                                                                         height: 150px;">
-
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-md-4 my-2">
-                                            <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf" target="_blank">
-                                                <div class="investor-info-images" style="background-image: url({{ asset('assets/img/VFD-GROUP-AND-OTHER-KEY-STAKEHOLDERS-SELL-STAKE-IN-NEM-INSURANCE-PLC-1.png') }});
-                                                                                         background-size: cover;
-                                                                                         background-repeat: no-repeat;
-                                                                                         background-position: center center;
-                                                                                         height: 150px;">
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-md-4 my-2">
-                                            <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf" target="_blank">
-                                                <div class="investor-info-images" style="background-image: url({{ asset('assets/img/Debt-Note-Offer-2.png') }});
-                                                                                         background-size: cover;
-                                                                                         background-repeat: no-repeat;
-                                                                                         background-position: center center;
-                                                                                         height: 150px;">
-                                                </div>
-                                            </a>
-                                        </div>
-
+                                            @foreach($conInfo as $info)
+                                            @if($con == $info->year)
                                         <div class="col-md-4 my-2">
                                             <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf" target="_blank">
                                                 <div class="investor-info-images" style="background-image: url({{ asset('assets/img/Getting-listed-2.png') }});
@@ -332,17 +211,9 @@
                                                 </div>
                                             </a>
                                         </div>
-
-                                        <div class="col-md-4 my-2">
-                                            <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf" target="_blank">
-                                                <div class="investor-info-images" style="background-image: url({{ asset('assets/img/Bond-offer.png') }});
-                                                                                         background-size: cover;
-                                                                                         background-repeat: no-repeat;
-                                                                                         background-position: center center;
-                                                                                         height: 150px;">
-                                                </div>
-                                            </a>
-                                        </div>
+                                        @endif
+                                        @endforeach
+                                        
                                     </div>
                                 </div>
 
@@ -351,32 +222,14 @@
                         </div>
 
 
-                        <div class="card my-3 border-0">
-
-                            <div class="card-header border-0 rounded" role="tab" id="conference_heading_2">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#conference" href="#conference2"
-                                   aria-expanded="false" aria-controls="conference2">
-                                    <h5 class="mb-0 text_secondary"> <span class="gotham-bold">2018</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                    </h5>
-                                </a>
-                            </div>
-
-
-                            <div id="conference2" class="collapse mb-2" role="tabpanel" aria-labelledby="conference_heading_2"
-                                 data-parent="#accordionEx">
-                                <div class="card-body pt-0">
-                                    <hr class="my-2" />
-                                    content goes here
-                                </div>
-                            </div>
-
-                        </div>
-
                     </div>
+                    @endforeach
                 </div>
 
 
                 <div class="tab-pane fade" id="press-just" role="tabpanel" aria-labelledby="press-tab-just">
+                        @foreach($pressYear as $press)
+
                     <div class="accordion md-accordion" id="presstab" role="tablist" aria-multiselectable="true">
 
                         <div class="card my-3 border-0">
@@ -384,7 +237,7 @@
                                 <a data-toggle="collapse" data-parent="#presstab" href="#press1" aria-expanded="true"
                                    aria-controls="press1">
                                     <h5 class="mb-0 text_secondary">
-                                        <span class="gotham-bold">2019</span> <i class="fa fa-angle-down rotate-icon"></i>
+                                        <span class="gotham-bold">{{$press}}</span> <i class="fa fa-angle-down rotate-icon"></i>
                                     </h5>
                                 </a>
                             </div>
@@ -392,62 +245,33 @@
                             <div id="press1" class="collapse show mb-2" role="tabpanel" aria-labelledby="press_head_1"
                                  data-parent="#presstab">
 
-                                <div class="card-body pt-0">
+                                 <div class="card-body pt-0">
                                     <hr class="my-2" />
-                                    Press content goes here
+                                    <div class="row">
+                                        @foreach($pressInfo as $info)
+                                        @if($press == $press->year)
+                                            <div class="col-md-4 my-2">
+                                            <a href="{{ asset($info->image_path) }}" target="_blank">
+                                                <div class="investor-info-images" style="background-image: url({{ asset($info->image_path) }});
+                                                                                            background-size: cover;
+                                                                                            background-repeat: no-repeat;
+                                                                                            height: 150px;">
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        @endif
+                                        @endforeach
+
+                                    </div>
                                 </div>
 
                             </div>
 
                         </div>
-
-
-                        <div class="card my-3 border-0">
-
-                            <div class="card-header border-0 rounded" role="tab" id="press_head_2">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#presstab" href="#press2"
-                                   aria-expanded="false" aria-controls="press2">
-                                    <h5 class="mb-0 text_secondary"> <span class="gotham-bold">2018</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                    </h5>
-                                </a>
-                            </div>
-
-
-                            <div id="press2" class="collapse mb-2" role="tabpanel" aria-labelledby="press_head_2"
-                                 data-parent="#presstab">
-                                <div class="card-body pt-0">
-                                    <hr class="my-2" />
-                                    content goes here
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="card my-3 border-0">
-
-                            <div class="card-header border-0 rounded" role="tab" id="press_head_3">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#presstab" href="#press3"
-                                   aria-expanded="false" aria-controls="press3">
-                                    <h5 class="mb-0 text_secondary">
-                                        <span class="gotham-bold">2017</span> <i class="fa fa-angle-down rotate-icon"></i>
-                                    </h5>
-                                </a>
-                            </div>
-
-
-                            <div id="press3" class="collapse mb-2" role="tabpanel" aria-labelledby="press_head_3"
-                                 data-parent="#presstab">
-                                <div class="card-body pt-0">
-                                    <hr  class="my-2"/>
-                                    content goes here
-                                </div>
-                            </div>
-
-                        </div>
-
 
                     </div>
+                    @endforeach
                 </div>
 
                 <div class="tab-pane fade" id="faq-just" role="tabpanel" aria-labelledby="faq-tab-just">

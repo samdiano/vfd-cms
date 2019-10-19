@@ -7,6 +7,7 @@ use App\Service;
 use App\Product;
 use App\Profile;
 use App\Blog;
+use App\Gallery;
 use App\FAQ;
 use App\FinancialInformation;
 use App\ConferenceCall;
@@ -71,8 +72,27 @@ class CompanyController extends Controller
         $generalFaq = Faq::where('type', '=', 'general')->get();
         $investorFaq = Faq::where('type', '=', 'investor')->get();
         $careerFaq = Faq::where('type', '=', 'career')->get();
-        
-        return view('investors',['generalFaq' => $generalFaq, 'investorFaq' => $investorFaq, 'careerFaq' => $careerFaq ]);
+        $finInfo = FinancialInformation::all();
+        $finArr = [];
+        foreach($finInfo as $fin){
+            array_push ($finArr, $fin->year);
+        }
+        $finYear = array_unique($finArr);
+
+        $conInfo = ConferenceCall::all();
+        $conArr = [];
+        foreach($conInfo as $con){
+            array_push ($conArr, $con->year);
+        }
+        $conYear = array_unique($conArr);
+
+        $pressInfo = PressRelease::all();
+        $pressArr = [];
+        foreach($pressInfo as $press){
+            array_push ($pressArr, $press->year);
+        }
+        $pressYear = array_unique($pressArr);
+        return view('investors',['generalFaq' => $generalFaq, 'investorFaq' => $investorFaq, 'careerFaq' => $careerFaq, 'finYear' => $finYear, 'finInfo' => $finInfo,'conYear' => $conYear, 'conInfo' => $conInfo,'pressYear' => $pressYear, 'pressInfo' => $pressInfo, ]);
     }
     
     /**
@@ -98,7 +118,14 @@ class CompanyController extends Controller
     {
         $company = Company::find(1);
         $blog = Blog::all();
-        return view('media',['blog' => $blog,'company' => $company ]);
+        $gallery = Gallery::all();
+        $galArr = [];
+        foreach($gallery as $gal){
+            array_push ($galArr, $gal->year);
+        }
+        $galYear = array_unique($galArr);
+
+        return view('media',['blog' => $blog, 'galYear' => $galYear, 'gallery' => $gallery,'company' => $company ]);
     }
     
 }
