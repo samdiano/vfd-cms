@@ -39,6 +39,17 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function profile($id)
+    {
+        $profile = Profile::find($id);
+        return view('profile',['profile' => $profile]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function index()
     {
         $company = Product::all();

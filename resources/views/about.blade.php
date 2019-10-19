@@ -247,7 +247,7 @@
                                                                 <h6 class="font-weight-bold">{{$director->role}}</h6>
                                                                 <h4 class="font-weight-bold gotham-bold">{{$director->name}}</h4>
                                                                 <p class="small">{!! $director->brief !!}
-                                                                <a href="profile" class="text-danger mb-3">Detailed Profile</a>
+                                                                <a href="{{ url('profile',['id' => $director->id]) }}" class="text-danger mb-3">Detailed Profile</a>
 
                                                                 <ul class="list-inline mt-2">
                                                                     <li class="list-inline-item"><a href="https://www.facebook.com/nonsokpala"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
@@ -322,7 +322,7 @@
                                                                     <h6 class="font-weight-bold">{{$director->role}}</h6>
                                                                     <h4 class="font-weight-bold gotham-bold">{{$director->name}}</h4>
                                                                     <p class="small">{!! $director->brief !!}
-                                                                    <a href="profile" class="text-danger mb-3">Detailed Profile</a>
+                                                                    <a href="{{ url('profile',['id' => $director->id]) }}" class="text-danger mb-3">Detailed Profile</a>
     
                                                                     <ul class="list-inline mt-2">
                                                                         <li class="list-inline-item"><a href="https://www.facebook.com/nonsokpala"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
@@ -398,7 +398,7 @@
                                                                     <h6 class="font-weight-bold">{{$director->role}}</h6>
                                                                     <h4 class="font-weight-bold gotham-bold">{{$director->name}}</h4>
                                                                     <p class="small">{!! $director->brief !!}
-                                                                    <a href="profile" class="text-danger mb-3">Detailed Profile</a>
+                                                                    <a href="{{ url('profile',['id' => $director->id]) }}" class="text-danger mb-3">Detailed Profile</a>
     
                                                                     <ul class="list-inline mt-2">
                                                                         <li class="list-inline-item"><a href="https://www.facebook.com/nonsokpala"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
