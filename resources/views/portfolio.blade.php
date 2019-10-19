@@ -112,35 +112,13 @@
 
 
                     <div class="row my-4">
+                        @foreach($product as $product)
                         <div class="col-md-4 my-3">
-                            <div class="text-center p-2 border" data-toggle="modal" data-target="#everdon">
-                                <img src="{{ asset('assets/img/everdon.png') }}" alt="Everdon" class="img-fluid" />
+                            <div class="text-center p-2 border" data-toggle="modal" data-target="#{{$product->name}}">
+                                <img src="{{ asset($product->image) }}" alt="Everdon" class="img-fluid" />
                             </div>
                         </div>
-
-                        <div class="col-md-4 my-3">
-                            <div class="text-center p-2 border" data-toggle="modal" data-target="#vfd_microfinance">
-                                <img src="{{ asset('assets/img/subs_micro_bank.png') }}" alt="vfd_microfinance" class="my-1 img-fluid" />
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 my-3">
-                            <div class="text-center p-2 border" data-toggle="modal" data-target="#bridge">
-                                <img src="{{ asset('assets/img/vfd_bridge.svg') }}" alt="VFD_BRIDGE" class="img-fluid" />
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 my-3">
-                            <div class="text-center p-2 border" data-toggle="modal" data-target="#dre">
-                                <img src="{{ asset('assets/img/dre.png') }}" alt="DRE Logo" class="img-fluid" />
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 my-3">
-                            <div class="text-center p-2 border" data-toggle="modal" data-target="#anchoria">
-                                <img src="{{ asset('assets/img/anchoria.png') }}" alt="Anchoria Logo" class="img-fluid" />
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
 
 
@@ -177,21 +155,20 @@
 
 
         <!-- Modal -->
-        <div class="modal fade" id="everdon" tabindex="-1" role="dialog" aria-labelledby="everdonLabel"
+        @foreach($sub as $product)
+        <div class="modal fade" id="{{$product->name}}" tabindex="-1" role="dialog" aria-labelledby="everdonLabel"
              aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header border-0 pb-0">
-                        <img src="{{ asset('assets/img/everdon.png') }}" alt="everdon logo" class="img-fluid" />
+                        <img src="{{ asset($product->image) }}" alt="everdon logo" class="img-fluid" />
                         <img src="{{ asset('assets/img/close_button.png') }}" alt="close button" class="img-fluid position-absolute close_button" data-dismiss="modal" aria-label="Close" />
                         <button type="button" class="d-none">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Anchoria Asset Management is a specialist provider of active investment products and services to institutional and individual investors. We are licensed by The Securities and Exchange Commission (SEC), Nigeria. Our investment products focus on capital preservation while providing income and asset class diversification.</p>
-
-                        <p>We draw on the unique talents, backgrounds, and experiences of our associates to promote a diversified portfolio for our clients.</p>
+                        {!! $product->description !!}
                     </div>
                     <div class="modal-footer px-5 py-4 border-0">
                         <a class="vfd-text-red" href="https://everdonbdc.com/about-us/" target="_blank">Visit Website</a>
@@ -199,103 +176,9 @@
                 </div>
             </div>
         </div>
+        @endforeach
 
 
-
-        <div class="modal fade" id="vfd_microfinance" tabindex="-1" role="dialog" aria-labelledby="vfd_microfinanceLabel"
-             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header border-0 pb-0">
-                        <img src="{{ asset('assets/img/microfinance_bank.png') }}" alt="everdon logo" class="img-fluid" />
-                        <img src="{{ asset('assets/img/close_button.png') }}" alt="close button" class="img-fluid position-absolute close_button" data-dismiss="modal" aria-label="Close" />
-                        <button type="button" class="d-none">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Anchoria Asset Management is a specialist provider of active investment products and services to institutional and individual investors. We are licensed by The Securities and Exchange Commission (SEC), Nigeria. Our investment products focus on capital preservation while providing income and asset class diversification.</p>
-
-                        <p>We draw on the unique talents, backgrounds, and experiences of our associates to promote a diversified portfolio for our clients.</p>
-                    </div>
-                    <div class="modal-footer px-5 py-4 border-0">
-                        <a class="vfd-text-red" href="https://vfdbank.com/" target="_blank">Visit Website</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="modal fade" id="bridge" tabindex="-1" role="dialog" aria-labelledby="bridgeLabel"
-             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header border-0 pb-0">
-                        <img src="{{ asset('assets/img/vfd_bridge.png') }}" alt="everdon logo" class="img-fluid" />
-                        <img src="{{ asset('assets/img/close_button.png') }}" alt="close button" class="img-fluid position-absolute close_button" data-dismiss="modal" aria-label="Close" />
-                        <button type="button" class="d-none">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Anchoria Asset Management is a specialist provider of active investment products and services to institutional and individual investors. We are licensed by The Securities and Exchange Commission (SEC), Nigeria. Our investment products focus on capital preservation while providing income and asset class diversification.</p>
-
-                        <p>We draw on the unique talents, backgrounds, and experiences of our associates to promote a diversified portfolio for our clients.</p>
-                    </div>
-                    <div class="modal-footer px-5 py-4 border-0">
-                        <a class="vfd-text-red" href="http://vfdbridge.com/" target="_blank">Visit Website</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="modal fade" id="dre" tabindex="-1" role="dialog" aria-labelledby="dreLabel"
-             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header border-0 pb-0">
-                        <img src="{{ asset('assets/img/dre.png') }}" alt="everdon logo" class="img-fluid" />
-                        <img src="{{ asset('assets/img/close_button.png') }}" alt="close button" class="img-fluid position-absolute close_button" data-dismiss="modal" aria-label="Close" />
-                        <button type="button" class="d-none">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Anchoria Asset Management is a specialist provider of active investment products and services to institutional and individual investors. We are licensed by The Securities and Exchange Commission (SEC), Nigeria. Our investment products focus on capital preservation while providing income and asset class diversification.</p>
-
-                        <p>We draw on the unique talents, backgrounds, and experiences of our associates to promote a diversified portfolio for our clients.</p>
-                    </div>
-                    <div class="modal-footer px-5 py-4 border-0">
-                        <a class="vfd-text-red" href="http://dre.ng/" target="_blank">Visit Website</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="modal fade" id="anchoria" tabindex="-1" role="dialog" aria-labelledby="anchoriaLabel"
-             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header border-0 pb-0">
-                        <img src="{{ asset('assets/img/anchoria.png') }}" alt="everdon logo" class="img-fluid" />
-                        <img src="{{ asset('assets/img/close_button.png') }}" alt="close button" class="img-fluid position-absolute close_button" data-dismiss="modal" aria-label="Close" />
-                        <button type="button" class="d-none">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Anchoria Asset Management is a specialist provider of active investment products and services to institutional and individual investors. We are licensed by The Securities and Exchange Commission (SEC), Nigeria. Our investment products focus on capital preservation while providing income and asset class diversification.</p>
-
-                        <p>We draw on the unique talents, backgrounds, and experiences of our associates to promote a diversified portfolio for our clients.</p>
-                    </div>
-                    <div class="modal-footer px-5 py-4 border-0">
-                        <a class="vfd-text-red" href="https://anchoriaam.com/" target="_blank">Visit Website</a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!--Footer-->
         <footer class="mt-5 pt-2 font-small landing_footer border border-grey border-right-0 border-bottom-0 border-left-0">

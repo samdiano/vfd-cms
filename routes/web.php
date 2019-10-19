@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'CompanyController@index')->name('welcome');
 
 Route::get('/about', 'CompanyController@about')->name('about');
 
@@ -152,11 +150,39 @@ Route::get('/admin/blog/new','AdminController@blogNew')->name('blogNew');
 Route::post('/admin/blog/new','AdminController@postBlogNew')->name('postBlogNew');
 
 
+Route::get('/admin/gallery','AdminController@gallery')->name('gallery');
+
+Route::get('/admin/gallery/new','AdminController@galleryNew')->name('galleryNew');
+
+Route::post('/admin/gallery/new','AdminController@postGalleryNew')->name('postGalleryNew');
+
+
 Route::get('/admin/press','AdminController@press')->name('press');
 
 Route::get('/admin/press/new','AdminController@pressNew')->name('pressNew');
 
 Route::post('/admin/press/new','AdminController@postPressNew')->name('postPressNew');
+
+
+Route::get('/admin/subsidiaries','AdminController@subsidiary')->name('subsidiary');
+
+Route::get('/admin/subsidiaries/new','AdminController@subsidiaryNew')->name('subsidiaryNew');
+
+Route::post('/admin/subsidiaries/new','AdminController@postSubsidiaryNew')->name('postSubsidiaryNew');
+
+
+Route::get('/admin/governance','AdminController@governance')->name('governance');
+
+Route::get('/admin/governance/directors','AdminController@directors')->name('governance');
+
+Route::get('/admin/governance/portfolios','AdminController@port')->name('governance');
+
+Route::get('/admin/governance/management','AdminController@management')->name('governance');
+
+
+Route::get('/admin/governance/new','AdminController@govenranceNew')->name('governanceNew');
+
+Route::post('/admin/governance/new','AdminController@postGovernanceNew')->name('postGovernanceNew');
 
 
 

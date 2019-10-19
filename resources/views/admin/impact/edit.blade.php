@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Our Impact')
+@section('title','About us ')
 
 @section('content')
     <div class="content-page">
@@ -20,16 +20,35 @@
                                         {{ csrf_field() }}
                                        
                                             <div class="form-group">
-                                                {{-- <label class="control-label col-md-3 col-sm-3">
-                                                    First name
-                                                </label> --}}
+                                                <label class="control-label col-md-3 col-sm-3">
+                                                    Text
+                                                </label>
                                                 <div class="col-md-9 col-sm-9">
-                                                <textarea class="form-control" name="impact">{{$company->impact ?? ''}}</textarea>
+                                                <textarea class="form-control" name="impact">{{$company->impact}}</textarea>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <div class="col-md-10">
+                                                    <label class="control-label col-md-3 col-sm-3">
+                                                        Quote
+                                                    </label>
+                                                    <div class="col-md-9 col-sm-9">
+                                                    <input class="form-control" name="impact_quote" value="{{$company->impact_quote}}" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3">
+                                                            Text
+                                                        </label>
+                                                        <div class="col-md-9 col-sm-9">
+                                                        <textarea class="form-control" name="impact_text">{{$company->impact_text}}</textarea>
+                                                        </div>
+                                                    </div>
+        
+        
+                                            <div class="form-group">
+                                                <div class="col-md-12">
                                                     <button class="btn btn-primary pull-right">Submit</button>
                                                 </div>
                                             </div>

@@ -73,13 +73,27 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-3 col-md-6">
                         <div class="card-box text-center">
-                            <h2 class="m-t-0 m-b-30">Profile</h2>
+                            <h2 class="m-t-0 m-b-30">Quote</h2>
                             <div class="widget-chart-3">
                                 <div class="widget-detail-1 ">
                                     <h4 class="p-t-10 m-b-0"><a
-                                                href="{{ url('admin/pages/profile') }}">View</a></h4>
+                                                href="{{ url('admin/quote') }}">View</a></h4>
+                                    {{-- <p class="text-muted">Registered</p> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card-box text-center">
+                            <h2 class="m-t-0 m-b-30">Subsidiaries</h2>
+                            <div class="widget-chart-3">
+                                <div class="widget-detail-1 ">
+                                    <h4 class="p-t-10 m-b-0"><a
+                                                href="{{ url('admin/subsidiaries') }}">View</a></h4>
                                     {{-- <p class="text-muted">Registered</p> --}}
                                 </div>
                             </div>

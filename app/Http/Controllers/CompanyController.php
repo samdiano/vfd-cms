@@ -5,6 +5,7 @@ use App\Company;
 use App\Vacancy;
 use App\Service;
 use App\Product;
+use App\Profile;
 use App\Blog;
 use App\FAQ;
 use App\FinancialInformation;
@@ -25,7 +26,22 @@ class CompanyController extends Controller
     public function about()
     {
         $company = Company::find(1);
-        return view('about',['company' => $company]);
+        $directors = Profile::where('section', '=', 'directors')->get();
+        $portfolio = Profile::where('section', '=', 'portfolio')->get();
+        $management = Profile::where('section', '=', 'management')->get();
+       
+        return view('about',['company' => $company, 'directors' => $directors, 'portfolio' => $portfolio, 'management' => $management]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        $company = Product::all();
+        return view('welcome',['company' => $company]);
     }
 
     /**
@@ -68,7 +84,9 @@ class CompanyController extends Controller
     {
         $company = Company::find(1);
         $services = Service::all();
-        return view('portfolio',['services' => $services,'company' => $company ]);
+        $product = Product::all();
+        $sub = Product::all();
+        return view('portfolio',['services' => $services,'product' => $product,'sub' => $sub,'company' => $company ]);
     }
     
     /**

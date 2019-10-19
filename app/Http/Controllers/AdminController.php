@@ -5,8 +5,10 @@ use App\Company;
 use App\Vacancy;
 use App\Service;
 use App\Product;
+use App\Profile;
 use App\FAQ;
 use App\Blog;
+use App\Gallery;
 use App\FinancialInformation;
 use App\ConferenceCall;
 use App\PressRelease;
@@ -15,6 +17,16 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Show the company's about page
      *
@@ -34,10 +46,14 @@ class AdminController extends Controller
     public function aboutEdit(Request $request)
     {
         $validator = $this->validate($request,[
-            'about' => 'required'
+            'about' => 'required',
+            'about_quote' => 'required',
+            'about_text' => 'required',
         ]);
         $company = Company::find(1);
         $company->about = $request->about;
+        $company->about_quote = $request->about_quote;
+        $company->about_text = $request->about_text;
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
@@ -66,10 +82,14 @@ class AdminController extends Controller
     public function historyEdit(Request $request)
     {
         $validator = $this->validate($request,[
-            'history' => 'required'
+            'history' => 'required',
+            'history_quote' => 'required',
+            'history_text' => 'required',
         ]);
         $company = Company::find(1);
         $company->history = $request->history;
+        $company->history_quote = $request->history_quote;
+        $company->history_text = $request->history_text;
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
@@ -98,10 +118,14 @@ class AdminController extends Controller
     public function impactEdit(Request $request)
     {
         $validator = $this->validate($request,[
-            'impact' => 'required'
+            'impact' => 'required',
+            'impact_quote' => 'required',
+            'impact_text' => 'required',
         ]);
         $company = Company::find(1);
         $company->impact = $request->impact;
+        $company->impact_quote = $request->impact_quote;
+        $company->impact_text = $request->impact_text;
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
@@ -741,5 +765,214 @@ class AdminController extends Controller
         }
     }
 
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function gallery()
+    {
+        $info = Gallery::all();
+        return view('admin.gallery.list',['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function galleryNew()
+    {
+        $info = Gallery::all();
+        return view('admin.gallery.new',['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postGalleryNew(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'cover' => 'required',
+            'title' => 'required',
+            'content' => 'required',
+            'year' => 'required',
+        ]);
+
+        $finInfo = new Gallery();
+        
+        if ($request->hasFile('cover')) {
+            $cover = $request->file('cover');
+            $img = $cover->store('images', 'public');
+            $finInfo->image_path =$img;
+        }
+
+        $finInfo->title = $request->title;
+        $finInfo->content = $request->content;
+        $finInfo->year = $request->year;
+        $finInfo->save;
+        $info = Gallery::all();
+
+        if ($finInfo->save()) {
+            return redirect('admin/gallery')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function subsidiary()
+    {
+        $info = Product::all();
+        return view('admin.subsidiaries.list',['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function subsidiaryNew()
+    {
+        $info = Product::all();
+        return view('admin.subsidiaries.new',['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postSubsidiaryNew(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'logo' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'link' => 'required',
+        ]);
+
+        $finInfo = new Product();
+        
+        if ($request->hasFile('logo')) {
+            $cover = $request->file('logo');
+            $img = $cover->store('images', 'public');
+            $finInfo->image =$img;
+        }
+
+        $finInfo->name = $request->name;
+        $finInfo->description = $request->description;
+        $finInfo->link = $request->link;
+        $finInfo->save;
+        $info = Product::all();
+
+        if ($finInfo->save()) {
+            return redirect('admin/subsidiaries')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function governance()
+    {
+        $info = Profile::all();
+        return view('admin.governance.index',['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function port()
+    {
+        $info = Profile::where('section', '=', 'portfolio')->get();
+        return view('admin.governance.portfolio',['info' => $info]);
+    }
+/**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function management()
+    {
+        $info = Profile::where('section', '=', 'management')->get();
+        return view('admin.governance.management',['info' => $info]);
+    }
+/**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function directors()
+    {
+        $info = Profile::where('section', '=', 'directors')->get();
+        return view('admin.governance.directors',['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function govenranceNew()
+    {
+        $info = Product::all();
+        return view('admin.governance.new',['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postGovernanceNew(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'logo' => 'required',
+            'name' => 'required',
+            'brief' => 'required',
+            'description' => 'required',
+        ]);
+
+        $finInfo = new Profile();
+        
+        if ($request->hasFile('logo')) {
+            $cover = $request->file('logo');
+            $img = $cover->store('images', 'public');
+            $finInfo->image =$img;
+        }
+
+        $finInfo->name = $request->name;
+        $finInfo->brief = $request->brief;
+        $finInfo->role = $request->role;
+        $finInfo->section = $request->section;
+        $finInfo->description = $request->description;
+        $finInfo->twitter = $request->twitter;
+        $finInfo->instagram = $request->instagram;
+        $finInfo->facebook = $request->facebook;
+        $finInfo->linkedin = $request->linkedin;
+        $finInfo->save;
+        $info = Profile::all();
+
+        if ($finInfo->save()) {
+            return redirect('admin/governance')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
 }
 

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,5 +14,20 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        DB::table('companies')->insert([
+            'about' => '',
+            'about_quote' => '',
+            'about_text' => '',
+            'history' => '',
+            'history_quote' => '',
+            'history_text' => '',
+            'impact' => '',
+            'impact_quote' => '',
+            'impact_text' => '',
+            'career' => '',
+            'portfolio' => '',
+            'profile' => '',
+            'quote' => '',
+        ]);
     }
 }

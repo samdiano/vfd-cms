@@ -53,46 +53,15 @@
                 </div>
 
                 <div class="row subsidiary_home justify-content-center my-5">
-
+                    @foreach($company as $subsidiary)
                     <div class="col-md-3 my-3">
                         <div class="card onhover p-3">
                             <div class="text-center">
-                                <img src="{{ asset('assets/img/micro_new.png') }}" class="img-fluid" alt="" />
+                                <img src="{{ asset($subsidiary->image) }}" class="img-fluid" alt="" />
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-3 my-3">
-                        <div class="card onhover p-3">
-                            <div class="text-center">
-                                <img src="{{ asset('assets/img/everdon.png') }}" class="img-fluid" alt="" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 my-3">
-                        <div class="card onhover p-3">
-                            <div class="text-center">
-                                <img src="{{ asset('assets/img/vfd_bridge.png') }}" class="img-fluid" alt="" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 my-3">
-                        <div class="card onhover p-3">
-                            <div class="text-center">
-                                <img src="{{ asset('assets/img/anchoria.png') }}" class="img-fluid" alt="" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 my-3">
-                        <div class="card onhover p-3">
-                            <div class="text-center">
-                                <img src="{{ asset('assets/img/dre.png') }}" class="img-fluid" alt="" />
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
             </div>
