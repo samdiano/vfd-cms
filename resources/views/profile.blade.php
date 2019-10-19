@@ -83,6 +83,7 @@
         </nav>
         <!--/.Navbar-->
 
+        
         <div class="bg-board-detail vertical-4">
             <div class="container-fluid mx-md-5">
                 <div class="row">
