@@ -63,6 +63,38 @@ class AdminController extends Controller
         }
     }
 
+        /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function quote()
+    {
+        $company = Company::find(1);
+        return view('admin.quote.edit',['company' => $company]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function quoteEdit(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'quote' => 'required',
+        ]);
+        $company = Company::find(1);
+        $company->quote = $request->quote;
+        $company->save;
+        // return view('admin.about.edit',['company' => $company]);
+        if ($company->save()) {
+            return redirect('admin/quote')->with('company', $company);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
     /**
      * Show the company's about page
      *

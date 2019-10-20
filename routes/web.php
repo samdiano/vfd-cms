@@ -60,9 +60,15 @@ Route::get('/admin/portfolio-vacancies', function () {
 });
 
 
+
 Route::get('/admin/about', 'AdminController@about')->name('adminAbout');
 
 Route::post('/admin/about','AdminController@aboutEdit')->name('adminAboutPost');
+
+
+Route::get('/admin/quote', 'AdminController@quote')->name('quote');
+
+Route::post('/admin/quote','AdminController@quoteEdit')->name('quoteEdit');
 
 
 Route::get('/admin/career', 'AdminController@career')->name('adminCareer');

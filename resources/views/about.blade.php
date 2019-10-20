@@ -142,7 +142,7 @@
                         <div class="offset-md-1 col-md-3">
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1" />
                             <p class="font-28 text-green-deep gotham-bold weight-semi-bold text-center">
-                                As a team, we identified the gap between both individuals and small businesses and
+                                {!! $company->quote!!}
                             </p>
 
                             <div class="card mb-5" data-toggle="modal" data-target="#download">
@@ -448,8 +448,7 @@
                         <div class="offset-md-1 col-md-3 d-none">
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1" />
                             <p class="font-14 text-green-deep gotham-bold">
-                                As a team, we identified the gap between both individuals and small businesses and their banking experiences and set out to bridge the divide.
-
+                                    {{ $company->quote }}
                             </p>
 
                             <div class="card" data-toggle="modal" data-target="#download">
