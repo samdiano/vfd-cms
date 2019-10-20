@@ -15,12 +15,12 @@
 {{-- @include('partial.alert') --}}
                                     <form class="form-horizontal" action="{{ url('admin/press/new') }}" method="post" enctype="multipart/form-data" role="form">
                                         {{ csrf_field() }}
-                                        <div class="col-lg-6">
+                                        <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label col-md-3 col-sm-3">
+                                                <label class="control-label col-md-2 col-sm-3">
                                                     Cover Image
                                                 </label>
-                                                <div class="col-md-9 col-sm-9">
+                                                <div class="col-md-8 col-sm-9">
                                                     <label class="btn btn-primary">
                                                         <input type="file" name="cover" accept="image/*" class="form-control" required>
                                                         <i class="fa fa-photo"></i> Add Photo
@@ -28,19 +28,19 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-md-3 col-sm-3">
+                                                <label class="control-label col-md-2 col-sm-3">
                                                     Name
                                                 </label>
-                                                <div class="col-md-9 col-sm-9">
+                                                <div class="col-md-8 col-sm-9">
                                                     <input type="text" name="name" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-md-3 col-sm-3">
+                                                <label class="control-label col-md-2 col-sm-3">
                                                     Document
                                                 </label>
-                                                <div class="col-md-9 col-sm-9">
-                                                    <label class="btn btn-primary">
+                                                <div class="col-md-8 col-sm-9">
+                                                    <label class="btn btn-lg btn-primary">
                                                         <input type="file" name="document" accept=".doc,.docx,.pdf" class="form-control" required>
                                                         <i class="fa fa-file"></i> Add file
                                                     </label>
@@ -48,19 +48,19 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="control-label col-md-3 col-sm-3">
+                                                <label class="control-label col-md-2 col-sm-3">
                                                     Content
                                                 </label>
-                                                <div class="col-md-9 col-sm-9">
+                                                <div class="col-md-8 col-sm-9">
                                                     <textarea name="content" class="form-control"></textarea>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3">
+                                                    <label class="control-label col-md-2 col-sm-3">
                                                         Year
                                                     </label>
-                                                    <div class="col-md-9 col-sm-9">
+                                                    <div class="col-md-8 col-sm-9">
                                                         <input type="text" name="year" class="form-control">
                                                     </div>
                                                 </div>

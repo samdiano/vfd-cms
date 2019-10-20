@@ -11,7 +11,7 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="card-box">
                             <h4 class="header-title m-t-0 m-b-30">History</h4>
                             <div class="row">
@@ -20,7 +20,7 @@
                                         {{ csrf_field() }}
                                        
                                             <div class="form-group">
-                                                <label class="control-label col-md-3 col-sm-3">
+                                                <label class="control-label col-md-2 col-sm-3">
                                                     Text
                                                 </label>
                                                 <div class="col-md-9 col-sm-9">
@@ -29,27 +29,27 @@
                                             </div>
 
                                             <div class="form-group">
-                                                    <label class="control-label col-md-3 col-sm-3">
+                                                    <label class="control-label col-md-2 col-sm-3">
                                                         Quote
                                                     </label>
                                                     <div class="col-md-9 col-sm-9">
                                                     <input class="form-control" name="history_quote" value="{{$company->history_quote}}" />
                                                     </div>
-                                                </div>
+                                            </div>
 
-                                                <div class="form-group">
-                                                        <label class="control-label col-md-3 col-sm-3">
-                                                            Text
-                                                        </label>
-                                                        <div class="col-md-9 col-sm-9">
-                                                        <textarea class="form-control" name="history_text">{{$company->history_text}}</textarea>
-                                                        </div>
+                                            <div class="form-group">
+                                                    <label class="control-label col-md-2 col-sm-3">
+                                                        Text
+                                                    </label>
+                                                    <div class="col-md-9 col-sm-9">
+                                                    <textarea class="form-control" name="history_text">{{$company->history_text}}</textarea>
                                                     </div>
+                                                </div>
         
         
                                             <div class="form-group">
-                                                <div class="col-md-12">
-                                                    <button class="btn btn-primary pull-right">Submit</button>
+                                                <div class="col-md-11">
+                                                    <button class="btn btn-lg btn-primary pull-right">Submit</button>
                                                 </div>
                                             </div>
                                         </form>

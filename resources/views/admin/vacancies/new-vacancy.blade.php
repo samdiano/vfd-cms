@@ -15,7 +15,7 @@
 {{-- @include('partial.alert') --}}
                                     <form class="form-horizontal" action="{{ url('admin/vacancies/new') }}" method="post" enctype="multipart/form-data" role="form">
                                         {{ csrf_field() }}
-                                        <div class="col-lg-6">
+                                        <div class="col-md-10">
                                             {{-- <div class="form-group">
                                                 <label class="control-label col-md-3 col-sm-3">
                                                     Profile Picture
@@ -45,8 +45,8 @@
                                             </div>
                                       
                                             <div class="form-group">
-                                                <div class="col-md-10">
-                                                    <button class="btn btn-primary pull-right">Submit</button>
+                                                <div class="col-md-12">
+                                                    <button class="btn btn-lg btn-primary pull-right">Submit</button>
                                                 </div>
                                             </div>
                                         </form>

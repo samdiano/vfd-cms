@@ -11,7 +11,7 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="card-box">
                             <h4 class="header-title m-t-0 m-b-30">Career</h4>
                             <div class="row">
@@ -30,7 +30,7 @@
 
                                             <div class="form-group">
                                                 <div class="col-md-offset-2 col-md-9">
-                                                    <button class="btn btn-primary pull-right">Submit</button>
+                                                    <button class="btn btn-lg btn-primary pull-right">Submit</button>
                                                 </div>
                                             </div>
                                         </form>

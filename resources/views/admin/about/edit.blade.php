@@ -49,7 +49,7 @@
         
                                             <div class="form-group">
                                                 <div class="col-md-11">
-                                                    <button class="btn btn-primary pull-right">Submit</button>
+                                                    <button class="btn btn-lg btn-primary pull-right">Submit</button>
                                                 </div>
                                             </div>
                                         </form>

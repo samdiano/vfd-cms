@@ -11,7 +11,7 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="card-box">
                             <h4 class="header-title m-t-0 m-b-30">Culture</h4>
                             <div class="row">
@@ -20,16 +20,16 @@
                                         {{ csrf_field() }}
                                        
                                             <div class="form-group">
-                                                <label class="control-label col-md-3 col-sm-3">
+                                                <label class="control-label col-md-2 col-sm-3">
                                                     Text
                                                 </label>
-                                                <div class="col-md-9 col-sm-9">
+                                                <div class="col-md-8 col-sm-9">
                                                 <input type="text" class="form-control" style="height:100px" name="culture" value="{{$company->culture}}" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <div class="col-md-12">
-                                                    <button class="btn btn-primary pull-right">Submit</button>
+                                                <div class="col-md-10">
+                                                    <button class="btn btn-lg btn-primary pull-right">Submit</button>
                                                 </div>
                                             </div>
 
