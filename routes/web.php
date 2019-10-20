@@ -203,6 +203,23 @@ Route::get('/admin/faq/new','AdminController@faqNew')->name('faqNew');
 Route::post('/admin/faq/new','AdminController@postFaqNew')->name('faqNew');
 
 
+Route::get('/admin/culture','AdminController@culture')->name('culture');
+
+Route::get('/admin/culture/edit','AdminController@cultureEdit')->name('culture');
+
+Route::post('/admin/culture/edit','AdminController@culturePostEdit')->name('culture');
+
+Route::get('/admin/mission','AdminController@mission')->name('culture');
+
+Route::post('/admin/mission','AdminController@postMission')->name('culture');
+
+Route::get('/admin/vision','AdminController@vision')->name('culture');
+
+Route::post('/admin/vision','AdminController@postVision')->name('culture');
+
+
+
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@home')->name('home');

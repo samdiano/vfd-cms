@@ -27,7 +27,10 @@ class DatabaseSeeder extends Seeder
             'career' => '',
             'portfolio' => '',
             'profile' => '',
+            'culture' => '',
+            'vision' => '',
             'quote' => '',
+            'mission' => '',
         ]);
     }
 }

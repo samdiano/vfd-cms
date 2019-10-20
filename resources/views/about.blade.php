@@ -487,7 +487,7 @@
 
                     <div class="row justify-content-center">
                         <div class="col-md-6">
-                            <p class="text_primary text-center my-5">Our values are the foundation on which our organization is built. They guide our business conduct with a mission to customer experiences that are timeless and trustworthy.</p>
+                            <p class="text_primary text-center my-5">{{ $company->culture}}</p>
                         </div>
                     </div>
 
@@ -496,7 +496,7 @@
                             <img src="{{ asset('assets/img/red_apostrophe.png') }}" class="img-fluid apostrophe-1" />
                             <h4 class="vfd-text-red font-weight-bold">Our Vision</h4>
                             <p class="font-14 text-green-deep">
-                                is to become the foremost financial solutions brand in Africa.
+                                    {{ $company->vision }}
                             </p>
                         </div>
 
@@ -504,7 +504,7 @@
                             <img src="{{ asset('assets/img/red_apostrophe.png') }}" class="img-fluid apostrophe-1" />
                             <h4 class="vfd-text-red font-weight-bold">Our Mission</h4>
                             <p class="font-14 text-green-deep">
-                                is to create innovative products and business models that provide value-adding financial access across Africa.
+                                    {{ $company->mission}}
                             </p>
                         </div>
 

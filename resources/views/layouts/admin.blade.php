@@ -209,7 +209,7 @@
                             <li><a href="{{ url('admin/about') }}">About</a></li>
                             <li><a href="{{ url('admin/governance') }}">Governance</a></li>
                             <li><a href="{{ url('admin/history') }}">Our History</a></li>
-                            {{-- <li><a href="{{ url('full-time/list') }}">Our Culture</a></li> --}}
+                            <li><a href="{{ url('admin/culture') }}">Our Culture</a></li>
                             <li><a href="{{ url('admin/impact') }}">Our Impact</a></li>
                         </ul>
                         

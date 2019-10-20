@@ -738,6 +738,121 @@ class AdminController extends Controller
     }
 
 
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function culturePostEdit(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'culture' => 'required',
+        ]);
+        $company = Company::find(1);
+        $company->culture = $request->culture;
+        $company->save;
+        // return view('admin.about.edit',['company' => $company]);
+        if ($company->save()) {
+            return redirect('admin/culture/edit');
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function culture()
+    {
+        return view('admin.culture.index');
+    }
+
+
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postMission(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'mission' => 'required',
+        ]);
+        $company = Company::find(1);
+        $company->mission = $request->mission;
+        $company->save;
+        // return view('admin.about.edit',['company' => $company]);
+        if ($company->save()) {
+            return redirect('admin/mission');
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function mission()
+    {
+        $company = Company::find(1);
+        return view('admin.culture.missionEdit',['company' => $company]);
+    }
+
+
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postVision(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'vision' => 'required',
+        ]);
+        $company = Company::find(1);
+        $company->vision = $request->vision;
+        $company->save;
+        // return view('admin.about.edit',['company' => $company]);
+        if ($company->save()) {
+            return redirect('admin/vision');
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function vision()
+    {
+        $company = Company::find(1);
+        return view('admin.culture.visionEdit',['company' => $company]);
+    }
+
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function cultureEdit()
+    {
+        $company = Company::find(1);
+        return view('admin.culture.cultureEdit',['company' => $company]);
+    }
+
+
+
     /**
      * Show the company's about page
      *
