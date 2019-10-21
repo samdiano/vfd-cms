@@ -15,6 +15,8 @@ Route::get('/', 'CompanyController@index')->name('welcome');
 
 Route::get('/about', 'CompanyController@about')->name('about');
 
+Route::post('/about', 'CompanyController@getDownload')->name('downlaod');
+
 Route::get('/career', 'CompanyController@career')->name('career');
 
 Route::get('/portfolio','CompanyController@portfolio')->name('portfolio');
@@ -64,6 +66,10 @@ Route::get('/admin/portfolio-vacancies', function () {
 Route::get('/admin/about', 'AdminController@about')->name('adminAbout');
 
 Route::post('/admin/about','AdminController@aboutEdit')->name('adminAboutPost');
+
+Route::get('/admin/profile', 'AdminController@profile')->name('profile');
+
+Route::post('/admin/profile','AdminController@profileEdit')->name('profileEdit');
 
 
 Route::get('/admin/quote', 'AdminController@quote')->name('quote');
@@ -216,6 +222,11 @@ Route::post('/admin/mission','AdminController@postMission')->name('culture');
 Route::get('/admin/vision','AdminController@vision')->name('culture');
 
 Route::post('/admin/vision','AdminController@postVision')->name('culture');
+
+
+
+Route::get('/admin/subscribers','AdminController@subscribers')->name('subscribers');
+
 
 
 

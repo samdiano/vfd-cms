@@ -628,21 +628,22 @@
                         <div class="row justfy-content-center">
                             <div class="col-md-10">
                                 <h5 class="gotham-bold mb-3">Download VFD Group Profile</h5>
-                                <form>
+                                <form action="{{ url('about') }}" method="post" enctype="multipart/form-data" role="form">
+                                    {{ csrf_field() }}
                                     <div class="form-row">
                                         <div class="col">
                                             <label for="name">Your Name</label>
-                                            <input id="name" type="text" class="form-control border rounded" placeholder="">
+                                            <input id="name" type="text" name="name" class="form-control border rounded" placeholder="">
                                         </div>
                                     </div>
 
                                     <div class="form-row">
                                         <div class="col">
                                             <label for="email">Your Email</label>
-                                            <input id="email" type="email" class="form-control border rounded">
+                                            <input id="email" type="email" name="email" class="form-control border rounded">
                                         </div>
                                     </div>
-                                    <a class="vfd-text-red">Download</a>
+                                    <button class="vfd-text-red">Download</button>
                                 </form>
                             </div>
                         </div>

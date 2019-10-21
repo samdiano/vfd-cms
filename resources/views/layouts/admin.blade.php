@@ -237,7 +237,7 @@
                         
                     </li>
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Media</span>
+                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-image"></i><span>Media</span>
                             <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
                                 <li><a href="{{ url('admin/blog') }}">Blog</a></li>
@@ -247,7 +247,7 @@
                         
                     </li>
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Portfolio</span>
+                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-case"></i><span>Portfolio</span>
                             <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
                                 <li><a href="{{ url('admin/portfolio') }}">Portfolio</a></li>
@@ -257,19 +257,16 @@
                         </ul>
                         
                     </li>
-                    {{-- <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Profile</span>
-                            <span class="menu-arrow"></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="{{ url('full-time/list') }}">about us</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                            <li><a href="{{ url('full-time/list') }}">Full-Time Drivers</a></li>
-                        </ul>
-                        
-                    </li> --}}
+                    <li>
+                        <a href="/admin/profile" class="waves-effect"><i class="zmdi zmdi-layers"></i>
+                            <span> VFD Profile </span> </a>
+                    </li>
+
+                    <li>
+                        <a href="/admin/subscribers" class="waves-effect"><i class="zmdi zmdi-layers"></i>
+                            <span> Subscribers </span> </a>
+                    </li>
+        
                     
                     {{-- <li>
                         <a href="/" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i>
@@ -279,7 +276,7 @@
                     <li>
                         <a href="/"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                           class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Logout </span> </a>
+                           class="waves-effect"><i class="zmdi zmdi-power"></i> <span> Logout </span> </a>
                         <form id="logout-form" action="/logout" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>

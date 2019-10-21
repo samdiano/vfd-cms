@@ -99,6 +99,33 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card-box text-center">
+                            <h2 class="m-t-0 m-b-30">VFD Group Profile</h2>
+                            <div class="widget-chart-3">
+                                <div class="widget-detail-1 ">
+                                    <h4 class="p-t-10 m-b-0"><a
+                                                href="{{ url('admin/profile') }}">View</a></h4>
+                                    {{-- <p class="text-muted">Registered</p> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                            <div class="card-box text-center">
+                                <h2 class="m-t-0 m-b-30">Subscribers</h2>
+                                <div class="widget-chart-3">
+                                    <div class="widget-detail-1 ">
+                                        <h4 class="p-t-10 m-b-0"><a
+                                                    href="{{ url('admin/subscribers') }}">View</a></h4>
+                                        {{-- <p class="text-muted">Registered</p> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
                 </div>
             </div>
         </div>

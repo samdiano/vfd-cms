@@ -9,6 +9,7 @@ use App\Profile;
 use App\Blog;
 use App\Gallery;
 use App\FAQ;
+use App\Subscriber;
 use App\FinancialInformation;
 use App\ConferenceCall;
 use App\PressRelease;
@@ -34,6 +35,25 @@ class CompanyController extends Controller
         return view('about',['company' => $company, 'directors' => $directors, 'portfolio' => $portfolio, 'management' => $management]);
     }
 
+    public function getDownload(Request $request)
+    {
+
+        $validator = $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+
+        $company = Company::find(1);
+        $subscriber = Subscriber::firstOrNew(['email' => $request->email]);
+        $path= public_path().'/'. $company->profile;
+        $file = pathinfo($path, PATHINFO_EXTENSION);
+        $headers = array('Content-Type: application/pdf');
+        $subscriber->name = $request->name;
+        $subscriber->email = $request->email;
+        $subscriber->save();
+        return response()->download($path, 'vfd-profile'.'.'.$file);
+        
+    }
     /**
      * Show the company's about page
      *

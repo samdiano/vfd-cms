@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Company;
 use App\Vacancy;
 use App\Service;
+use App\Subscriber;
 use App\Product;
 use App\Profile;
 use App\FAQ;
@@ -62,6 +63,46 @@ class AdminController extends Controller
             return redirect()->back()->withErrors($validator);
         }
     }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function profile()
+    {
+        $company = Company::find(1);
+        return view('admin.profile.edit',['company' => $company]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function profileEdit(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'profile' => 'required',
+        ]);
+
+        $company = Company::find(1);
+
+
+        if ($request->hasFile('profile')) {
+            $filename = $request->profile->store('documents', 'public');
+            $company->profile = $filename;
+        }
+
+        $company->save;
+        // return view('admin.about.edit',['company' => $company]);
+        if ($company->save()) {
+            return redirect('admin/profile')->with('company', $company);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
 
         /**
      * Show the company's about page
@@ -322,6 +363,18 @@ class AdminController extends Controller
             return redirect()->back()->withErrors($validator);
         }
     }
+
+        /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function subscribers()
+    {
+        $subscriber = Subscriber::all();
+        return view('admin.subscribers.list',['subscriber' => $subscriber]);
+    }
+
 
      /**
      * Show the company's about page
