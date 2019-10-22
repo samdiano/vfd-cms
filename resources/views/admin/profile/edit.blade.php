@@ -12,10 +12,10 @@
                         <div class="card-box">
                             <h4 class="header-title m-t-0 m-b-30">Upload VFD Profile</h4>
                             @if($company->profile)
-                                                    <div>
-                                                        <button class="btn btn-lg btn-info"><a style="color:white" target="_blank" href={{ url($company->profile)}}>View File</a></button>
-                                                    </div>
-                                                    @endif
+                            <div>
+                                <button class="btn btn-lg btn-info"><a style="color:white" target="_blank" href={{ url($company->profile)}}>View File</a></button>
+                            </div>
+                            @endif
                             <div class="row">
 {{-- @include('partial.alert') --}}
                                     <form class="form-horizontal" action="{{ url('admin/profile') }}" method="post" enctype="multipart/form-data" role="form">
