@@ -1,4 +1,7 @@
 <?php
+use Illuminate\Http\Request;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +63,12 @@ Route::get('/admin/pages/portfolio', function () {
 Route::get('/admin/portfolio-vacancies', function () {
     return view('admin.vacancies.portfolio-vacancies');
 });
+
+Route::post('/contact_us', function (Request $request) {
+    Mail::send(new ContactMail($request));
+    return redirect('/');
+});
+
 
 
 

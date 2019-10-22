@@ -97,29 +97,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <form>
+                <form method="post" action="{{url('contact_us')}}">
+                    {{csrf_field()}}
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control border rounded" id="name" placeholder="">
+                            <input type="text" class="form-control border rounded" id="name" name="name" placeholder="">
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email address</label>
-                            <input type="email" class="form-control border rounded" id="email" placeholder="">
+                            <input type="email" class="form-control border rounded" id="email" name="email" placeholder="">
                         </div>
 
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="text" class="form-control border rounded" id="phone" placeholder="">
+                            <input type="text" class="form-control border rounded" id="phone" name="phone" placeholder="">
                         </div>
 
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea class="form-control text-area" id="message" rows="3" style=""></textarea>
+                            <textarea class="form-control text-area" id="message" name="message" rows="3" style=""></textarea>
                         </div>
+                        <button class="btn vfd-btn-red py-2 weight-semi-bold rounded mx-md-0">Send</button>
                     </form>
 
-                    <button class="btn vfd-btn-red py-2 weight-semi-bold rounded mx-md-0">Send</button>
                 </div>
 
                 <div class="offset-md-1 col-md-4">
