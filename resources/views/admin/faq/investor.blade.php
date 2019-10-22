@@ -9,32 +9,30 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box">
-                             <a class="btn btn-primary" href="{{ url('admin/faq/new') }}">Investor FAQs</a>
+                             <a class="btn btn-primary" href="{{ url('admin/faq/new') }}">Add Investor FAQs</a>
                             <div class="table-rep-plugin">
                                 <div class="table-responsive" data-pattern="priority-columns">
                                     {{-- @include('partial.alert') --}}
                                     @if(count($faq) < 1)
                                         <br><br>
                                         <div class="alert alert-info text-center">
-                                            <p>There are no FAQs provided at the moment</p>
+                                            <p>There are no faqs provided at the moment</p>
                                         </div>
                                     @else
                                         <br><br>
                                         <table id="tech-companies-1" class="table  table-striped">
                                             <thead>
                                             <tr>
-                                                <th>Title</th>
-                                                <th>Image</th>
-                                                <th>Document</th>
+                                                <th>Question</th>
+                                                <th>Response</th>
                                                 <th>Action</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             @foreach($faq as $faq)
                                                 <tr>
-                                                    <td>{{ $info->title }}</td>
-                                                    <td><img height="300" width="300" src="{{ asset($info->image_path) }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" /></td>
-                                                    <td>{{ $info->document }}</td>
+                                                    <td>{{ $faq->question }}</td>
+                                                    <td>{{ $faq->response }}</td>
                                                    
                                                     <td>
                                                         {{-- <a class="btn btn-primary" href="{{ url('booking/annual/view/') }}">View</a> --}}
@@ -55,7 +53,7 @@
                                                                     <p>You are about to delete a request.</p>
                                                                     <div class="xs-mt-50">
                                                                         <button type="button" data-dismiss="modal" class="btn btn-space btn-default">Cancel</button>
-                                                                        <a href="{{ url('booking/annual/')}}" class="btn btn-space btn-danger" type="submit">Delete</a>
+                                                                        <a href="{{ url('admin/faq/delete', ['id' => $faq->id])}}" class="btn btn-space btn-danger" type="submit">Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </div>

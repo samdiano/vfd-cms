@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box">
-                             <a class="btn btn-primary" href="{{ url('admin/faq/new') }}">General FAQs</a>
+                             <a class="btn btn-primary" href="{{ url('admin/faq/new') }}">Add General FAQs</a>
                             <div class="table-rep-plugin">
                                 <div class="table-responsive" data-pattern="priority-columns">
                                     {{-- @include('partial.alert') --}}
@@ -53,7 +53,7 @@
                                                                     <p>You are about to delete a request.</p>
                                                                     <div class="xs-mt-50">
                                                                         <button type="button" data-dismiss="modal" class="btn btn-space btn-default">Cancel</button>
-                                                                        <a href="{{ url('booking/annual/')}}" class="btn btn-space btn-danger" type="submit">Delete</a>
+                                                                        <a href="{{ url('admin/faq/delete', ['id' => $faq->id])}}" class="btn btn-space btn-danger" type="submit">Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </div>

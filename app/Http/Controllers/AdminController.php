@@ -1030,6 +1030,32 @@ class AdminController extends Controller
         }
     }
 
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postFaqDelete($id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = FAQ::find($id);
+        
+        // $finInfo->delete();
+        $info = FAQ::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->delete()) {
+            return redirect()->back()->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
 
      /**
      * Show the company's about page

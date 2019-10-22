@@ -230,6 +230,8 @@ Route::get('/admin/faq/new','AdminController@faqNew')->name('faqNew');
 
 Route::post('/admin/faq/new','AdminController@postFaqNew')->name('faqNew');
 
+Route::get('/admin/faq/delete/{id}','AdminController@postFaqDelete')->name('postFaqDelete');
+
 
 Route::get('/admin/culture','AdminController@culture')->name('culture');
 
