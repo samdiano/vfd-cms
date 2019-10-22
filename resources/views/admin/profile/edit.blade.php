@@ -13,7 +13,7 @@
                             <h4 class="header-title m-t-0 m-b-30">Upload VFD Profile</h4>
                             @if($company->profile)
                                                     <div>
-                                                        <button class="btn btn-lg btn-info"><a style="color:white" href={{ url($company->profile)}}>View File</a></button>
+                                                        <button class="btn btn-lg btn-info"><a style="color:white" target="_blank" href={{ url($company->profile)}}>View File</a></button>
                                                     </div>
                                                     @endif
                             <div class="row">
