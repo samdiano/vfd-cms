@@ -109,12 +109,17 @@
                         </div>
                         @endforeach
                     </div>
-
-
+                    @if(count($product) >= 1)
+                    <div class="row">
+                        <div class="col-md-10">
+                            <p>Click on any of the portfolio companies below to find out more:</p>
+                        </div>
+                    </div>
+                    @endif
                     <div class="row my-4">
                         @foreach($product as $product)
                         <div class="col-md-4 my-3">
-                            <div class="text-center p-2 border" data-toggle="modal" data-target="#{{$product->name}}">
+                            <div class="text-center p-2 border onhover rounded-2" data-toggle="modal" data-target="#{{$product->name}}">
                                 <img src="{{ asset($product->image) }}" alt="Everdon" class="img-fluid" />
                             </div>
                         </div>
@@ -134,8 +139,8 @@
                         <img src="{{ asset('assets/img/download_2.png') }}" class="card-img-top" alt="...">
                         <div class="card-body pt-0 d-flex px-0">
                             <div class="col-8">
-                                <h5 class="card-title mb-0 font-weight-bold font-12">VFD Group Profile</h5>
-                                <p class="card-text font-12 mb-0">Download for March 28th</p>
+                                <h5 class="card-title mb-0 font-weight-bold font-12">Download VFD Group Profile</h5>
+                                {{-- <p class="card-text font-12 mb-0">Download for {{ date('M Y', $company->updated_at) }}</p> --}}
                             </div>
 
                             <div class="col ml-auto">

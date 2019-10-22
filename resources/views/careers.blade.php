@@ -97,13 +97,15 @@
     
 
         <div class="container">
-            <div class="row mt-3">
+            <div class="row mt-4 mb-3 p-font-17">
                 <div class="col-md-6">
                     <p class="mt-md-">{!!$company->career!!}</p>
                 </div>
 
-                <div class="offset-md-1 col-md-5">
-                    <img src="{{ asset('assets/img/StockSnap_YK0PRWX6MC.png') }}" class="img-fluid" />
+                <div class="col-md-6">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ig5-vVlPQ_U?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
 
