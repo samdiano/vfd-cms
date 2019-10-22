@@ -240,6 +240,38 @@ class AdminController extends Controller
         }
     }
 
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function careerVideo()
+    {
+        $company = Company::find(1);
+        return view('admin.career.video',['company' => $company]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function careerVideoEdit(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'link' => 'required'
+        ]);
+        $company = Company::find(1);
+        $company->youtube_link = $request->link;
+        // return view('admin.about.edit',['company' => $company]);
+        if ($company->save()) {
+            return redirect()->back()->with('company', $company);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+      
       
      /**
      * Show the company's about page

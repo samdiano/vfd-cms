@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             'vision' => '',
             'quote' => '',
             'mission' => '',
+            'youtube_link' => 'https://www.youtube.com/embed/ig5-vVlPQ_U?controls=0',
         ]);
     }
 }

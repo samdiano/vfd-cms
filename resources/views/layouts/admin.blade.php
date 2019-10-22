@@ -221,6 +221,7 @@
                             <li><a href="{{ url('admin/career') }}">Career</a></li>
                             <li><a href="{{ url('admin/vacancies') }}">Vacancies</a></li>
                             <li><a href="{{ url('admin/portfolio-vacancies') }}">Portfolio Vacancies</a></li>
+                            <li><a href="{{ url('admin/career/video') }}">Career Video</a></li>
                         </ul>
                         
                     </li>

@@ -47,6 +47,20 @@
                         </div>
                     </div>
 
+                    <div class="col-lg-3 col-md-6">
+                            <div class="card-box text-center">
+                                <h2 class="m-t-0 m-b-30">Youtube Video</h2>
+                                <div class="widget-chart-3">
+                                    <div class="widget-detail-1 ">
+                                        <h4 class="p-t-10 m-b-0"><a
+                                                    href="{{ url('admin/career/video') }}">View</a>
+                                        </h4>
+                                        {{-- <p class="text-muted">Registered</p> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
                     {{-- <div class="col-lg-3 col-md-6">
                         <div class="card-box text-center">
                             <h2 class="m-t-0 m-b-30">Our Values</h2>

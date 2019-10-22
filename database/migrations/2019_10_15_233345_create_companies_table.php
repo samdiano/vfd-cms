@@ -31,6 +31,7 @@ class CreateCompaniesTable extends Migration
             $table->text('mission');
             $table->string('profile');
             $table->string('quote');
+            $table->string('youtube_link');
             $table->timestamps();
         });
     }

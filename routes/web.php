@@ -81,6 +81,10 @@ Route::get('/admin/career', 'AdminController@career')->name('adminCareer');
 
 Route::post('/admin/career', 'AdminController@careerEdit')->name('adminCareerPost');
 
+Route::get('/admin/career/video', 'AdminController@careerVideo')->name('profile');
+
+Route::post('/admin/career/video','AdminController@careerVideoEdit')->name('profileEdit');
+
 
 Route::get('/admin/portfolio', 'AdminController@portfolio')->name('adminPortfolio');
 
