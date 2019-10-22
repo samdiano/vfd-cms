@@ -40,7 +40,7 @@
                                                    
                                                     <td>
                                                         {{-- <a class="btn btn-primary" href="{{ url('booking/annual/view/') }}">View</a> --}}
-                                                        {{-- <a class="btn btn-info" href="{{ url('booking/annual/view/') }}">Edit</a> --}}
+                                                        <a class="btn btn-info" href="{{ url('admin/press', ['id' => $info->id]) }}">Edit</a>
                                                         <a data-toggle="modal" data-target="#mod-danger" href="#" class="btn btn-danger">Delete</a>
                                                     </td>
                                                 </tr>
@@ -54,10 +54,10 @@
                                                                 <div class="text-center">
                                                                     <div class="text-danger"><span class="modal-main-icon mdi mdi-close-circle-o"></span></div>
                                                                     <h3>Warning!</h3>
-                                                                    <p>You are about to delete a request.</p>
+                                                                    <p>You are about to delete this item</p>
                                                                     <div class="xs-mt-50">
                                                                         <button type="button" data-dismiss="modal" class="btn btn-space btn-default">Cancel</button>
-                                                                        <a href="{{ url('booking/annual/')}}" class="btn btn-space btn-danger" type="submit">Delete</a>
+                                                                        <a href="{{ url('admin/press', ['id' => $info->id])}}" class="btn btn-space btn-danger" type="submit">Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </div>

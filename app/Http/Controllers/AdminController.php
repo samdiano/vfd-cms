@@ -583,6 +583,85 @@ class AdminController extends Controller
         }
     }
 
+
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function financialInfoEdit($id)
+    {
+        $info = FinancialInformation::find($id);
+        return view('admin.financial.edit',['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postFinancialInfoEdit(Request $request, $id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = FinancialInformation::find($id);
+        
+        if ($request->hasFile('cover')) {
+            $cover = $request->file('cover');
+            $img = $cover->store('images', 'public');
+            $finInfo->image_path =$img;
+        }
+
+        if ($request->hasFile('document')) {
+            $filename = $request->document->store('documents', 'public');
+            $finInfo->document = $filename;
+        }
+
+
+        $finInfo->title = $request->name;
+        $finInfo->year = $request->year;
+        $finInfo->save;
+        $info = FinancialInformation::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->save()) {
+            return redirect('admin/financial-information')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postFinancialInfoDelete($id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = FinancialInformation::find($id);
+        
+        // $finInfo->delete();
+        $info = FinancialInformation::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->delete()) {
+            return redirect('admin/financial-information')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
     /**
      * Show the company's about page
      *
@@ -644,6 +723,86 @@ class AdminController extends Controller
             return redirect()->back()->withErrors($validator);
         }
     }
+
+
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function conferenceEdit($id)
+    {
+        $info = ConferenceCall::find($id);
+        return view('admin.conference.edit',['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postConferenceEdit(Request $request, $id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = ConferenceCall::find($id);
+        
+        if ($request->hasFile('cover')) {
+            $cover = $request->file('cover');
+            $img = $cover->store('images', 'public');
+            $finInfo->image_path =$img;
+        }
+
+        if ($request->hasFile('document')) {
+            $filename = $request->document->store('documents', 'public');
+            $finInfo->document = $filename;
+        }
+
+
+        $finInfo->title = $request->name;
+        $finInfo->year = $request->year;
+        $finInfo->save;
+        $info = ConferenceCall::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->save()) {
+            return redirect('admin/conference')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postConferenceDelete($id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = ConferenceCall::find($id);
+        
+        // $finInfo->delete();
+        $info = ConferenceCall::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->delete()) {
+            return redirect('admin/conference')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
 
     /**
      * Show the company's about page
@@ -708,6 +867,87 @@ class AdminController extends Controller
             return redirect()->back()->withErrors($validator);
         }
     }
+
+
+
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function pressEdit($id)
+    {
+        $info = PressRelease::find($id);
+        return view('admin.press.edit',['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postPressEdit(Request $request, $id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = PressRelease::find($id);
+        
+        if ($request->hasFile('cover')) {
+            $cover = $request->file('cover');
+            $img = $cover->store('images', 'public');
+            $finInfo->image_path =$img;
+        }
+
+        if ($request->hasFile('document')) {
+            $filename = $request->document->store('documents', 'public');
+            $finInfo->document = $filename;
+        }
+
+
+        $finInfo->title = $request->name;
+        $finInfo->year = $request->year;
+        $finInfo->save;
+        $info = PressRelease::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->save()) {
+            return redirect('admin/press')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postConferenceDelete($id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = PressRelease::find($id);
+        
+        // $finInfo->delete();
+        $info = PressRelease::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->delete()) {
+            return redirect('admin/press')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
 
 
      /**

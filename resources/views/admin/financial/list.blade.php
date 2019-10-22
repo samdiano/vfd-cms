@@ -34,13 +34,13 @@
                                             @foreach($info as $info)
                                                 <tr>
                                                     <td>{{ $info->title }}</td>
-                                                    <td><img height="300" width="300" src="{{ asset($info->image_path) }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" /></td>
+                                                    <td><img width="200" src="{{ asset($info->image_path) }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" /></td>
                                                     <td>{{ $info->document }}</td>
                                                     <td>{{ $info->year }}</td>
                                                    
                                                     <td>
                                                         {{-- <a class="btn btn-primary" href="{{ url('booking/annual/view/') }}">View</a> --}}
-                                                        {{-- <a class="btn btn-info" href="{{ url('booking/annual/view/') }}">Edit</a> --}}
+                                                        <a class="btn btn-info" href="{{ url('admin/financial-information/edit',['id' => $info->id]) }}">Edit</a>
                                                         <a data-toggle="modal" data-target="#mod-danger" href="#" class="btn btn-danger">Delete</a>
                                                     </td>
                                                 </tr>
@@ -57,7 +57,7 @@
                                                                     <p>You are about to delete a request.</p>
                                                                     <div class="xs-mt-50">
                                                                         <button type="button" data-dismiss="modal" class="btn btn-space btn-default">Cancel</button>
-                                                                        <a href="{{ url('booking/annual/')}}" class="btn btn-space btn-danger" type="submit">Delete</a>
+                                                                        <a href="{{ url('admin/financial-information/delete',['id' => $info->id])}}" class="btn btn-space btn-danger" type="submit">Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </div>

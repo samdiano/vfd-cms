@@ -145,12 +145,25 @@ Route::get('/admin/financial-information/new','AdminController@financialInfoNew'
 
 Route::post('/admin/financial-information/new','AdminController@postFinancialInfoNew')->name('adminVacancyPost');
 
+Route::get('/admin/financial-information/edit/{id}','AdminController@financialInfoEdit')->name('adminVacancyPost'); 
+
+Route::post('/admin/financial-information/edit/{id}','AdminController@postFinancialInfoEdit')->name('adminVacancyPost'); 
+
+Route::get('/admin/financial-information/delete/{id}','AdminController@postFinancialInfoDelete')->name('adminVacancyPost'); 
+
 
 Route::get('/admin/conference','AdminController@conference')->name('conference');
 
 Route::get('/admin/conference/new','AdminController@conferenceNew')->name('conferenceNew');
 
 Route::post('/admin/conference/new','AdminController@postConferenceNew')->name('postConferenceNew');
+
+Route::get('/admin/conference/edit/{id}','AdminController@conferenceEdit')->name('adminVacancyPost'); 
+
+Route::post('/admin/conference/edit/{id}','AdminController@postConferenceEdit')->name('adminVacancyPost'); 
+
+Route::get('/admin/conference/delete/{id}','AdminController@postConferenceDelete')->name('adminVacancyPost'); 
+
 
 
 Route::get('/admin/blog','AdminController@blog')->name('blog');
@@ -167,11 +180,20 @@ Route::get('/admin/gallery/new','AdminController@galleryNew')->name('galleryNew'
 Route::post('/admin/gallery/new','AdminController@postGalleryNew')->name('postGalleryNew');
 
 
+
 Route::get('/admin/press','AdminController@press')->name('press');
 
 Route::get('/admin/press/new','AdminController@pressNew')->name('pressNew');
 
 Route::post('/admin/press/new','AdminController@postPressNew')->name('postPressNew');
+
+Route::get('/admin/press/edit/{id}','AdminController@pressEdit')->name('adminVacancyPost'); 
+
+Route::post('/admin/press/edit/{id}','AdminController@postPressEdit')->name('adminVacancyPost'); 
+
+Route::get('/admin/press/delete/{id}','AdminController@postPressDelete')->name('adminVacancyPost'); 
+
+
 
 
 Route::get('/admin/subsidiaries','AdminController@subsidiary')->name('subsidiary');
