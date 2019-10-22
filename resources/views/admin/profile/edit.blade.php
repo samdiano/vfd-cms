@@ -11,7 +11,7 @@
                     <div class="col-sm-12">
                         <div class="card-box">
                             <h4 class="header-title m-t-0 m-b-30">Upload VFD Profile</h4>
-                            @if($company)
+                            @if($company->profile)
                                                     <div>
                                                         <button class="btn btn-lg btn-info"><a style="color:white" href={{ url($company->profile)}}>View File</a></button>
                                                     </div>
