@@ -15,7 +15,7 @@
                                     @if(count($subscriber) < 1)
                                         <br><br>
                                         <div class="alert alert-info text-center">
-                                            <p>There are no articles posted at the moment</p>
+                                            <p>There are no subscribers at the moment</p>
                                         </div>
                                     @else
                                         <br><br>
