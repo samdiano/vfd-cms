@@ -298,6 +298,33 @@ class AdminController extends Controller
         }
     }
 
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postServiceDelete($id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = Service::find($id);
+        
+        // $finInfo->delete();
+        $services = Service::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->delete()) {
+            return redirect()->back()->with('services', $services);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
+
     /**
      * Show the company's about page
      *
@@ -1228,6 +1255,34 @@ class AdminController extends Controller
         }
     }
 
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postBlogDelete($id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = blog::find($id);
+        
+        // $finInfo->delete();
+        $info = blog::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->delete()) {
+            return redirect()->back()->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
+
+
     /**
      * Show the company's about page
      *
@@ -1285,6 +1340,34 @@ class AdminController extends Controller
             return redirect()->back()->withErrors($validator);
         }
     }
+
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postGalleryDelete($id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = Gallery::find($id);
+        
+        // $finInfo->delete();
+        $info = Gallery::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->delete()) {
+            return redirect()->back()->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
+
 
     /**
      * Show the company's about page

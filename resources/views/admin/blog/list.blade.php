@@ -52,10 +52,10 @@
                                                                 <div class="text-center">
                                                                     <div class="text-danger"><span class="modal-main-icon mdi mdi-close-circle-o"></span></div>
                                                                     <h3>Warning!</h3>
-                                                                    <p>You are about to delete a request.</p>
+                                                                    <p>You are about to delete an item.</p>
                                                                     <div class="xs-mt-50">
                                                                         <button type="button" data-dismiss="modal" class="btn btn-space btn-default">Cancel</button>
-                                                                        <a href="{{ url('booking/annual/')}}" class="btn btn-space btn-danger" type="submit">Delete</a>
+                                                                        <a href="{{ url('admin/blog/delete', ['id' => $info->id])}}" class="btn btn-space btn-danger" type="submit">Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </div>

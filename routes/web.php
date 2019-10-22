@@ -120,6 +120,9 @@ Route::get('/admin/services/new','AdminController@newService')->name('adminServi
 
 Route::post('/admin/services/new','AdminController@addService')->name('adminServices');
 
+Route::get('/admin/services/delete/{id}','AdminController@postServiceDelete')->name('postFaqDelete');
+
+
 
 
 Route::get('/admin/products','AdminController@products')->name('adminServices');
@@ -172,6 +175,9 @@ Route::get('/admin/blog/new','AdminController@blogNew')->name('blogNew');
 
 Route::post('/admin/blog/new','AdminController@postBlogNew')->name('postBlogNew');
 
+Route::get('/admin/blog/delete/{id}','AdminController@postBlogDelete')->name('postBlogDelete');
+
+
 
 Route::get('/admin/gallery','AdminController@gallery')->name('gallery');
 
@@ -179,6 +185,7 @@ Route::get('/admin/gallery/new','AdminController@galleryNew')->name('galleryNew'
 
 Route::post('/admin/gallery/new','AdminController@postGalleryNew')->name('postGalleryNew');
 
+Route::get('/admin/gallery/delete/{id}','AdminController@postGalleryDelete')->name('postFaqDelete');
 
 
 Route::get('/admin/press','AdminController@press')->name('press');
