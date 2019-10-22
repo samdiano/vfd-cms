@@ -35,7 +35,7 @@
                                                 <tr>
                                                     <td>{{ $info->title }}</td>
                                                     <td>{!! $info->content !!}</td>
-                                                    <td><img height="300" width="300" src="{{ asset($info->image_path) }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" /></td>
+                                                    <td><img height="200" width="200" src="{{ asset($info->image_path) }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" /></td>
                                                     <td>{{ $info->document }}</td>
                                                    
                                                     <td>
@@ -57,7 +57,7 @@
                                                                     <p>You are about to delete this item</p>
                                                                     <div class="xs-mt-50">
                                                                         <button type="button" data-dismiss="modal" class="btn btn-space btn-default">Cancel</button>
-                                                                        <a href="{{ url('admin/press', ['id' => $info->id])}}" class="btn btn-space btn-danger" type="submit">Delete</a>
+                                                                        <a href="{{ url('admin/press/delete', ['id' => $info->id])}}" class="btn btn-space btn-danger" type="submit">Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </div>

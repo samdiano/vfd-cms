@@ -927,7 +927,7 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function postConferenceDelete($id)
+    public function postPressDelete($id)
     {
         // $validator = $this->validate($request,[
         //     'cover' => 'required',
