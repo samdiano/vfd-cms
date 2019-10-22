@@ -63,7 +63,7 @@
                         </li>
 
                         <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="media.html">Media</a>
+                            <a class="nav-link bold" href="media">Media</a>
                         </li>
 
                         <li class="nav-item px-md-3 my-2 my-md-0">
@@ -71,11 +71,11 @@
                         </li>
 
                         <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="contact_us.html">Contact Us</a>
+                            <a class="nav-link bold" href="contact_us">Contact Us</a>
                         </li>
 
                         <li class="nav-item pl-md-3 pr-md-5 my-2 my-md-0">
-                            <a class="nav-link bold" href="search.html"><img src="{{ asset('assets/img/search.svg') }}" alt="search" class="img-fluid" /></a>
+                            <a class="nav-link bold" href="search"><img src="{{ asset('assets/img/search.svg') }}" alt="search" class="img-fluid" /></a>
                         </li>
                     </ul>
                 </div>
@@ -145,7 +145,7 @@
                                 {!! $company->quote!!}
                             </p>
 
-                            <div class="card mb-5" data-toggle="modal" data-target="#download">
+                            <div class="card mb-5 onhover cursor" data-toggle="modal" data-target="#download">
                                 <img src="{{ asset('assets/img/download_2.png') }}" class="card-img-top" alt="...">
                                 <div class="card-body pt-0 d-flex px-0">
                                     <div class="col-8">
@@ -159,7 +159,7 @@
                                 </div>
                             </div>
 
-                            <div class="mt-4">
+                            <div class="mt-4 card shadow">
                                 <a class="twitter-timeline" data-width="300" data-height="300" href="https://twitter.com/VFDGroup?ref_src=twsrc%5Etfw">Tweets by VFDGroup</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                             </div>
                         </div>
@@ -445,30 +445,30 @@
                         </div>
 
 
-                        <div class="offset-md-1 col-md-3 d-none">
-                            <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1" />
-                            <p class="font-14 text-green-deep gotham-bold">
-                                    {{ $company->quote }}
-                            </p>
-
-                            <div class="card" data-toggle="modal" data-target="#download">
-                                <img src="{{ asset('assets/img/download_2.png') }}" class="card-img-top" alt="...">
-                                <div class="card-body pt-0 d-flex px-0">
-                                    <div class="col-8">
-                                        <h5 class="card-title mb-0 font-weight-bold font-12">VFD Group Profile</h5>
-                                        <p class="card-text font-12 mb-0">Download for March 28th</p>
-                                    </div>
-
-                                    <div class="col ml-auto">
-                                        <img src="{{ asset('assets/img/download.png') }}" class="img-fluid float-right" />
+                        <div class="offset-md-1 col-md-3">
+                                <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1" />
+                                <p class="font-28 text-green-deep gotham-bold weight-semi-bold text-center">
+                                    {!! $company->quote!!}
+                                </p>
+    
+                                <div class="card mb-5 onhover cursor" data-toggle="modal" data-target="#download">
+                                    <img src="{{ asset('assets/img/download_2.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body pt-0 d-flex px-0">
+                                        <div class="col-8">
+                                            <h5 class="card-title mb-0 font-weight-bold font-12">VFD Group Profile</h5>
+                                            <p class="card-text font-12 mb-0">Download for March 28th</p>
+                                        </div>
+    
+                                        <div class="col ml-auto">
+                                            <img src="{{ asset('assets/img/download.png') }}" class="img-fluid float-right" />
+                                        </div>
                                     </div>
                                 </div>
+    
+                                <div class="mt-4 card shadow">
+                                    <a class="twitter-timeline" data-width="300" data-height="300" href="https://twitter.com/VFDGroup?ref_src=twsrc%5Etfw">Tweets by VFDGroup</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                </div>
                             </div>
-
-                            <div>
-                                <img  class="img-fluid" />
-                            </div>
-                        </div>
 
                     </div>
 
@@ -554,7 +554,7 @@
                     </div>
 
                     <div class="row justify-content-center">
-                        <div class="col-md-8">
+                        <div class="col-md-7">
                                 {!! $company->impact !!}
                             
                                 <div class="position-relative">
@@ -566,6 +566,31 @@
                                 {!! $company->impact_text !!}
                                 </ul>
                         </div>
+
+                        <div class="offset-md-1 col-md-3">
+                                <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1" />
+                                <p class="font-28 text-green-deep gotham-bold weight-semi-bold text-center">
+                                    {!! $company->quote!!}
+                                </p>
+    
+                                <div class="card mb-5 onhover cursor" data-toggle="modal" data-target="#download">
+                                    <img src="{{ asset('assets/img/download_2.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body pt-0 d-flex px-0">
+                                        <div class="col-8">
+                                            <h5 class="card-title mb-0 font-weight-bold font-12">VFD Group Profile</h5>
+                                            <p class="card-text font-12 mb-0">Download for March 28th</p>
+                                        </div>
+    
+                                        <div class="col ml-auto">
+                                            <img src="{{ asset('assets/img/download.png') }}" class="img-fluid float-right" />
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="mt-4 card shadow">
+                                    <a class="twitter-timeline" data-width="300" data-height="300" href="https://twitter.com/VFDGroup?ref_src=twsrc%5Etfw">Tweets by VFDGroup</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                </div>
+                            </div>
                     </div>
                 </div>
 

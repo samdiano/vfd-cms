@@ -33,7 +33,7 @@
     }
 
     .vertical-8{
-        margin-top: 10rem !important;
+        margin-top: 8rem !important;
     }
 
     .investor-banner {
@@ -43,6 +43,14 @@
     .career-banner {
         top: -1%;
     }
+
+/*
+    .global-image-subtract {
+        left: 0;
+        top: 80px;
+        width: 100% !important;
+    }
+*/
 }
 
 /* 
@@ -111,7 +119,6 @@
 @media (min-width: 481px) and (max-width: 768px) {
     .global-image-subtract {
         left: 0;
-        top: 70px;
         width: 100% !important;
         display: none !important;
     }
