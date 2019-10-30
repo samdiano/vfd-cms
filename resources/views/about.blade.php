@@ -250,10 +250,18 @@
                                                                 <a href="{{ url('profile',['id' => $director->id]) }}" class="text-danger mb-3">Detailed Profile</a>
 
                                                                 <ul class="list-inline mt-2">
-                                                                    <li class="list-inline-item"><a href="https://www.facebook.com/nonsokpala"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
-                                                                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/nonso-okpala-a3939856/"><img src="{{ asset('assets/img/social_icons/linkedin.png') }}" class="img-fluid" /></a></li>
-                                                                    <li class="list-inline-item"><a href="https://www.instagram.com/nonsomokpala/"><img src="{{ asset('assets/img/social_icons/instagram.png') }}" class="img-fluid" /></a></li>
-                                                                    <li class="list-inline-item"><a href="https://twitter.com/NonsoMOkpala"><img src="{{ asset('assets/img/social_icons/twitter.png') }}" class="img-fluid" /></a></li>
+                                                                    @if($profile->facebook)
+                                                                    <li class="list-inline-item"><a target="_blank" href="{{$profile->facebook}}"><img src="{{ asset('assets/img/social_icons/facebook.png')}}" class="img-fluid" /></a></li>
+                                                                    @endif
+                                                                    @if($profile->linkedin)
+                                                                    <li class="list-inline-item"><a target="_blank" href="{{$profile->linkedin}}"><img src="{{ asset('assets/img/social_icons/linkedin.png')}}" class="img-fluid" /></a></li>
+                                                                    @endif
+                                                                    @if($profile->instagram)
+                                                                    <li class="list-inline-item"><a target="_blank" href="{{$profile->instagram}}"><img src="{{ asset('assets/img/social_icons/instagram.png')}}" class="img-fluid" /></a></li>
+                                                                    @endif
+                                                                    @if($profile->twitter)
+                                                                    <li class="list-inline-item"><a target="_blank" href="{{$profile->twitter}}"><img src="{{ asset('assets/img/social_icons/twitter.png')}}" class="img-fluid" /></a></li>
+                                                                    @endif
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -325,10 +333,18 @@
                                                                     <a href="{{ url('profile',['id' => $director->id]) }}" class="text-danger mb-3">Detailed Profile</a>
     
                                                                     <ul class="list-inline mt-2">
-                                                                        <li class="list-inline-item"><a href="https://www.facebook.com/nonsokpala"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
-                                                                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/nonso-okpala-a3939856/"><img src="{{ asset('assets/img/social_icons/linkedin.png') }}" class="img-fluid" /></a></li>
-                                                                        <li class="list-inline-item"><a href="https://www.instagram.com/nonsomokpala/"><img src="{{ asset('assets/img/social_icons/instagram.png') }}" class="img-fluid" /></a></li>
-                                                                        <li class="list-inline-item"><a href="https://twitter.com/NonsoMOkpala"><img src="{{ asset('assets/img/social_icons/twitter.png') }}" class="img-fluid" /></a></li>
+                                                                        @if($profile->facebook)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->facebook}}"><img src="{{ asset('assets/img/social_icons/facebook.png')}}" class="img-fluid" /></a></li>
+                                                                        @endif
+                                                                        @if($profile->linkedin)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->linkedin}}"><img src="{{ asset('assets/img/social_icons/linkedin.png')}}" class="img-fluid" /></a></li>
+                                                                        @endif
+                                                                        @if($profile->instagram)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->instagram}}"><img src="{{ asset('assets/img/social_icons/instagram.png')}}" class="img-fluid" /></a></li>
+                                                                        @endif
+                                                                        @if($profile->twitter)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->twitter}}"><img src="{{ asset('assets/img/social_icons/twitter.png')}}" class="img-fluid" /></a></li>
+                                                                        @endif
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -401,10 +417,18 @@
                                                                     <a href="{{ url('profile',['id' => $director->id]) }}" class="text-danger mb-3">Detailed Profile</a>
     
                                                                     <ul class="list-inline mt-2">
-                                                                        <li class="list-inline-item"><a href="https://www.facebook.com/nonsokpala"><img src="{{ asset('assets/img/social_icons/facebook.png') }}" class="img-fluid" /></a></li>
-                                                                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/nonso-okpala-a3939856/"><img src="{{ asset('assets/img/social_icons/linkedin.png') }}" class="img-fluid" /></a></li>
-                                                                        <li class="list-inline-item"><a href="https://www.instagram.com/nonsomokpala/"><img src="{{ asset('assets/img/social_icons/instagram.png') }}" class="img-fluid" /></a></li>
-                                                                        <li class="list-inline-item"><a href="https://twitter.com/NonsoMOkpala"><img src="{{ asset('assets/img/social_icons/twitter.png') }}" class="img-fluid" /></a></li>
+                                                                        @if($profile->facebook)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->facebook}}"><img src="{{ asset('assets/img/social_icons/facebook.png')}}" class="img-fluid" /></a></li>
+                                                                        @endif
+                                                                        @if($profile->linkedin)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->linkedin}}"><img src="{{ asset('assets/img/social_icons/linkedin.png')}}" class="img-fluid" /></a></li>
+                                                                        @endif
+                                                                        @if($profile->instagram)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->instagram}}"><img src="{{ asset('assets/img/social_icons/instagram.png')}}" class="img-fluid" /></a></li>
+                                                                        @endif
+                                                                        @if($profile->twitter)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->twitter}}"><img src="{{ asset('assets/img/social_icons/twitter.png')}}" class="img-fluid" /></a></li>
+                                                                        @endif
                                                                     </ul>
                                                                 </div>
                                                             </div>
