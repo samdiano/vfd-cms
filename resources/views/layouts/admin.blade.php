@@ -31,7 +31,7 @@
     <script>
         tinymce.init({
   selector: 'textarea',
-  plugins: 'print preview fullpage paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
+  plugins: 'print maxChars preview fullpage paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
   imagetools_cors_hosts: ['picsum.photos'],
   menubar: 'file edit view insert format tools table help',
   toolbar: 'undo redo | bold italic underline strikethrough |  numlist bullist | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent | forecolor backcolor removeformat | pagebreak preview | insertfile link anchor codesample',
@@ -93,6 +93,8 @@
         editor.on('init', function () {
             editor.dom.addClass(tinymce.activeEditor.dom.select('p'), 'text-justify slick_dark');
         });
+        editor.maxChars = 10;
+
 	}
  });
 
