@@ -20,8 +20,10 @@ class CreateCompaniesTable extends Migration
             $table->text('about_text');
             $table->text('history');
             $table->text('history_quote');
+            $table->text('history_quote_side');
             $table->text('history_text');
             $table->text('impact');
+            $table->text('impact_quote_side');
             $table->text('impact_quote');
             $table->text('impact_text');
             $table->text('career');

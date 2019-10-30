@@ -208,7 +208,7 @@
                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>About us</span>
                             <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="{{ url('admin/about') }}">About</a></li>
+                            <li><a href="{{ url('admin/about') }}">Introductory Text</a></li>
                             <li><a href="{{ url('admin/governance') }}">Governance</a></li>
                             <li><a href="{{ url('admin/history') }}">Our History</a></li>
                             <li><a href="{{ url('admin/culture') }}">Our Culture</a></li>
@@ -216,6 +216,39 @@
                         </ul>
                         
                     </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-case"></i><span>Our Portfolio</span>
+                                    <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                        <li><a href="{{ url('admin/portfolio') }}">Introductory Text</a></li>
+                                        <li><a href="{{ url('admin/services') }}">Services</a></li>
+                                        <li><a href="{{ url('admin/subsidiaries') }}">Subsidiaries</a></li>
+        
+                                </ul>
+                                
+                            </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Investor Information</span>
+                                    <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{ url('admin/financial-information') }}">Financial Information</a></li>
+                                    <li><a href="{{ url('admin/conference') }}">Conference Calls</a></li>
+                                    <li><a href="{{ url('admin/press') }}">Press Release</a></li>
+                                    <li><a href="{{ url('admin/faq') }}">FAQs</a></li>
+                                    
+                                </ul>
+                                
+                            </li>
+                                    <li class="has_sub">
+                                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-image"></i><span>Media</span>
+                                            <span class="menu-arrow"></span></a>
+                                        <ul class="list-unstyled">
+                                                <li><a href="{{ url('admin/blog') }}">Blog</a></li>
+                                                <li><a href="{{ url('admin/gallery') }}">Gallery</a></li>
+                
+                                        </ul>
+                                        
+                                    </li>
                     <li class="has_sub">
                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Careers</span>
                             <span class="menu-arrow"></span></a>
@@ -224,39 +257,6 @@
                             <li><a href="{{ url('admin/vacancies') }}">Vacancies</a></li>
                             <li><a href="{{ url('admin/portfolio-vacancies') }}">Portfolio Vacancies</a></li>
                             <li><a href="{{ url('admin/career/video') }}">Career Video</a></li>
-                        </ul>
-                        
-                    </li>
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Investors</span>
-                            <span class="menu-arrow"></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="{{ url('admin/financial-information') }}">Financial Information</a></li>
-                            <li><a href="{{ url('admin/conference') }}">Conference Calls</a></li>
-                            <li><a href="{{ url('admin/press') }}">Press Release</a></li>
-                            <li><a href="{{ url('admin/faq') }}">FAQs</a></li>
-                            
-                        </ul>
-                        
-                    </li>
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-image"></i><span>Media</span>
-                            <span class="menu-arrow"></span></a>
-                        <ul class="list-unstyled">
-                                <li><a href="{{ url('admin/blog') }}">Blog</a></li>
-                                <li><a href="{{ url('admin/gallery') }}">Gallery</a></li>
-
-                        </ul>
-                        
-                    </li>
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-case"></i><span>Portfolio</span>
-                            <span class="menu-arrow"></span></a>
-                        <ul class="list-unstyled">
-                                <li><a href="{{ url('admin/portfolio') }}">Portfolio</a></li>
-                                <li><a href="{{ url('admin/services') }}">Services</a></li>
-                                {{-- <li><a href="{{ url('admin/products') }}">Products</a></li> --}}
-
                         </ul>
                         
                     </li>

@@ -87,7 +87,7 @@
             <div class="container-fluid mx-md-5">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="text-green gotham-bold my-4 font-weight-bold"> <a href="{{ url()->previous() }}"><i class="fa fa-angle-left text-dark mr-5"></i></a> Board of Directors</h3>
+                        <h3 class="text-green gotham-bold my-4 font-weight-bold"> <a href="{{ url()->previous().'?sub=subsidiary-just' }}"><i class="fa fa-angle-left text-dark mr-5"></i></a> Board of Directors</h3>
                     </div>
                 </div>
             </div>
