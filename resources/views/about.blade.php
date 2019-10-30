@@ -250,17 +250,17 @@
                                                                 <a href="{{ url('profile',['id' => $director->id]) }}" class="text-danger mb-3">Detailed Profile</a>
 
                                                                 <ul class="list-inline mt-2">
-                                                                    @if($profile->facebook)
-                                                                    <li class="list-inline-item"><a target="_blank" href="{{$profile->facebook}}"><img src="{{ asset('assets/img/social_icons/facebook.png')}}" class="img-fluid" /></a></li>
+                                                                    @if($director->facebook)
+                                                                    <li class="list-inline-item"><a target="_blank" href="{{$director->facebook}}"><img src="{{ asset('assets/img/social_icons/facebook.png')}}" class="img-fluid" /></a></li>
                                                                     @endif
-                                                                    @if($profile->linkedin)
-                                                                    <li class="list-inline-item"><a target="_blank" href="{{$profile->linkedin}}"><img src="{{ asset('assets/img/social_icons/linkedin.png')}}" class="img-fluid" /></a></li>
+                                                                    @if($director->linkedin)
+                                                                    <li class="list-inline-item"><a target="_blank" href="{{$director->linkedin}}"><img src="{{ asset('assets/img/social_icons/linkedin.png')}}" class="img-fluid" /></a></li>
                                                                     @endif
-                                                                    @if($profile->instagram)
-                                                                    <li class="list-inline-item"><a target="_blank" href="{{$profile->instagram}}"><img src="{{ asset('assets/img/social_icons/instagram.png')}}" class="img-fluid" /></a></li>
+                                                                    @if($director->instagram)
+                                                                    <li class="list-inline-item"><a target="_blank" href="{{$director->instagram}}"><img src="{{ asset('assets/img/social_icons/instagram.png')}}" class="img-fluid" /></a></li>
                                                                     @endif
-                                                                    @if($profile->twitter)
-                                                                    <li class="list-inline-item"><a target="_blank" href="{{$profile->twitter}}"><img src="{{ asset('assets/img/social_icons/twitter.png')}}" class="img-fluid" /></a></li>
+                                                                    @if($director->twitter)
+                                                                    <li class="list-inline-item"><a target="_blank" href="{{$director->twitter}}"><img src="{{ asset('assets/img/social_icons/twitter.png')}}" class="img-fluid" /></a></li>
                                                                     @endif
                                                                 </ul>
                                                             </div>
@@ -333,17 +333,17 @@
                                                                     <a href="{{ url('profile',['id' => $director->id]) }}" class="text-danger mb-3">Detailed Profile</a>
     
                                                                     <ul class="list-inline mt-2">
-                                                                        @if($profile->facebook)
-                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->facebook}}"><img src="{{ asset('assets/img/social_icons/facebook.png')}}" class="img-fluid" /></a></li>
+                                                                        @if($director->facebook)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$director->facebook}}"><img src="{{ asset('assets/img/social_icons/facebook.png')}}" class="img-fluid" /></a></li>
                                                                         @endif
-                                                                        @if($profile->linkedin)
-                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->linkedin}}"><img src="{{ asset('assets/img/social_icons/linkedin.png')}}" class="img-fluid" /></a></li>
+                                                                        @if($director->linkedin)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$director->linkedin}}"><img src="{{ asset('assets/img/social_icons/linkedin.png')}}" class="img-fluid" /></a></li>
                                                                         @endif
-                                                                        @if($profile->instagram)
-                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->instagram}}"><img src="{{ asset('assets/img/social_icons/instagram.png')}}" class="img-fluid" /></a></li>
+                                                                        @if($director->instagram)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$director->instagram}}"><img src="{{ asset('assets/img/social_icons/instagram.png')}}" class="img-fluid" /></a></li>
                                                                         @endif
-                                                                        @if($profile->twitter)
-                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->twitter}}"><img src="{{ asset('assets/img/social_icons/twitter.png')}}" class="img-fluid" /></a></li>
+                                                                        @if($director->twitter)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$director->twitter}}"><img src="{{ asset('assets/img/social_icons/twitter.png')}}" class="img-fluid" /></a></li>
                                                                         @endif
                                                                     </ul>
                                                                 </div>
@@ -417,17 +417,17 @@
                                                                     <a href="{{ url('profile',['id' => $director->id]) }}" class="text-danger mb-3">Detailed Profile</a>
     
                                                                     <ul class="list-inline mt-2">
-                                                                        @if($profile->facebook)
-                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->facebook}}"><img src="{{ asset('assets/img/social_icons/facebook.png')}}" class="img-fluid" /></a></li>
+                                                                        @if($director->facebook)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$director->facebook}}"><img src="{{ asset('assets/img/social_icons/facebook.png')}}" class="img-fluid" /></a></li>
                                                                         @endif
-                                                                        @if($profile->linkedin)
-                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->linkedin}}"><img src="{{ asset('assets/img/social_icons/linkedin.png')}}" class="img-fluid" /></a></li>
+                                                                        @if($director->linkedin)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$director->linkedin}}"><img src="{{ asset('assets/img/social_icons/linkedin.png')}}" class="img-fluid" /></a></li>
                                                                         @endif
-                                                                        @if($profile->instagram)
-                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->instagram}}"><img src="{{ asset('assets/img/social_icons/instagram.png')}}" class="img-fluid" /></a></li>
+                                                                        @if($director->instagram)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$director->instagram}}"><img src="{{ asset('assets/img/social_icons/instagram.png')}}" class="img-fluid" /></a></li>
                                                                         @endif
-                                                                        @if($profile->twitter)
-                                                                        <li class="list-inline-item"><a target="_blank" href="{{$profile->twitter}}"><img src="{{ asset('assets/img/social_icons/twitter.png')}}" class="img-fluid" /></a></li>
+                                                                        @if($director->twitter)
+                                                                        <li class="list-inline-item"><a target="_blank" href="{{$director->twitter}}"><img src="{{ asset('assets/img/social_icons/twitter.png')}}" class="img-fluid" /></a></li>
                                                                         @endif
                                                                     </ul>
                                                                 </div>
