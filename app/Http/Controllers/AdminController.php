@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Company;
 use App\Vacancy;
+use App\Value;
 use App\Service;
 use App\Subscriber;
 use App\Product;
@@ -315,10 +316,12 @@ class AdminController extends Controller
     {
         $validator = $this->validate($request,[
             'name' => 'required',
+            'link' => 'required',
         ]);
         $service = new Service();
 
         $service->name = $request->name;
+        $service->link = $request->link;
         $service->save;
         $services = Service::all();
 
@@ -355,6 +358,82 @@ class AdminController extends Controller
             return redirect()->back()->withErrors();
         }
     }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function values()
+    {
+        $services = Value::all();
+        return view('admin.values.list',['services' => $services]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function newValue()
+    {
+        $vacancies = Vacancy::all();
+        return view('admin.values.new',['vacancies' => $vacancies]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function addValue(Request $request)
+    {
+        $validator = $this->validate($request,[
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+        $service = new Value();
+
+        $service->value = $request->name;
+        $service->description = $request->description;
+        $service->save;
+        $services = Value::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($service->save()) {
+            return redirect('admin/values')->with('services', $services);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postValueDelete($id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = Value::find($id);
+        
+        // $finInfo->delete();
+        $services = Value::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->delete()) {
+            return redirect()->back()->with('services', $services);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
 
 
     /**

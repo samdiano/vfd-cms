@@ -136,6 +136,15 @@ Route::post('/admin/services/new','AdminController@addService')->name('adminServ
 Route::get('/admin/services/delete/{id}','AdminController@postServiceDelete')->name('postFaqDelete');
 
 
+Route::get('/admin/values','AdminController@values')->name('adminServices');
+
+Route::get('/admin/values/new','AdminController@newValue')->name('adminServices');
+
+Route::post('/admin/values/new','AdminController@addValue')->name('adminServices');
+
+Route::get('/admin/values/delete/{id}','AdminController@postValueDelete')->name('postFaqDelete');
+
+
 
 
 Route::get('/admin/products','AdminController@products')->name('adminServices');

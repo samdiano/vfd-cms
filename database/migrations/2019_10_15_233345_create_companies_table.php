@@ -27,6 +27,9 @@ class CreateCompaniesTable extends Migration
             $table->text('impact_quote');
             $table->text('impact_text');
             $table->text('career');
+            $table->text('career_quote_side');
+            $table->text('career_quote');
+            $table->text('career_text');
             $table->text('portfolio');
             $table->text('culture');
             $table->text('vision');

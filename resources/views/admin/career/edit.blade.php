@@ -27,6 +27,23 @@
                                                 <textarea class="form-control" name="career">{{$company->career ?? ''}}</textarea>
                                                 </div>
                                             </div>
+                                            <div class="form-group">
+                                                    <label class="control-label col-md-2 col-sm-3">
+                                                        Quote
+                                                    </label>
+                                                    <div class="col-md-9 col-sm-9">
+                                                    <input class="form-control" name="career_quote" value="{{$company->career_quote}}" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                        <label class="control-label col-md-2 col-sm-3">
+                                                            Text
+                                                        </label>
+                                                        <div class="col-md-9 col-sm-9">
+                                                        <textarea class="form-control" name="career_text">{{$company->career_text}}</textarea>
+                                                        </div>
+                                                    </div>
 
                                             <div class="form-group">
                                                 <div class="col-md-offset-2 col-md-9">
