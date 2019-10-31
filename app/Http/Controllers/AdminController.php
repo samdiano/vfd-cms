@@ -202,6 +202,7 @@ class AdminController extends Controller
         $company = Company::find(1);
         $company->impact = $request->impact;
         $company->impact_quote = $request->impact_quote;
+        $company->impact_quote_side = $request->impact_quote_side;
         $company->impact_text = $request->impact_text;
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
