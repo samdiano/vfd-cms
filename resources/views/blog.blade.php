@@ -88,112 +88,79 @@
     </nav>
     <!--/.Navbar-->
 
-    <div class="position-relative about_top_banner">
-        <div class="container">
+
+    <div class="bg-board-detail vertical-4">
+        <div class="container-fluid mx-md-5">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="font-41 text-white vertical-7 weight-semi-bold">Media</h3>
+                    <h3 class="text-green gotham-bold my-4 font-weight-bold"> {{$blog->title}}</h3>
                 </div>
             </div>
         </div>
-        <img src="{{ asset('assets/img/insert_subtract.png') }}"
-            class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                <ul class="nav nav-tabs nav-justified md-tabs mb-3 mt-3 media-margin" id="blogTab" role="tablist">
-                    <li class="nav-item waves-effect waves-light">
-                        <a class="nav-link active small-md" id="vacancies-tab-just" data-toggle="tab"
-                            href="#vacancies-just" role="tab" aria-controls="vacancies-just"
-                            aria-selected="true">Blog</a>
-                    </li>
-
-                    <li class="nav-item waves-effect waves-light">
-                        <a class="nav-link small-md" id="portfolios-tab-just" data-toggle="tab" href="#portfolios-just"
-                            role="tab" aria-controls="portfolios-just" aria-selected="true">Gallery</a>
-                    </li>
-                </ul>
-
-                <div class="tab-content" id="myTabContentJust">
-
-                    <div class="tab-pane fade show active" id="vacancies-just" role="tabpanel"
-                        aria-labelledby="vacancies-tab-just">
-                        <div class="row">
-                            @foreach($blog as $blog)
-                            <div class="col-md-4 my-3">
-
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset($blog->image_path) }}" alt="post">
-
-                                    <div class="card-body grey-bg px-3">
-
-                                        <p class="card-title weight-semi-bold"><a>{{$blog->title}}</a></p>
-
-                                        <p class="font-13">{!! str_limit($blog->content, 200)!!}</p>
-                                        <a href="{{url('media/blog/'.$blog->id)}}" class="vfd-text-red weight-semi-bold">Read More</a>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            @endforeach
-                        </div>
-
-
-                    </div>
-
-                    <div class="tab-pane fade" id="portfolios-just" role="tabpanel"
-                        aria-labelledby="portfolios-tab-just">
-                        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
-                            @foreach($galYear as $gal)
-
-                            <div class="card my-3 border-0">
-
-                                <div class="card-header border rounded" role="tab" id="headingOne1">
-                                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1"
-                                        aria-expanded="true" aria-controls="collapseOne1">
-                                        <h5 class="mb-0 text_secondary">
-                                            <span class="gotham-bold">{{$gal}}</span> <i
-                                                class="fa fa-angle-down rotate-icon"></i>
-                                        </h5>
-                                    </a>
-                                </div>
-
-                                <div id="collapseOne1" class="collapse show my-4" role="tabpanel"
-                                    aria-labelledby="headingOne1" data-parent="#accordionEx">
-
-                                    <div class="row">
-                                        @foreach($gallery as $info)
-                                        @if($gal == $info->year)
-                                        <div class="col-md-3">
-                                            <img src="{{ asset($info->image_path) }}" alt="Annual general meeting"
-                                                class="img-fluid" />
-                                        </div>
-                                        @endif
-                                        @endforeach
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-
+    <div class="container-fluid mx-md-5">
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="mb-3"
+                    style="background-image: url({{ asset($blog->image_path) }}); height: 320px; width: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover;">
                 </div>
+
+                <p class="text-grey"><span><i class="fa fa-calendar mr-2"> </i> {{$blog->created_at}}</span> <span
+                        class="mx-2">|</span> <span class=""><i class="fa fa-user mr-2"></i> By Admin</span> </p>
+
+                <h5 class="font-weight-bold text-md-left text-center">{{$blog->title}}</h5>
+
+                <p class="">{!!$blog->content!!}</p>
+
+
+
             </div>
 
-            <div class="col-md-3">
-                <div class="mt- vertical-8">
+            <div class="col-md-3 col-md-1">
+                <h6 class="weight-semi-bold text-md-left text-center mb-3 mt-2">More Blog Posts...</h6>
+                <div class="card mb-4">
+                    <img class="card-img-top" src="img/post_1.png" alt="post">
+
+                    <div class="card-body grey-bg px-3">
+
+                        <p class="card-title weight-semi-bold"><a href="blog_post.html">PRESS RELEASE – VFD Group
+                                Concludes a Successful Business Exit of Germaine Auto Center.</a></p>
+
+                        <p class="font-13">Lagos – Nigeria, 15 07 2019: — VFD Group Plc (“VFD Group”, “VFD”) announces
+                            its... </p>
+                        <a href="blog_post.html" class="vfd-text-red weight-semi-bold">Read More</a>
+
+                    </div>
+                </div>
+
+
+                <div class="card mb-4">
+                    <img class="card-img-top" src="img/post_2.png" alt="post">
+
+                    <div class="card-body grey-bg px-3">
+
+                        <p class="card-title weight-semi-bold"><a href="blog_post.html">PRESS RELEASE – VFD Group
+                                Concludes a Successful Business Exit of Germaine Auto Center.</a></p>
+
+                        <p class="font-13">Lagos – Nigeria, 15 07 2019: — VFD Group Plc (“VFD Group”, “VFD”) announces
+                            its... </p>
+                        <a href="blog_post.html" class="vfd-text-red weight-semi-bold">Read More</a>
+
+                    </div>
+                </div>
+
+                <div class="card mb-4">
                     <a class="twitter-timeline" data-width="300" data-height="300"
                         href="https://twitter.com/VFDGroup?ref_src=twsrc%5Etfw">Tweets by VFDGroup</a>
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
         </div>
+
     </div>
+
+
 
 
     <!--Footer-->
@@ -237,13 +204,29 @@
     </footer>
     <!--/.Footer-->
 
-</body>
 
-<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/js/popper.min.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/js/slick.js') }}"></script>
-<script src="{{ asset('assets/js/mdb.js') }}"></script>
-<script src="{{ asset('assets/js/utility.js') }}"></script>
+
+    <!-- Search modal -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="max-width: 95%;">
+            <div class="modal-content">
+                <form>
+                    <div class="form-group mb-0" style="position: relative">
+                        <input type="text" class="rounded-0 form-control" id="search" placeholder="search">
+                        <img src="img/search_bar_icon.png" alt="search icon"
+                            style="position: absolute; right: 10px; top: 10px;" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src='js/jquery.min.js'></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/mdb.js"></script>
+<script src="js/utility.js"></script>
 
 </html>

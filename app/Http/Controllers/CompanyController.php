@@ -65,6 +65,18 @@ class CompanyController extends Controller
         return view('profile', ['profile' => $profile]);
     }
 
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function blog($id)
+    {
+        $blog = Blog::find($id);
+        return view('blog', ['blog' => $blog]);
+    }
+
     /**
      * Show the company's about page
      *

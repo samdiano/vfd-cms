@@ -28,6 +28,8 @@ Route::get('/investors','CompanyController@investors')->name('investors');
 
 Route::get('/media','CompanyController@media')->name('media');
 
+Route::get('/media/blog/{id}','CompanyController@blog')->name('media');
+
 Route::get('/contact_us', function () {
     return view('contact_us');
 });
