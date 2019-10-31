@@ -56,6 +56,7 @@ class AdminController extends Controller
         $company = Company::find(1);
         $company->about = $request->about;
         $company->about_quote = $request->about_quote;
+        $company->about_quote_side = $request->about_quote_side;
         $company->about_text = $request->about_text;
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
@@ -164,6 +165,7 @@ class AdminController extends Controller
         $company = Company::find(1);
         $company->history = $request->history;
         $company->history_quote = $request->history_quote;
+        $company->history_quote_side = $request->history_quote_side;
         $company->history_text = $request->history_text;
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
@@ -356,7 +358,7 @@ class AdminController extends Controller
         if ($finInfo->delete()) {
             return redirect()->back()->with('services', $services);
         } else {
-            return redirect()->back()->withErrors();
+            return redirect()->back()->withErrors('');
         }
     }
 
@@ -431,7 +433,7 @@ class AdminController extends Controller
         if ($finInfo->delete()) {
             return redirect()->back()->with('services', $services);
         } else {
-            return redirect()->back()->withErrors();
+            return redirect()->back()->withErrors('');
         }
     }
 
@@ -475,7 +477,7 @@ class AdminController extends Controller
         $services = Service::all();
 
         // return view('admin.about.edit',['company' => $company]);
-        if ($vacancy->save()) {
+        if ($service->save()) {
             return redirect('admin/services')->with('services', $services);
         } else {
             return redirect()->back()->withErrors($validator);
