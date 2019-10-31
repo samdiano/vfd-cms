@@ -1,0 +1,340 @@
+
+/* 
+##Device = Desktops
+##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1441px) {
+
+    .image-subtract {
+        display: none;
+        bottom: 0; left: 0
+    }
+
+    .about-banner-img {
+        min-width: 100%;
+        top: -20%;
+    }
+
+    .vertical-8{
+        margin-top: 19rem !important;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1440px) {
+
+    .image-subtract {
+        display: block;
+    }
+
+    .about-banner-img {
+        min-width: 100%;
+        /*        top: -7.5%;*/
+    }
+
+    .vertical-8{
+        margin-top: 8rem !important;
+    }
+
+    .investor-banner {
+        top: -5.5%;
+    }
+
+    .career-banner {
+        top: -1%;
+    }
+
+/*
+    .global-image-subtract {
+        left: 0;
+        top: 80px;
+        width: 100% !important;
+    }
+*/
+}
+
+/* 
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+    .image-subtract {
+        display: block;
+        bottom: 0; left: 0
+    }
+}
+
+/* 
+##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .home-btn-padding {
+        padding: 15px 35px !important;
+    }
+
+    .floating-landing-logo {
+        right: 0; top: 60%; opacity: 0.3; width: 20%; z-index: 2;
+    }
+
+    .vertical-8{
+        margin-top: 4rem !important;
+    }
+
+    .about-banner-img {
+        min-width: 100%;
+        top: -5%;
+    }
+
+    .navbar-nav  .nav-link {
+        color : #3D4241;
+        margin-top: 1.5px !important;
+        font-family: 'poppins', "san-serif" !important;
+        font-size: 9px;
+        font-weight: 500;
+    }
+
+}
+
+/* 
+##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+    //CSS
+
+}
+
+/* 
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .global-image-subtract {
+        left: 0;
+        width: 100% !important;
+        display: none !important;
+    }
+
+    .slick-slide img {
+        display: inline !important;
+    }
+
+    .image-subtract {
+        display: none;
+    }
+
+    .onhover:hover {
+        -webkit-transform: translateY(-1px) scale(1.02);
+        transform: translateY(-5px) scale(1);
+        /*	border: 2px solid #006A5A !important;*/
+    }
+
+    .onhover, .hover {
+        -webkit-animation-name: fadeUp;
+        animation-name: fadeUp;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+    }
+
+    .onhover, .hover {
+        -webkit-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+    }
+
+    .md-border-right {
+        border-right: 0px solid #dee2e6;
+    }
+
+    #myGovernanceTab {
+        justify-content: center !important;
+    }
+
+    .home-btn-padding {
+        padding: 15px 50px !important;
+    }
+
+    .vertical-5, .vertical-9{
+        margin-top: 1rem !important;
+    }
+
+    .vertical-8{
+        margin-top: 6rem !important;
+    }
+
+    .media-banner {
+        top: auto;
+    }
+
+    .portfolio-banner {
+        top: auto;
+        transform: rotate(0deg);
+    }
+
+    .contact-banner {
+        top: auto;
+    }
+
+    .about-banner-img {
+        min-width: 100%;
+        top: 10% !important;
+    }
+
+    .about-banner-img {
+        top: auto;
+        transform: rotate(0deg);
+    }
+
+    .about_top_banner {
+        background-image: url(../img/banner_1.jpg);
+        background-size: cover;
+        height: auto;
+        background-repeat: no-repeat;
+    }
+
+    .portfolio_top_banner {
+        background-image: url(../img/banner_2.jpg);
+        background-size: cover;
+        height: auto;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+    }
+}
+
+/* 
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .slick-slide img {
+        display: inline !important;
+    }
+
+    .image-subtract {
+        display: none;
+    }
+    .onhover:hover {
+        -webkit-transform: translateY(-1px) scale(1.02);
+        transform: translateY(-5px) scale(1);
+        /*	border: 2px solid #006A5A !important;*/
+    }
+
+    .onhover, .hover {
+        -webkit-animation-name: fadeUp;
+        animation-name: fadeUp;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+    }
+
+    .onhover, .hover {
+        -webkit-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+    }
+
+    .md-border-right {
+        border-right: 0px solid #dee2e6;
+    }
+
+    #myGovernanceTab {
+        justify-content: center !important;
+    }
+
+    .vertical-5, .vertical-9{
+        margin-top: 1rem !important;
+        margin-bottom: 3rem;
+    }
+
+    .vertical-8{
+        margin-top: 15px;
+        margin-bottom: 3rem;
+    }
+
+    .font-41 {
+        font-size: 22px;
+    }
+    .media-banner {
+        top: auto;
+    }
+
+    .portfolio-banner {
+        top: auto;
+        transform: rotate(0deg);
+    }
+
+    .contact-banner {
+        top: auto !important;
+    }
+
+    .about-banner-img {
+        top: 50px;
+        transform: rotate(0deg);
+    }
+
+    .home-btn-padding {
+        padding: 15px 50px !important;
+    }
+
+    .about_top_banner {
+        background-image: url(../img/banner_1.jpg);
+        background-size: cover;
+        height: auto;
+        background-repeat: no-repeat;
+    }
+
+    .portfolio_top_banner {
+        background-image: url(../img/banner_2.jpg);
+        background-size: cover;
+        height: auto;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+    }
+
+    .investor_top_banner {
+        background-image: url(../img/banner_3.jpg);
+        background-size: cover;
+        height: auto;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+    }
+
+    .career_top_banner {
+        background-image: url(../img/landing_banner.jpg);
+        background-size: cover;
+        height: auto;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+    }
+
+    /* About us, investor tabs */
+
+    #myTabJust, #investor_tab {
+
+        display: -ms-flexbox;
+        display: block !important;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        text-align: center !important;
+    }
+
+    #myTabJust li, #investor_tab li {
+        display: block;
+    }
+
+    .card-body .investor-info-images {
+        background-size: contain !important;
+        height: 100px !important;
+        width: 100% !important;
+    }
+}
