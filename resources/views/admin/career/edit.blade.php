@@ -48,7 +48,7 @@
                                             name="career_text">{{$company->career_text}}</textarea>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-9">
                                         <button class="btn btn-lg btn-primary pull-right">Submit</button>
