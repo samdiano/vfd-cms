@@ -150,8 +150,8 @@
 
                     <div class="offset-md-1 col-md-3">
                         <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1" />
-                        <p class="font-28 text-green-deep gotham-bold weight-semi-bold text-center">
-                            {!! $company->quote!!}
+                        <p class="font-26 text-green-deep gotham-bold weight-semi-bold text-center">
+                            {!! $company->about_quote_side !!}
                         </p>
 
                         <div class="card mb-5 onhover cursor" data-toggle="modal" data-target="#download">
@@ -545,8 +545,8 @@
 
                     <div class="offset-md-1 col-md-3">
                         <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1" />
-                        <p class="font-28 text-green-deep gotham-bold weight-semi-bold text-center">
-                            {!! $company->quote!!}
+                        <p class="font-26 text-green-deep gotham-bold weight-semi-bold text-center">
+                            {!! $company->history_quote_side!!}
                         </p>
 
                         <div class="card mb-5 onhover cursor" data-toggle="modal" data-target="#download">
@@ -670,8 +670,8 @@
 
                     <div class="offset-md-1 col-md-3">
                         <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1" />
-                        <p class="font-28 text-green-deep gotham-bold weight-semi-bold text-center">
-                            {!! $company->quote!!}
+                        <p class="font-26 text-green-deep gotham-bold weight-semi-bold text-center">
+                            {!! $company->impact_quote_side !!}
                         </p>
 
                         <div class="card mb-5 onhover cursor" data-toggle="modal" data-target="#download">
