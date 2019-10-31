@@ -15,7 +15,7 @@ class CompanyTableSeeder extends Seeder
             'about' => '',
             'about_quote' => '',
             'about_text' => '',
-            'about_text_side' => '',
+            'about_quote_side' => '',
             'history' => '',
             'history_quote' => '',
             'history_quote_side' => '',
