@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Company;
 use App\Vacancy;
 use App\Service;
@@ -31,28 +32,27 @@ class CompanyController extends Controller
         $directors = Profile::where('section', '=', 'directors')->get();
         $portfolio = Profile::where('section', '=', 'portfolio')->get();
         $management = Profile::where('section', '=', 'management')->get();
-       
-        return view('about',['company' => $company, 'directors' => $directors, 'portfolio' => $portfolio, 'management' => $management]);
+
+        return view('about', ['company' => $company, 'directors' => $directors, 'portfolio' => $portfolio, 'management' => $management]);
     }
 
     public function getDownload(Request $request)
     {
 
-        $validator = $this->validate($request,[
+        $validator = $this->validate($request, [
             'name' => 'required',
             'email' => 'required',
         ]);
 
         $company = Company::find(1);
         $subscriber = Subscriber::firstOrNew(['email' => $request->email]);
-        $path= public_path().'/'. $company->profile;
+        $path = public_path() . '/' . $company->profile;
         $file = pathinfo($path, PATHINFO_EXTENSION);
         $headers = array('Content-Type: application/pdf');
         $subscriber->name = $request->name;
         $subscriber->email = $request->email;
         $subscriber->save();
-        return response()->download($path, 'vfd-profile'.'.'.$file);
-        
+        return response()->download($path, 'vfd-profile' . '.' . $file);
     }
     /**
      * Show the company's about page
@@ -62,7 +62,7 @@ class CompanyController extends Controller
     public function profile($id)
     {
         $profile = Profile::find($id);
-        return view('profile',['profile' => $profile]);
+        return view('profile', ['profile' => $profile]);
     }
 
     /**
@@ -73,7 +73,7 @@ class CompanyController extends Controller
     public function index()
     {
         $company = Product::all();
-        return view('welcome',['company' => $company]);
+        return view('welcome', ['company' => $company]);
     }
 
     /**
@@ -90,7 +90,7 @@ class CompanyController extends Controller
         $microfinance_vacancies = PortfolioVacancy::where('portfolio', '=', 'microfinance')->get();
         $dynasty_vacancies = PortfolioVacancy::where('portfolio', '=', 'dynasty')->get();
         $anchoria_vacancies = PortfolioVacancy::where('portfolio', '=', 'anchoria')->get();
-        return view('careers',['company' => $company, 'vacancies' => $vacancies, 'bridge_vacancies' => $bridge_vacancies, 'everdon_vacancies' => $everdon_vacancies, 'microfinance_vacancies' => $microfinance_vacancies, 'dynasty_vacancies' => $dynasty_vacancies, 'anchoria_vacancies' => $anchoria_vacancies, ]);
+        return view('careers', ['company' => $company, 'vacancies' => $vacancies, 'bridge_vacancies' => $bridge_vacancies, 'everdon_vacancies' => $everdon_vacancies, 'microfinance_vacancies' => $microfinance_vacancies, 'dynasty_vacancies' => $dynasty_vacancies, 'anchoria_vacancies' => $anchoria_vacancies,]);
     }
 
     /**
@@ -105,27 +105,27 @@ class CompanyController extends Controller
         $careerFaq = Faq::where('type', '=', 'career')->get();
         $finInfo = FinancialInformation::all();
         $finArr = [];
-        foreach($finInfo as $fin){
-            array_push ($finArr, $fin->year);
+        foreach ($finInfo as $fin) {
+            array_push($finArr, $fin->year);
         }
         $finYear = array_unique($finArr);
 
         $conInfo = ConferenceCall::all();
         $conArr = [];
-        foreach($conInfo as $con){
-            array_push ($conArr, $con->year);
+        foreach ($conInfo as $con) {
+            array_push($conArr, $con->year);
         }
         $conYear = array_unique($conArr);
 
         $pressInfo = PressRelease::all();
         $pressArr = [];
-        foreach($pressInfo as $press){
-            array_push ($pressArr, $press->year);
+        foreach ($pressInfo as $press) {
+            array_push($pressArr, $press->year);
         }
         $pressYear = array_unique($pressArr);
-        return view('investors',['generalFaq' => $generalFaq, 'investorFaq' => $investorFaq, 'careerFaq' => $careerFaq, 'finYear' => $finYear, 'finInfo' => $finInfo,'conYear' => $conYear, 'conInfo' => $conInfo,'pressYear' => $pressYear, 'pressInfo' => $pressInfo, ]);
+        return view('investors', ['generalFaq' => $generalFaq, 'investorFaq' => $investorFaq, 'careerFaq' => $careerFaq, 'finYear' => $finYear, 'finInfo' => $finInfo, 'conYear' => $conYear, 'conInfo' => $conInfo, 'pressYear' => $pressYear, 'pressInfo' => $pressInfo,]);
     }
-    
+
     /**
      * Show the company's career page
      *
@@ -137,9 +137,9 @@ class CompanyController extends Controller
         $services = Service::all();
         $product = Product::all();
         $sub = Product::all();
-        return view('portfolio',['services' => $services,'product' => $product,'sub' => $sub,'company' => $company ]);
+        return view('portfolio', ['services' => $services, 'product' => $product, 'sub' => $sub, 'company' => $company]);
     }
-    
+
     /**
      * Show the company's career page
      *
@@ -151,12 +151,11 @@ class CompanyController extends Controller
         $blog = Blog::all();
         $gallery = Gallery::all();
         $galArr = [];
-        foreach($gallery as $gal){
-            array_push ($galArr, $gal->year);
+        foreach ($gallery as $gal) {
+            array_push($galArr, $gal->year);
         }
         $galYear = array_unique($galArr);
 
-        return view('media',['blog' => $blog, 'galYear' => $galYear, 'gallery' => $gallery,'company' => $company ]);
+        return view('media', ['blog' => $blog, 'galYear' => $galYear, 'gallery' => $gallery, 'company' => $company]);
     }
-    
 }
