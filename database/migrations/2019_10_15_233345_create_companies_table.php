@@ -17,6 +17,7 @@ class CreateCompaniesTable extends Migration
             $table->bigIncrements('id');
             $table->text('about');
             $table->text('about_quote');
+            $table->text('about_quote_side');
             $table->text('about_text');
             $table->text('history');
             $table->text('history_quote');
