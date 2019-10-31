@@ -9,8 +9,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card-box">
-                        <a class="btn btn-primary" href="{{ url('admin/portfolio/vacancies/new/') }}">Add New Portfolio
-                            Vacancy</a>
+                        <a class="btn btn-primary" href="{{ url('admin/portfolio/vacancies/new/') }}"> Post new vacancies</a>
                         <div class="table-rep-plugin">
                             <div class="table-responsive" data-pattern="priority-columns">
                                 {{-- @include('partial.alert') --}}

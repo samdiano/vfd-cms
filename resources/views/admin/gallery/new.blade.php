@@ -40,18 +40,18 @@
 
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3">
-                                            Description
+                                            Hyperlink
                                         </label>
                                         <div class="col-md-9 col-sm-9">
-                                            <textarea name="content" class="form-control"></textarea>
+                                            <input type="text" name="title" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3">
-                                            Year
+                                            Date
                                         </label>
                                         <div class="col-md-9 col-sm-9">
-                                            <input type="text" name="year" class="form-control">
+                                            <input type="date" name="year" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
