@@ -124,7 +124,7 @@
             </li>
         </ul>
 
-        <div class="tab-content" id="myTabContentJust">
+        <div class="tab-content p-font-17" id="myTabContentJust">
             <!--                ABout Tab-->
             <div class="tab-pane fade show active" id="home-just" role="tabpanel" aria-labelledby="home-tab-just">
 
@@ -140,7 +140,7 @@
                         {!! $company->about !!}
 
                         <div class="position-relative">
-                            <p class="ml-md-2 text-green-deep gotham-bold my-5">{!! $company->about_quote !!}</p>
+                            <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!! $company->about_quote !!}</p>
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1 pt-4" />
 
                         </div>
@@ -535,7 +535,7 @@
                         {!! $company->history !!}
 
                         <div class="position-relative">
-                            <p class="ml-md-2 text-green-deep gotham-bold my-5">{!! $company->history_quote !!}</p>
+                            <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!! $company->history_quote !!}</p>
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1 pt-4" />
 
                         </div>
@@ -659,7 +659,7 @@
                         {!! $company->impact !!}
 
                         <div class="position-relative">
-                            <p class="ml-md-2 text-green-deep gotham-bold my-5">{!! $company->impact_quote !!}</p>
+                            <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!! $company->impact_quote !!}</p>
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1 pt-4" />
 
                         </div>
