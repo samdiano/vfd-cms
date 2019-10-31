@@ -24,7 +24,6 @@
                                             <tr>
                                                 <th>Title</th>
                                                 <th>Image</th>
-                                                <th>Description</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -32,11 +31,13 @@
                                             @foreach($info as $info)
                                             <tr>
                                                 <td>{{ $info->title }}</td>
-                                                <td><img height="200" width="200" src="{{ asset($info->image_path) }}"
-                                                        class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
-                                                </td>
-                                                <td>{!! $info->content !!}</td>
+                                                <td>
+                                                    @foreach(json_decode($info->image_path) as $path)
 
+                                                    <img height="50" width="50" src="{{ asset($path) }}"
+                                                        class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
+                                                    @endforeach
+                                                </td>
                                                 <td>
                                                     {{-- <a class="btn btn-primary" href="{{ url('booking/annual/view/') }}">View</a>
                                                     --}}

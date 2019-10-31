@@ -1431,7 +1431,6 @@ class AdminController extends Controller
         $validator = $this->validate($request, [
             'cover' => 'required',
             'title' => 'required',
-            'content' => 'required',
             'year' => 'required',
         ]);
 
@@ -1439,15 +1438,15 @@ class AdminController extends Controller
 
         if ($request->hasFile('cover')) {
             foreach ($request->file('cover') as $image) {
-                $cover = $request->file('cover');
-                $img = $cover->store('images', 'public');
+                // $cover = $request->file('cover');
+                $img = $image->store('images', 'public');
                 $data[] = $img;
             }
         }
         
         $finInfo->image_path = json_encode($data);
         $finInfo->title = $request->title;
-        $finInfo->content = $request->content;
+        $finInfo->content = '';
         $finInfo->year = $request->year;
         $finInfo->save;
         $info = Gallery::all();

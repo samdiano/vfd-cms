@@ -132,7 +132,8 @@
                                         <p class="card-title weight-semi-bold"><a>{{$blog->title}}</a></p>
 
                                         <p class="font-13">{!! str_limit($blog->content, 200)!!}</p>
-                                        <a href="{{url('media/blog/'.$blog->id)}}" class="vfd-text-red weight-semi-bold">Read More</a>
+                                        <a href="{{url('media/blog/'.$blog->id)}}"
+                                            class="vfd-text-red weight-semi-bold">Read More</a>
 
                                     </div>
                                 </div>
@@ -166,11 +167,15 @@
 
                                     <div class="row">
                                         @foreach($gallery as $info)
-                                        @if($gal == $info->year)
+                                        @if($gal == date('Y', strtotime($info->year)))
+                                        @foreach(json_decode($info->image_path) as $path)
                                         <div class="col-md-3">
-                                            <img src="{{ asset($info->image_path) }}" alt="Annual general meeting"
-                                                class="img-fluid" />
+
+                                            <img src="{{ asset($path) }}" width="100" height="100"
+                                                alt="{{$info->title}}" class="img-fluid" />
+
                                         </div>
+                                        @endforeach
                                         @endif
                                         @endforeach
                                     </div>

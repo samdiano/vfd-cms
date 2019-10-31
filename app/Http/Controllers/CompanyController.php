@@ -165,10 +165,10 @@ class CompanyController extends Controller
         $gallery = Gallery::all();
         $galArr = [];
         foreach ($gallery as $gal) {
-            array_push($galArr, $gal->year);
+            $year = date('Y', strtotime($gal->year));
+            array_push($galArr, $year);
         }
         $galYear = array_unique($galArr);
-
         return view('media', ['blog' => $blog, 'galYear' => $galYear, 'gallery' => $gallery, 'company' => $company]);
     }
 }

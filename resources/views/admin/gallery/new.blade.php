@@ -60,14 +60,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3">
-                                            Hyperlink
-                                        </label>
-                                        <div class="col-md-9 col-sm-9">
-                                            <input type="text" name="title" class="form-control">
-                                        </div>
-                                    </div>
+                                    
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3">
                                             Date
