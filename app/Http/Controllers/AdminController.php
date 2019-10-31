@@ -1441,7 +1441,7 @@ class AdminController extends Controller
             foreach ($request->file('cover') as $image) {
                 $cover = $request->file('cover');
                 $img = $cover->store('images', 'public');
-                $data[] = $img
+                $data[] = $img;
             }
         }
         
