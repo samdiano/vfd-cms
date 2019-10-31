@@ -1438,11 +1438,14 @@ class AdminController extends Controller
         $finInfo = new Gallery();
 
         if ($request->hasFile('cover')) {
-            $cover = $request->file('cover');
-            $img = $cover->store('images', 'public');
-            $finInfo->image_path = $img;
+            foreach ($request->file('cover') as $image) {
+                $cover = $request->file('cover');
+                $img = $cover->store('images', 'public');
+                $data[] = $img
+            }
         }
-
+        
+        $finInfo->image_path = json_encode($data);
         $finInfo->title = $request->title;
         $finInfo->content = $request->content;
         $finInfo->year = $request->year;

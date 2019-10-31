@@ -4,6 +4,8 @@
 
 @section('content')
 <div class="content-page">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
     <div class="content">
         <div class="container">
 
@@ -17,16 +19,36 @@
                                 enctype="multipart/form-data" role="form">
                                 {{ csrf_field() }}
                                 <div class="col-lg-10">
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3">
                                             Image
                                         </label>
                                         <div class="col-md-9 col-sm-9">
                                             <label class="btn btn-primary">
-                                                <input type="file" name="cover" accept="image/*" class="form-control"
+                                                <input type="file" name="cover[]" accept="image/*" class="form-control"
                                                     required>
                                                 <i class="fa fa-photo"></i> Add Photo
                                             </label>
+                                        </div>
+                                    </div> --}}
+                                    <div class="col-md-offset-4 col-md-6 m-b-30">
+
+                                        <div
+                                            class="input-group control-group increment">
+                                            <input type="file" name="cover[]" class="form-control">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-success" type="button"><i
+                                                        class="glyphicon glyphicon-plus"></i>Add</button>
+                                            </div>
+                                        </div>
+                                        <div class="clone hide">
+                                            <div class="control-group input-group" style="margin-top:10px">
+                                                <input type="file" name="cover[]" class="form-control">
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-danger" type="button"><i
+                                                            class="glyphicon glyphicon-remove"></i> Remove</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -67,4 +89,20 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+      $(".btn-success").click(function(){ 
+          var html = $(".clone").html();
+          $(".increment").after(html);
+      });
+
+      $("body").on("click",".btn-danger",function(){ 
+          $(this).parents(".control-group ").remove();
+      });
+
+    });
+
+</script>
 @endsection
