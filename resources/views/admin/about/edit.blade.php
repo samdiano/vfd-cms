@@ -50,6 +50,15 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <label class="control-label col-md-2 col-sm-3">
+                                        Side Quote
+                                    </label>
+                                    <div class="col-md-9 col-sm-9">
+                                        <input class="form-control" name="about_quote_side"
+                                            value="{{$company->about_quote_side}}" />
+                                    </div>
+                                </div>
 
                                 <div class="form-group">
                                     <div class="col-md-11">

@@ -50,6 +50,16 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label class="control-label col-md-2 col-sm-3">
+                                        Side Quote
+                                    </label>
+                                    <div class="col-md-9 col-sm-9">
+                                        <input class="form-control" name="career_quote"
+                                            value="{{$company->career_quote_side}}" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
                                     <div class="col-md-offset-2 col-md-9">
                                         <button class="btn btn-lg btn-primary pull-right">Submit</button>
                                     </div>

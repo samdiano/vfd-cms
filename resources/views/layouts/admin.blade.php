@@ -213,7 +213,7 @@
                                     class="zmdi zmdi-layers"></i><span>About us</span>
                                 <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="{{ url('admin/about') }}">Introductory Text</a></li>
+                                <li><a href="{{ url('admin/about') }}">About us</a></li>
                                 <li><a href="{{ url('admin/governance') }}">Governance</a></li>
                                 <li><a href="{{ url('admin/history') }}">Our History</a></li>
                                 <li><a href="{{ url('admin/culture') }}">Our Culture</a></li>
