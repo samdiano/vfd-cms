@@ -16,6 +16,8 @@ class CreateVacanciesTable extends Migration
         Schema::create('vacancies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('role');
+            $table->string('level');
+            $table->string('deadline');
             $table->string('description');
             $table->boolean('active');            
             $table->timestamps();

@@ -105,6 +105,14 @@
         <div class="row mt-4 mb-3 p-font-17">
             <div class="col-md-6">
                 <p class="mt-md-">{!!$company->career!!}</p>
+                <div class="position-relative">
+                    <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">
+                        {{$company->career_quote}}</p>
+                    <img src="img/%E2%80%9C.png" class="img-fluid apostrophe-1 pt-4" />
+                </div>
+
+                <p class="">
+                    {!!$company->career_text!!}</p>
             </div>
 
             <div class="col-md-6">
@@ -337,36 +345,33 @@
 
                     </div>
 
-                    <div class="tab-pane fade" id="career-just" role="tabpanel"
-                                aria-labelledby="career-tab-just">
-                                <div class="accordion md-accordion" id="careerfaq" role="tablist"
-                                    aria-multiselectable="true">
-                                    @foreach($careerFaq as $career)
-                                    <div class="card my-3 border-0">
-                                        <div class="card-header rounded" role="tab" id="faqheading1">
-                                            <a data-toggle="collapse" data-parent="#accordionExfaq"
-                                                href="#{{$career->id}}" aria-expanded="true"
-                                                aria-controls="{{$career->id}}">
-                                                <h5 class="mb-0 text_secondary">
-                                                    <span class="gotham-bold">{{$career->question}}</span> <i
-                                                        class="fa fa-angle-down rotate-icon"></i>
-                                                </h5>
+                    <div class="tab-pane fade" id="career-just" role="tabpanel" aria-labelledby="career-tab-just">
+                        <div class="accordion md-accordion" id="careerfaq" role="tablist" aria-multiselectable="true">
+                            @foreach($careerFaq as $career)
+                            <div class="card my-3 border-0">
+                                <div class="card-header rounded" role="tab" id="faqheading1">
+                                    <a data-toggle="collapse" data-parent="#accordionExfaq" href="#{{$career->id}}"
+                                        aria-expanded="true" aria-controls="{{$career->id}}">
+                                        <h5 class="mb-0 text_secondary">
+                                            <span class="gotham-bold">{{$career->question}}</span> <i
+                                                class="fa fa-angle-down rotate-icon"></i>
+                                        </h5>
 
-                                            </a>
-                                        </div>
+                                    </a>
+                                </div>
 
-                                        <div id="{{$career->id}}" class="collapse show mb-2" role="tabpanel"
-                                            aria-labelledby="faqheading1" data-parent="#accordionExfaq">
-                                            <div class="card-body pt-0">
-                                                <hr class="my-2" />
-                                                {{$career->response}}.
-                                            </div>
-                                        </div>
+                                <div id="{{$career->id}}" class="collapse show mb-2" role="tabpanel"
+                                    aria-labelledby="faqheading1" data-parent="#accordionExfaq">
+                                    <div class="card-body pt-0">
+                                        <hr class="my-2" />
+                                        {{$career->response}}.
                                     </div>
-                                    @endforeach
-
                                 </div>
                             </div>
+                            @endforeach
+
+                        </div>
+                    </div>
 
                 </div>
             </div>

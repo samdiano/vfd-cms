@@ -16,9 +16,11 @@ class CreatePortfolioVacanciesTable extends Migration
         Schema::create('portfolio_vacancies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('role');
+            $table->string('level');
+            $table->string('deadline');
             $table->string('description');
-            $table->string('portfolio');
-            $table->boolean('active');    
+            $table->boolean('active');  
+            $table->string('portfolio');  
             $table->timestamps();
         });
     }

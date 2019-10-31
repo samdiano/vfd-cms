@@ -26,7 +26,7 @@
                                                 </label> --}}
                                     <div class="col-md-offset-2 col-md-9 col-sm-9">
                                         <textarea class="form-control"
-                                            name="career">{{$company->career ?? ''}}</textarea>
+                                            name="career">{!!$company->career !!}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -35,7 +35,7 @@
                                     </label>
                                     <div class="col-md-9 col-sm-9">
                                         <input class="form-control" name="career_quote"
-                                            value="{{$company->career_quote}}" />
+                                            value="{!!$company->career_quote!!}" />
                                     </div>
                                 </div>
 
@@ -45,7 +45,7 @@
                                     </label>
                                     <div class="col-md-9 col-sm-9">
                                         <textarea class="form-control"
-                                            name="career_text">{{$company->career_text}}</textarea>
+                                            name="career_text">{!!$company->career_text!!}</textarea>
                                     </div>
                                 </div>
 

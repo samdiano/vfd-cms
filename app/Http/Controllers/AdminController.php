@@ -236,6 +236,8 @@ class AdminController extends Controller
         ]);
         $company = Company::find(1);
         $company->career = $request->career;
+        $company->career_quote = $request->career_quote;
+        $company->career_text = $request->career_text;
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
