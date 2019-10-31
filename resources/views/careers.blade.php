@@ -23,6 +23,13 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="{{ asset('assets/css/Assets/animate.min.css') }}" type="text/css" rel="stylesheet" />
+    <style>
+        .card {
+            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1) !important;
+            border: 2px solid #E0E0E0 !important;
+            border-radius: 8px !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -92,7 +99,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="font-41 text-white vertical-7 weight-semi-bold">Careers</h3>
+                    <h3 class="font-41 text-white vertical-8 weight-semi-bold">Careers</h3>
                 </div>
             </div>
         </div>
@@ -126,9 +133,9 @@
 
     </div>
 
-    <div class="career-bg-2 mt-5 mb-4">
+    <div class="career-bg-2 mt-0 mb-4">
         <div class="container">
-            <div class="row py-5">
+            <div class="row py-3">
                 <div class="col-md-6">
                     <h5 class="text-white gotham-bold mt-2">Apply for Our Internship/<br />
                         Graduate Trainee Program</h5>
@@ -141,20 +148,22 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="containers">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <ul class="nav nav-tabs nav-justified-career md-tabs mt-4 mb-3 border" id="careerTab" role="tablist">
                     <li class="nav-item waves-effect waves-light">
-                        <a class="nav-link active small-md" id="vacancies-tab-just" data-toggle="tab"
+                        <a class="nav-link active small-md text-center" id="vacancies-tab-just" data-toggle="tab"
                             href="#vacancies-just" role="tab" aria-controls="vacancies-just"
                             aria-selected="true">Vacancies</a>
                     </li>
 
                     <li class="nav-item waves-effect waves-light">
-                        <a class="nav-link small-md" id="portfolios-tab-just" data-toggle="tab" href="#portfolios-just"
-                            role="tab" aria-controls="portfolios-just" aria-selected="true">Portfolio Vacancies</a>
+                        <a class="nav-link small-md text-center" id="portfolios-tab-just" data-toggle="tab"
+                            href="#portfolios-just" role="tab" aria-controls="portfolios-just"
+                            aria-selected="true">Portfolio Vacancies</a>
                     </li>
+
                     <li class="nav-item waves-effect waves-light">
                         <a class="nav-link small-md text-center" id="career-tab-just" data-toggle="tab"
                             href="#career-just" role="tab" aria-controls="career-just" aria-selected="true">Careers
@@ -345,29 +354,28 @@
 
                     </div>
 
-                    <div class="tab-pane fade" id="career-just" role="tabpanel" aria-labelledby="career-tab-just">
-                        <div class="accordion md-accordion" id="careerfaq" role="tablist" aria-multiselectable="true">
+                    <div class="tab-pane fade active container" id="career-just" role="tabpanel" aria-labelledby="career-tab-just">
+							<div class="accordion md-accordion" id="accordionExfaq" role="tablist" aria-multiselectable="true">
                             @foreach($careerFaq as $career)
                             <div class="card my-3 border-0">
-                                <div class="card-header rounded" role="tab" id="faqheading1">
-                                    <a data-toggle="collapse" data-parent="#accordionExfaq" href="#{{$career->id}}"
-                                        aria-expanded="true" aria-controls="{{$career->id}}">
-                                        <h5 class="mb-0 text_secondary">
-                                            <span class="gotham-bold">{{$career->question}}</span> <i
-                                                class="fa fa-angle-down rotate-icon"></i>
-                                        </h5>
+									<div class="card-header rounded" role="tab" id="faqheading1">
+										<a data-toggle="collapse" data-parent="#accordionExfaq" href="#{{$career->id}}" aria-expanded="true"
+										   aria-controls="{{$career->id}}">
+											<h5 class="mb-0 text_secondary">
+												<span class="gotham-bold">{{$career->question}}</span> <i class="fa fa-angle-down rotate-icon"></i>
+											</h5>
 
-                                    </a>
-                                </div>
+										</a>
+									</div>
 
-                                <div id="{{$career->id}}" class="collapse show mb-2" role="tabpanel"
-                                    aria-labelledby="faqheading1" data-parent="#accordionExfaq">
-                                    <div class="card-body pt-0">
-                                        <hr class="my-2" />
-                                        {{$career->response}}.
-                                    </div>
-                                </div>
-                            </div>
+									<div id="{{$career->id}}" class="collapse show mb-2" role="tabpanel" aria-labelledby="faqheading1"
+										 data-parent="#accordionExfaq">
+										<div class="card-body pt-0">
+											<hr class="my-2" />
+											{{$career->response}}
+										</div>
+									</div>
+								</div>
                             @endforeach
 
                         </div>
