@@ -147,6 +147,11 @@
                         <a class="nav-link small-md" id="portfolios-tab-just" data-toggle="tab" href="#portfolios-just"
                             role="tab" aria-controls="portfolios-just" aria-selected="true">Portfolio Vacancies</a>
                     </li>
+                    <li class="nav-item waves-effect waves-light">
+                        <a class="nav-link small-md text-center" id="career-tab-just" data-toggle="tab"
+                            href="#career-just" role="tab" aria-controls="career-just" aria-selected="true">Careers
+                            FAQs</a>
+                    </li>
                 </ul>
 
                 <div class="tab-content" id="myTabContentJust">
@@ -331,6 +336,37 @@
                         </div>
 
                     </div>
+
+                    <div class="tab-pane fade" id="career-just" role="tabpanel"
+                                aria-labelledby="career-tab-just">
+                                <div class="accordion md-accordion" id="careerfaq" role="tablist"
+                                    aria-multiselectable="true">
+                                    @foreach($careerFaq as $career)
+                                    <div class="card my-3 border-0">
+                                        <div class="card-header rounded" role="tab" id="faqheading1">
+                                            <a data-toggle="collapse" data-parent="#accordionExfaq"
+                                                href="#{{$career->id}}" aria-expanded="true"
+                                                aria-controls="{{$career->id}}">
+                                                <h5 class="mb-0 text_secondary">
+                                                    <span class="gotham-bold">{{$career->question}}</span> <i
+                                                        class="fa fa-angle-down rotate-icon"></i>
+                                                </h5>
+
+                                            </a>
+                                        </div>
+
+                                        <div id="{{$career->id}}" class="collapse show mb-2" role="tabpanel"
+                                            aria-labelledby="faqheading1" data-parent="#accordionExfaq">
+                                            <div class="card-body pt-0">
+                                                <hr class="my-2" />
+                                                {{$career->response}}.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
+
+                                </div>
+                            </div>
 
                 </div>
             </div>
