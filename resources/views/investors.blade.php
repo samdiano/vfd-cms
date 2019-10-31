@@ -297,18 +297,15 @@
                                     data-toggle="tab" href="#directors-just" role="tab" aria-controls="directors-just"
                                     aria-selected="true">General FAQs</a>
                             </li>
-                            <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link text-center active small-md" id="portfolios-tab-just"
-                                    data-toggle="tab" href="#portfolios-just" role="tab" aria-controls="portfolios-just"
-                                    aria-selected="true">Career FAQs</a>
-                            </li>
+
 
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link text-center active small-md" id="investor-tab-just" data-toggle="tab"
+                                <a class="nav-link small-md text-center" id="investor-tab-just" data-toggle="tab"
                                     href="#investor-just" role="tab" aria-controls="investor-just"
                                     aria-selected="false">Investor FAQs</a>
                             </li>
                         </ul>
+
 
                         <h6 class="gotham-bold font-weight-bold">Please note, this section applies only to Shareholders
                             of VFD Group</h6>
