@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card-box">
-                        <a class="btn btn-primary" href="{{ url('admin/faq/new') }}"> Add New FAQs</a>
+                        <a class="btn btn-primary" href="{{ url('admin/faq/new') }}"> Add New FAQ</a>
                         <div class="table-rep-plugin">
                             <div class="table-responsive" data-pattern="priority-columns">
                                 {{-- @include('partial.alert') --}}
