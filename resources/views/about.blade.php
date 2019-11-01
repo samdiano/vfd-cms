@@ -140,7 +140,8 @@
                         {!! $company->about !!}
 
                         <div class="position-relative">
-                            <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!! $company->about_quote !!}</p>
+                            <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!!
+                                $company->about_quote !!}</p>
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1 pt-4" />
 
                         </div>
@@ -212,8 +213,8 @@
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="directors-just" role="tabpanel"
                                 aria-labelledby="directors-tab-just">
-                                @foreach($directors as $director)
                                 <div class="row justify-content-center">
+                                    @foreach($directors as $director)
                                     <div class="col-md-5 border-bottom md-border-right border-left py-3">
                                         <div class="row">
                                             <div class="col-md-5" data-toggle="modal" data-target="#{{$director->id}}">
@@ -236,9 +237,9 @@
                                         </div>
                                     </div>
 
+                                    @endforeach
                                 </div>
-
-
+                                @foreach($directors as $director)
                                 <div class="modal fade" id="{{$director->id}}" tabindex="-1" role="dialog"
                                     aria-labelledby="exec_infoLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -535,7 +536,8 @@
                         {!! $company->history !!}
 
                         <div class="position-relative">
-                            <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!! $company->history_quote !!}</p>
+                            <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!!
+                                $company->history_quote !!}</p>
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1 pt-4" />
 
                         </div>
@@ -659,7 +661,8 @@
                         {!! $company->impact !!}
 
                         <div class="position-relative">
-                            <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!! $company->impact_quote !!}</p>
+                            <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!!
+                                $company->impact_quote !!}</p>
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1 pt-4" />
 
                         </div>
