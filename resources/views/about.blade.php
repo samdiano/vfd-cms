@@ -140,20 +140,23 @@
                         {!! $company->about !!}
 
                         <div class="position-relative">
+                                @if($company->about_quote)
                             <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!!
                                 $company->about_quote !!}</p>
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1 pt-4" />
-
+@endif
                         </div>
                         {!! $company->about_text !!}
                     </div>
 
 
                     <div class="offset-md-1 col-md-3">
+                        @if($company->about_quote_side)
                         <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1" />
                         <p class="font-26 text-green-deep gotham-bold weight-semi-bold text-center">
                             {!! $company->about_quote_side !!}
                         </p>
+                        @endif
                         @if($company->profile)
                         <div class="card mb-5 onhover cursor" data-toggle="modal" data-target="#download">
                             <img src="{{ asset('assets/img/download_2.png') }}" class="card-img-top" alt="...">
@@ -536,20 +539,23 @@
                         {!! $company->history !!}
 
                         <div class="position-relative">
+                                @if($company->history_quote)
                             <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!!
                                 $company->history_quote !!}</p>
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1 pt-4" />
-
+                                @endif
                         </div>
                         {!! $company->history_text !!}
                     </div>
 
 
                     <div class="offset-md-1 col-md-3">
+                        @if($company->history_quote_side)
                         <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1" />
                         <p class="font-26 text-green-deep gotham-bold weight-semi-bold text-center">
                             {!! $company->history_quote_side!!}
                         </p>
+                        @endif
                         @if($company->profile)
                         <div class="card mb-5 onhover cursor" data-toggle="modal" data-target="#download">
                             <img src="{{ asset('assets/img/download_2.png') }}" class="card-img-top" alt="...">
@@ -661,10 +667,11 @@
                         {!! $company->impact !!}
 
                         <div class="position-relative">
+                                @if($company->impact_quote)
                             <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!!
                                 $company->impact_quote !!}</p>
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1 pt-4" />
-
+@endif
                         </div>
                         <ul style="list-style:disc">
                             {!! $company->impact_text !!}
@@ -672,10 +679,12 @@
                     </div>
 
                     <div class="offset-md-1 col-md-3">
+                        @if($company->impact_quote_side)
                         <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1" />
                         <p class="font-26 text-green-deep gotham-bold weight-semi-bold text-center">
                             {!! $company->impact_quote_side !!}
                         </p>
+                        @endif
                         @if($company->profile)
                         <div class="card mb-5 onhover cursor" data-toggle="modal" data-target="#download">
                             <img src="{{ asset('assets/img/download_2.png') }}" class="card-img-top" alt="...">
