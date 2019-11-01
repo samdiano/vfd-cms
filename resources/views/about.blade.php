@@ -154,7 +154,7 @@
                         <p class="font-26 text-green-deep gotham-bold weight-semi-bold text-center">
                             {!! $company->about_quote_side !!}
                         </p>
-
+                        @if($company->profile)
                         <div class="card mb-5 onhover cursor" data-toggle="modal" data-target="#download">
                             <img src="{{ asset('assets/img/download_2.png') }}" class="card-img-top" alt="...">
                             <div class="card-body pt-0 d-flex px-0">
@@ -168,7 +168,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        @endif
                         <div class="mt-4 card shadow">
                             <a class="twitter-timeline" data-width="300" data-height="300"
                                 href="https://twitter.com/VFDGroup?ref_src=twsrc%5Etfw">Tweets by VFDGroup</a>
@@ -550,7 +550,7 @@
                         <p class="font-26 text-green-deep gotham-bold weight-semi-bold text-center">
                             {!! $company->history_quote_side!!}
                         </p>
-
+                        @if($company->profile)
                         <div class="card mb-5 onhover cursor" data-toggle="modal" data-target="#download">
                             <img src="{{ asset('assets/img/download_2.png') }}" class="card-img-top" alt="...">
                             <div class="card-body pt-0 d-flex px-0">
@@ -564,7 +564,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        @endif
                         <div class="mt-4 card shadow">
                             <a class="twitter-timeline" data-width="300" data-height="300"
                                 href="https://twitter.com/VFDGroup?ref_src=twsrc%5Etfw">Tweets by VFDGroup</a>
@@ -676,7 +676,7 @@
                         <p class="font-26 text-green-deep gotham-bold weight-semi-bold text-center">
                             {!! $company->impact_quote_side !!}
                         </p>
-
+                        @if($company->profile)
                         <div class="card mb-5 onhover cursor" data-toggle="modal" data-target="#download">
                             <img src="{{ asset('assets/img/download_2.png') }}" class="card-img-top" alt="...">
                             <div class="card-body pt-0 d-flex px-0">
@@ -690,7 +690,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        @endif
                         <div class="mt-4 card shadow">
                             <a class="twitter-timeline" data-width="300" data-height="300"
                                 href="https://twitter.com/VFDGroup?ref_src=twsrc%5Etfw">Tweets by VFDGroup</a>
