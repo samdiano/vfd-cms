@@ -1169,7 +1169,7 @@ class AdminController extends Controller
             'response' => 'required',
             'type' => 'required',
         ]);
-        if($request->type == 'general'){
+        if ($request->type == 'general') {
             $faq = new FAQ();
             $faq->question = $request->question;
             $faq->response = $request->response;
@@ -1182,7 +1182,7 @@ class AdminController extends Controller
                 return redirect()->back()->withErrors($validator);
             }
         }
-        if($request->type == 'career'){
+        if ($request->type == 'career') {
             $faq = new CareerFaq();
             $faq->question = $request->question;
             $faq->response = $request->response;
@@ -1195,7 +1195,7 @@ class AdminController extends Controller
                 return redirect()->back()->withErrors($validator);
             }
         }
-        if($request->type == 'investor'){
+        if ($request->type == 'investor') {
             $faq = new InvestorFaq();
             $faq->question = $request->question;
             $faq->response = $request->response;
@@ -1481,7 +1481,7 @@ class AdminController extends Controller
                 $data[] = $img;
             }
         }
-        
+
         $finInfo->image_path = json_encode($data);
         $finInfo->title = $request->title;
         $finInfo->content = '';
@@ -1628,7 +1628,7 @@ class AdminController extends Controller
      */
     public function port()
     {
-        $info = Profile::where('section', '=', 'portfolio')->get();
+        $info = PortfolioHead::orderBy('rank', 'asc')->get();
         return view('admin.governance.portfolio', ['info' => $info]);
     }
     /**
@@ -1638,7 +1638,8 @@ class AdminController extends Controller
      */
     public function management()
     {
-        $info = Profile::where('section', '=', 'management')->get();
+
+        $info = Management::orderBy('rank', 'asc')->get();
         return view('admin.governance.management', ['info' => $info]);
     }
     /**
@@ -1648,7 +1649,7 @@ class AdminController extends Controller
      */
     public function directors()
     {
-        $info = Profile::where('section', '=', 'directors')->get();
+        $info = Profile::where('section', '=', 'directors')->orderBy('rank','asc')->get();
         return view('admin.governance.directors', ['info' => $info]);
     }
 
@@ -1677,30 +1678,91 @@ class AdminController extends Controller
             'description' => 'required',
         ]);
 
-        $finInfo = new Profile();
+        if ($request->section == "directors") {
+            $finInfo = new Profile();
+            $info = Profile::where('section', '=', 'directors')->orderBy('rank','asc')->get();
 
-        if ($request->hasFile('logo')) {
-            $cover = $request->file('logo');
-            $img = $cover->store('images', 'public');
-            $finInfo->image = $img;
+            if ($request->hasFile('logo')) {
+                $cover = $request->file('logo');
+                $img = $cover->store('images', 'public');
+                $finInfo->image = $img;
+            }
+            
+            $finInfo->name = $request->name;
+            $finInfo->brief = $request->brief;
+            $finInfo->role = $request->role;
+            $finInfo->section = $request->section;
+            $finInfo->rank = $request->section;
+            $finInfo->description = $request->description;
+            $finInfo->twitter = $request->twitter;
+            $finInfo->instagram = $request->instagram;
+            $finInfo->facebook = $request->facebook;
+            $finInfo->linkedin = $request->linkedin;
+            $finInfo->save;
+
+            if ($finInfo->save()) {
+                return redirect('admin/governance/directors')->with('info', $info);
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
         }
 
-        $finInfo->name = $request->name;
-        $finInfo->brief = $request->brief;
-        $finInfo->role = $request->role;
-        $finInfo->section = $request->section;
-        $finInfo->description = $request->description;
-        $finInfo->twitter = $request->twitter;
-        $finInfo->instagram = $request->instagram;
-        $finInfo->facebook = $request->facebook;
-        $finInfo->linkedin = $request->linkedin;
-        $finInfo->save;
-        $info = Profile::all();
+        if ($request->section == "management") {
+            $finInfo = new Management();
 
-        if ($finInfo->save()) {
-            return redirect('admin/governance')->with('info', $info);
-        } else {
-            return redirect()->back()->withErrors($validator);
+            if ($request->hasFile('logo')) {
+                $cover = $request->file('logo');
+                $img = $cover->store('images', 'public');
+                $finInfo->image = $img;
+            }
+
+            $finInfo->name = $request->name;
+            $finInfo->brief = $request->brief;
+            $finInfo->role = $request->role;
+            $finInfo->section = $request->section;
+            $finInfo->rank = $request->section;
+            $finInfo->description = $request->description;
+            $finInfo->twitter = $request->twitter;
+            $finInfo->instagram = $request->instagram;
+            $finInfo->facebook = $request->facebook;
+            $finInfo->linkedin = $request->linkedin;
+            $finInfo->save;
+            $info = Management::orderBy('rank','asc')->get();
+
+            if ($finInfo->save()) {
+                return redirect('admin/governance/management')->with('info', $info);
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
         }
+        if ($request->section == "portfolio") {
+            $finInfo = new PortfolioHead();
+
+            if ($request->hasFile('logo')) {
+                $cover = $request->file('logo');
+                $img = $cover->store('images', 'public');
+                $finInfo->image = $img;
+            }
+
+            $finInfo->name = $request->name;
+            $finInfo->brief = $request->brief;
+            $finInfo->role = $request->role;
+            $finInfo->section = $request->section;
+            $finInfo->rank = $request->section;
+            $finInfo->description = $request->description;
+            $finInfo->twitter = $request->twitter;
+            $finInfo->instagram = $request->instagram;
+            $finInfo->facebook = $request->facebook;
+            $finInfo->linkedin = $request->linkedin;
+            $finInfo->save;
+            $info = PortfolioHead::orderBy('rank','asc')->get();
+
+            if ($finInfo->save()) {
+                return redirect('admin/governance/portfolios')->with('info', $info);
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
+        }
+
     }
 }

@@ -16,6 +16,8 @@ use App\Subscriber;
 use App\FinancialInformation;
 use App\ConferenceCall;
 use App\InvestorFaq;
+use App\Management;
+use App\PortfolioHead;
 use App\PressRelease;
 use App\PortfolioVacancy;
 
@@ -32,9 +34,9 @@ class CompanyController extends Controller
     public function about()
     {
         $company = Company::find(1);
-        $directors = Profile::where('section', '=', 'directors')->get();
-        $portfolio = Profile::where('section', '=', 'portfolio')->get();
-        $management = Profile::where('section', '=', 'management')->get();
+        $directors = Profile::where('section', '=', 'directors')->orderBy('rank','asc')->get();
+        $portfolio = PortfolioHead::orderBy('rank','asc')->get();
+        $management = Management::orderBy('rank','asc')->get();
         $values = Value::all();
 
         return view('about', ['company' => $company, 'directors' => $directors, 'portfolio' => $portfolio, 'management' => $management, 'values' => $values]);

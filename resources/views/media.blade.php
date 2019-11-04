@@ -139,7 +139,6 @@
                             @endforeach
                         </div>
 
-
                     </div>
 
                     <div class="tab-pane fade" id="portfolios-just" role="tabpanel"
