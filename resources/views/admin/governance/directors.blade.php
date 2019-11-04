@@ -24,7 +24,7 @@
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Image</th>
-                                                <th>Description</th>
+                                                <th>Role</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -35,7 +35,7 @@
                                                 <td><img height="200" width="200" src="{{ asset($info->image) }}"
                                                         class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
                                                 </td>
-                                                <td>{!! $info->description !!}</td>
+                                                <td>{!! $info->role !!}</td>
 
                                                 <td>
                                                     {{-- <a class="btn btn-primary" href="{{ url('booking/annual/view/') }}">View</a>

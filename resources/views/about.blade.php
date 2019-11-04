@@ -220,7 +220,7 @@
                                     @foreach($directors as $director)
                                     <div class="col-md-5 border-bottom md-border-right border-left py-3">
                                         <div class="row">
-                                            <div class="col-md-5" data-toggle="modal" data-target="#{{$director->id}}">
+                                            <div class="col-md-5" data-toggle="modal" data-target="#{{$director->name}}">
                                                 <div class="curso" style="background-image: url({{ asset($director->image) }});
                                                                               background-size: contain;
                                                                               background-position: center;
@@ -233,97 +233,96 @@
 
                                             <div class="col-md-6">
                                                 <h5 class="cursor font-weight-bold mt-3 text-md-left text-center"
-                                                    data-toggle="modal" data-target="#{{$director->id}}">
+                                                    data-toggle="modal" data-target="#{{$director->name}}">
                                                     {{$director->name}}</h5>
                                                 <p class="text-md-left text-center">{{$director->role}}</p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    @endforeach
-                                </div>
-                                @foreach($directors as $director)
-                                <div class="modal fade" id="{{$director->id}}" tabindex="-1" role="dialog"
-                                    aria-labelledby="exec_infoLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header border-0 pb-0">
-                                                <img src="{{ asset('assets/img/close_button.png') }}" alt="close button"
-                                                    class="img-fluid position-absolute close_button"
-                                                    data-dismiss="modal" aria-label="Close" />
-                                                <button type="button" class="d-none">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row">
-
-                                                    <div class="col-md-5">
-                                                        <div style="background-image: url({{ asset($director->image) }});
-                                                                            background-size: contain;
-                                                                            background-position: center;
-                                                                            background-repeat: no-repeat;
-                                                                            width: 100%;
-                                                                            height: 250px;">
-
-                                                        </div>
+                                    <div class="modal fade" id="{{$director->name}}" tabindex="-1" role="dialog"
+                                            aria-labelledby="exec_infoLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header border-0 pb-0">
+                                                        <img src="{{ asset('assets/img/close_button.png') }}" alt="close button"
+                                                            class="img-fluid position-absolute close_button"
+                                                            data-dismiss="modal" aria-label="Close" />
+                                                        <button type="button" class="d-none">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
                                                     </div>
-
-                                                    <div class="col-md-7">
-                                                        <h6 class="font-weight-bold">{{$director->role}}</h6>
-                                                        <h4 class="font-weight-bold gotham-bold">{{$director->name}}
-                                                        </h4>
-                                                        <p class="small">{!! $director->brief !!}
-                                                            <a href="{{ url('profile',['id' => $director->id]) }}"
-                                                                class="text-danger mb-3">Detailed Profile</a>
-
-                                                            <ul class="list-inline mt-2">
-                                                                @if($director->facebook)
-                                                                <li class="list-inline-item"><a target="_blank"
-                                                                        href="{{$director->facebook}}"><img
-                                                                            src="{{ asset('assets/img/social_icons/facebook.png')}}"
-                                                                            class="img-fluid" /></a></li>
-                                                                @endif
-                                                                @if($director->linkedin)
-                                                                <li class="list-inline-item"><a target="_blank"
-                                                                        href="{{$director->linkedin}}"><img
-                                                                            src="{{ asset('assets/img/social_icons/linkedin.png')}}"
-                                                                            class="img-fluid" /></a></li>
-                                                                @endif
-                                                                @if($director->instagram)
-                                                                <li class="list-inline-item"><a target="_blank"
-                                                                        href="{{$director->instagram}}"><img
-                                                                            src="{{ asset('assets/img/social_icons/instagram.png')}}"
-                                                                            class="img-fluid" /></a></li>
-                                                                @endif
-                                                                @if($director->twitter)
-                                                                <li class="list-inline-item"><a target="_blank"
-                                                                        href="{{$director->twitter}}"><img
-                                                                            src="{{ asset('assets/img/social_icons/twitter.png')}}"
-                                                                            class="img-fluid" /></a></li>
-                                                                @endif
-                                                            </ul>
+                                                    <div class="modal-body">
+                                                        <div class="row">
+        
+                                                            <div class="col-md-5">
+                                                                <div style="background-image: url({{ asset($director->image) }});
+                                                                                    background-size: contain;
+                                                                                    background-position: center;
+                                                                                    background-repeat: no-repeat;
+                                                                                    width: 100%;
+                                                                                    height: 250px;">
+        
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="col-md-7">
+                                                                <h6 class="font-weight-bold">{{$director->role}}</h6>
+                                                                <h4 class="font-weight-bold gotham-bold">{{$director->name}}
+                                                                </h4>
+                                                                <p class="small">{!! $director->brief !!}
+                                                                    <a href="{{ url('profile',['id' => $director->id]) }}"
+                                                                        class="text-danger mb-3">Detailed Profile</a>
+        
+                                                                    <ul class="list-inline mt-2">
+                                                                        @if($director->facebook)
+                                                                        <li class="list-inline-item"><a target="_blank"
+                                                                                href="{{$director->facebook}}"><img
+                                                                                    src="{{ asset('assets/img/social_icons/facebook.png')}}"
+                                                                                    class="img-fluid" /></a></li>
+                                                                        @endif
+                                                                        @if($director->linkedin)
+                                                                        <li class="list-inline-item"><a target="_blank"
+                                                                                href="{{$director->linkedin}}"><img
+                                                                                    src="{{ asset('assets/img/social_icons/linkedin.png')}}"
+                                                                                    class="img-fluid" /></a></li>
+                                                                        @endif
+                                                                        @if($director->instagram)
+                                                                        <li class="list-inline-item"><a target="_blank"
+                                                                                href="{{$director->instagram}}"><img
+                                                                                    src="{{ asset('assets/img/social_icons/instagram.png')}}"
+                                                                                    class="img-fluid" /></a></li>
+                                                                        @endif
+                                                                        @if($director->twitter)
+                                                                        <li class="list-inline-item"><a target="_blank"
+                                                                                href="{{$director->twitter}}"><img
+                                                                                    src="{{ asset('assets/img/social_icons/twitter.png')}}"
+                                                                                    class="img-fluid" /></a></li>
+                                                                        @endif
+                                                                    </ul>
+                                                            </div>
+                                                        </div>
+        
+                                                    </div>
+                                                    <div class="modal-footer px-5 py-4 border-0">
                                                     </div>
                                                 </div>
-
-                                            </div>
-                                            <div class="modal-footer px-5 py-4 border-0">
                                             </div>
                                         </div>
-                                    </div>
+
+                                    @endforeach
                                 </div>
-                                @endforeach
 
                             </div>
 
                             <div class="tab-pane fade" id="portfolios-just" role="tabpanel"
                                 aria-labelledby="portfolios-tab-just">
-                                @foreach($portfolio as $director)
                                 <div class="row justify-content-center">
+                                    @foreach($portfolio as $port)
                                     <div class="col-md-5 border-bottom md-border-right border-left py-3">
                                         <div class="row">
-                                            <div class="col-md-5" data-toggle="modal" data-target="#{{$director->id}}">
-                                                <div class="curso" style="background-image: url({{ asset($director->image) }});
+                                            <div class="col-md-5" data-toggle="modal" data-target="#{{$port->name}}">
+                                                <div class="curso" style="background-image: url({{ asset($port->image) }});
                                                                                   background-size: contain;
                                                                                   background-position: center;
                                                                                   background-repeat: no-repeat;
@@ -335,98 +334,96 @@
 
                                             <div class="col-md-6">
                                                 <h5 class="cursor font-weight-bold mt-3 text-md-left text-center"
-                                                    data-toggle="modal" data-target="#{{$director->id}}">
-                                                    {{$director->name}}</h5>
-                                                <p class="text-md-left text-center">{{$director->role}}</p>
+                                                    data-toggle="modal" data-target="#{{$port->name}}">
+                                                    {{$port->name}}</h5>
+                                                <p class="text-md-left text-center">{{$port->role}}</p>
                                             </div>
                                         </div>
                                     </div>
 
-                                </div>
-
-
-                                <div class="modal fade" id="{{$director->id}}" tabindex="-1" role="dialog"
-                                    aria-labelledby="exec_infoLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header border-0 pb-0">
-                                                <img src="{{ asset('assets/img/close_button.png') }}" alt="close button"
-                                                    class="img-fluid position-absolute close_button"
-                                                    data-dismiss="modal" aria-label="Close" />
-                                                <button type="button" class="d-none">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row">
-
-                                                    <div class="col-md-5">
-                                                        <div style="background-image: url({{ asset($director->image) }});
-                                                                                background-size: contain;
-                                                                                background-position: center;
-                                                                                background-repeat: no-repeat;
-                                                                                width: 100%;
-                                                                                height: 250px;">
-
+                                <div class="modal fade" id="{{$port->name}}" tabindex="-1" role="dialog"
+                                        aria-labelledby="exec_infoLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header border-0 pb-0">
+                                                    <img src="{{ asset('assets/img/close_button.png') }}" alt="close button"
+                                                        class="img-fluid position-absolute close_button"
+                                                        data-dismiss="modal" aria-label="Close" />
+                                                    <button type="button" class="d-none">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+    
+                                                        <div class="col-md-5">
+                                                            <div style="background-image: url({{ asset($port->image) }});
+                                                                                    background-size: contain;
+                                                                                    background-position: center;
+                                                                                    background-repeat: no-repeat;
+                                                                                    width: 100%;
+                                                                                    height: 250px;">
+    
+                                                            </div>
+                                                        </div>
+    
+                                                        <div class="col-md-7">
+                                                            <h6 class="font-weight-bold">{{$port->role}}</h6>
+                                                            <h4 class="font-weight-bold gotham-bold">{{$port->name}}
+                                                            </h4>
+                                                            <p class="small">{!! $port->brief !!}
+                                                                <a href="{{ url('profile',['id' => $port->id]) }}"
+                                                                    class="text-danger mb-3">Detailed Profile</a>
+    
+                                                                <ul class="list-inline mt-2">
+                                                                    @if($port->facebook)
+                                                                    <li class="list-inline-item"><a target="_blank"
+                                                                            href="{{$port->facebook}}"><img
+                                                                                src="{{ asset('assets/img/social_icons/facebook.png')}}"
+                                                                                class="img-fluid" /></a></li>
+                                                                    @endif
+                                                                    @if($port->linkedin)
+                                                                    <li class="list-inline-item"><a target="_blank"
+                                                                            href="{{$port->linkedin}}"><img
+                                                                                src="{{ asset('assets/img/social_icons/linkedin.png')}}"
+                                                                                class="img-fluid" /></a></li>
+                                                                    @endif
+                                                                    @if($port->instagram)
+                                                                    <li class="list-inline-item"><a target="_blank"
+                                                                            href="{{$port->instagram}}"><img
+                                                                                src="{{ asset('assets/img/social_icons/instagram.png')}}"
+                                                                                class="img-fluid" /></a></li>
+                                                                    @endif
+                                                                    @if($port->twitter)
+                                                                    <li class="list-inline-item"><a target="_blank"
+                                                                            href="{{$port->twitter}}"><img
+                                                                                src="{{ asset('assets/img/social_icons/twitter.png')}}"
+                                                                                class="img-fluid" /></a></li>
+                                                                    @endif
+                                                                </ul>
                                                         </div>
                                                     </div>
-
-                                                    <div class="col-md-7">
-                                                        <h6 class="font-weight-bold">{{$director->role}}</h6>
-                                                        <h4 class="font-weight-bold gotham-bold">{{$director->name}}
-                                                        </h4>
-                                                        <p class="small">{!! $director->brief !!}
-                                                            <a href="{{ url('profile',['id' => $director->id]) }}"
-                                                                class="text-danger mb-3">Detailed Profile</a>
-
-                                                            <ul class="list-inline mt-2">
-                                                                @if($director->facebook)
-                                                                <li class="list-inline-item"><a target="_blank"
-                                                                        href="{{$director->facebook}}"><img
-                                                                            src="{{ asset('assets/img/social_icons/facebook.png')}}"
-                                                                            class="img-fluid" /></a></li>
-                                                                @endif
-                                                                @if($director->linkedin)
-                                                                <li class="list-inline-item"><a target="_blank"
-                                                                        href="{{$director->linkedin}}"><img
-                                                                            src="{{ asset('assets/img/social_icons/linkedin.png')}}"
-                                                                            class="img-fluid" /></a></li>
-                                                                @endif
-                                                                @if($director->instagram)
-                                                                <li class="list-inline-item"><a target="_blank"
-                                                                        href="{{$director->instagram}}"><img
-                                                                            src="{{ asset('assets/img/social_icons/instagram.png')}}"
-                                                                            class="img-fluid" /></a></li>
-                                                                @endif
-                                                                @if($director->twitter)
-                                                                <li class="list-inline-item"><a target="_blank"
-                                                                        href="{{$director->twitter}}"><img
-                                                                            src="{{ asset('assets/img/social_icons/twitter.png')}}"
-                                                                            class="img-fluid" /></a></li>
-                                                                @endif
-                                                            </ul>
-                                                    </div>
+    
                                                 </div>
-
-                                            </div>
-                                            <div class="modal-footer px-5 py-4 border-0">
+                                                <div class="modal-footer px-5 py-4 border-0">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    @endforeach
                                 </div>
-                                @endforeach
                             </div>
 
 
                             <div class="tab-pane fade" id="management-just" role="tabpanel"
                                 aria-labelledby="management-tab-just">
 
-                                @foreach($management as $director)
                                 <div class="row justify-content-center">
+                                    @foreach($management as $mgt)
                                     <div class="col-md-5 border-bottom md-border-right border-left py-3">
                                         <div class="row">
-                                            <div class="col-md-5" data-toggle="modal" data-target="#{{$director->id}}">
-                                                <div class="curso" style="background-image: url({{ asset($director->image) }});
+                                            <div class="col-md-5" data-toggle="modal" data-target="#{{$mgt->name}}">
+                                                <div class="curso" style="background-image: url({{ asset($mgt->image) }});
                                                                                   background-size: contain;
                                                                                   background-position: center;
                                                                                   background-repeat: no-repeat;
@@ -438,86 +435,86 @@
 
                                             <div class="col-md-6">
                                                 <h5 class="cursor font-weight-bold mt-3 text-md-left text-center"
-                                                    data-toggle="modal" data-target="#{{$director->id}}">
-                                                    {{$director->name}}</h5>
-                                                <p class="text-md-left text-center">{{$director->role}}</p>
+                                                    data-toggle="modal" data-target="#{{$mgt->name}}">
+                                                    {{$mgt->name}}</h5>
+                                                <p class="text-md-left text-center">{{$mgt->role}}</p>
                                             </div>
                                         </div>
                                     </div>
 
-                                </div>
-
-
-                                <div class="modal fade" id="{{$director->id}}" tabindex="-1" role="dialog"
-                                    aria-labelledby="exec_infoLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header border-0 pb-0">
-                                                <img src="{{ asset('assets/img/close_button.png') }}" alt="close button"
-                                                    class="img-fluid position-absolute close_button"
-                                                    data-dismiss="modal" aria-label="Close" />
-                                                <button type="button" class="d-none">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row">
-
-                                                    <div class="col-md-5">
-                                                        <div style="background-image: url({{ asset($director->image) }});
-                                                                                background-size: contain;
-                                                                                background-position: center;
-                                                                                background-repeat: no-repeat;
-                                                                                width: 100%;
-                                                                                height: 250px;">
-
+                                <div class="modal fade" id="{{$mgt->name}}" tabindex="-1" role="dialog"
+                                        aria-labelledby="exec_infoLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header border-0 pb-0">
+                                                    <img src="{{ asset('assets/img/close_button.png') }}" alt="close button"
+                                                        class="img-fluid position-absolute close_button"
+                                                        data-dismiss="modal" aria-label="Close" />
+                                                    <button type="button" class="d-none">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+    
+                                                        <div class="col-md-5">
+                                                            <div style="background-image: url({{ asset($mgt->image) }});
+                                                                                    background-size: contain;
+                                                                                    background-position: center;
+                                                                                    background-repeat: no-repeat;
+                                                                                    width: 100%;
+                                                                                    height: 250px;">
+    
+                                                            </div>
+                                                        </div>
+    
+                                                        <div class="col-md-7">
+                                                            <h6 class="font-weight-bold">{{$mgt->role}}</h6>
+                                                            <h4 class="font-weight-bold gotham-bold">{{$mgt->name}}
+                                                            </h4>
+                                                            <p class="small">{!! $mgt->brief !!}
+                                                                <a href="{{ url('profile',['id' => $mgt->id]) }}"
+                                                                    class="text-danger mb-3">Detailed Profile</a>
+    
+                                                                <ul class="list-inline mt-2">
+                                                                    @if($mgt->facebook)
+                                                                    <li class="list-inline-item"><a target="_blank"
+                                                                            href="{{$mgt->facebook}}"><img
+                                                                                src="{{ asset('assets/img/social_icons/facebook.png')}}"
+                                                                                class="img-fluid" /></a></li>
+                                                                    @endif
+                                                                    @if($mgt->linkedin)
+                                                                    <li class="list-inline-item"><a target="_blank"
+                                                                            href="{{$mgt->linkedin}}"><img
+                                                                                src="{{ asset('assets/img/social_icons/linkedin.png')}}"
+                                                                                class="img-fluid" /></a></li>
+                                                                    @endif
+                                                                    @if($mgt->instagram)
+                                                                    <li class="list-inline-item"><a target="_blank"
+                                                                            href="{{$mgt->instagram}}"><img
+                                                                                src="{{ asset('assets/img/social_icons/instagram.png')}}"
+                                                                                class="img-fluid" /></a></li>
+                                                                    @endif
+                                                                    @if($mgt->twitter)
+                                                                    <li class="list-inline-item"><a target="_blank"
+                                                                            href="{{$mgt->twitter}}"><img
+                                                                                src="{{ asset('assets/img/social_icons/twitter.png')}}"
+                                                                                class="img-fluid" /></a></li>
+                                                                    @endif
+                                                                </ul>
                                                         </div>
                                                     </div>
-
-                                                    <div class="col-md-7">
-                                                        <h6 class="font-weight-bold">{{$director->role}}</h6>
-                                                        <h4 class="font-weight-bold gotham-bold">{{$director->name}}
-                                                        </h4>
-                                                        <p class="small">{!! $director->brief !!}
-                                                            <a href="{{ url('profile',['id' => $director->id]) }}"
-                                                                class="text-danger mb-3">Detailed Profile</a>
-
-                                                            <ul class="list-inline mt-2">
-                                                                @if($director->facebook)
-                                                                <li class="list-inline-item"><a target="_blank"
-                                                                        href="{{$director->facebook}}"><img
-                                                                            src="{{ asset('assets/img/social_icons/facebook.png')}}"
-                                                                            class="img-fluid" /></a></li>
-                                                                @endif
-                                                                @if($director->linkedin)
-                                                                <li class="list-inline-item"><a target="_blank"
-                                                                        href="{{$director->linkedin}}"><img
-                                                                            src="{{ asset('assets/img/social_icons/linkedin.png')}}"
-                                                                            class="img-fluid" /></a></li>
-                                                                @endif
-                                                                @if($director->instagram)
-                                                                <li class="list-inline-item"><a target="_blank"
-                                                                        href="{{$director->instagram}}"><img
-                                                                            src="{{ asset('assets/img/social_icons/instagram.png')}}"
-                                                                            class="img-fluid" /></a></li>
-                                                                @endif
-                                                                @if($director->twitter)
-                                                                <li class="list-inline-item"><a target="_blank"
-                                                                        href="{{$director->twitter}}"><img
-                                                                            src="{{ asset('assets/img/social_icons/twitter.png')}}"
-                                                                            class="img-fluid" /></a></li>
-                                                                @endif
-                                                            </ul>
-                                                    </div>
+    
                                                 </div>
-
-                                            </div>
-                                            <div class="modal-footer px-5 py-4 border-0">
+                                                <div class="modal-footer px-5 py-4 border-0">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    @endforeach
                                 </div>
-                                @endforeach
+
+                              
                             </div>
                         </div>
                     </div>

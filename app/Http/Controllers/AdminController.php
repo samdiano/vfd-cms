@@ -1681,18 +1681,23 @@ class AdminController extends Controller
         if ($request->section == "directors") {
             $finInfo = new Profile();
             $info = Profile::where('section', '=', 'directors')->orderBy('rank','asc')->get();
+            $max_info= 0;
 
             if ($request->hasFile('logo')) {
                 $cover = $request->file('logo');
                 $img = $cover->store('images', 'public');
                 $finInfo->image = $img;
             }
-            
+
+            if (count($info)>=1) {
+                # code...
+                $max_info= $info->last()->rank;
+            }
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;
             $finInfo->section = $request->section;
-            $finInfo->rank = $request->section;
+            $finInfo->rank = $max_info+1;
             $finInfo->description = $request->description;
             $finInfo->twitter = $request->twitter;
             $finInfo->instagram = $request->instagram;
@@ -1709,25 +1714,29 @@ class AdminController extends Controller
 
         if ($request->section == "management") {
             $finInfo = new Management();
+            $info = Management::orderBy('rank','asc')->get();
+            $max_info= 0;
 
             if ($request->hasFile('logo')) {
                 $cover = $request->file('logo');
                 $img = $cover->store('images', 'public');
                 $finInfo->image = $img;
             }
-
+            if (count($info)>=1) {
+                # code...
+                $max_info= $info->last()->rank;
+            }
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;
             $finInfo->section = $request->section;
-            $finInfo->rank = $request->section;
+            $finInfo->rank = $max_info+1;
             $finInfo->description = $request->description;
             $finInfo->twitter = $request->twitter;
             $finInfo->instagram = $request->instagram;
             $finInfo->facebook = $request->facebook;
             $finInfo->linkedin = $request->linkedin;
             $finInfo->save;
-            $info = Management::orderBy('rank','asc')->get();
 
             if ($finInfo->save()) {
                 return redirect('admin/governance/management')->with('info', $info);
@@ -1737,25 +1746,29 @@ class AdminController extends Controller
         }
         if ($request->section == "portfolio") {
             $finInfo = new PortfolioHead();
-
+            $info = PortfolioHead::orderBy('rank','asc')->get();
+            $max_info=0;
             if ($request->hasFile('logo')) {
                 $cover = $request->file('logo');
                 $img = $cover->store('images', 'public');
                 $finInfo->image = $img;
+            }
+            if (count($info)>=1) {
+                # code...
+                $max_info= $info->last()->rank;
             }
 
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;
             $finInfo->section = $request->section;
-            $finInfo->rank = $request->section;
+            $finInfo->rank = $max_info+1;
             $finInfo->description = $request->description;
             $finInfo->twitter = $request->twitter;
             $finInfo->instagram = $request->instagram;
             $finInfo->facebook = $request->facebook;
             $finInfo->linkedin = $request->linkedin;
             $finInfo->save;
-            $info = PortfolioHead::orderBy('rank','asc')->get();
 
             if ($finInfo->save()) {
                 return redirect('admin/governance/portfolios')->with('info', $info);
