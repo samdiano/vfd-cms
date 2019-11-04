@@ -65,7 +65,7 @@
                                                                 <div class="xs-mt-50">
                                                                     <button type="button" data-dismiss="modal"
                                                                         class="btn btn-space btn-default">Cancel</button>
-                                                                    <a href="{{ url('booking/annual/')}}"
+                                                                    <a href="{{ url('admin/subsidiaries/delete', ['id' => $info->id])}}"
                                                                         class="btn btn-space btn-danger"
                                                                         type="submit">Delete</a>
                                                                 </div>

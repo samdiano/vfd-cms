@@ -1551,6 +1551,34 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function postSubsidiaryDelete($id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = Product::find($id);
+
+        // $finInfo->delete();
+        $info = Product::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->delete()) {
+            return redirect()->back()->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function governance()
     {
         $info = Profile::all();

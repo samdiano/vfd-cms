@@ -233,6 +233,9 @@ Route::get('/admin/subsidiaries/new','AdminController@subsidiaryNew')->name('sub
 
 Route::post('/admin/subsidiaries/new','AdminController@postSubsidiaryNew')->name('postSubsidiaryNew');
 
+Route::get('/admin/subsidiaries/delete/{id}','AdminController@postSubsidiaryDelete')->name('postFaqDelete');
+
+
 
 Route::get('/admin/governance','AdminController@governance')->name('governance');
 

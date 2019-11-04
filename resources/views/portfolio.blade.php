@@ -108,8 +108,7 @@
                     @foreach($services as $service)
                     <div class="col-md-6">
                         <ul>
-                            <li class="custom-list my-2">{{$service->name}}</li>
-
+                            <li class="custom-list my-2"><a class="service-link" href="{{$service->link}}">{{$service->name}}</a></li>
                         </ul>
                     </div>
                     @endforeach
