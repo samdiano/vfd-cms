@@ -10,6 +10,7 @@ use App\Profile;
 use App\Blog;
 use App\Gallery;
 use App\FAQ;
+use App\Value;
 use App\Subscriber;
 use App\FinancialInformation;
 use App\ConferenceCall;
@@ -32,8 +33,9 @@ class CompanyController extends Controller
         $directors = Profile::where('section', '=', 'directors')->get();
         $portfolio = Profile::where('section', '=', 'portfolio')->get();
         $management = Profile::where('section', '=', 'management')->get();
+        $values = Value::all();
 
-        return view('about', ['company' => $company, 'directors' => $directors, 'portfolio' => $portfolio, 'management' => $management]);
+        return view('about', ['company' => $company, 'directors' => $directors, 'portfolio' => $portfolio, 'management' => $management, 'values' => $values]);
     }
 
     public function getDownload(Request $request)

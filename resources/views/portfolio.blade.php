@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/hamburger.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/Assets/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/Assets/mdb.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/Assets/mdb.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('assets/css/Assets/mdb-theme.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/media-queries.css') }}">
 
@@ -100,8 +100,8 @@
         <img src="{{ asset('assets/img/insert_subtract.png') }}"
             class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
     </div>
-    <div class="container">
-        <div class="row">
+    <div class="container vertical-1">
+        <div class="row mt-4 font-17">
             <div class="col-md-8">
                 {!!$company->portfolio!!}
                 <div class="row">

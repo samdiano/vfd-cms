@@ -140,11 +140,11 @@
                         {!! $company->about !!}
 
                         <div class="position-relative">
-                                @if($company->about_quote)
+                            @if($company->about_quote)
                             <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!!
                                 $company->about_quote !!}</p>
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1 pt-4" />
-@endif
+                            @endif
                         </div>
                         {!! $company->about_text !!}
                     </div>
@@ -539,11 +539,11 @@
                         {!! $company->history !!}
 
                         <div class="position-relative">
-                                @if($company->history_quote)
+                            @if($company->history_quote)
                             <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!!
                                 $company->history_quote !!}</p>
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1 pt-4" />
-                                @endif
+                            @endif
                         </div>
                         {!! $company->history_text !!}
                     </div>
@@ -600,6 +600,7 @@
                 </div>
 
                 <div class="row justify-content-center mt-5">
+                    @if($company->vision)
                     <div class="col-md-4 my-5">
                         <img src="{{ asset('assets/img/red_apostrophe.png') }}" class="img-fluid apostrophe-1" />
                         <h4 class="vfd-text-red font-weight-bold">Our Vision</h4>
@@ -607,7 +608,8 @@
                             {{ $company->vision }}
                         </p>
                     </div>
-
+                    @endif
+                    @if($company->mission)
                     <div class="col-md-4 offset-md-1 my-4">
                         <img src="{{ asset('assets/img/red_apostrophe.png') }}" class="img-fluid apostrophe-1" />
                         <h4 class="vfd-text-red font-weight-bold">Our Mission</h4>
@@ -615,43 +617,62 @@
                             {{ $company->mission}}
                         </p>
                     </div>
+                    @endif
 
                 </div>
-
                 <div class="row justify-content-center mt-1">
+
+                    @foreach ($values as $key=>$value)
+                    @if ($key %2==0 )
                     <div class="col-md-4 my-4">
-                        <h4 class="text-green-deep font-weight-bold">Integrity</h4>
+                        <h4 class="text-green-deep font-weight-bold">{{$value->value}}</h4>
                         <p class="font-14 text-green-deep">
-                            We are thorough, honest and accountable in every area of business.
+                            {{$value->description}}
                         </p>
                     </div>
 
+                    @else
                     <div class="col-md-4 offset-md-1 my-4">
-                        <h4 class="text-green-deep font-weight-bold">Empathy</h4>
+                        <h4 class="text-green-deep font-weight-bold">{{$value->value}}</h4>
                         <p class="font-14 text-green-deep">
-                            We are aware of the feelings and emotions of our stakeholders.
+                            {{$value->description}}
                         </p>
                     </div>
-
+                    @endif
+                    @endforeach
                 </div>
 
-                <div class="row justify-content-center mt-1">
-                    <div class="col-md-4 my-4">
-                        <h4 class="text-green-deep font-weight-bold">Innovation</h4>
-                        <p class="font-14 text-green-deep">
-                            We are continually creating innovative ways to serve our customers better, even as we remain
-                            on top of the foremost financial technologies.
-                        </p>
-                    </div>
-
-                    <div class="col-md-4 offset-md-1 my-4">
-                        <h4 class="text-green-deep font-weight-bold">Teamwork</h4>
-                        <p class="font-14 text-green-deep">
-                            We believe in the importance of collaboration to achieve value for our stakeholders.
-                        </p>
-                    </div>
-
+                {{-- <div class="row justify-content-center mt-1">
+                <div class="col-md-4 my-4">
+                    <h4 class="text-green-deep font-weight-bold">Integrity</h4>
+                    <p class="font-14 text-green-deep">
+                        We are thorough, honest and accountable in every area of business.
+                    </p>
                 </div>
+
+                <div class="col-md-4 offset-md-1 my-4">
+                    <h4 class="text-green-deep font-weight-bold">Empathy</h4>
+                    <p class="font-14 text-green-deep">
+                        We are aware of the feelings and emotions of our stakeholders.
+                    </p>
+                </div>
+                <div class="col-md-4 my-4">
+                    <h4 class="text-green-deep font-weight-bold">Integrity</h4>
+                    <p class="font-14 text-green-deep">
+                        We are thorough, honest and accountable in every area of business.
+                    </p>
+                </div>
+
+                <div class="col-md-4 offset-md-1 my-4">
+                    <h4 class="text-green-deep font-weight-bold">Empathy</h4>
+                    <p class="font-14 text-green-deep">
+                        We are aware of the feelings and emotions of our stakeholders.
+                    </p>
+                </div>
+
+            </div> --}}
+
+
             </div>
 
             <!--                Our impact tab starts here-->
@@ -667,11 +688,11 @@
                         {!! $company->impact !!}
 
                         <div class="position-relative">
-                                @if($company->impact_quote)
+                            @if($company->impact_quote)
                             <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">{!!
                                 $company->impact_quote !!}</p>
                             <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1 pt-4" />
-@endif
+                            @endif
                         </div>
                         <ul style="list-style:disc">
                             {!! $company->impact_text !!}
