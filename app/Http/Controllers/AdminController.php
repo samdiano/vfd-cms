@@ -16,6 +16,11 @@ use App\FinancialInformation;
 use App\ConferenceCall;
 use App\PressRelease;
 use App\PortfolioVacancy;
+use App\CareerFaq;
+use App\InvestorFaq;
+use App\Director;
+use App\Management;
+use App\PortfolioHead;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -1126,7 +1131,7 @@ class AdminController extends Controller
      */
     public function careerFaq()
     {
-        $faq = FAQ::where('type', '=', 'career')->get();
+        $faq = CareerFaq::all();
         return view('admin.faq.career', ['faq' => $faq]);
     }
 
@@ -1137,7 +1142,7 @@ class AdminController extends Controller
      */
     public function investorFaq()
     {
-        $faq = FAQ::where('type', '=', 'investor')->get();
+        $faq = InvestorFaq::all();
         return view('admin.faq.investor', ['faq' => $faq]);
     }
 
@@ -1164,16 +1169,44 @@ class AdminController extends Controller
             'response' => 'required',
             'type' => 'required',
         ]);
-        $faq = new FAQ();
-        $faq->question = $request->question;
-        $faq->response = $request->response;
-        $faq->type = $request->type;
-        $faq->save;
-        // return view('admin.about.edit',['company' => $company]);
-        if ($faq->save()) {
-            return redirect('admin/faq');
-        } else {
-            return redirect()->back()->withErrors($validator);
+        if($request->type == 'general'){
+            $faq = new FAQ();
+            $faq->question = $request->question;
+            $faq->response = $request->response;
+            $faq->type = $request->type;
+            $faq->rank = $request->type;
+            $faq->save;
+            if ($faq->save()) {
+                return redirect('admin/faq/general');
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
+        }
+        if($request->type == 'career'){
+            $faq = new CareerFaq();
+            $faq->question = $request->question;
+            $faq->response = $request->response;
+            // $faq->type = $request->type;
+            $faq->rank = $request->type;
+            $faq->save;
+            if ($faq->save()) {
+                return redirect('admin/faq/career');
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
+        }
+        if($request->type == 'investor'){
+            $faq = new InvestorFaq();
+            $faq->question = $request->question;
+            $faq->response = $request->response;
+            // $faq->type = $request->type;
+            $faq->rank = $request->type;
+            $faq->save;
+            if ($faq->save()) {
+                return redirect('admin/faq/investor');
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
         }
     }
 

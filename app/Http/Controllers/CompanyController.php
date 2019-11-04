@@ -8,12 +8,14 @@ use App\Service;
 use App\Product;
 use App\Profile;
 use App\Blog;
+use App\CareerFaq;
 use App\Gallery;
 use App\FAQ;
 use App\Value;
 use App\Subscriber;
 use App\FinancialInformation;
 use App\ConferenceCall;
+use App\InvestorFaq;
 use App\PressRelease;
 use App\PortfolioVacancy;
 
@@ -104,7 +106,7 @@ class CompanyController extends Controller
         $microfinance_vacancies = PortfolioVacancy::where('portfolio', '=', 'microfinance')->get();
         $dynasty_vacancies = PortfolioVacancy::where('portfolio', '=', 'dynasty')->get();
         $anchoria_vacancies = PortfolioVacancy::where('portfolio', '=', 'anchoria')->get();
-        $careerFaq = Faq::where('type', '=', 'career')->get();
+        $careerFaq = CareerFaq::where('type', '=', 'career')->get();
         return view('careers', ['company' => $company, 'vacancies' => $vacancies, 'bridge_vacancies' => $bridge_vacancies, 'everdon_vacancies' => $everdon_vacancies, 'microfinance_vacancies' => $microfinance_vacancies, 'dynasty_vacancies' => $dynasty_vacancies, 'anchoria_vacancies' => $anchoria_vacancies, 'careerFaq' => $careerFaq]);
     }
 
@@ -116,8 +118,7 @@ class CompanyController extends Controller
     public function investors()
     {
         $generalFaq = Faq::where('type', '=', 'general')->get();
-        $investorFaq = Faq::where('type', '=', 'investor')->get();
-        $careerFaq = Faq::where('type', '=', 'career')->get();
+        $investorFaq = InvestorFaq::all();
         $finInfo = FinancialInformation::all();
         $finArr = [];
         foreach ($finInfo as $fin) {
@@ -138,7 +139,7 @@ class CompanyController extends Controller
             array_push($pressArr, $press->year);
         }
         $pressYear = array_unique($pressArr);
-        return view('investors', ['generalFaq' => $generalFaq, 'investorFaq' => $investorFaq, 'careerFaq' => $careerFaq, 'finYear' => $finYear, 'finInfo' => $finInfo, 'conYear' => $conYear, 'conInfo' => $conInfo, 'pressYear' => $pressYear, 'pressInfo' => $pressInfo,]);
+        return view('investors', ['generalFaq' => $generalFaq, 'investorFaq' => $investorFaq, 'finYear' => $finYear, 'finInfo' => $finInfo, 'conYear' => $conYear, 'conInfo' => $conInfo, 'pressYear' => $pressYear, 'pressInfo' => $pressInfo,]);
     }
 
     /**
