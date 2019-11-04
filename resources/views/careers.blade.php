@@ -186,12 +186,35 @@
                         <div class="row justify-content-center">
                             @foreach($vacancies as $vacancy)
                             <div class="col-md-3 my-2">
-                                <div class="p-3 career-card text-center cursor" data-toggle="modal" data-target="#job">
+                                <div class="p-3 career-card text-center cursor" data-toggle="modal"
+                                    data-target="#{{$vacancy->id}}">
                                     <h5 class="text_secondary gotham-bold mt-2">{{$vacancy->role}}</h5>
                                     <p class="text_secondary mb-1 small">Posted on
                                         {{date_format($vacancy->created_at,'d-m-Y')}}</p>
                                 </div>
                             </div>
+                            <div class="modal fade" id="{{$vacancy->id}}" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header pb-1">
+                                                <h5 class="modal-title">{{$vacancy->role}}</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h6><span class="weight-semi-bold">Level: {{$vacancy->level}}</span></h6>
+                                                <h6><span class="weight-semi-bold">Department: {{$vacancy->department}} </span></h6>
+                                                <h6><span class="weight-semi-bold">Role: {{$vacancy->role}} </span></h6>
+                                                <h6><span class="weight-semi-bold">Deadline: {{$vacancy->deadline}} </span></h6>
+                                                <h6><span class="weight-semi-bold">Description: {{$vacancy->description}}</span></h6>
+                                            </div>
+                                            <div class="modal-footer border-0">
+                                                <a href="mailto:someone@example.com" target="_top" type="button" class="btn btn-success">Apply</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                         </div>
                     </div>
@@ -354,28 +377,31 @@
 
                     </div>
 
-                    <div class="tab-pane fade active container" id="career-just" role="tabpanel" aria-labelledby="career-tab-just">
-							<div class="accordion md-accordion" id="accordionExfaq" role="tablist" aria-multiselectable="true">
+                    <div class="tab-pane fade active container" id="career-just" role="tabpanel"
+                        aria-labelledby="career-tab-just">
+                        <div class="accordion md-accordion" id="accordionExfaq" role="tablist"
+                            aria-multiselectable="true">
                             @foreach($careerFaq as $career)
                             <div class="card my-3 border-0">
-									<div class="card-header rounded" role="tab" id="faqheading1">
-										<a data-toggle="collapse" data-parent="#accordionExfaq" href="#{{$career->id}}" aria-expanded="true"
-										   aria-controls="{{$career->id}}">
-											<h5 class="mb-0 text_secondary">
-												<span class="gotham-bold">{{$career->question}}</span> <i class="fa fa-angle-down rotate-icon"></i>
-											</h5>
+                                <div class="card-header rounded" role="tab" id="faqheading1">
+                                    <a data-toggle="collapse" data-parent="#accordionExfaq" href="#{{$career->id}}"
+                                        aria-expanded="true" aria-controls="{{$career->id}}">
+                                        <h5 class="mb-0 text_secondary">
+                                            <span class="gotham-bold">{{$career->question}}</span> <i
+                                                class="fa fa-angle-down rotate-icon"></i>
+                                        </h5>
 
-										</a>
-									</div>
+                                    </a>
+                                </div>
 
-									<div id="{{$career->id}}" class="collapse show mb-2" role="tabpanel" aria-labelledby="faqheading1"
-										 data-parent="#accordionExfaq">
-										<div class="card-body pt-0">
-											<hr class="my-2" />
-											{{$career->response}}
-										</div>
-									</div>
-								</div>
+                                <div id="{{$career->id}}" class="collapse show mb-2" role="tabpanel"
+                                    aria-labelledby="faqheading1" data-parent="#accordionExfaq">
+                                    <div class="card-body pt-0">
+                                        <hr class="my-2" />
+                                        {{$career->response}}
+                                    </div>
+                                </div>
+                            </div>
                             @endforeach
 
                         </div>
@@ -429,28 +455,10 @@
     <!--/.Footer-->
 
     <!--Job Modal -->
-		<div class="modal fade" id="job" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header pb-1">
-                            <h5 class="modal-title">Job Title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <h6><span class="weight-semi-bold">Level: </span></h6>
-                            <h6><span class="weight-semi-bold">Department: </span></h6>
-                            <h6><span class="weight-semi-bold">Role: </span></h6>
-                            <h6><span class="weight-semi-bold">Deadline: </span></h6>
-                            <h6><span class="weight-semi-bold">Description: </span></h6>
-                        </div>
-                        <div class="modal-footer border-0">
-                            <a href="mailto:someone@example.com" target="_top" type="button" class="btn btn-success">Apply</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    {{-- @foreach ($vacancies as $vacancy )
+    
+
+    @endforeach --}}
 
 </body>
 
