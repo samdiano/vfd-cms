@@ -17,6 +17,7 @@ class CreateFAQSTable extends Migration
             $table->bigIncrements('id');
             $table->string('question');    
             $table->string('response');    
+            $table->string('rank');    
             $table->enum('type', ['investor', 'general', 'career']);  
             $table->timestamps();
         });

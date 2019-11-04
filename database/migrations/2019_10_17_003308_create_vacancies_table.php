@@ -19,6 +19,7 @@ class CreateVacanciesTable extends Migration
             $table->string('level');
             $table->string('deadline');
             $table->string('description');
+            $table->string('department');
             $table->boolean('active');            
             $table->timestamps();
         });

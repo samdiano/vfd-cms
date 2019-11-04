@@ -46,6 +46,33 @@
                                                 class="form-control" required>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3">
+                                            Level
+                                        </label>
+                                        <div class="col-md-9 col-sm-9">
+                                            <input type="text" name="level" 
+                                                class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3">
+                                                Department
+                                            </label>
+                                            <div class="col-md-9 col-sm-9">
+                                                <input type="text" name="department" 
+                                                    class="form-control" required>
+                                            </div>
+                                        </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3">
+                                            Deadline
+                                        </label>
+                                        <div class="col-md-9 col-sm-9">
+                                            <input type="date" name="deadline"
+                                                class="form-control" required>
+                                        </div>
+                                    </div>
 
                                     <div class="form-group">
                                         <div class="col-md-12">

@@ -19,6 +19,7 @@ class CreateProfilesTable extends Migration
             $table->string('role');
             $table->string('image');
             $table->string('section');
+            $table->string('rank');
             $table->text('brief');
             $table->text('description');
             $table->string('facebook')->nullable();

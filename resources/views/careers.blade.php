@@ -186,7 +186,7 @@
                         <div class="row justify-content-center">
                             @foreach($vacancies as $vacancy)
                             <div class="col-md-3 my-2">
-                                <div class="p-3 career-card text-center">
+                                <div class="p-3 career-card text-center cursor" data-toggle="modal" data-target="#job">
                                     <h5 class="text_secondary gotham-bold mt-2">{{$vacancy->role}}</h5>
                                     <p class="text_secondary mb-1 small">Posted on
                                         {{date_format($vacancy->created_at,'d-m-Y')}}</p>
@@ -427,6 +427,30 @@
 
     </footer>
     <!--/.Footer-->
+
+    <!--Job Modal -->
+		<div class="modal fade" id="job" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header pb-1">
+                            <h5 class="modal-title">Job Title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6><span class="weight-semi-bold">Level: </span></h6>
+                            <h6><span class="weight-semi-bold">Department: </span></h6>
+                            <h6><span class="weight-semi-bold">Role: </span></h6>
+                            <h6><span class="weight-semi-bold">Deadline: </span></h6>
+                            <h6><span class="weight-semi-bold">Description: </span></h6>
+                        </div>
+                        <div class="modal-footer border-0">
+                            <a href="mailto:someone@example.com" target="_top" type="button" class="btn btn-success">Apply</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 </body>
 

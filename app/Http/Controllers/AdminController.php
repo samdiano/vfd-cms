@@ -613,6 +613,9 @@ class AdminController extends Controller
 
         $vacancy->role = $request->role;
         $vacancy->description = $request->description;
+        $vacancy->level = $request->level;
+        $vacancy->deadline = $request->deadline;
+        $vacancy->department = $request->department;
         $vacancy->active = true;
         $vacancy->save;
         $vacancies = Vacancy::all();
