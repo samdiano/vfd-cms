@@ -125,7 +125,7 @@
                             <div class="col-md-4 my-3">
 
                                 <div class="card">
-                                    <img class="card-img-top" src="{{ asset($blog->image_path) }}" alt="post">
+                                    <a href="{{url('media/blog/'.$blog->id)}}"><img class="card-img-top" src="{{ asset($blog->image_path) }}" alt="post"></a>
 
                                     <div class="card-body grey-bg px-3">
 
