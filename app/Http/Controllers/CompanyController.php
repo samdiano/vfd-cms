@@ -106,7 +106,7 @@ class CompanyController extends Controller
         $microfinance_vacancies = PortfolioVacancy::where('portfolio', '=', 'microfinance')->get();
         $dynasty_vacancies = PortfolioVacancy::where('portfolio', '=', 'dynasty')->get();
         $anchoria_vacancies = PortfolioVacancy::where('portfolio', '=', 'anchoria')->get();
-        $careerFaq = CareerFaq::where('type', '=', 'career')->get();
+        $careerFaq = CareerFaq::all();
         return view('careers', ['company' => $company, 'vacancies' => $vacancies, 'bridge_vacancies' => $bridge_vacancies, 'everdon_vacancies' => $everdon_vacancies, 'microfinance_vacancies' => $microfinance_vacancies, 'dynasty_vacancies' => $dynasty_vacancies, 'anchoria_vacancies' => $anchoria_vacancies, 'careerFaq' => $careerFaq]);
     }
 
