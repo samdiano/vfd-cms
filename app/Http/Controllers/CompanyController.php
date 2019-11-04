@@ -119,6 +119,7 @@ class CompanyController extends Controller
     {
         $generalFaq = Faq::where('type', '=', 'general')->get();
         $investorFaq = InvestorFaq::all();
+        $careerFaq = CareerFaq::all();
         $finInfo = FinancialInformation::all();
         $finArr = [];
         foreach ($finInfo as $fin) {
@@ -139,7 +140,7 @@ class CompanyController extends Controller
             array_push($pressArr, $press->year);
         }
         $pressYear = array_unique($pressArr);
-        return view('investors', ['generalFaq' => $generalFaq, 'investorFaq' => $investorFaq, 'finYear' => $finYear, 'finInfo' => $finInfo, 'conYear' => $conYear, 'conInfo' => $conInfo, 'pressYear' => $pressYear, 'pressInfo' => $pressInfo,]);
+        return view('investors', ['generalFaq' => $generalFaq, 'investorFaq' => $investorFaq, 'careerFaq' => $careerFaq, 'finYear' => $finYear, 'finInfo' => $finInfo, 'conYear' => $conYear, 'conInfo' => $conInfo, 'pressYear' => $pressYear, 'pressInfo' => $pressInfo,]);
     }
 
     /**
