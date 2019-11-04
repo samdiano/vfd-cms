@@ -126,7 +126,6 @@
 
                                 <div class="card">
                                     <a href="{{url('media/blog/'.$blog->id)}}"><img class="card-img-top" src="{{ asset($blog->image_path) }}" alt="post"></a>
-
                                     <div class="card-body grey-bg px-3">
 
                                         <p class="card-title weight-semi-bold"><a>{{$blog->title}}</a></p>
@@ -134,10 +133,8 @@
                                         <p class="font-13">{!! str_limit($blog->content, 200)!!}</p>
                                         <a href="{{url('media/blog/'.$blog->id)}}"
                                             class="vfd-text-red weight-semi-bold">Read More</a>
-
                                     </div>
                                 </div>
-
                             </div>
                             @endforeach
                         </div>
