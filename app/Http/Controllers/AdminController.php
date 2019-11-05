@@ -700,13 +700,36 @@ class AdminController extends Controller
         $vacancy->role = $request->role;
         $vacancy->description = $request->description;
         $vacancy->portfolio = $request->portfolio;
+        $vacancy->level = $request->level;
+        $vacancy->deadline = $request->deadline;
+        // $vacancy->department = $request->department;
         $vacancy->active = true;
         $vacancy->save;
         $vacancies = PortfolioVacancy::all();
 
         // return view('admin.about.edit',['company' => $company]);
         if ($vacancy->save()) {
-            return redirect('admin/portfolio-vacancies')->with('vacancies', $vacancies);
+            if ($request->portfolio == 'bridge') {
+                # code...
+            return redirect('admin/portfolio/bridge')->with('vacancies', $vacancies);
+
+            }
+            if ($request->portfolio == 'microfinance') {
+            return redirect('admin/portfolio/microfinance')->with('vacancies', $vacancies);
+            # code...
+            }
+            if ($request->portfolio == 'everdon') {
+            return redirect('admin/portfolio/everdon')->with('vacancies', $vacancies);
+            # code...
+            }
+            if ($request->portfolio == 'dynasty') {
+            return redirect('admin/portfolio/dynasty')->with('vacancies', $vacancies);
+            # code...dynasty
+            }
+            if ($request->portfolio == 'anchoria') {
+            return redirect('admin/portfolio/anchoria')->with('vacancies', $vacancies);
+            # code...
+            }
         } else {
             return redirect()->back()->withErrors($validator);
         }
