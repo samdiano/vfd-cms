@@ -239,6 +239,10 @@ Route::get('/admin/subsidiaries/delete/{id}','AdminController@postSubsidiaryDele
 
 Route::get('/admin/governance','AdminController@governance')->name('governance');
 
+Route::get('/admin/governance/directors/edit/{id}','AdminController@directorsEdit')->name('adminVacancyPost'); 
+
+Route::post('/admin/governance/directors/edit/{id}','AdminController@postDirectorsEdit')->name('adminVacancyPost'); 
+
 Route::get('/admin/governance/directors','AdminController@directors')->name('governance');
 
 Route::get('/admin/governance/directors/delete/{id}','AdminController@postDirectorsDelete')->name('postFaqDelete');

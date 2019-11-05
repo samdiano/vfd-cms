@@ -42,10 +42,11 @@
                                                 <td>
                                                     {{-- <a class="btn btn-primary" href="{{ url('booking/annual/view/') }}">View</a>
                                                     --}}
-                                                    {{-- <a class="btn btn-info" href="{{ url('booking/annual/view/') }}">Edit</a>
-                                                    --}}
+                                                    <a class="btn btn-info" href="{{ url('admin/governance/directors/edit', ['id' => $info->id]) }}">Edit</a>
+                                                   
                                                     <a data-toggle="modal" data-target="#{{$info->id}}" href="#"
-                                                        class="btn btn-warning">Change Priority</a>
+                                                            class="btn btn-warning">Change Priority</a>
+                                                            
                                                     <a data-toggle="modal" data-target="#{{$info->id}}del" href="#"
                                                         class="btn btn-danger">Delete</a>
                                                 </td>
@@ -94,8 +95,9 @@
                                                                 <div class="text-danger"><span
                                                                         class="modal-main-icon mdi mdi-close-circle-o"></span>
                                                                 </div>
-                                                                <h3>Warning!</h3>
-                                                                <p>You are about to delete a request.</p>
+                                                                    <h3>Update Priority</h3>
+                                                                    {{-- <h3>Warning!</h3> --}}
+                                                                {{-- <p>Chan</p> --}}
                                                                 <form class="form-horizontal"
                                                                     action="{{ url('admin/governance/directors/rank', ['id' => $info->id]) }}"
                                                                     method="post" enctype="multipart/form-data"

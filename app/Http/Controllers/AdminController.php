@@ -1672,17 +1672,16 @@ class AdminController extends Controller
         //     'year' => 'required',
         // ]);
         $finInfo = PortfolioHead::find($id);
-        
+
         $finInfo->rank = $request->rank;
         $info = PortfolioHead::orderBy('rank', 'asc')->get();
         foreach ($info as $key => $info) {
             # code...rank
             if ($info->rank == $request->rank) {
                 # code...
-                $info->rank+=1;
+                $info->rank += 1;
             }
             $info->save();
-
         }
         $saved = $finInfo->save();
 
@@ -1694,7 +1693,7 @@ class AdminController extends Controller
             # code...
             if (($info->rank > $request->rank)) {
                 # code...
-                $index +=1;
+                $index += 1;
                 // return $index;
                 $info->rank = 0;
                 $info->rank = $index;
@@ -1763,17 +1762,16 @@ class AdminController extends Controller
         //     'year' => 'required',
         // ]);
         $finInfo = Management::find($id);
-        
+
         $finInfo->rank = $request->rank;
         $info = Management::orderBy('rank', 'asc')->get();
         foreach ($info as $key => $info) {
             # code...rank
             if ($info->rank == $request->rank) {
                 # code...
-                $info->rank+=1;
+                $info->rank += 1;
             }
             $info->save();
-
         }
         $saved = $finInfo->save();
 
@@ -1785,7 +1783,7 @@ class AdminController extends Controller
             # code...
             if (($info->rank > $request->rank)) {
                 # code...
-                $index +=1;
+                $index += 1;
                 // return $index;
                 $info->rank = 0;
                 $info->rank = $index;
@@ -1811,6 +1809,62 @@ class AdminController extends Controller
     {
         $info = Profile::where('section', '=', 'directors')->orderBy('rank', 'asc')->get();
         return view('admin.governance.directors', ['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function directorsEdit($id)
+    {
+        $info = Profile::find($id);
+        return view('admin.governance.edit', ['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postDirectorsEdit(Request $request, $id)
+    {
+        $validator = $this->validate($request, [
+            // 'cover' => 'required',
+            // 'document' => 'required',
+            'role' => 'required',
+            // 'year' => 'required',
+        ]);
+        $finInfo = Profile::find($id);
+
+        if ($request->hasFile('logo')) {
+            $cover = $request->file('logo');
+            $img = $cover->store('images', 'public');
+            $finInfo->image = $img;
+        }
+
+
+        // return $request;
+        $finInfo->name = $request->name;
+        $finInfo->brief = $request->brief;
+        $finInfo->role = $request->role;
+        // $finInfo->section = $request->section;
+        $finInfo->description = $request->description;
+        $finInfo->twitter = $request->twitter;
+        $finInfo->instagram = $request->instagram;
+        $finInfo->facebook = $request->facebook;
+        $finInfo->linkedin = $request->linkedin;
+        $finInfo->save;
+
+        $info = Profile::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->save()) {
+            return redirect('admin/governance/directors')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
     }
 
     /**
@@ -1853,17 +1907,16 @@ class AdminController extends Controller
         //     'year' => 'required',
         // ]);
         $finInfo = Profile::find($id);
-        
+
         $finInfo->rank = $request->rank;
         $info = Profile::where('section', '=', 'directors')->orderBy('rank', 'asc')->get();
         foreach ($info as $key => $info) {
             # code...rank
             if ($info->rank == $request->rank) {
                 # code...
-                $info->rank+=1;
+                $info->rank += 1;
             }
             $info->save();
-
         }
         $saved = $finInfo->save();
 
@@ -1875,7 +1928,7 @@ class AdminController extends Controller
             # code...
             if (($info->rank > $request->rank)) {
                 # code...
-                $index +=1;
+                $index += 1;
                 // return $index;
                 $info->rank = 0;
                 $info->rank = $index;
