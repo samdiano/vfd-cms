@@ -88,6 +88,11 @@ Route::get('/admin/quote', 'AdminController@quote')->name('quote');
 Route::post('/admin/quote','AdminController@quoteEdit')->name('quoteEdit');
 
 
+Route::get('/admin/contact', 'AdminController@contact')->name('quote');
+
+Route::post('/admin/contact','AdminController@contactEdit')->name('quoteEdit');
+
+
 Route::get('/admin/career', 'AdminController@career')->name('adminCareer');
 
 Route::post('/admin/career', 'AdminController@careerEdit')->name('adminCareerPost');

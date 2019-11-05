@@ -145,6 +145,45 @@ class AdminController extends Controller
         }
     }
 
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contact()
+    {
+        $company = Company::find(1);
+        return view('admin.contact.edit', ['company' => $company]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contactEdit(Request $request)
+    {
+        $validator = $this->validate($request, [
+            'email1' => 'required',
+        ]);
+        $company = Company::find(1);
+        $company->phone = $request->phone ;
+        $company->email1 = $request->email1;
+        if ($request->email2) {
+            # code...
+            $company->email2 = $request->email2;
+        }
+        $company->address = $request->address;
+        $company->save;
+        // return view('admin.about.edit',['company' => $company]);
+        if ($company->save()) {
+            return redirect('admin/contact')->with('company', $company);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
     /**
      * Show the company's about page
      *

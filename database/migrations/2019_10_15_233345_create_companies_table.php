@@ -37,6 +37,10 @@ class CreateCompaniesTable extends Migration
             $table->text('mission');
             $table->string('profile');
             $table->string('quote');
+            $table->string('email1');
+            $table->string('email2');
+            $table->string('address');
+            $table->string('phone');
             $table->string('youtube_link');
             $table->timestamps();
         });

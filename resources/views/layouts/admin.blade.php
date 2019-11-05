@@ -276,6 +276,12 @@
                         </li>
 
                         <li>
+                            <a href="/admin/contact" class="waves-effect"><i class="zmdi zmdi-layers"></i>
+                                <span> Contact Page </span> </a>
+                        </li>
+
+
+                        <li>
                             <a href="/admin/subscribers" class="waves-effect"><i class="zmdi zmdi-layers"></i>
                                 <span> Subscribers </span> </a>
                         </li>
