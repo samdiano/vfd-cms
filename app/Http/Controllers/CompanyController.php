@@ -20,8 +20,7 @@ use App\Management;
 use App\PortfolioHead;
 use App\PressRelease;
 use App\PortfolioVacancy;
-
-
+use App\Video;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -169,12 +168,19 @@ class CompanyController extends Controller
         $company = Company::find(1);
         $blog = Blog::all();
         $gallery = Gallery::all();
+        $video = Video::all();
         $galArr = [];
+        $vidArr = [];
         foreach ($gallery as $gal) {
             $year = date('Y', strtotime($gal->year));
             array_push($galArr, $year);
         }
+        foreach ($video as $vid) {
+            $year = date('Y', strtotime($vid->year));
+            array_push($vidArr, $year);
+        }
         $galYear = array_unique($galArr);
-        return view('media', ['blog' => $blog, 'galYear' => $galYear, 'gallery' => $gallery, 'company' => $company]);
+        $vidYear = array_unique($vidArr);
+        return view('media', ['blog' => $blog, 'galYear' => $galYear, 'gallery' => $gallery, 'vidYear' => $vidYear, 'video' => $video, 'company' => $company]);
     }
 }

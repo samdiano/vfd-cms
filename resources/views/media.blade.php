@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/Assets/mdb.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/Assets/mdb-theme.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/media-queries.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/modal-video.min.css') }}">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="{{ asset('assets/css/Assets/animate.min.css') }}" type="text/css" rel="stylesheet" />
@@ -114,6 +116,11 @@
                         <a class="nav-link small-md" id="portfolios-tab-just" data-toggle="tab" href="#portfolios-just"
                             role="tab" aria-controls="portfolios-just" aria-selected="true">Gallery</a>
                     </li>
+
+                    <li class="nav-item waves-effect waves-light">
+                        <a class="nav-link small-md" id="videos-tab-just" data-toggle="tab" href="#videos-just"
+                            role="tab" aria-controls="videos-just" aria-selected="true">Videos</a>
+                    </li>
                 </ul>
 
                 <div class="tab-content" id="myTabContentJust">
@@ -125,7 +132,8 @@
                             <div class="col-md-4 my-3">
 
                                 <div class="card">
-                                    <a href="{{url('media/blog/'.$blog->id)}}"><img class="card-img-top" src="{{ asset($blog->image_path) }}" alt="post"></a>
+                                    <a href="{{url('media/blog/'.$blog->id)}}"><img class="card-img-top"
+                                            src="{{ asset($blog->image_path) }}" alt="post"></a>
                                     <div class="card-body grey-bg px-3">
 
                                         <p class="card-title weight-semi-bold"><a>{{$blog->title}}</a></p>
@@ -172,6 +180,63 @@
 
                                         </div>
                                         @endforeach
+                                        @endif
+                                        @endforeach
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="videos-just" role="tabpanel" aria-labelledby="portfolios-tab-just">
+                        <div class="accordion md-accordion" id="accordionEx3" role="tablist"
+                            aria-multiselectable="true">
+
+                            @foreach($vidYear as $vid)
+
+                            <div class="card my-3 border-0">
+
+                                <div class="card-header border rounded" role="tab" id="heading1">
+                                    <a data-toggle="collapse" data-parent="#accordionEx3" href="#videos1"
+                                        aria-expanded="true" aria-controls="videos1">
+                                        <h5 class="mb-0 text_secondary">
+                                            <span class="gotham-bold">{{$vid}}</span> <i
+                                                class="fa fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <div id="videos1" class="collapse show my-4" role="tabpanel" aria-labelledby="heading1"
+                                    data-parent="#accordionEx">
+
+                                    <div class="row">
+                                        @foreach($video as $info)
+                                        @if($vid == date('Y', strtotime($info->year)))
+                                        {{-- @foreach($info->link as $path) --}}
+                                        <div class="col-md-4 my-2">
+                                            <img src="http://img.youtube.com/vi/ig5-vVlPQ_U/hqdefault.jpg"
+                                                alt="Annual general meeting" class="img-fluid cursor js-modal-btn"
+                                                data-video-id="ig5-vVlPQ_U" />
+                                        </div>
+
+                                        {{-- <div class="col-md-4 my-2">
+                                            <img src="http://img.youtube.com/vi/uFIkbzJfF4c/hqdefault.jpg"
+                                                alt="Annual general meeting"
+                                                class="cursor img-fluid cursor js-modal-btn"
+                                                data-video-id="uFIkbzJfF4c" />
+                                        </div>
+
+                                        <div class="col-md-4 my-2">
+                                            <img src="http://img.youtube.com/vi/uFIkbzJfF4c/hqdefault.jpg"
+                                                alt="Annual general meeting"
+                                                class="cursor img-fluid cursor js-modal-btn"
+                                                data-video-id="uFIkbzJfF4c" />
+                                        </div> --}}
+
+                                        {{-- @endforeach --}}
                                         @endif
                                         @endforeach
                                     </div>
@@ -246,5 +311,6 @@
 <script src="{{ asset('assets/js/slick.js') }}"></script>
 <script src="{{ asset('assets/js/mdb.js') }}"></script>
 <script src="{{ asset('assets/js/utility.js') }}"></script>
+<script src="{{ asset('assets/js/modal-video.min.js') }}"></script>
 
 </html>
