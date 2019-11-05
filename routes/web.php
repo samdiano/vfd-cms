@@ -252,6 +252,10 @@ Route::post('/admin/governance/directors/rank/{id}','AdminController@postDirecto
 
 Route::get('/admin/governance/portfolios','AdminController@port')->name('governance');
 
+Route::get('/admin/governance/portfolios/edit/{id}','AdminController@portEdit')->name('adminVacancyPost'); 
+
+Route::post('/admin/governance/portfolios/edit/{id}','AdminController@postPortEdit')->name('adminVacancyPost'); 
+
 Route::get('/admin/governance/portfolios/delete/{id}','AdminController@postPortDelete')->name('postFaqDelete');
 
 Route::post('/admin/governance/portfolios/rank/{id}','AdminController@postPortRank')->name('postFaqDelete');
@@ -259,6 +263,11 @@ Route::post('/admin/governance/portfolios/rank/{id}','AdminController@postPortRa
 
 
 Route::get('/admin/governance/management','AdminController@management')->name('governance');
+
+Route::get('/admin/governance/management/edit/{id}','AdminController@managementEdit')->name('adminVacancyPost'); 
+
+Route::post('/admin/governance/management/edit/{id}','AdminController@postManagementEdit')->name('adminVacancyPost'); 
+
 
 Route::get('/admin/governance/management/delete/{id}','AdminController@postManagementDelete')->name('postFaqDelete');
 

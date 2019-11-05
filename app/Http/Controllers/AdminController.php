@@ -1637,6 +1637,63 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function portEdit($id)
+    {
+        $info = PortfolioHead::find($id);
+        return view('admin.governance.edit-portfolio', ['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postPortEdit(Request $request, $id)
+    {
+        $validator = $this->validate($request, [
+            // 'cover' => 'required',
+            // 'document' => 'required',
+            'role' => 'required',
+            // 'year' => 'required',
+        ]);
+        $finInfo = PortfolioHead::find($id);
+
+        if ($request->hasFile('logo')) {
+            $cover = $request->file('logo');
+            $img = $cover->store('images', 'public');
+            $finInfo->image = $img;
+        }
+
+
+        // return $request;
+        $finInfo->name = $request->name;
+        $finInfo->brief = $request->brief;
+        $finInfo->role = $request->role;
+        // $finInfo->section = $request->section;
+        $finInfo->description = $request->description;
+        $finInfo->twitter = $request->twitter;
+        $finInfo->instagram = $request->instagram;
+        $finInfo->facebook = $request->facebook;
+        $finInfo->linkedin = $request->linkedin;
+        $finInfo->save;
+
+        $info = PortfolioHead::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->save()) {
+            return redirect('admin/governance/portfolios')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function postPortDelete($id)
     {
         // $validator = $this->validate($request,[
@@ -1721,6 +1778,63 @@ class AdminController extends Controller
         $info = Management::orderBy('rank', 'asc')->get();
         return view('admin.governance.management', ['info' => $info]);
     }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function managementEdit($id)
+    {
+        $info = Management::find($id);
+        return view('admin.governance.edit-management', ['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postManagementEdit(Request $request, $id)
+    {
+        $validator = $this->validate($request, [
+            // 'cover' => 'required',
+            // 'document' => 'required',
+            'role' => 'required',
+            // 'year' => 'required',
+        ]);
+        $finInfo = Management::find($id);
+
+        if ($request->hasFile('logo')) {
+            $cover = $request->file('logo');
+            $img = $cover->store('images', 'public');
+            $finInfo->image = $img;
+        }
+
+
+        // return $request;
+        $finInfo->name = $request->name;
+        $finInfo->brief = $request->brief;
+        $finInfo->role = $request->role;
+        // $finInfo->section = $request->section;
+        $finInfo->description = $request->description;
+        $finInfo->twitter = $request->twitter;
+        $finInfo->instagram = $request->instagram;
+        $finInfo->facebook = $request->facebook;
+        $finInfo->linkedin = $request->linkedin;
+        $finInfo->save;
+
+        $info = Management::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->save()) {
+            return redirect('admin/governance/management')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
 
     /**
      * Show the company's about page
