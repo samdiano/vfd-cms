@@ -241,14 +241,33 @@ Route::get('/admin/governance','AdminController@governance')->name('governance')
 
 Route::get('/admin/governance/directors','AdminController@directors')->name('governance');
 
+Route::get('/admin/governance/directors/delete/{id}','AdminController@postDirectorsDelete')->name('postFaqDelete');
+
+Route::post('/admin/governance/directors/rank/{id}','AdminController@postDirectorsRank')->name('postFaqDelete');
+
+
 Route::get('/admin/governance/portfolios','AdminController@port')->name('governance');
 
+Route::get('/admin/governance/portfolios/delete/{id}','AdminController@postPortDelete')->name('postFaqDelete');
+
+Route::post('/admin/governance/portfolios/rank/{id}','AdminController@postPortRank')->name('postFaqDelete');
+
+
+
 Route::get('/admin/governance/management','AdminController@management')->name('governance');
+
+Route::get('/admin/governance/management/delete/{id}','AdminController@postManagementDelete')->name('postFaqDelete');
+
+Route::post('/admin/governance/management/rank/{id}','AdminController@postManagementRank')->name('postFaqDelete');
+
+
 
 
 Route::get('/admin/governance/new','AdminController@govenranceNew')->name('governanceNew');
 
 Route::post('/admin/governance/new','AdminController@postGovernanceNew')->name('postGovernanceNew');
+
+
 
 
 

@@ -1631,6 +1631,86 @@ class AdminController extends Controller
         $info = PortfolioHead::orderBy('rank', 'asc')->get();
         return view('admin.governance.portfolio', ['info' => $info]);
     }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postPortDelete($id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = PortfolioHead::find($id);
+
+        // $finInfo->delete();
+        $info = Port::orderBy('rank', 'asc')->get();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->delete()) {
+            return redirect()->back()->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postPortRank($id, Request $request)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = PortfolioHead::find($id);
+        
+        $finInfo->rank = $request->rank;
+        $info = PortfolioHead::orderBy('rank', 'asc')->get();
+        foreach ($info as $key => $info) {
+            # code...rank
+            if ($info->rank == $request->rank) {
+                # code...
+                $info->rank+=1;
+            }
+            $info->save();
+
+        }
+        $saved = $finInfo->save();
+
+        $info = PortfolioHead::orderBy('rank', 'asc')->get();
+
+        $index = $request->rank;
+        // return $request->rank;
+        foreach ($info as $key => $info) {
+            # code...
+            if (($info->rank > $request->rank)) {
+                # code...
+                $index +=1;
+                // return $index;
+                $info->rank = 0;
+                $info->rank = $index;
+            }
+            $info->save();
+        }
+
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($saved) {
+            return redirect()->back()->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
     /**
      * Show the company's about page
      *
@@ -1642,6 +1722,86 @@ class AdminController extends Controller
         $info = Management::orderBy('rank', 'asc')->get();
         return view('admin.governance.management', ['info' => $info]);
     }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postManagementDelete($id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = Management::find($id);
+
+        // $finInfo->delete();
+        $info = Management::orderBy('rank', 'asc')->get();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->delete()) {
+            return redirect()->back()->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postManagementRank($id, Request $request)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = Management::find($id);
+        
+        $finInfo->rank = $request->rank;
+        $info = Management::orderBy('rank', 'asc')->get();
+        foreach ($info as $key => $info) {
+            # code...rank
+            if ($info->rank == $request->rank) {
+                # code...
+                $info->rank+=1;
+            }
+            $info->save();
+
+        }
+        $saved = $finInfo->save();
+
+        $info = Management::where('section', '=', 'directors')->orderBy('rank', 'asc')->get();
+
+        $index = $request->rank;
+        // return $request->rank;
+        foreach ($info as $key => $info) {
+            # code...
+            if (($info->rank > $request->rank)) {
+                # code...
+                $index +=1;
+                // return $index;
+                $info->rank = 0;
+                $info->rank = $index;
+            }
+            $info->save();
+        }
+
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($saved) {
+            return redirect()->back()->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
     /**
      * Show the company's about page
      *
@@ -1649,8 +1809,87 @@ class AdminController extends Controller
      */
     public function directors()
     {
-        $info = Profile::where('section', '=', 'directors')->orderBy('rank','asc')->get();
+        $info = Profile::where('section', '=', 'directors')->orderBy('rank', 'asc')->get();
         return view('admin.governance.directors', ['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postDirectorsDelete($id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = Profile::find($id);
+
+        // $finInfo->delete();
+        $info = Profile::where('section', '=', 'directors')->orderBy('rank', 'asc')->get();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->delete()) {
+            return redirect()->back()->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postDirectorsRank($id, Request $request)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = Profile::find($id);
+        
+        $finInfo->rank = $request->rank;
+        $info = Profile::where('section', '=', 'directors')->orderBy('rank', 'asc')->get();
+        foreach ($info as $key => $info) {
+            # code...rank
+            if ($info->rank == $request->rank) {
+                # code...
+                $info->rank+=1;
+            }
+            $info->save();
+
+        }
+        $saved = $finInfo->save();
+
+        $info = Profile::where('section', '=', 'directors')->orderBy('rank', 'asc')->get();
+
+        $index = $request->rank;
+        // return $request->rank;
+        foreach ($info as $key => $info) {
+            # code...
+            if (($info->rank > $request->rank)) {
+                # code...
+                $index +=1;
+                // return $index;
+                $info->rank = 0;
+                $info->rank = $index;
+            }
+            $info->save();
+        }
+
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($saved) {
+            return redirect()->back()->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
     }
 
     /**
@@ -1680,8 +1919,8 @@ class AdminController extends Controller
 
         if ($request->section == "directors") {
             $finInfo = new Profile();
-            $info = Profile::where('section', '=', 'directors')->orderBy('rank','asc')->get();
-            $max_info= 0;
+            $info = Profile::where('section', '=', 'directors')->orderBy('rank', 'asc')->get();
+            $max_info = 0;
 
             if ($request->hasFile('logo')) {
                 $cover = $request->file('logo');
@@ -1689,15 +1928,15 @@ class AdminController extends Controller
                 $finInfo->image = $img;
             }
 
-            if (count($info)>=1) {
+            if (count($info) >= 1) {
                 # code...
-                $max_info= $info->last()->rank;
+                $max_info = $info->last()->rank;
             }
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;
             $finInfo->section = $request->section;
-            $finInfo->rank = $max_info+1;
+            $finInfo->rank = $max_info + 1;
             $finInfo->description = $request->description;
             $finInfo->twitter = $request->twitter;
             $finInfo->instagram = $request->instagram;
@@ -1714,23 +1953,23 @@ class AdminController extends Controller
 
         if ($request->section == "management") {
             $finInfo = new Management();
-            $info = Management::orderBy('rank','asc')->get();
-            $max_info= 0;
+            $info = Management::orderBy('rank', 'asc')->get();
+            $max_info = 0;
 
             if ($request->hasFile('logo')) {
                 $cover = $request->file('logo');
                 $img = $cover->store('images', 'public');
                 $finInfo->image = $img;
             }
-            if (count($info)>=1) {
+            if (count($info) >= 1) {
                 # code...
-                $max_info= $info->last()->rank;
+                $max_info = $info->last()->rank;
             }
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;
             $finInfo->section = $request->section;
-            $finInfo->rank = $max_info+1;
+            $finInfo->rank = $max_info + 1;
             $finInfo->description = $request->description;
             $finInfo->twitter = $request->twitter;
             $finInfo->instagram = $request->instagram;
@@ -1746,23 +1985,23 @@ class AdminController extends Controller
         }
         if ($request->section == "portfolio") {
             $finInfo = new PortfolioHead();
-            $info = PortfolioHead::orderBy('rank','asc')->get();
-            $max_info=0;
+            $info = PortfolioHead::orderBy('rank', 'asc')->get();
+            $max_info = 0;
             if ($request->hasFile('logo')) {
                 $cover = $request->file('logo');
                 $img = $cover->store('images', 'public');
                 $finInfo->image = $img;
             }
-            if (count($info)>=1) {
+            if (count($info) >= 1) {
                 # code...
-                $max_info= $info->last()->rank;
+                $max_info = $info->last()->rank;
             }
 
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;
             $finInfo->section = $request->section;
-            $finInfo->rank = $max_info+1;
+            $finInfo->rank = $max_info + 1;
             $finInfo->description = $request->description;
             $finInfo->twitter = $request->twitter;
             $finInfo->instagram = $request->instagram;
@@ -1776,6 +2015,5 @@ class AdminController extends Controller
                 return redirect()->back()->withErrors($validator);
             }
         }
-
     }
 }

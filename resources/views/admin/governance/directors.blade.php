@@ -25,6 +25,7 @@
                                                 <th>Name</th>
                                                 <th>Image</th>
                                                 <th>Role</th>
+                                                <th>Priority</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -36,17 +37,20 @@
                                                         class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
                                                 </td>
                                                 <td>{!! $info->role !!}</td>
+                                                <td>{!! $info->rank !!}</td>
 
                                                 <td>
                                                     {{-- <a class="btn btn-primary" href="{{ url('booking/annual/view/') }}">View</a>
                                                     --}}
                                                     {{-- <a class="btn btn-info" href="{{ url('booking/annual/view/') }}">Edit</a>
                                                     --}}
-                                                    <a data-toggle="modal" data-target="#mod-danger" href="#"
+                                                    <a data-toggle="modal" data-target="#{{$info->id}}" href="#"
+                                                        class="btn btn-warning">Change Priority</a>
+                                                    <a data-toggle="modal" data-target="#{{$info->id}}del" href="#"
                                                         class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
-                                            <div id="mod-danger" tabindex="-1" role="dialog" style=""
+                                            <div id="{{$info->id}}del" tabindex="-1" role="dialog" style=""
                                                 class="modal fade">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
@@ -65,10 +69,61 @@
                                                                 <div class="xs-mt-50">
                                                                     <button type="button" data-dismiss="modal"
                                                                         class="btn btn-space btn-default">Cancel</button>
-                                                                    <a href="{{ url('booking/annual/')}}"
+                                                                    <a href="{{ url('admin/governance/directors/delete', ['id' => $info->id])}}"
                                                                         class="btn btn-space btn-danger"
                                                                         type="submit">Delete</a>
                                                                 </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="{{$info->id}}" tabindex="-1" role="dialog" style=""
+                                                class="modal fade">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" data-dismiss="modal"
+                                                                aria-hidden="true" class="close"><span
+                                                                    class="mdi mdi-close"></span></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="text-center">
+                                                                <div class="text-danger"><span
+                                                                        class="modal-main-icon mdi mdi-close-circle-o"></span>
+                                                                </div>
+                                                                <h3>Warning!</h3>
+                                                                <p>You are about to delete a request.</p>
+                                                                <form class="form-horizontal"
+                                                                    action="{{ url('admin/governance/directors/rank', ['id' => $info->id]) }}"
+                                                                    method="post" enctype="multipart/form-data"
+                                                                    role="form">
+                                                                    {{ csrf_field() }}
+                                                                    <div class="row">
+
+                                                                        <div class="form-group">
+                                                                            <label
+                                                                                class="control-label col-md-3 col-sm-3">
+                                                                                Rank
+                                                                            </label>
+                                                                            <div class="col-md-9 col-sm-9">
+                                                                                <input type="text" name="rank"
+                                                                                    placeholder="{{$info->rank}}"
+                                                                                    class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                
+                                                                <div class="xs-mt-50">
+                                                                    <button type="button" data-dismiss="modal"
+                                                                        class="btn btn-space btn-default">Cancel</button>
+                                                                    <button
+                                                                        class="btn btn-space btn-success"
+                                                                        type="submit">Change Priority</button>
+                                                                </div>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer"></div>
