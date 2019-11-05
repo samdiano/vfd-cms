@@ -21,6 +21,7 @@ use App\InvestorFaq;
 use App\Director;
 use App\Management;
 use App\PortfolioHead;
+use App\Video;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -1413,6 +1414,58 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function blogEdit($id)
+    {
+        $info = Blog::find($id);
+        return view('admin.blog.edit', ['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postBlogEdit(Request $request, $id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = Blog::find($id);
+
+        // if ($request->hasFile('cover')) {
+        //     $cover = $request->file('cover');
+        //     $img = $cover->store('images', 'public');
+        //     $finInfo->image_path = $img;
+        // }
+
+        // if ($request->hasFile('document')) {
+        //     $filename = $request->document->store('documents', 'public');
+        //     $finInfo->document = $filename;
+        // }
+
+
+        $finInfo->title = $request->title;
+        $finInfo->content = $request->content;
+        $finInfo->save;
+        $info = Blog::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->save()) {
+            return redirect('admin/blog')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function postBlogDelete($id)
     {
         // $validator = $this->validate($request,[
@@ -1496,6 +1549,59 @@ class AdminController extends Controller
         }
     }
 
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function galleryEdit($id)
+    {
+        $info = Blog::find($id);
+        return view('admin.gallery.edit', ['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postGalleryEdit(Request $request, $id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = Gallery::find($id);
+
+        if ($request->hasFile('cover')) {
+            $cover = $request->file('cover');
+            $img = $cover->store('images', 'public');
+            $finInfo->image_path = $img;
+        }
+
+        if ($request->hasFile('document')) {
+            $filename = $request->document->store('documents', 'public');
+            $finInfo->document = $filename;
+        }
+
+
+        $finInfo->title = $request->name;
+        $finInfo->year = $request->year;
+        $finInfo->save;
+        $info = Gallery::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->save()) {
+            return redirect('admin/gallery')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
     /**
      * Show the company's about page
      *
@@ -1513,6 +1619,130 @@ class AdminController extends Controller
 
         // $finInfo->delete();
         $info = Gallery::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->delete()) {
+            return redirect()->back()->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors();
+        }
+    }
+
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function video()
+    {
+        $info = Video::all();
+        return view('admin.videos.list', ['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function videoNew()
+    {
+        $info = Video::all();
+        return view('admin.videos.new', ['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postVideoNew(Request $request)
+    {
+        $validator = $this->validate($request, [
+            // 'cover' => 'required',
+            'title' => 'required',
+            'year' => 'required',
+        ]);
+
+        $finInfo = new Video();
+
+        
+
+        $finInfo->title = $request->title;
+        $finInfo->link = $request->link;
+        $finInfo->year = $request->year;
+        $finInfo->save;
+        $info = Video::all();
+
+        if ($finInfo->save()) {
+            return redirect('admin/videos')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function videoEdit($id)
+    {
+        $info = Video::find($id);
+        return view('admin.videos.edit', ['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postVideoEdit(Request $request, $id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = Video::find($id);
+
+    
+        $finInfo->title = $request->title;
+        $finInfo->link = $request->link;
+        $finInfo->save;
+        $info = Video::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($finInfo->save()) {
+            return redirect('admin/videos')->with('info', $info);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postVideoDelete($id)
+    {
+        // $validator = $this->validate($request,[
+        //     'cover' => 'required',
+        //     'document' => 'required',
+        //     'name' => 'required',
+        //     'year' => 'required',
+        // ]);
+        $finInfo = Video::find($id);
+
+        // $finInfo->delete();
+        $info = Video::all();
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->delete()) {

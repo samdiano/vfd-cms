@@ -43,11 +43,13 @@
                                                     --}}
                                                     {{-- <a class="btn btn-info" href="{{ url('booking/annual/view/') }}">Edit</a>
                                                     --}}
-                                                    <a data-toggle="modal" data-target="#mod-danger" href="#"
+                                                    {{-- <a class="btn btn-info" href="{{ url('admin/gallery/edit', ['id' => $info->id]) }}">Edit</a> --}}
+
+                                                    <a data-toggle="modal" data-target="#{{$info->id}}" href="#"
                                                         class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
-                                            <div id="mod-danger" tabindex="-1" role="dialog" style=""
+                                            <div id="{{$info->id}}" tabindex="-1" role="dialog" style=""
                                                 class="modal fade">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">

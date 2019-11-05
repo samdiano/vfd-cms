@@ -32,7 +32,7 @@
                                                 <td>{!! $subscriber->email !!}</td>
 
                                             </tr>
-                                            <div id="mod-danger" tabindex="-1" role="dialog" style=""
+                                            <div id="{{$info->id}}" tabindex="-1" role="dialog" style=""
                                                 class="modal fade">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">

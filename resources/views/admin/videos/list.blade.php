@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Values')
+@section('title','Videos')
 
 @section('content')
 <div class="content-page">
@@ -9,38 +9,47 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card-box">
-                        <a class="btn btn-primary" href="{{ url('admin/values/new/') }}">Add New Value</a>
+                        <a class="btn btn-primary" href="{{ url('admin/videos/new') }}">Add Video</a>
                         <div class="table-rep-plugin">
                             <div class="table-responsive" data-pattern="priority-columns">
                                 {{-- @include('partial.alert') --}}
-                                @if(count($services) < 1) <br><br>
+                                @if(count($info) < 1) <br><br>
                                     <div class="alert alert-info text-center">
-                                        <p>There are no values at the moment</p>
+                                        <p>There are no videos posted at the moment</p>
                                     </div>
                                     @else
                                     <br><br>
                                     <table id="tech-companies-1" class="table  table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Values</th>
-                                                <th>Description</th>
+                                                <th>Title</th>
+                                                <th>Video</th>
+                                                <th>Year</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($services as $service)
+                                            @foreach($info as $info)
                                             <tr>
-                                                <td>{{ $service->value }}</td>
-                                                <td>{{ $service->description }}</td>
+                                                <td>{{ $info->title }}</td>
+                                                <td><iframe width="415" height="215" src={{$info->link}} frameborder="0"
+                                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowfullscreen></iframe>
+                                                </td>
+                                                <td>{!! $info->year !!}</td>
 
                                                 <td>
+                                                    {{-- <a class="btn btn-primary" href="{{ url('booking/annual/view/') }}">View</a>
+                                                    --}}
                                                     {{-- <a class="btn btn-info" href="{{ url('booking/annual/view/') }}">Edit</a>
                                                     --}}
-                                                    <a data-toggle="modal" data-target="#{{$service->id}}" href="#"
+                                                    <a class="btn btn-info" href="{{ url('admin/videos/edit', ['id' => $info->id]) }}">Edit</a>
+
+                                                    <a data-toggle="modal" data-target="#mod-danger" href="#"
                                                         class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
-                                            <div id="{{$service->id}}" tabindex="-1" role="dialog" style=""
+                                            <div id="mod-danger" tabindex="-1" role="dialog" style=""
                                                 class="modal fade">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
@@ -55,11 +64,11 @@
                                                                         class="modal-main-icon mdi mdi-close-circle-o"></span>
                                                                 </div>
                                                                 <h3>Warning!</h3>
-                                                                <p>You are about to delete an Item.</p>
+                                                                <p>You are about to delete an item.</p>
                                                                 <div class="xs-mt-50">
                                                                     <button type="button" data-dismiss="modal"
                                                                         class="btn btn-space btn-default">Cancel</button>
-                                                                    <a href="{{ url('admin/values/delete', ['id' => $service->id])}}"
+                                                                    <a href="{{ url('admin/videos/delete', ['id' => $info->id])}}"
                                                                         class="btn btn-space btn-danger"
                                                                         type="submit">Delete</a>
                                                                 </div>

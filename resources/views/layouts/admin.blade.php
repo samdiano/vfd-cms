@@ -253,6 +253,7 @@
                             <ul class="list-unstyled">
                                 <li><a href="{{ url('admin/blog') }}">Blog</a></li>
                                 <li><a href="{{ url('admin/gallery') }}">Gallery</a></li>
+                                <li><a href="{{ url('admin/videos') }}">Videos</a></li>
 
                             </ul>
 

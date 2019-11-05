@@ -43,11 +43,11 @@
                                                     --}}
                                                     {{-- <a class="btn btn-info" href="{{ url('booking/annual/view/') }}">Edit</a>
                                                     --}}
-                                                    <a data-toggle="modal" data-target="#mod-danger" href="#"
+                                                    <a data-toggle="modal" data-target="#{{$vacancy->id}}" href="#"
                                                         class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
-                                            <div id="mod-danger" tabindex="-1" role="dialog" style=""
+                                            <div id="{{$vacancy->id}}" tabindex="-1" role="dialog" style=""
                                                 class="modal fade">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">

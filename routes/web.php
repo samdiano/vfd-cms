@@ -199,6 +199,11 @@ Route::get('/admin/blog/new','AdminController@blogNew')->name('blogNew');
 
 Route::post('/admin/blog/new','AdminController@postBlogNew')->name('postBlogNew');
 
+Route::get('/admin/blog/edit/{id}','AdminController@blogEdit')->name('adminVacancyPost'); 
+
+Route::post('/admin/blog/edit/{id}','AdminController@postBlogEdit')->name('adminVacancyPost'); 
+
+
 Route::get('/admin/blog/delete/{id}','AdminController@postBlogDelete')->name('postBlogDelete');
 
 
@@ -209,7 +214,25 @@ Route::get('/admin/gallery/new','AdminController@galleryNew')->name('galleryNew'
 
 Route::post('/admin/gallery/new','AdminController@postGalleryNew')->name('postGalleryNew');
 
+Route::get('/admin/gallery/edit/{id}','AdminController@galleryEdit')->name('adminVacancyPost'); 
+
+Route::post('/admin/gallery/edit/{id}','AdminController@postGalleryEdit')->name('adminVacancyPost'); 
+
 Route::get('/admin/gallery/delete/{id}','AdminController@postGalleryDelete')->name('postFaqDelete');
+
+
+
+Route::get('/admin/videos','AdminController@video')->name('gallery');
+
+Route::get('/admin/videos/new','AdminController@videoNew')->name('galleryNew');
+
+Route::post('/admin/videos/new','AdminController@postVideoNew')->name('postGalleryNew');
+
+Route::get('/admin/videos/edit/{id}','AdminController@videoEdit')->name('adminVacancyPost'); 
+
+Route::post('/admin/videos/edit/{id}','AdminController@postVideoEdit')->name('adminVacancyPost'); 
+
+Route::get('/admin/videos/delete/{id}','AdminController@postVideoDelete')->name('postFaqDelete');
 
 
 Route::get('/admin/press','AdminController@press')->name('press');
