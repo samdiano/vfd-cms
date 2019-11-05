@@ -312,5 +312,11 @@
 <script src="{{ asset('assets/js/mdb.js') }}"></script>
 <script src="{{ asset('assets/js/utility.js') }}"></script>
 <script src="{{ asset('assets/js/modal-video.min.js') }}"></script>
+<script>
+        //        $(".js-modal-btn").modalVideo();
+        window.addEventListener('DOMContentLoaded',function(){
+            new ModalVideo(".js-modal-btn");
+        });
+    </script>
 
 </html>

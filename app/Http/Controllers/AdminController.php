@@ -67,7 +67,7 @@ class AdminController extends Controller
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
-            return redirect('admin/about')->with('company', $company);
+            return redirect('admin/about')->with(['company'=> $company, 'alert', 'Update Successful'] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
