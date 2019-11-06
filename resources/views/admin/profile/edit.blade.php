@@ -18,7 +18,7 @@
                         </div>
                         @endif
                         <div class="row">
-                            {{-- @include('partial.alert') --}}
+                            @include('partial.alert')
                             <form class="form-horizontal" action="{{ url('admin/profile') }}" method="post"
                                 enctype="multipart/form-data" role="form">
                                 {{ csrf_field() }}

@@ -13,7 +13,7 @@
                         Service</a> --}}
                         <div class="table-rep-plugin">
                             <div class="table-responsive" data-pattern="priority-columns">
-                                {{-- @include('partial.alert') --}}
+                                @include('partial.alert')
                                 @if(count($services) > 1)
                                 <br><br>
                                 <div class="alert alert-info text-center">

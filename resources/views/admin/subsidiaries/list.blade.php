@@ -12,7 +12,7 @@
                         <a class="btn btn-primary" href="{{ url('admin/subsidiaries/new') }}">Add Subsidiaries</a>
                         <div class="table-rep-plugin">
                             <div class="table-responsive" data-pattern="priority-columns">
-                                {{-- @include('partial.alert') --}}
+                                @include('partial.alert')
                                 @if(count($info) < 1) <br><br>
                                     <div class="alert alert-info text-center">
                                         <p>There are no subsidiaries posted at the moment</p>
