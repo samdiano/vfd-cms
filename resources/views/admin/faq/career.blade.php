@@ -12,7 +12,7 @@
                         <a class="btn btn-primary" href="{{ url('admin/faq/new') }}"> Add New FAQ</a>
                         <div class="table-rep-plugin">
                             <div class="table-responsive" data-pattern="priority-columns">
-                                {{-- @include('partial.alert') --}}
+                                @include('partial.alert')
                                 @if(count($faq) < 1) <br><br>
                                     <div class="alert alert-info text-center">
                                         <p>There are no faqs provided at the moment</p>
