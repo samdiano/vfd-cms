@@ -67,7 +67,7 @@ class AdminController extends Controller
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
-            return redirect('admin/about')->with(['company'=> $company, 'alert', 'Update Successful'] );
+            return redirect('admin/about')->with(['company'=> $company, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -106,7 +106,7 @@ class AdminController extends Controller
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
-            return redirect('admin/profile')->with('company', $company);
+            return redirect('admin/profile')->with(['company'=> $company, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -139,7 +139,7 @@ class AdminController extends Controller
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
-            return redirect('admin/quote')->with('company', $company);
+            return redirect('admin/quote')->wwith(['company'=> $company, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -178,7 +178,7 @@ class AdminController extends Controller
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
-            return redirect('admin/contact')->with('company', $company);
+            return redirect('admin/contact')->with(['company'=> $company, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -215,7 +215,7 @@ class AdminController extends Controller
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
-            return redirect('admin/history')->with('company', $company);
+            return redirect('admin/history')->with(['company'=> $company, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -252,7 +252,7 @@ class AdminController extends Controller
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
-            return redirect('admin/impact')->with('company', $company);
+            return redirect('admin/impact')->with(['company'=> $company, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -286,7 +286,7 @@ class AdminController extends Controller
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
-            return redirect('admin/career')->with('company', $company);
+            return redirect('admin/career')->with(['company'=> $company, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -317,7 +317,7 @@ class AdminController extends Controller
         $company->youtube_link = $request->link;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
-            return redirect()->back()->with('company', $company);
+            return redirect()->back()->with(['company'=> $company, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -378,7 +378,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($service->save()) {
-            return redirect('admin/services')->with('services', $services);
+            return redirect('admin/services')->with(['services'=> $services, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -404,7 +404,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->delete()) {
-            return redirect()->back()->with('services', $services);
+            return redirect()->back()->with(['services'=> $services, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors('');
         }
@@ -453,7 +453,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($service->save()) {
-            return redirect('admin/values')->with('services', $services);
+            return redirect('admin/values')->with(['services'=> $services, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -479,7 +479,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->delete()) {
-            return redirect()->back()->with('services', $services);
+            return redirect()->back()->with(['services'=> $services, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors('');
         }
@@ -526,7 +526,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($service->save()) {
-            return redirect('admin/services')->with('services', $services);
+            return redirect('admin/services')->with(['services'=> $services, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -547,7 +547,7 @@ class AdminController extends Controller
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
-            return redirect('admin/portfolio')->with('company', $company);
+            return redirect('admin/portfolio')->with(['company'=> $company, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -667,7 +667,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($vacancy->save()) {
-            return redirect('admin/vacancies')->with('vacancies', $vacancies);
+            return redirect('admin/vacancies')->with(['vacancies'=> $vacancies, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -792,7 +792,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->save()) {
-            return redirect('admin/financial-information')->with('info', $info);
+            return redirect('admin/financial-information')->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -845,7 +845,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->save()) {
-            return redirect('admin/financial-information')->with('info', $info);
+            return redirect('admin/financial-information')->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -871,7 +871,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->delete()) {
-            return redirect('admin/financial-information')->with('info', $info);
+            return redirect('admin/financial-information')->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors();
         }
@@ -933,7 +933,7 @@ class AdminController extends Controller
         $info = ConferenceCall::all();
 
         if ($finInfo->save()) {
-            return redirect('admin/conference')->with('info', $info);
+            return redirect('admin/conference')->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -986,7 +986,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->save()) {
-            return redirect('admin/conference')->with('info', $info);
+            return redirect('admin/conference')->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -1012,7 +1012,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->delete()) {
-            return redirect('admin/conference')->with('info', $info);
+            return redirect('admin/conference')->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors();
         }
@@ -1077,7 +1077,7 @@ class AdminController extends Controller
         $info = PressRelease::all();
 
         if ($finInfo->save()) {
-            return redirect('admin/press')->with('info', $info);
+            return redirect('admin/press')->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -1131,7 +1131,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->save()) {
-            return redirect('admin/press')->with('info', $info);
+            return redirect('admin/press')->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -1157,7 +1157,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->delete()) {
-            return redirect('admin/press')->with('info', $info);
+            return redirect('admin/press')->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors();
         }
@@ -1293,7 +1293,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->delete()) {
-            return redirect()->back()->with('info', $info);
+            return redirect()->back()->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors();
         }
@@ -1315,7 +1315,7 @@ class AdminController extends Controller
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
-            return redirect('admin/culture/edit');
+            return redirect('admin/culture/edit')->with(['info'=> $company, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -1348,7 +1348,7 @@ class AdminController extends Controller
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
-            return redirect('admin/mission');
+            return redirect('admin/mission')->with(['info'=> $company, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -1382,7 +1382,7 @@ class AdminController extends Controller
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
-            return redirect('admin/vision');
+            return redirect('admin/vision')->with(['info'=> $company, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -1465,7 +1465,7 @@ class AdminController extends Controller
         $info = Blog::all();
 
         if ($finInfo->save()) {
-            return redirect('admin/blog')->with('info', $info);
+            return redirect('admin/blog')->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -1517,7 +1517,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->save()) {
-            return redirect('admin/blog')->with('info', $info);
+            return redirect('admin/blog')->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -1543,7 +1543,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->delete()) {
-            return redirect()->back()->with('info', $info);
+            return redirect()->back()->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors();
         }
@@ -1605,7 +1605,7 @@ class AdminController extends Controller
         $info = Gallery::all();
 
         if ($finInfo->save()) {
-            return redirect('admin/gallery')->with('info', $info);
+            return redirect('admin/gallery')->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -1658,7 +1658,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->save()) {
-            return redirect('admin/gallery')->with('info', $info);
+            return redirect('admin/gallery')->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors($validator);
         }
@@ -1684,7 +1684,7 @@ class AdminController extends Controller
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->delete()) {
-            return redirect()->back()->with('info', $info);
+            return redirect()->back()->with(['info'=> $info, 'alert' => ' '] );
         } else {
             return redirect()->back()->withErrors();
         }
