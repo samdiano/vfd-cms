@@ -14,7 +14,7 @@
                     <div class="card-box">
                         <h4 class="header-title m-t-0 m-b-30">Create New Image</h4>
                         <div class="row">
-                            {{-- @include('partial.alert') --}}
+                            @include('partial.alert')
                             <form class="form-horizontal" action="{{ url('admin/gallery/new') }}" method="post"
                                 enctype="multipart/form-data" role="form">
                                 {{ csrf_field() }}
