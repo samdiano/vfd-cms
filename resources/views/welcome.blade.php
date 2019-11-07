@@ -69,7 +69,7 @@
         <img src="{{ asset('assets/img/favicon.png') }}"
             class="img-fluid position-absolute d-none floating-landing-logo" />
 
-        <img src="{{ asset('assets//Subtract.png') }}" class="img-fluid position-absolute image-subtract" />
+        <img src="{{ asset('assets/img/Subtract.png') }}" class="img-fluid position-absolute image-subtract" />
     </div>
 
     <div class="container position-asolute d-none">

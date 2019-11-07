@@ -38,7 +38,7 @@
                                                         class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
-                                            <div id="{{$info->id}}" tabindex="-1" role="dialog" style=""
+                                            <div id="{{$service->id}}" tabindex="-1" role="dialog" style=""
                                                 class="modal fade">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
