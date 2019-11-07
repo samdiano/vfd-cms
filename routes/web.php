@@ -124,6 +124,10 @@ Route::get('/admin/vacancies/new','AdminController@vacancy')->name('adminVacancy
 
 Route::post('/admin/vacancies/new','AdminController@newVacancy')->name('adminVacancyPost');
 
+Route::get('/admin/vacancies/edit/{id}','AdminController@newVacancyEdit')->name('adminVacancyPost'); 
+
+Route::post('/admin/vacancies/edit/{id}','AdminController@postNewVacancyEdit')->name('adminVacancyPost'); 
+
 
 
 Route::get('/admin/portfolio/bridge','AdminController@bridgeVacancy')->name('adminPortfolioBridge');

@@ -43,7 +43,7 @@
                                                     --}}
                                                     {{-- <a class="btn btn-info" href="{{ url('booking/annual/view/') }}">Edit</a>
                                                     --}}
-                                                    {{-- <a class="btn btn-info" href="{{ url('admin/gallery/edit', ['id' => $info->id]) }}">Edit</a> --}}
+                                                    <a class="btn btn-info" href="{{ url('admin/gallery/edit', ['id' => $info->id]) }}">Edit</a>
 
                                                     <a data-toggle="modal" data-target="#{{$info->id}}" href="#"
                                                         class="btn btn-danger">Delete</a>

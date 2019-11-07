@@ -15,7 +15,7 @@
                         <h4 class="header-title m-t-0 m-b-30">Create New Image</h4>
                         <div class="row">
                             @include('partial.alert')
-                            <form class="form-horizontal" action="{{ url('admin/gallery/new') }}" method="post"
+                            <form class="form-horizontal" action="{{ url('admin/gallery/edit', ['$id' => $info->id]) }}" method="post"
                                 enctype="multipart/form-data" role="form">
                                 {{ csrf_field() }}
                                 <div class="col-lg-10">
@@ -56,7 +56,7 @@
                                             Title
                                         </label>
                                         <div class="col-md-9 col-sm-9">
-                                            <input type="text" name="title" class="form-control">
+                                        <input type="text" name="title" value="{{$info->title}}" class="form-control">
                                         </div>
                                     </div>
 

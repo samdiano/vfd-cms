@@ -17,18 +17,18 @@
                                 enctype="multipart/form-data" role="form">
                                 {{ csrf_field() }}
                                 <div class="col-md-10">
-                                    {{-- <div class="form-group">
+                                    <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3">
                                             Cover Image
                                         </label>
                                         <div class="col-md-9 col-sm-9">
                                             <label class="btn btn-primary">
                                                 <input type="file" name="cover" accept="image/*" class="form-control"
-                                                    required>
+                                                    >
                                                 <i class="fa fa-photo"></i> Add Photo
                                             </label>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3">
                                             Title

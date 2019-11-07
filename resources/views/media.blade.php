@@ -217,9 +217,9 @@
                                         @if($vid == date('Y', strtotime($info->year)))
                                         {{-- @foreach($info->link as $path) --}}
                                         <div class="col-md-4 my-2">
-                                            <img src="http://img.youtube.com/vi/ig5-vVlPQ_U/hqdefault.jpg"
+                                            <img src="http://img.youtube.com/vi/{{$info->link}}/hqdefault.jpg"
                                                 alt="Annual general meeting" class="img-fluid cursor js-modal-btn"
-                                                data-video-id="ig5-vVlPQ_U" />
+                                                data-video-id="{{$info->link}}" />
                                         </div>
 
                                         {{-- <div class="col-md-4 my-2">

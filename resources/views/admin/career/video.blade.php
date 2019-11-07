@@ -24,7 +24,7 @@
                                         </label>
                                         <div class="col-md-9 col-sm-9">
                                             <input class="form-control" name="link"
-                                                value="{{$company->youtube_link}}" />
+                                                value="https://youtube.com/watch?v={{$company->youtube_link}}" />
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -38,7 +38,7 @@
                         @if($company->youtube_link)
                         <div class="col-md-offset-1 col-md-6">
                             <div class="video-container">
-                                <iframe width="915" height="515" src={{$company->youtube_link}} frameborder="0"
+                                <iframe width="915" height="515" src="https://youtube.com/embed/{{$company->youtube_link}}"" frameborder="0"
                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
                             </div>

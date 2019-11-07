@@ -32,7 +32,7 @@
                                             @foreach($info as $info)
                                             <tr>
                                                 <td>{{ $info->title }}</td>
-                                                <td><iframe width="415" height="215" src={{$info->link}} frameborder="0"
+                                                <td><iframe width="415" height="215" src={{ 'https://youtube.com/embed/'.$info->link}} frameborder="0"
                                                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                         allowfullscreen></iframe>
                                                 </td>
