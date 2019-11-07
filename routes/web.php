@@ -265,6 +265,10 @@ Route::get('/admin/subsidiaries/new','AdminController@subsidiaryNew')->name('sub
 
 Route::post('/admin/subsidiaries/new','AdminController@postSubsidiaryNew')->name('postSubsidiaryNew');
 
+Route::get('/admin/subsidiaries/edit/{id}','AdminController@newSubsidiaryEdit')->name('adminVacancyPost'); 
+
+Route::post('/admin/subsidiaries/edit/{id}','AdminController@postNewSubsidiaryEdit')->name('adminVacancyPost'); 
+
 Route::get('/admin/subsidiaries/delete/{id}','AdminController@postSubsidiaryDelete')->name('postFaqDelete');
 
 

@@ -40,8 +40,8 @@
                                                 <td>
                                                     {{-- <a class="btn btn-primary" href="{{ url('booking/annual/view/') }}">View</a>
                                                     --}}
-                                                    {{-- <a class="btn btn-info" href="{{ url('booking/annual/view/') }}">Edit</a>
-                                                    --}}
+                                                    <a class="btn btn-info" href="{{ url('admin/subsidiaries/edit', ['$id'=> $info->id]) }}">Edit</a>
+                                                   
                                                     <a data-toggle="modal" data-target="#{{$info->id}}" href="#"
                                                         class="btn btn-danger">Delete</a>
                                                 </td>

@@ -1925,6 +1925,52 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function newSubsidiaryEdit($id)
+    {
+        $info = Product::find($id);
+        return view('admin.subsidiaries.edit', ['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postNewSubsidiaryEdit(Request $request, $id)
+    {
+        $validator = $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+            'link' => 'required',
+        ]);
+
+        $finInfo = Product::find($id);
+
+        if ($request->hasFile('logo')) {
+            $cover = $request->file('logo');
+            $img = $cover->store('images', 'public');
+            $finInfo->image = $img;
+        }
+
+        $finInfo->name = $request->name;
+        $finInfo->description = $request->description;
+        $finInfo->link = $request->link;
+        $finInfo->save;
+        $info = Product::all();
+
+        if ($finInfo->save()) {
+            return redirect('admin/subsidiaries')->with(['info' => $info, 'alert' => ' ']);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function postSubsidiaryDelete($id)
     {
         // $validator = $this->validate($request,[
