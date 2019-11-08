@@ -139,8 +139,8 @@
         </ul>
 
         <div class="tab-content px-0 px-md-2" id="myTabContentJust">
-            @foreach($finYear as $fin)
             <div class="tab-pane fade active show" id="finance-just" role="tabpanel" aria-labelledby="finance-tab-just">
+                @foreach($finYear as $fin)
                 <div class="accordion md-accordion" id="finance" role="tablist" aria-multiselectable="true">
                     <div class="card my-3 border-0">
                         <div class="card-header border-0 rounded" role="tab" id="finance_heading_1">
@@ -160,7 +160,7 @@
                                 <hr class="my-2" />
                                 <div class="row">
                                     @foreach($finInfo as $info)
-                                    @if($fin == $info->year)
+                                    @if($fin == date('Y', strtotime($info->year)))
                                     <div class="col-md-4 my-2">
                                         <a href="{{ asset($info->image_path) }}" target="_blank">
                                             <div class="investor-info-images" style="background-image: url({{ asset($info->image_path) }});
@@ -235,8 +235,8 @@
                     </div>
 
 
+                    @endforeach
                 </div>
-                @endforeach
             </div>
 
 
@@ -284,8 +284,8 @@
 
                     </div>
 
+                    @endforeach
                 </div>
-                @endforeach
             </div>
 
             <div class="tab-pane fade" id="faq-just" role="tabpanel" aria-labelledby="faq-tab-just">

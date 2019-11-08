@@ -36,8 +36,8 @@
                                                 <td>
                                                     {{-- <a class="btn btn-primary" href="{{ url('booking/annual/view/') }}">View</a>
                                                     --}}
-                                                    {{-- <a class="btn btn-info" href="{{ url('booking/annual/view/') }}">Edit</a>
-                                                    --}}
+                                                    <a class="btn btn-info" href="{{ url('admin/faq/edit/general', ['$id' => $faq->id]) }}">Edit</a>
+                                                   
                                                     <a data-toggle="modal" data-target="#mod-danger" href="#"
                                                         class="btn btn-danger">Delete</a>
                                                 </td>

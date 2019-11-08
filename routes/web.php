@@ -332,6 +332,14 @@ Route::get('/admin/faq/new','AdminController@faqNew')->name('faqNew');
 
 Route::post('/admin/faq/new','AdminController@postFaqNew')->name('faqNew');
 
+Route::get('/admin/faq/edit/general/{id}','AdminController@faqGeneralEdit')->name('adminVacancyPost'); 
+
+Route::get('/admin/faq/edit/career/{id}','AdminController@faqCareerEdit')->name('adminVacancyPost'); 
+
+Route::get('/admin/faq/edit/investor/{id}','AdminController@faqInvestorEdit')->name('adminVacancyPost'); 
+
+Route::post('/admin/faq/edit/{id}','AdminController@postFaqEdit')->name('adminVacancyPost'); 
+
 Route::get('/admin/faq/delete/{id}','AdminController@postFaqDelete')->name('postFaqDelete');
 
 

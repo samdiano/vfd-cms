@@ -131,21 +131,24 @@ class CompanyController extends Controller
         $finInfo = FinancialInformation::all();
         $finArr = [];
         foreach ($finInfo as $fin) {
-            array_push($finArr, $fin->year);
+            $year = date('Y', strtotime($fin->year));
+            array_push($finArr, $year);
         }
         $finYear = array_unique($finArr);
 
         $conInfo = ConferenceCall::all();
         $conArr = [];
         foreach ($conInfo as $con) {
-            array_push($conArr, $con->year);
+            $year = date('Y', strtotime($con->year));
+            array_push($conArr, $year);
         }
         $conYear = array_unique($conArr);
 
         $pressInfo = PressRelease::all();
         $pressArr = [];
         foreach ($pressInfo as $press) {
-            array_push($pressArr, $press->year);
+            $year = date('Y', strtotime($press->year));
+            array_push($pressArr, $year);
         }
         $pressYear = array_unique($pressArr);
         return view('investors', ['generalFaq' => $generalFaq, 'investorFaq' => $investorFaq, 'careerFaq' => $careerFaq, 'finYear' => $finYear, 'finInfo' => $finInfo, 'conYear' => $conYear, 'conInfo' => $conInfo, 'pressYear' => $pressYear, 'pressInfo' => $pressInfo,]);

@@ -1322,6 +1322,95 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function faqCareerEdit($id)
+    {
+        $info = CareerFaq::find($id);
+        return view('admin.faq.edit-career', ['info' => $info]);
+    }
+
+/**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function faqGeneralEdit($id)
+    {
+        $info = FAQ::find($id);
+        return view('admin.faq.edit', ['info' => $info]);
+    }
+
+/**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function faqInvestorEdit($id)
+    {
+        $info = investorFaq::find($id);
+        return view('admin.faq.edit-investor', ['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postFaqEdit(Request $request, $id)
+    {
+        $validator = $this->validate($request, [
+            'question' => 'required',
+            'response' => 'required',
+            'type' => 'required',
+        ]);
+        if ($request->type == 'general') {
+            $faq = FAQ::find($id);
+            $faq->question = $request->question;
+            $faq->response = $request->response;
+            $faq->type = $request->type;
+            $faq->rank = $request->type;
+            $faq->save;
+            if ($faq->save()) {
+                return redirect('admin/faq/general');
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
+        }
+        if ($request->type == 'career') {
+            $faq = CareerFaq::find($id);
+            $faq->question = $request->question;
+            $faq->response = $request->response;
+            // $faq->type = $request->type;
+            $faq->rank = $request->type;
+            $faq->save;
+            if ($faq->save()) {
+                return redirect('admin/faq/career');
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
+        }
+        if ($request->type == 'investor') {
+            $faq =InvestorFaq::find($id);
+            $faq->question = $request->question;
+            $faq->response = $request->response;
+            // $faq->type = $request->type;
+            $faq->rank = $request->type;
+            $faq->save;
+            if ($faq->save()) {
+                return redirect('admin/faq/investor');
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
+        }
+    }
+
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function postFaqDelete($id)
     {
         // $validator = $this->validate($request,[
@@ -2482,6 +2571,7 @@ class AdminController extends Controller
                 # code...
                 $max_info = $info->last()->rank;
             }
+            $finInfo->id = uniqid();
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;
@@ -2515,6 +2605,7 @@ class AdminController extends Controller
                 # code...
                 $max_info = $info->last()->rank;
             }
+            $finInfo->id = uniqid();
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;
@@ -2547,6 +2638,7 @@ class AdminController extends Controller
                 $max_info = $info->last()->rank;
             }
 
+            $finInfo->id = uniqid();
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;
