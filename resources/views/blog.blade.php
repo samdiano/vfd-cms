@@ -122,7 +122,6 @@
 
                 @foreach($blogs as $blogs)
 
-                @if($blog->id == $blogs->id)
                 <div class="card mb-4">
                     <img class="card-img-top" src="{{asset($blogs->image_path)}}" alt="post">
 
@@ -135,7 +134,6 @@
 
                     </div>
                 </div>
-                @endif
                 @endforeach
 
 
