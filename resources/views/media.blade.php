@@ -29,6 +29,18 @@
 </head>
 
 <body>
+    <style>
+        .img {
+            position: relative;
+            float: left;
+            width:  205px;
+            height: 178px;
+            margin-bottom: 30px;
+            background-position: 50% 50%;
+            background-repeat:   no-repeat;
+            background-size:     cover;
+        }
+    </style>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar mb-md-5 py-2">
         <div class="container-fluid">
@@ -175,8 +187,8 @@
                                         @foreach(json_decode($info->image_path) as $path)
                                         <div class="col-md-3">
 
-                                            <img src="{{ asset($path) }}" width="100" height="100"
-                                                alt="{{$info->title}}" class="img-fluid" />
+                                            <img src="{{ asset($path) }}" width="200" height="200"
+                                                alt="{{$info->title}}" class="img img-fluid" />
 
                                         </div>
                                         @endforeach
