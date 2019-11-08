@@ -130,7 +130,7 @@
 
                         <p class="card-title weight-semi-bold"><a href="{{url('/media/blog', ['$id' => $blogs->id])}}">{!! $blogs->title !!}</a></p>
 
-                        <p class="font-13">{!! $blogs->content !!} </p>
+                        <p class="font-13">{!! str_limit($blogs->content, $limit = 200, $end = '...') !!}</p>
                     <a href="{{url('/media/blog', ['$id' => $blogs->id])}}" class="vfd-text-red weight-semi-bold">Read More</a>
 
                     </div>
