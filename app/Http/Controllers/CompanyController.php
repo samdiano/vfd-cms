@@ -33,9 +33,9 @@ class CompanyController extends Controller
     public function about()
     {
         $company = Company::find(1);
-        $directors = Profile::where('section', '=', 'directors')->orderBy('rank','asc')->get();
-        $portfolio = PortfolioHead::orderBy('rank','asc')->get();
-        $management = Management::orderBy('rank','asc')->get();
+        $directors = Profile::where('section', '=', 'directors')->orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $portfolio = PortfolioHead::orderBy('rank','asc')->orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $management = Management::orderBy('rank','asc')->orderByRaw('LENGTH(rank)', 'ASC')->get();
         $values = Value::all();
 
         return view('about', ['company' => $company, 'directors' => $directors, 'portfolio' => $portfolio, 'management' => $management, 'values' => $values]);
