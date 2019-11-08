@@ -2571,7 +2571,9 @@ class AdminController extends Controller
                 # code...
                 $max_info = $info->last()->rank;
             }
-            $finInfo->id = uniqid();
+            $date = new DateTime();
+
+            $finInfo->id = $date->getTimestamp();
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;
@@ -2605,7 +2607,9 @@ class AdminController extends Controller
                 # code...
                 $max_info = $info->last()->rank;
             }
-            $finInfo->id = uniqid();
+            $date = new DateTime();
+
+            $finInfo->id = $date->getTimestamp();
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;
@@ -2638,7 +2642,9 @@ class AdminController extends Controller
                 $max_info = $info->last()->rank;
             }
 
-            $finInfo->id = uniqid();
+            $date = new DateTime();
+
+            $finInfo->id = $date->getTimestamp();
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;

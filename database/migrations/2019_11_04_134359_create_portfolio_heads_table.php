@@ -14,7 +14,7 @@ class CreatePortfolioHeadsTable extends Migration
     public function up()
     {
         Schema::create('portfolio_heads', function (Blueprint $table) {
-            $table->string('id')->unique();
+            $table->bigIncrements('id');
             $table->string('name');
             $table->string('role');
             $table->string('image');
