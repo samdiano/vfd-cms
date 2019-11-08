@@ -9,13 +9,12 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card-box">
-                        <a class="btn btn-primary" href="{{ url('admin/governance/new') }}">Add Profile</a>
                         <div class="table-rep-plugin">
                             <div class="table-responsive" data-pattern="priority-columns">
                                 @include('partial.alert')
                                 @if(count($info) < 1) <br><br>
                                     <div class="alert alert-info text-center">
-                                        <p>There are no Head of portfolios posted at the moment</p>
+                                        <p>There are no Head of portfolios posted at the moment</p> <a class="btn btn-primary" href="{{ url('admin/governance/new') }}">Click here to add Profile</a>
                                     </div>
                                     @else
                                     <br><br>

@@ -6,6 +6,9 @@
 <div class="content-page">
     <div class="content">
         <div class="container">
+            <div class="m-b-30">
+                <a class="btn btn-primary" href="{{ url('admin/governance/new') }}">Add Profile</a>
+            </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="card-box text-center">
