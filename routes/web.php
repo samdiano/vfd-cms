@@ -359,5 +359,4 @@ Route::get('/admin/subscribers','AdminController@subscribers')->name('subscriber
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/admin', 'HomeController@index')->name('admin');

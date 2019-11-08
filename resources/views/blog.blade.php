@@ -119,36 +119,25 @@
 
             <div class="col-md-3 col-md-1">
                 <h6 class="weight-semi-bold text-md-left text-center mb-3 mt-2">More Blog Posts...</h6>
+
+                @foreach($blogs as $blogs)
+
+                @if($blog->id == $blogs->id)
                 <div class="card mb-4">
-                    <img class="card-img-top" src="img/post_1.png" alt="post">
+                    <img class="card-img-top" src="{{asset($blogs->image_path)}}" alt="post">
 
                     <div class="card-body grey-bg px-3">
 
-                        <p class="card-title weight-semi-bold"><a href="blog_post.html">PRESS RELEASE – VFD Group
-                                Concludes a Successful Business Exit of Germaine Auto Center.</a></p>
+                        <p class="card-title weight-semi-bold"><a href="{{url('/media/blog', ['$id' => $blogs->id])}}">{!! $blogs->title !!}</a></p>
 
-                        <p class="font-13">Lagos – Nigeria, 15 07 2019: — VFD Group Plc (“VFD Group”, “VFD”) announces
-                            its... </p>
-                        <a href="blog_post.html" class="vfd-text-red weight-semi-bold">Read More</a>
+                        <p class="font-13">{!! $blogs->content !!} </p>
+                    <a href="{{url('/media/blog', ['$id' => $blogs->id])}}" class="vfd-text-red weight-semi-bold">Read More</a>
 
                     </div>
                 </div>
+                @endif
+                @endforeach
 
-
-                <div class="card mb-4">
-                    <img class="card-img-top" src="img/post_2.png" alt="post">
-
-                    <div class="card-body grey-bg px-3">
-
-                        <p class="card-title weight-semi-bold"><a href="blog_post.html">PRESS RELEASE – VFD Group
-                                Concludes a Successful Business Exit of Germaine Auto Center.</a></p>
-
-                        <p class="font-13">Lagos – Nigeria, 15 07 2019: — VFD Group Plc (“VFD Group”, “VFD”) announces
-                            its... </p>
-                        <a href="blog_post.html" class="vfd-text-red weight-semi-bold">Read More</a>
-
-                    </div>
-                </div>
 
                 <div class="card mb-4">
                     <a class="twitter-timeline" data-width="300" data-height="300"

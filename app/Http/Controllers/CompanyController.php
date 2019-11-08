@@ -79,7 +79,14 @@ class CompanyController extends Controller
     public function blog($id)
     {
         $blog = Blog::find($id);
-        return view('blog', ['blog' => $blog]);
+        $more_blogs = Blog::all();
+        $blogs = Blog::all()->random(1);
+
+        if (count($more_blogs) > 1) {
+            # code...
+            $blogs = Blog::all()->random(2);
+        }
+        return view('blog', ['blog' => $blog, 'blogs' => $blogs]);
     }
 
     /**

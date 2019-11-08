@@ -34,7 +34,7 @@
                                                 <td>
                                                     {{-- <a class="btn btn-info" href="{{ url('booking/annual/view/') }}">Edit</a>
                                                     --}}
-                                                    <a data-toggle="modal" data-target="#{{$info->id}}" href="#"
+                                                    <a data-toggle="modal" data-target="#{{$service->id}}" href="#"
                                                         class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
