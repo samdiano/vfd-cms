@@ -271,7 +271,7 @@
                                                                 <h4 class="font-weight-bold gotham-bold">{{$director->name}}
                                                                 </h4>
                                                                 <p class="small">{!! $director->brief !!}
-                                                                    <a href="{{ url('profile',['id' => $director->id]) }}"
+                                                                    <a href="{{ url('profile',['id' => $director->id,'type' => 'profile']) }}"
                                                                         class="text-danger mb-3">Detailed Profile</a>
         
                                                                     <ul class="list-inline mt-2">
@@ -372,7 +372,7 @@
                                                             <h4 class="font-weight-bold gotham-bold">{{$port->name}}
                                                             </h4>
                                                             <p class="small">{!! $port->brief !!}
-                                                                <a href="{{ url('profile',['id' => $port->id]) }}"
+                                                                <a href="{{ url('profile',['id' => $port->id,'type' => 'portfolio']) }}"
                                                                     class="text-danger mb-3">Detailed Profile</a>
     
                                                                 <ul class="list-inline mt-2">
@@ -473,7 +473,7 @@
                                                             <h4 class="font-weight-bold gotham-bold">{{$mgt->name}}
                                                             </h4>
                                                             <p class="small">{!! $mgt->brief !!}
-                                                                <a href="{{ url('profile',['id' => $mgt->id]) }}"
+                                                                <a href="{{ url('profile',['id' => $mgt->id,'type' => 'management']) }}"
                                                                     class="text-danger mb-3">Detailed Profile</a>
     
                                                                 <ul class="list-inline mt-2">

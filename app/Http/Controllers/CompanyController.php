@@ -64,9 +64,20 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function profile($id)
+    public function profile($id, $type)
     {
+        if($type == 'profile'){
+
         $profile = Profile::find($id);
+    }
+        if($type == 'management'){
+            
+        $profile = Management::find($id);
+    }
+        if($type == 'portfolio'){
+            
+        $profile = PortfolioHead::find($id);
+    }
         return view('profile', ['profile' => $profile]);
     }
 
