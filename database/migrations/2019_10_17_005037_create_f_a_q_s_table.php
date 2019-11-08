@@ -15,8 +15,8 @@ class CreateFAQSTable extends Migration
     {
         Schema::create('f_a_q_s', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('question');    
-            $table->string('response');    
+            $table->text('question');    
+            $table->text('response');    
             $table->string('rank');    
             $table->enum('type', ['investor', 'general', 'career']);  
             $table->timestamps();
