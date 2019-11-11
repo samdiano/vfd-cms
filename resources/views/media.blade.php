@@ -44,7 +44,7 @@
             position: relative;
             float: left;
             width:  100%;
-            height: 250px;
+            height: 220px;
             /* margin-bottom: 30px; */
             background-position: 50% 50%;
             background-repeat:   no-repeat;
@@ -160,7 +160,7 @@
                                 <div class="card">
                                     <a href="{{url('media/blog/'.$blog->id)}}"><img class="card-img-top img-bg"
                                             src="{{ asset($blog->image_path) }}" alt="post"></a>
-                                    <div class="card-body grey-bg px-3" style="height: 250px">
+                                    <div class="card-body grey-bg px-3" style="height: 220px">
 
                                         <p class="card-title weight-semi-bold"><a>{!! str_limit($blog->title, 20)!!}</a></p>
 
