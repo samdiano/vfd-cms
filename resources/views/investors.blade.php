@@ -235,8 +235,8 @@
                     </div>
 
 
-                    @endforeach
                 </div>
+                @endforeach
             </div>
 
 
@@ -284,8 +284,8 @@
 
                     </div>
 
-                    @endforeach
                 </div>
+                @endforeach 
             </div>
 
             <div class="tab-pane fade" id="faq-just" role="tabpanel" aria-labelledby="faq-tab-just">

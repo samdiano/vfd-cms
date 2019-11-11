@@ -33,23 +33,25 @@
         .img {
             position: relative;
             float: left;
-            width:  100%;
+            width: 100%;
             height: 178px;
             margin-bottom: 30px;
             background-position: 50% 50%;
-            background-repeat:   no-repeat;
-            background-size:     cover;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
+
         .img-bg {
             position: relative;
             float: left;
-            width:  100%;
+            width: 100%;
             height: 220px;
             /* margin-bottom: 30px; */
             background-position: 50% 50%;
-            background-repeat:   no-repeat;
-            background-size:     cover;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
+
         .read {
             position: absolute;
             bottom: 10px;
@@ -162,7 +164,8 @@
                                             src="{{ asset($blog->image_path) }}" alt="post"></a>
                                     <div class="card-body grey-bg px-3" style="height: 220px">
 
-                                        <p class="card-title weight-semi-bold"><a>{!! str_limit($blog->title, 20)!!}</a></p>
+                                        <p class="card-title weight-semi-bold"><a>{!! str_limit($blog->title, 20)!!}</a>
+                                        </p>
 
                                         <p class="font-13">{!! str_limit($blog->content, 200)!!}</p>
                                         <a href="{{url('media/blog/'.$blog->id)}}"
@@ -183,7 +186,7 @@
                             <div class="card my-3 border-0">
 
                                 <div class="card-header border rounded" role="tab" id="headingOne1">
-                                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1"
+                                    <a data-toggle="collapse" data-parent="#accordionEx" href="#{{$gal}}--"
                                         aria-expanded="true" aria-controls="collapseOne1">
                                         <h5 class="mb-0 text_secondary">
                                             <span class="gotham-bold">{{$gal}}</span> <i
@@ -192,7 +195,7 @@
                                     </a>
                                 </div>
 
-                                <div id="collapseOne1" class="collapse show my-4" role="tabpanel"
+                                <div id="{{$gal}}--" class="collapse show my-4" role="tabpanel"
                                     aria-labelledby="headingOne1" data-parent="#accordionEx">
 
                                     <div class="row">
@@ -226,7 +229,7 @@
                             <div class="card my-3 border-0">
 
                                 <div class="card-header border rounded" role="tab" id="heading1">
-                                    <a data-toggle="collapse" data-parent="#accordionEx3" href="#videos1"
+                                    <a data-toggle="collapse" data-parent="#accordionEx3" href="#{{$vid}}"
                                         aria-expanded="true" aria-controls="videos1">
                                         <h5 class="mb-0 text_secondary">
                                             <span class="gotham-bold">{{$vid}}</span> <i
@@ -235,7 +238,7 @@
                                     </a>
                                 </div>
 
-                                <div id="videos1" class="collapse show my-4" role="tabpanel" aria-labelledby="heading1"
+                                <div id="{{$vid}}" class="collapse show my-4" role="tabpanel" aria-labelledby="heading1"
                                     data-parent="#accordionEx">
 
                                     <div class="row">
@@ -278,7 +281,7 @@
             </div>
 
             <div class="col-md-3">
-                <div class="mt- vertical-8">
+                <div class="mt- vertical-9 card shadow">
                     <a class="twitter-timeline" data-width="300" data-height="300"
                         href="https://twitter.com/VFDGroup?ref_src=twsrc%5Etfw">Tweets by VFDGroup</a>
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -339,10 +342,10 @@
 <script src="{{ asset('assets/js/utility.js') }}"></script>
 <script src="{{ asset('assets/js/modal-video.min.js') }}"></script>
 <script>
-        //        $(".js-modal-btn").modalVideo();
+    //        $(".js-modal-btn").modalVideo();
         window.addEventListener('DOMContentLoaded',function(){
             new ModalVideo(".js-modal-btn");
         });
-    </script>
+</script>
 
 </html>
