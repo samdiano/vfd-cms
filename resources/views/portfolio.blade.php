@@ -108,7 +108,8 @@
                     @foreach($services as $service)
                     <div class="col-md-6">
                         <ul>
-                            <li class="custom-list my-2"><a class="service-link" href="{{$service->link}}">{{$service->name}}</a></li>
+                            <li class="custom-list my-2"><a class="service-link"
+                                    href="{{$service->link}}">{{$service->name}}</a></li>
                         </ul>
                     </div>
                     @endforeach
@@ -135,18 +136,19 @@
             </div>
 
             <div class="col-md-4">
-                <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1" />
-                <p class="font-28 text-green-deep gotham-bold weight-semi-bold text-center">
-                    As a team, we identified the gap between both individuals and small businesses and
-                </p>
-
-                <div class="card mb-5" style=";">
+                    @if($company->quote)
+                    <img src="{{ asset('assets/img/%E2%80%9C.png') }}" class="img-fluid apostrophe-1" />
+                    <p class="font-26 text-green-deep gotham-bold weight-semi-bold text-center">
+                        {!! $company->quote !!}
+                    </p>
+                    @endif
+                @if($company->profile)
+                <div class="card mb-5 onhover cursor" data-toggle="modal" data-target="#download">
                     <img src="{{ asset('assets/img/download_2.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0 d-flex px-0">
                         <div class="col-8">
-                            <h5 class="card-title mb-0 font-weight-bold font-12">Download VFD Group Profile</h5>
-                            {{-- <p class="card-text font-12 mb-0">Download for {{ date('M Y', $company->updated_at) }}
-                            </p> --}}
+                            <h5 class="card-title mb-0 font-weight-bold font-12">VFD Group Profile</h5>
+                            <p class="card-text font-12 mb-0">Download for March 28th</p>
                         </div>
 
                         <div class="col ml-auto">
@@ -154,6 +156,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
 
                 <div class="mt-4">
                     <a class="twitter-timeline" data-width="400" data-height="350"
@@ -191,6 +194,51 @@
         </div>
     </div>
     @endforeach
+
+    <!--       Download modal-->
+    <div class="modal fade" id="download" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+            <div class="modal-dialog download-modal modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header border-0 pb-0">
+                        <img src="{{ asset('assets/img/close_button.png') }}" alt="close button"
+                            class="img-fluid position-absolute close_button" data-dismiss="modal" aria-label="Close" />
+                        <button type="button" class="d-none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+    
+    
+    
+                    <div class="modal-body">
+                        <div class="row justfy-content-center">
+                            <div class="col-md-10">
+                                <h5 class="gotham-bold mb-3">Download VFD Group Profile</h5>
+                                <form action="{{ url('about') }}" method="post" enctype="multipart/form-data" role="form">
+                                    {{ csrf_field() }}
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label for="name">Your Name</label>
+                                            <input id="name" type="text" name="name" class="form-control border rounded"
+                                                placeholder="">
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label for="email">Your Email</label>
+                                            <input id="email" type="email" name="email" class="form-control border rounded">
+                                        </div>
+                                    </div>
+                                    <button class="vfd-text-red">Download</button>
+                                </form>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
 
 
 
