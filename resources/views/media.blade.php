@@ -33,12 +33,26 @@
         .img {
             position: relative;
             float: left;
-            width:  205px;
+            width:  100%;
             height: 178px;
             margin-bottom: 30px;
             background-position: 50% 50%;
             background-repeat:   no-repeat;
             background-size:     cover;
+        }
+        .img-bg {
+            position: relative;
+            float: left;
+            width:  100%;
+            height: 250px;
+            /* margin-bottom: 30px; */
+            background-position: 50% 50%;
+            background-repeat:   no-repeat;
+            background-size:     cover;
+        }
+        .read {
+            position: absolute;
+            bottom: 10px;
         }
     </style>
     <!--Navbar-->
@@ -144,15 +158,15 @@
                             <div class="col-md-4 my-3">
 
                                 <div class="card">
-                                    <a href="{{url('media/blog/'.$blog->id)}}"><img class="card-img-top"
+                                    <a href="{{url('media/blog/'.$blog->id)}}"><img class="card-img-top img-bg"
                                             src="{{ asset($blog->image_path) }}" alt="post"></a>
-                                    <div class="card-body grey-bg px-3">
+                                    <div class="card-body grey-bg px-3" style="height: 250px">
 
-                                        <p class="card-title weight-semi-bold"><a>{{$blog->title}}</a></p>
+                                        <p class="card-title weight-semi-bold"><a>{!! str_limit($blog->title, 20)!!}</a></p>
 
                                         <p class="font-13">{!! str_limit($blog->content, 200)!!}</p>
                                         <a href="{{url('media/blog/'.$blog->id)}}"
-                                            class="vfd-text-red weight-semi-bold">Read More</a>
+                                            class="vfd-text-red weight-semi-bold read">Read More</a>
                                     </div>
                                 </div>
                             </div>

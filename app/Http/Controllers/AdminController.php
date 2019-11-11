@@ -540,10 +540,12 @@ class AdminController extends Controller
     public function portfolioEdit(Request $request)
     {
         $validator = $this->validate($request, [
-            'portfolio' => 'required'
+            'portfolio' => 'required',
+            'quote' => 'required',
         ]);
         $company = Company::find(1);
         $company->portfolio = $request->portfolio;
+        $company->quote = $request->quote;
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {

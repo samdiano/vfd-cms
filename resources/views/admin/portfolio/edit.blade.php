@@ -21,12 +21,21 @@
                                 {{ csrf_field() }}
 
                                 <div class="form-group">
-                                    {{-- <label class="control-label col-md-3 col-sm-3">
-                                                    First name
-                                                </label> --}}
-                                    <div class="col-md-offset-2 col-md-9 col-sm-9">
+                                    <label class="control-label col-md-3 col-sm-3">
+                                        Introductory text
+                                    </label>
+                                    <div class="col-md-8 col-sm-8">
                                         <textarea class="form-control"
-                                            name="portfolio">{{$company->portfolio ?? ''}}</textarea>
+                                            name="portfolio">{{$company->portfolio}}</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3">
+                                        Side quote
+                                    </label>
+                                    <div class="col-md-8 col-sm-8">
+                                        <input class="form-control" name="quote" value="{{$company->quote}}">
                                     </div>
                                 </div>
 
