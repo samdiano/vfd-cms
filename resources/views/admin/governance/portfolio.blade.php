@@ -17,9 +17,10 @@
                                 </div>
                                 @if(count($info) < 1) <br><br>
                                     <div class="alert alert-info text-center">
-                                        <p>There are no Head of portfolios posted at the moment</p> <a
+                                        <p>There are no Head of portfolios posted at the moment</p>
+                                        {{-- <a
                                             class="btn btn-primary" href="{{ url('admin/governance/new') }}">Click here
-                                            to add Profile</a>
+                                        to add Profile</a> --}}
                                     </div>
                                     @else
                                     <br><br>
