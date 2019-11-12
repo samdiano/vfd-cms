@@ -162,7 +162,7 @@
                                     @foreach($finInfo as $info)
                                     @if($fin == date('Y', strtotime($info->year)))
                                     <div class="col-md-4 my-2">
-                                        <a href="{{ asset($info->image_path) }}" target="_blank">
+                                        <a href="{{ asset($info->document) }}" target="_blank">
                                             <div class="investor-info-images" style="background-image: url({{ asset($info->image_path) }});
                                                                                          background-size: cover;
                                                                                          background-repeat: no-repeat;
@@ -214,9 +214,9 @@
                                     @foreach($conInfo as $info)
                                     @if($con == $info->year)
                                     <div class="col-md-4 my-2">
-                                        <a href="https://vfdgroup.com/wp-content/uploads/2019/03/Audited-Financial-Report-2016..2017_optimized.pdf"
+                                        <a href="{{ asset($info->document) }}"
                                             target="_blank">
-                                            <div class="investor-info-images" style="background-image: url({{ asset('assets/img/Getting-listed-2.png') }});
+                                            <div class="investor-info-images" style="background-image: url({{ asset($info->image_path) }});
                                                                                          background-size: cover;
                                                                                          background-repeat: no-repeat;
                                                                                          background-position: center center;
@@ -265,7 +265,7 @@
                                     @foreach($pressInfo as $info)
                                     @if($press == $press->year)
                                     <div class="col-md-4 my-2">
-                                        <a href="{{ asset($info->image_path) }}" target="_blank">
+                                        <a href="{{ asset($info->document) }}" target="_blank">
                                             <div class="investor-info-images" style="background-image: url({{ asset($info->image_path) }});
                                                                                             background-size: cover;
                                                                                             background-repeat: no-repeat;
