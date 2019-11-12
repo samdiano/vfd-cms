@@ -425,97 +425,31 @@
                                 <div class="row justify-content-center">
                                     @foreach($management as $mgt)
                                     <div class="col-md-5 border-bottom md-border-right border-left py-3">
-                                        <div class="row">
-                                            <div class="col-md-5" data-toggle="modal" data-target="#{{$mgt->name}}">
-                                                <div class="curso" style="background-image: url({{ asset($mgt->image) }});
-                                                                                  background-size: contain;
-                                                                                  background-position: center;
-                                                                                  background-repeat: no-repeat;
-                                                                                  width: 100%;
-                                                                                  height: 250px;">
 
-                                                </div>
+                                        <div class="row">
+                                            <div class="col-md-5 cursor">
+                                                <a href="detailed_profile.html">
+                                                    <div style="background-image: url({{ asset($mgt->image) }});
+																	background-size: cover;
+																	background-position: center;
+																	background-repeat: no-repeat;
+																	width: 100%;
+																	height: 250px;">
+                                                    </div>
+                                                </a>
                                             </div>
 
                                             <div class="col-md-6">
-                                                <h5 class="cursor font-weight-bold mt-3 text-md-left text-center"
-                                                    data-toggle="modal" data-target="#{{$mgt->name}}">
-                                                    {{$mgt->name}}</h5>
+                                                <a href="{{ url('profile',['id' => $mgt->id,'type' => 'management']) }}">
+                                                    <h5
+                                                        class="font-weight-bold text-dark mt-4 text-md-left text-center text-uppercase">
+                                                        {{$mgt->name}}</h5>
+                                                </a>
                                                 <p class="text-md-left text-center">{{$mgt->role}}</p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="modal fade" id="{{$mgt->name}}" tabindex="-1" role="dialog"
-                                        aria-labelledby="exec_infoLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header border-0 pb-0">
-                                                    <img src="{{ asset('assets/img/close_button.png') }}"
-                                                        alt="close button"
-                                                        class="img-fluid position-absolute close_button"
-                                                        data-dismiss="modal" aria-label="Close" />
-                                                    <button type="button" class="d-none">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="row">
-
-                                                        <div class="col-md-5">
-                                                            <div style="background-image: url({{ asset($mgt->image) }});
-                                                                                    background-size: contain;
-                                                                                    background-position: center;
-                                                                                    background-repeat: no-repeat;
-                                                                                    width: 100%;
-                                                                                    height: 250px;">
-
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-7">
-                                                            <h6 class="font-weight-bold">{{$mgt->role}}</h6>
-                                                            <h4 class="font-weight-bold gotham-bold">{{$mgt->name}}
-                                                            </h4>
-                                                            <p class="small">{!! $mgt->brief !!}
-                                                                <a href="{{ url('profile',['id' => $mgt->id,'type' => 'management']) }}"
-                                                                    class="text-danger mb-3">Detailed Profile</a>
-
-                                                                <ul class="list-inline mt-2">
-                                                                    @if($mgt->facebook)
-                                                                    <li class="list-inline-item"><a target="_blank"
-                                                                            href="{{$mgt->facebook}}"><img
-                                                                                src="{{ asset('assets/img/social_icons/facebook.png')}}"
-                                                                                class="img-fluid" /></a></li>
-                                                                    @endif
-                                                                    @if($mgt->linkedin)
-                                                                    <li class="list-inline-item"><a target="_blank"
-                                                                            href="{{$mgt->linkedin}}"><img
-                                                                                src="{{ asset('assets/img/social_icons/linkedin.png')}}"
-                                                                                class="img-fluid" /></a></li>
-                                                                    @endif
-                                                                    @if($mgt->instagram)
-                                                                    <li class="list-inline-item"><a target="_blank"
-                                                                            href="{{$mgt->instagram}}"><img
-                                                                                src="{{ asset('assets/img/social_icons/instagram.png')}}"
-                                                                                class="img-fluid" /></a></li>
-                                                                    @endif
-                                                                    @if($mgt->twitter)
-                                                                    <li class="list-inline-item"><a target="_blank"
-                                                                            href="{{$mgt->twitter}}"><img
-                                                                                src="{{ asset('assets/img/social_icons/twitter.png')}}"
-                                                                                class="img-fluid" /></a></li>
-                                                                    @endif
-                                                                </ul>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="modal-footer px-5 py-4 border-0">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                     @endforeach
                                 </div>
 
