@@ -93,7 +93,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="font-41 text-white vertical-7 weight-semi-bold">Portfolio</h3>
+                    <h3 class="font-41 text-white vertical-8 weight-semi-bold">Portfolio</h3>
                 </div>
             </div>
         </div>
