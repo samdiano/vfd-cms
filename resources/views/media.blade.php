@@ -78,33 +78,33 @@
 
 
                     <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold  " href="/">Home</a>
+                        <a class="nav-link bold  " href="{{url('/')}}">Home</a>
                     </li>
 
 
                     <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold" href="about">About Us</a>
+                        <a class="nav-link bold" href="{{url('/about')}}">About Us</a>
                     </li>
 
 
                     <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold" href="portfolio">Our Portfolio</a>
+                        <a class="nav-link bold" href="{{url('/portfolio')}}">Our Portfolio</a>
                     </li>
 
                     <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold" href="investors">Investor Information</a>
+                        <a class="nav-link bold" href="{{url('/investors')}}">Investor Information</a>
                     </li>
 
                     <li class="nav-item px-md-3 my-2 my-md-0 active-link">
-                        <a class="nav-link bold" href="media">Media</a>
+                        <a class="nav-link bold" href="{{url('/media')}}">Media</a>
                     </li>
 
                     <li class="nav-item px-md-3 my-2 my-md-0 ">
-                        <a class="nav-link bold" href="career">Careers</a>
+                        <a class="nav-link bold" href="{{url('/career')}}">Careers</a>
                     </li>
 
-                    <li class="nav-item px-md-3 my-2 my-md-0 ">
-                        <a class="nav-link bold" href="contact_us">Contact Us</a>
+                    <li class="nav-item px-md-3 my-2 my-md-0">
+                        <a class="nav-link bold" href="{{url('/contact_us')}}">Contact Us</a>
                     </li>
 
                     <li class="nav-item pl-md-3 pr-md-5 my-2 my-md-0">
@@ -164,7 +164,9 @@
                                             src="{{ asset($blog->image_path) }}" alt="post"></a>
                                     <div class="card-body grey-bg px-3" style="height: 220px">
 
-                                        <p class="card-title weight-semi-bold"><a href="{{url('media/blog/'.$blog->id)}}">{!! str_limit($blog->title, 20)!!}</a>
+                                        <p class="card-title weight-semi-bold"><a
+                                                href="{{url('media/blog/'.$blog->id)}}">{!! str_limit($blog->title,
+                                                20)!!}</a>
                                         </p>
 
                                         <p class="font-13">{!! str_limit($blog->content, 200)!!}</p>
@@ -203,10 +205,10 @@
                                         @if($gal == date('Y', strtotime($info->year)))
                                         @foreach(json_decode($info->image_path) as $path)
                                         <div class="col-md-3">
-
-                                            <img src="{{ asset($path) }}" width="200" height="200"
-                                                alt="{{$info->title}}" class="img img-fluid" />
-
+                                            <a href="{{url('gallery', ['id'=> $info->id])}}">
+                                                <img src="{{ asset($path) }}" width="200" height="200"
+                                                    alt="{{$info->title}}" class="img img-fluid" />
+                                            </a>
                                         </div>
                                         @endforeach
                                         @endif
