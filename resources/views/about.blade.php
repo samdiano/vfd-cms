@@ -339,6 +339,7 @@
                                                     data-toggle="modal" data-target="#{{$port->name}}">
                                                     {{$port->name}}</h5>
                                                 <p class="text-md-left text-center">{{$port->role}}</p>
+                                                <p class="text-md-left text-center font-12">{{$port->section}}</p>
                                             </div>
                                         </div>
                                     </div>
