@@ -13,8 +13,9 @@
                         <h4 class="header-title m-t-0 m-b-30">Update Profile</h4>
                         <div class="row">
                             @include('partial.alert')
-                            <form class="form-horizontal" action="{{ url('admin/governance/portfolios/edit', ['$id' => $info->id]) }}" method="post"
-                                enctype="multipart/form-data" role="form">
+                            <form class="form-horizontal"
+                                action="{{ url('admin/governance/portfolios/edit', ['$id' => $info->id]) }}"
+                                method="post" enctype="multipart/form-data" role="form">
                                 {{ csrf_field() }}
                                 <div class="col-md-10">
                                     <div class="form-group">
@@ -23,8 +24,7 @@
                                         </label>
                                         <div class="col-md-9 col-sm-9">
                                             <label class="">
-                                                <input type="file" name="logo" accept="image/*" class="form-control"
-                                                    >
+                                                <input type="file" name="logo" accept="image/*" class="form-control">
                                                 <i class="fa fa-photo"></i> Add Photo
                                             </label>
                                         </div>
@@ -34,7 +34,7 @@
                                             Name
                                         </label>
                                         <div class="col-md-9 col-sm-9">
-                                        <input type="text" name="name"  value="{{$info->name}}" class="form-control">
+                                            <input type="text" name="name" value="{{$info->name}}" class="form-control">
                                         </div>
                                     </div>
 
@@ -44,6 +44,23 @@
                                         </label>
                                         <div class="col-md-9 col-sm-9">
                                             <input type="text" name="role" value="{{$info->role}}" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3">
+                                            Portfolio
+                                        </label>
+                                        <div class="col-md-9 col-sm-9">
+                                            <select name="portfolio" class="form-control" required>
+                                                <option>{{$info->section}}</option><hr>
+                                                <option>VFD Microfinance Bank</option>
+                                                <option>VFD Bridge</option>
+                                                <option>Anchoria Asset Management Limited</option>
+                                                <option>Dynasty Real Estate</option>
+                                                <option>Everdon Bureau de Change</option>
+
+                                            </select>
                                         </div>
                                     </div>
 
@@ -75,7 +92,8 @@
                                             Description
                                         </label>
                                         <div class="col-md-9 col-sm-9">
-                                            <textarea name="description"  class="form-control">{{$info->description}}</textarea>
+                                            <textarea name="description"
+                                                class="form-control">{{$info->description}}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -83,7 +101,8 @@
                                             Twitter profile
                                         </label>
                                         <div class="col-md-9 col-sm-9">
-                                            <input type="url" name="twitter" value="{{$info->twitter}}" class="form-control">
+                                            <input type="url" name="twitter" value="{{$info->twitter}}"
+                                                class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -91,7 +110,8 @@
                                             Instagram profile
                                         </label>
                                         <div class="col-md-9 col-sm-9">
-                                            <input type="url" name="instagram" value="{{$info->instagram}}" class="form-control">
+                                            <input type="url" name="instagram" value="{{$info->instagram}}"
+                                                class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -99,7 +119,8 @@
                                             Linkedin profile
                                         </label>
                                         <div class="col-md-9 col-sm-9">
-                                            <input type="url" name="linkedin" value="{{$info->linkedin}}" class="form-control">
+                                            <input type="url" name="linkedin" value="{{$info->linkedin}}"
+                                                class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -107,7 +128,8 @@
                                             Facebook profile
                                         </label>
                                         <div class="col-md-9 col-sm-9">
-                                            <input type="url" name="facebook" value="{{$info->profile}}" class="form-control">
+                                            <input type="url" name="facebook" value="{{$info->profile}}"
+                                                class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
