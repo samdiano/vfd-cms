@@ -212,7 +212,7 @@
                                 <hr class="my-2" />
                                 <div class="row">
                                     @foreach($conInfo as $info)
-                                    @if($con == $info->year)
+                                    @if($con == date('Y', strtotime($info->year)))
                                     <div class="col-md-4 my-2">
                                         <a href="{{ asset($info->document) }}"
                                             target="_blank">
@@ -263,7 +263,7 @@
                                 <hr class="my-2" />
                                 <div class="row">
                                     @foreach($pressInfo as $info)
-                                    @if($press == $press->year)
+                                    @if($press == date('Y', strtotime($info->year)))
                                     <div class="col-md-4 my-2">
                                         <a href="{{ asset($info->document) }}" target="_blank">
                                             <div class="investor-info-images" style="background-image: url({{ asset($info->image_path) }});

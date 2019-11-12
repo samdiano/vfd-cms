@@ -150,6 +150,7 @@ class CompanyController extends Controller
         $generalFaq = Faq::where('type', '=', 'general')->get();
         $investorFaq = InvestorFaq::all();
         $careerFaq = CareerFaq::all();
+        
         $finInfo = FinancialInformation::all();
         $finArr = [];
         foreach ($finInfo as $fin) {
