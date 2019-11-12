@@ -12,8 +12,14 @@
                         <div class="table-rep-plugin">
                             <div class="table-responsive" data-pattern="priority-columns">
                                 @include('partial.alert')
+                                <div class="m-b-30">
+                                    <a class="btn btn-primary" href="{{ url('admin/governance/new') }}">Add Profile</a>
+                                </div>
                                 @if(count($info) < 1) <br><br>
-                                    <div class="alert alert-info text-center"> <p>There are no board of director members posted at the moment</p> <a class="btn btn-primary" href="{{ url('admin/governance/new') }}">Click here to add Profile</a>
+                                    <div class="alert alert-info text-center">
+                                        <p>There are no board of director members posted at the moment</p> <a
+                                            class="btn btn-primary" href="{{ url('admin/governance/new') }}">Click here
+                                            to add Profile</a>
                                     </div>
                                     @else
                                     <br><br>
@@ -40,11 +46,12 @@
                                                 <td>
                                                     {{-- <a class="btn btn-primary" href="{{ url('booking/annual/view/') }}">View</a>
                                                     --}}
-                                                    <a class="btn btn-info" href="{{ url('admin/governance/directors/edit', ['id' => $info->id]) }}">Edit</a>
-                                                   
+                                                    <a class="btn btn-info"
+                                                        href="{{ url('admin/governance/directors/edit', ['id' => $info->id]) }}">Edit</a>
+
                                                     <a data-toggle="modal" data-target="#{{$info->id}}" href="#"
-                                                            class="btn btn-warning">Change Priority</a>
-                                                            
+                                                        class="btn btn-warning">Change Priority</a>
+
                                                     <a data-toggle="modal" data-target="#{{$info->id}}del" href="#"
                                                         class="btn btn-danger">Delete</a>
                                                 </td>
@@ -93,8 +100,8 @@
                                                                 <div class="text-danger"><span
                                                                         class="modal-main-icon mdi mdi-close-circle-o"></span>
                                                                 </div>
-                                                                    <h3>Update Priority</h3>
-                                                                    {{-- <h3>Warning!</h3> --}}
+                                                                <h3>Update Priority</h3>
+                                                                {{-- <h3>Warning!</h3> --}}
                                                                 {{-- <p>Chan</p> --}}
                                                                 <form class="form-horizontal"
                                                                     action="{{ url('admin/governance/directors/rank', ['id' => $info->id]) }}"
@@ -115,14 +122,13 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                
-                                                                <div class="xs-mt-50">
-                                                                    <button type="button" data-dismiss="modal"
-                                                                        class="btn btn-space btn-default">Cancel</button>
-                                                                    <button
-                                                                        class="btn btn-space btn-success"
-                                                                        type="submit">Change Priority</button>
-                                                                </div>
+
+                                                                    <div class="xs-mt-50">
+                                                                        <button type="button" data-dismiss="modal"
+                                                                            class="btn btn-space btn-default">Cancel</button>
+                                                                        <button class="btn btn-space btn-success"
+                                                                            type="submit">Change Priority</button>
+                                                                    </div>
                                                                 </form>
                                                             </div>
                                                         </div>
