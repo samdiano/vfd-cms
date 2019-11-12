@@ -164,7 +164,7 @@
                                             src="{{ asset($blog->image_path) }}" alt="post"></a>
                                     <div class="card-body grey-bg px-3" style="height: 220px">
 
-                                        <p class="card-title weight-semi-bold"><a>{!! str_limit($blog->title, 20)!!}</a>
+                                        <p class="card-title weight-semi-bold"><a href="{{url('media/blog/'.$blog->id)}}">{!! str_limit($blog->title, 20)!!}</a>
                                         </p>
 
                                         <p class="font-13">{!! str_limit($blog->content, 200)!!}</p>
