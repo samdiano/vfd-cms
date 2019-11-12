@@ -112,12 +112,13 @@
         <div class="row mt-4 mb-3 p-font-17">
             <div class="col-md-6">
                 <p class="mt-md-">{!!$company->career!!}</p>
+                @if($company->career_quote)
                 <div class="position-relative">
                     <p class="font-weight-bold ml-md-2 text-green-deep gotham-bold mt-5 font-18">
                         {{$company->career_quote}}</p>
                     <img src="img/%E2%80%9C.png" class="img-fluid apostrophe-1 pt-4" />
                 </div>
-
+                @endif
                 <p class="">
                     {!!$company->career_text!!}</p>
             </div>
