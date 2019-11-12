@@ -34,6 +34,8 @@ Route::get('/contact_us', 'CompanyController@contact')->name('contact');
 
 Route::get('profile/{id}/{type}','CompanyController@profile')->name('profile');
 
+Route::get('gallery/{id}','CompanyController@gallery')->name('gallery');
+
 Route::get('/admin', function () {
     return view('admin.dashboard');
 });

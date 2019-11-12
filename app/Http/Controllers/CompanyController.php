@@ -150,7 +150,7 @@ class CompanyController extends Controller
         $generalFaq = Faq::where('type', '=', 'general')->get();
         $investorFaq = InvestorFaq::all();
         $careerFaq = CareerFaq::all();
-        
+
         $finInfo = FinancialInformation::all();
         $finArr = [];
         foreach ($finInfo as $fin) {
@@ -189,6 +189,24 @@ class CompanyController extends Controller
         $product = Product::all();
         $sub = Product::all();
         return view('portfolio', ['services' => $services, 'product' => $product, 'sub' => $sub, 'company' => $company]);
+    }
+
+    /**
+     * Show the company's career page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function gallery($id)
+    {
+        $gallery = Gallery::find($id);
+        $more_blogs = Blog::all();
+        $blogs = Blog::all()->random(1);
+
+        if (count($more_blogs) > 1) {
+            # code...
+            $blogs = Blog::all()->random(2);
+        }
+        return view('gallery', ['gallery' => $gallery, 'blogs' => $blogs]);
     }
 
     /**
