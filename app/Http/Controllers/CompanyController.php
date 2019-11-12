@@ -41,6 +41,17 @@ class CompanyController extends Controller
         return view('about', ['company' => $company, 'directors' => $directors, 'portfolio' => $portfolio, 'management' => $management, 'values' => $values]);
     }
 
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contact()
+    {
+        $company = Company::find(1);
+        return view('contact_us', ['company' => $company]);
+    }
+
     public function getDownload(Request $request)
     {
 

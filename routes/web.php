@@ -30,9 +30,7 @@ Route::get('/media','CompanyController@media')->name('media');
 
 Route::get('/media/blog/{id}','CompanyController@blog')->name('media');
 
-Route::get('/contact_us', function () {
-    return view('contact_us');
-});
+Route::get('/contact_us', 'CompanyController@contact')->name('contact');
 
 Route::get('profile/{id}/{type}','CompanyController@profile')->name('profile');
 
