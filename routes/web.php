@@ -360,6 +360,7 @@ Route::post('/admin/vision','AdminController@postVision')->name('culture');
 
 
 Route::get('/admin/subscribers','AdminController@subscribers')->name('subscribers');
+Route::get('export', 'AdminController@export');
 
 
 

@@ -23,6 +23,9 @@ use App\Management;
 use App\PortfolioHead;
 use App\Video;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\SubscriberExport;
+
 
 class AdminController extends Controller
 {
@@ -1330,7 +1333,7 @@ class AdminController extends Controller
         return view('admin.faq.edit-career', ['info' => $info]);
     }
 
-/**
+    /**
      * Show the company's about page
      *
      * @return \Illuminate\Contracts\Support\Renderable
@@ -1341,7 +1344,7 @@ class AdminController extends Controller
         return view('admin.faq.edit', ['info' => $info]);
     }
 
-/**
+    /**
      * Show the company's about page
      *
      * @return \Illuminate\Contracts\Support\Renderable
@@ -1392,7 +1395,7 @@ class AdminController extends Controller
             }
         }
         if ($request->type == 'investor') {
-            $faq =InvestorFaq::find($id);
+            $faq = InvestorFaq::find($id);
             $faq->question = $request->question;
             $faq->response = $request->response;
             // $faq->type = $request->type;
@@ -2607,7 +2610,7 @@ class AdminController extends Controller
                 # code...
                 $max_info = $info->last()->rank;
             }
-            
+
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;
@@ -2658,5 +2661,10 @@ class AdminController extends Controller
                 return redirect()->back()->withErrors($validator);
             }
         }
+    }
+
+    public function export()
+    {
+        return Excel::download(new SubscriberExport, 'subscribers.csv');
     }
 }

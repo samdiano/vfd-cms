@@ -10,13 +10,15 @@
                 <div class="col-sm-12">
                     <div class="card-box">
                         <div class="table-rep-plugin">
+                            
                             <div class="table-responsive" data-pattern="priority-columns">
                                 @include('partial.alert')
                                 @if(count($subscriber) < 1) <br><br>
-                                    <div class="alert alert-info text-center">
-                                        <p>There are no subscribers at the moment</p>
-                                    </div>
-                                    @else
+                                <div class="alert alert-info text-center">
+                                    <p>There are no subscribers at the moment</p>
+                                </div>
+                                @else
+                                <a class="btn btn-info" href="{{ url('export') }}">Download CSV</a>
                                     <br><br>
                                     <table id="tech-companies-1" class="table  table-striped">
                                         <thead>
