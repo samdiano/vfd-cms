@@ -2646,7 +2646,7 @@ class AdminController extends Controller
             $finInfo->name = $request->name;
             $finInfo->brief = $request->brief;
             $finInfo->role = $request->role;
-            $finInfo->section = $request->section;
+            $finInfo->section = $request->portfolio;
             $finInfo->rank = $max_info + 1;
             $finInfo->description = $request->description;
             $finInfo->twitter = $request->twitter;

@@ -52,10 +52,27 @@
                                             Section
                                         </label>
                                         <div class="col-md-9 col-sm-9">
-                                            <select name="section" class="form-control" required>
+                                            <select name="section" class="form-control" required
+                                                onchange="yesnoCheck(this);">
                                                 <option>directors</option>
                                                 <option>management</option>
                                                 <option>portfolio</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="ifYes" style="display:none">
+                                        <label class="control-label col-md-3 col-sm-3">
+                                            Portfolio
+                                        </label>
+                                        <div  class="col-md-9 col-sm-9">
+                                            <select name="portfolio" class="form-control" required>
+                                                <option>VFD Microfinance Bank</option>
+                                                <option>VFD Bridge</option>
+                                                <option>Anchoria Asset Management Limited</option>
+                                                <option>Dynasty Real Estate</option>
+                                                <option>Everdon Bureau de Change</option>
 
                                             </select>
                                         </div>
@@ -123,4 +140,15 @@
         </div>
     </div>
 </div>
+
+<script>
+    function yesnoCheck(that) {
+    if (that.value == "portfolio") {
+    alert("check");
+            document.getElementById("ifYes").style.display = "block";
+        } else {
+            document.getElementById("ifYes").style.display = "none";
+        }
+    }
+</script>
 @endsection
