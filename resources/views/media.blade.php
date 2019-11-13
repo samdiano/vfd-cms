@@ -203,14 +203,14 @@
                                     <div class="row">
                                         @foreach($gallery as $info)
                                         @if($gal == date('Y', strtotime($info->year)))
-                                        @foreach(json_decode($info->image_path) as $path)
+                                        {{-- @foreach(json_decode($info->image_path) as $path) --}}
                                         <div class="col-md-3">
                                             <a href="{{url('gallery', ['id'=> $info->id])}}">
-                                                <img src="{{ asset($path) }}" width="200" height="200"
+                                                <img src="{{ asset(json_decode($info->image_path)[0]) }}" width="200" height="200"
                                                     alt="{{$info->title}}" class="img img-fluid" />
                                             </a>
                                         </div>
-                                        @endforeach
+                                        {{-- @endforeach --}}
                                         @endif
                                         @endforeach
                                     </div>

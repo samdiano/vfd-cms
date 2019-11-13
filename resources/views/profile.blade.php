@@ -46,40 +46,40 @@
                 <ul class="navbar-nav ml-auto">
 
 
-                    <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold  " href="/">Home</a>
-                    </li>
-
-
-                    <li class="nav-item px-md-3 my-2 my-md-0 active-link">
-                        <a class="nav-link bold" href="about">About Us</a>
-                    </li>
-
-
-                    <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold" href="portfolio">Our Portfolio</a>
-                    </li>
-
-                    <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold" href="investors">Investor Information</a>
-                    </li>
-
-                    <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold" href="media">Media</a>
-                    </li>
-
-                    <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold" href="career">Careers</a>
-                    </li>
-
-                    <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold" href="contact_us">Contact Us</a>
-                    </li>
-
-                    <li class="nav-item pl-md-3 pr-md-5 my-2 my-md-0">
-                        <a class="nav-link bold" href="search"><img src="{{ asset('assets/img/search.svg')}}"
-                                alt="search" class="img-fluid" /></a>
-                    </li>
+                        <li class="nav-item px-md-3 my-2 my-md-0">
+                                <a class="nav-link bold  " href="{{url('/')}}">Home</a>
+                            </li>
+        
+        
+                            <li class="nav-item px-md-3 my-2 my-md-0 active-link">
+                                <a class="nav-link bold" href="{{url('/about')}}">About Us</a>
+                            </li>
+        
+        
+                            <li class="nav-item px-md-3 my-2 my-md-0">
+                                <a class="nav-link bold" href="{{url('/portfolio')}}">Our Portfolio</a>
+                            </li>
+        
+                            <li class="nav-item px-md-3 my-2 my-md-0">
+                                <a class="nav-link bold" href="{{url('/investors')}}">Investor Information</a>
+                            </li>
+        
+                            <li class="nav-item px-md-3 my-2 my-md-0">
+                                <a class="nav-link bold" href="{{url('/media')}}">Media</a>
+                            </li>
+        
+                            <li class="nav-item px-md-3 my-2 my-md-0 ">
+                                <a class="nav-link bold" href="{{url('/career')}}">Careers</a>
+                            </li>
+        
+                            <li class="nav-item px-md-3 my-2 my-md-0">
+                                <a class="nav-link bold" href="{{url('/contact_us')}}">Contact Us</a>
+                            </li>
+        
+                            <li class="nav-item pl-md-3 pr-md-5 my-2 my-md-0">
+                                <a class="nav-link bold" href="search"><img src="{{ asset('assets/img/search.svg') }}"
+                                        alt="search" class="img-fluid" /></a>
+                            </li>
                 </ul>
             </div>
             <!-- Collapsible content -->
