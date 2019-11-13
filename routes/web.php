@@ -68,10 +68,8 @@ Route::get('/admin/portfolio-vacancies', function () {
 
 Route::post('/contact_us', function (Request $request) {
     Mail::send(new ContactMail($request));
-    return redirect('/');
+    return redirect()->back()->with(['alert' => ' message sent']);
 });
-
-
 
 
 Route::get('/admin/about', 'AdminController@about')->name('adminAbout');

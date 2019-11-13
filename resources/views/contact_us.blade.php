@@ -100,6 +100,8 @@
             class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
     </div>
     <div class="container">
+            @include('partial.alert')
+
         <div class="row">
             <div class="col-md-5">
                 <form method="post" action="{{url('contact_us')}}">

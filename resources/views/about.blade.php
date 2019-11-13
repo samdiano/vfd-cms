@@ -428,7 +428,7 @@
 
                                         <div class="row">
                                             <div class="col-md-5 cursor">
-                                                <a href="detailed_profile.html">
+                                                <a href="{{ url('profile',['id' => $mgt->id,'type' => 'management']) }}">
                                                     <div style="background-image: url({{ asset($mgt->image) }});
 																	background-size: cover;
 																	background-position: center;
