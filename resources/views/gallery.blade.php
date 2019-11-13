@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/Assets/mdb-theme.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/media-queries.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/modal-video.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/lightbox.min.css') }}">
 
+    {{-- <link href="css/lightbox.min.css" rel="stylesheet" /> --}}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="{{ asset('assets/css/Assets/animate.min.css') }}" type="text/css" rel="stylesheet" />
@@ -117,7 +119,7 @@
                 <div class="row">
                     @foreach(json_decode($gallery->image_path) as $path)
                     <div class="col-md-4 my-3">
-                        <a href="{{ asset($path)}}" target="_blank" data-lightbox="image-1" data-title="image-1">
+                        <a href="{{ asset($path)}}" data-lightbox="{{$gallery->title}}" data-title="{{$gallery->title}}">
                             <img class="img-fluid rounded shadow img-bg" src="{{ asset($path) }}"
                                 alt="{{$gallery->title}}">
                         </a>
@@ -213,6 +215,8 @@
 <script src="{{ asset('assets/js/mdb.js') }}"></script>
 <script src="{{ asset('assets/js/utility.js') }}"></script>
 <script src="{{ asset('assets/js/modal-video.min.js') }}"></script>
+<script src="{{ asset('assets/js/lightbox.min.js') }}"></script>
+
 <script>
     //        $(".js-modal-btn").modalVideo();
         window.addEventListener('DOMContentLoaded',function(){
