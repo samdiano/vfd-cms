@@ -2106,7 +2106,7 @@ class AdminController extends Controller
      */
     public function port()
     {
-        $info = PortfolioHead::orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $info = PortfolioHead::orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
         return view('admin.governance.portfolio', ['info' => $info]);
     }
 
@@ -2183,7 +2183,7 @@ class AdminController extends Controller
         $finInfo = PortfolioHead::find($id);
 
         // $finInfo->delete();
-        $info = Port::orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $info = Port::orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->delete()) {
@@ -2209,7 +2209,7 @@ class AdminController extends Controller
         $finInfo = PortfolioHead::find($id);
 
         $finInfo->rank = $request->rank;
-        $info = PortfolioHead::orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $info = PortfolioHead::orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
         foreach ($info as $key => $info) {
             # code...rank
             if ($info->rank == $request->rank) {
@@ -2220,7 +2220,7 @@ class AdminController extends Controller
         }
         $saved = $finInfo->save();
 
-        $info = PortfolioHead::orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $info = PortfolioHead::orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
 
         $index = $request->rank;
         // return $request->rank;
@@ -2253,7 +2253,7 @@ class AdminController extends Controller
     public function management()
     {
 
-        $info = Management::orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $info = Management::orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
         return view('admin.governance.management', ['info' => $info]);
     }
 
@@ -2330,7 +2330,7 @@ class AdminController extends Controller
         $finInfo = Management::find($id);
 
         // $finInfo->delete();
-        $info = Management::orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $info = Management::orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->delete()) {
@@ -2356,7 +2356,7 @@ class AdminController extends Controller
         $finInfo = Management::find($id);
 
         $finInfo->rank = $request->rank;
-        $info = Management::orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $info = Management::orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
         foreach ($info as $key => $info) {
             # code...rank
             if ($info->rank == $request->rank) {
@@ -2367,7 +2367,7 @@ class AdminController extends Controller
         }
         $saved = $finInfo->save();
 
-        $info = Management::where('section', '=', 'directors')->orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $info = Management::where('section', '=', 'directors')->orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
 
         $index = $request->rank;
         // return $request->rank;
@@ -2399,7 +2399,7 @@ class AdminController extends Controller
      */
     public function directors()
     {
-        $info = Profile::where('section', '=', 'directors')->orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $info = Profile::where('section', '=', 'directors')->orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
         return view('admin.governance.directors', ['info' => $info]);
     }
 
@@ -2475,7 +2475,7 @@ class AdminController extends Controller
         $finInfo = Profile::find($id);
 
         // $finInfo->delete();
-        $info = Profile::where('section', '=', 'directors')->orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $info = Profile::where('section', '=', 'directors')->orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
 
         // return view('admin.about.edit',['company' => $company]);
         if ($finInfo->delete()) {
@@ -2501,7 +2501,7 @@ class AdminController extends Controller
         $finInfo = Profile::find($id);
 
         $finInfo->rank = $request->rank;
-        $info = Profile::where('section', '=', 'directors')->orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $info = Profile::where('section', '=', 'directors')->orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
         foreach ($info as $key => $info) {
             # code...rank
             if ($info->rank == $request->rank) {
@@ -2512,7 +2512,7 @@ class AdminController extends Controller
         }
         $saved = $finInfo->save();
 
-        $info = Profile::where('section', '=', 'directors')->orderByRaw('LENGTH(rank)', 'ASC')->get();
+        $info = Profile::where('section', '=', 'directors')->orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
         $index = $request->rank;
         // return $request->rank;
         foreach ($info as $key => $info) {
@@ -2563,7 +2563,7 @@ class AdminController extends Controller
 
         if ($request->section == "directors") {
             $finInfo = new Profile();
-            $info = Profile::where('section', '=', 'directors')->orderByRaw('LENGTH(rank)', 'ASC')->get();
+            $info = Profile::where('section', '=', 'directors')->orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
             $max_info = 0;
 
             if ($request->hasFile('logo')) {
@@ -2598,7 +2598,7 @@ class AdminController extends Controller
 
         if ($request->section == "management") {
             $finInfo = new Management();
-            $info = Management::orderByRaw('LENGTH(rank)', 'ASC')->get();
+            $info = Management::orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
             $max_info = 0;
 
             if ($request->hasFile('logo')) {
@@ -2631,7 +2631,7 @@ class AdminController extends Controller
         }
         if ($request->section == "portfolio") {
             $finInfo = new PortfolioHead();
-            $info = PortfolioHead::orderByRaw('LENGTH(rank)', 'ASC')->get();
+            $info = PortfolioHead::orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
             $max_info = 0;
             if ($request->hasFile('logo')) {
                 $cover = $request->file('logo');
