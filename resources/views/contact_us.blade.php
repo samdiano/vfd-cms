@@ -133,14 +133,15 @@
 
             <div class="offset-md-1 col-md-4">
                 <p class="gotham-bold text_secondary mt-5 mt-md-0">You can visit our Head Office</p>
-                <ul class="list-unstyled mb-1">
+                {{-- <ul class="list-unstyled mb-1">
                     <li class="text_primary"><img src="{{asset('assets/img/location.svg')}}" class="img-fluid mr-1"
                             width="12" />Foresight House,</li>
-                </ul>
+                </ul> --}}
 
-                <ul class="ml-3">
+                <ul class="">
                         @if($company->address)
-                    <li>{{$company->address}}</li>
+                    <li><img src="{{asset('assets/img/location.svg')}}" class="img-fluid mr-1"
+											width="12" />{{$company->address}}</li>
                     @endif
                 </ul>
 
