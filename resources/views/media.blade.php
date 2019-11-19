@@ -118,7 +118,7 @@
     </nav>
     <!--/.Navbar-->
 
-    <div class="position-relative about_top_banner">
+    <div class="position-relative about_top_banner" style="background-image: url({{ asset($banner->media) }}">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

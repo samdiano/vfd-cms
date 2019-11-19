@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Banner' => $baseDir . '/app/Banner.php',
     'App\\Blog' => $baseDir . '/app/Blog.php',
     'App\\CareerFaq' => $baseDir . '/app/CareerFaq.php',
     'App\\Company' => $baseDir . '/app/Company.php',
@@ -13,6 +14,7 @@ return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Director' => $baseDir . '/app/Director.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Exports\\SubscriberExport' => $baseDir . '/app/Exports/SubscriberExport.php',
     'App\\FAQ' => $baseDir . '/app/FAQ.php',
     'App\\FinancialInformation' => $baseDir . '/app/FinancialInformation.php',
     'App\\Gallery' => $baseDir . '/app/Gallery.php',

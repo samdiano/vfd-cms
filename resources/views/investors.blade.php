@@ -97,7 +97,7 @@
     </nav>
     <!--/.Navbar-->
 
-    <div class="position-relative investor_top_banner">
+    <div class="position-relative investor_top_banner" style="background-image: url({{ asset($banner->investor) }}">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
