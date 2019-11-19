@@ -97,7 +97,7 @@
     </nav>
     <!--/.Navbar-->
 
-    <div class="position-relative investor_top_banner">
+    <div class="position-relative investor_top_banner" style="background-image: url({{ asset($banner->investor) }}">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -112,10 +112,7 @@
     <img src="{{ asset('assets/img/favicon.png') }}" class="img-fluid position-absolute d-none"
         style="right: 5%; top: 20%; opacity: 0.3; width: 10%" />
 
-
     <div class="container">
-
-
         <ul class="nav nav-tabs nav-justified md-tabs mb-3" id="investor_tab" role="tablist">
             <li class="nav-item waves-effect waves-light">
                 <a class="nav-link active small-md" id="finance-tab-just" data-toggle="tab" href="#finance-just"
@@ -167,7 +164,8 @@
                                                                                          background-size: cover;
                                                                                          background-repeat: no-repeat;
                                                                                          height: 150px;">
-
+                                                                                         <p class="mt-3 mb-0">{{ $info->title }}</p>
+                                                                                         <p class="mb-0 line-height-5">Released: {{ $info->year }}</p>
                                             </div>
                                         </a>
                                     </div>
@@ -222,6 +220,8 @@
                                                                                          background-position: center center;
                                                                                          height: 150px;">
                                             </div>
+                                            <p class="mt-3 mb-0">{{ $info->title }}</p>
+                                            <p class="mb-0 line-height-5">Released: {{ $info->year }}</p>
                                         </a>
                                     </div>
                                     @endif
@@ -270,6 +270,8 @@
                                                                                             background-size: cover;
                                                                                             background-repeat: no-repeat;
                                                                                             height: 150px;">
+                                                                                            <p class="mt-3 mb-0">{{ $info->title }}</p>
+                                                                                         <p class="mb-0 line-height-5">Released: {{ $info->year }}</p>
 
                                             </div>
                                         </a>

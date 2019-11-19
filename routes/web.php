@@ -361,6 +361,20 @@ Route::get('/admin/subscribers','AdminController@subscribers')->name('subscriber
 Route::get('export', 'AdminController@export');
 
 
+Route::get('/admin/banner/about', 'AdminController@aboutBanner')->name('banner');
+
+Route::get('/admin/banner/contact', 'AdminController@contactBanner')->name('banner');
+
+Route::get('/admin/banner/career', 'AdminController@careerBanner')->name('banner');
+
+Route::get('/admin/banner/investor', 'AdminController@investorBanner')->name('banner');
+
+Route::get('/admin/banner/media', 'AdminController@mediaBanner')->name('banner');
+
+Route::get('/admin/banner/portfolio', 'AdminController@portfolioBanner')->name('banner');
+
+Route::post('/admin/banner','AdminController@postBanner')->name('baner');
+
 
 
 

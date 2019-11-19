@@ -95,7 +95,7 @@
     </nav>
     <!--/.Navbar-->
 
-    <div class="position-relative career_top_banner">
+    <div class="position-relative career_top_banner" style="background-image: url({{ asset($banner->career) }}">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -121,6 +121,7 @@
                 @endif
                 <p class="">
                     {!!$company->career_text!!}</p>
+                    <a href="https://vfdgroup.seamlesshiring.com/" class="btn vfd-btn-red btn-sm">Apply Now</a>
             </div>
 
             <div class="col-md-6">
@@ -134,7 +135,7 @@
 
     </div>
 
-    <div class="career-bg-2 mt-0 mb-4">
+    <div class="career-bg-2 mt-5">
         <div class="container">
             <div class="row py-3">
                 <div class="col-md-6">
@@ -143,13 +144,13 @@
                 </div>
 
                 <div class="col-md-4">
-                    <button class="btn vfd-btn-red float-md-right">Learn More</button>
-                </div>
+						<a href="https://vfdgroup.seamlesshiring.com/" class="btn vfd-btn-red float-md-right">Learn More</a>
+					</div>
             </div>
         </div>
     </div>
 
-    <div class="containers">
+    <div class="containers d-none">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <ul class="nav nav-tabs nav-justified-career md-tabs mt-4 mb-3 border" id="careerTab" role="tablist">
@@ -415,7 +416,7 @@
     </div>
 
     <!--Footer-->
-    <footer class="mt-5 pt-2 font-small landing_footer border border-grey border-right-0 border-bottom-0 border-left-0">
+    <footer class="pt-2 font-small landing_footer border border-grey border-right-0 border-bottom-0 border-left-0">
 
         <!--Footer Links-->
         <div class="container text-center text-md-left">

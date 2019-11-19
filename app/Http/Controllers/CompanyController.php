@@ -10,6 +10,7 @@ use App\Profile;
 use App\Blog;
 use App\CareerFaq;
 use App\Gallery;
+use App\Banner;
 use App\FAQ;
 use App\Value;
 use App\Subscriber;
@@ -37,8 +38,9 @@ class CompanyController extends Controller
         $portfolio = PortfolioHead::orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
         $management = Management::orderByRaw('LENGTH(rank)', 'ASC')->orderBy('rank', 'ASC')->get();
         $values = Value::all();
+        $banner = Banner::find(1);
 
-        return view('about', ['company' => $company, 'directors' => $directors, 'portfolio' => $portfolio, 'management' => $management, 'values' => $values]);
+        return view('about', ['company' => $company, 'directors' => $directors, 'portfolio' => $portfolio, 'management' => $management, 'values' => $values, 'banner' => $banner]);
     }
 
     /**
@@ -49,7 +51,9 @@ class CompanyController extends Controller
     public function contact()
     {
         $company = Company::find(1);
-        return view('contact_us', ['company' => $company]);
+        $banner = Banner::find(1);
+
+        return view('contact_us', ['company' => $company, 'banner' => $banner]);
     }
 
     public function getDownload(Request $request)
@@ -77,18 +81,18 @@ class CompanyController extends Controller
      */
     public function profile($id, $type)
     {
-        if($type == 'profile'){
+        if ($type == 'profile') {
 
-        $profile = Profile::find($id);
-    }
-        if($type == 'management'){
-            
-        $profile = Management::find($id);
-    }
-        if($type == 'portfolio'){
-            
-        $profile = PortfolioHead::find($id);
-    }
+            $profile = Profile::find($id);
+        }
+        if ($type == 'management') {
+
+            $profile = Management::find($id);
+        }
+        if ($type == 'portfolio') {
+
+            $profile = PortfolioHead::find($id);
+        }
         return view('profile', ['profile' => $profile]);
     }
 
@@ -136,8 +140,9 @@ class CompanyController extends Controller
         $microfinance_vacancies = PortfolioVacancy::where('portfolio', '=', 'microfinance')->get();
         $dynasty_vacancies = PortfolioVacancy::where('portfolio', '=', 'dynasty')->get();
         $anchoria_vacancies = PortfolioVacancy::where('portfolio', '=', 'anchoria')->get();
+        $banner = Banner::find(1);
         $careerFaq = CareerFaq::all();
-        return view('careers', ['company' => $company, 'vacancies' => $vacancies, 'bridge_vacancies' => $bridge_vacancies, 'everdon_vacancies' => $everdon_vacancies, 'microfinance_vacancies' => $microfinance_vacancies, 'dynasty_vacancies' => $dynasty_vacancies, 'anchoria_vacancies' => $anchoria_vacancies, 'careerFaq' => $careerFaq]);
+        return view('careers', ['company' => $company, 'vacancies' => $vacancies, 'bridge_vacancies' => $bridge_vacancies, 'everdon_vacancies' => $everdon_vacancies, 'microfinance_vacancies' => $microfinance_vacancies, 'dynasty_vacancies' => $dynasty_vacancies, 'anchoria_vacancies' => $anchoria_vacancies, 'careerFaq' => $careerFaq, 'banner' => $banner]);
     }
 
     /**
@@ -174,7 +179,9 @@ class CompanyController extends Controller
             array_push($pressArr, $year);
         }
         $pressYear = array_unique($pressArr);
-        return view('investors', ['generalFaq' => $generalFaq, 'investorFaq' => $investorFaq, 'careerFaq' => $careerFaq, 'finYear' => $finYear, 'finInfo' => $finInfo, 'conYear' => $conYear, 'conInfo' => $conInfo, 'pressYear' => $pressYear, 'pressInfo' => $pressInfo,]);
+        $banner = Banner::find(1);
+
+        return view('investors', ['generalFaq' => $generalFaq, 'investorFaq' => $investorFaq, 'careerFaq' => $careerFaq, 'finYear' => $finYear, 'finInfo' => $finInfo, 'conYear' => $conYear, 'conInfo' => $conInfo, 'pressYear' => $pressYear, 'pressInfo' => $pressInfo, 'banner' => $banner]);
     }
 
     /**
@@ -188,7 +195,9 @@ class CompanyController extends Controller
         $services = Service::all();
         $product = Product::all();
         $sub = Product::all();
-        return view('portfolio', ['services' => $services, 'product' => $product, 'sub' => $sub, 'company' => $company]);
+        $banner = Banner::find(1);
+
+        return view('portfolio', ['services' => $services, 'product' => $product, 'sub' => $sub, 'company' => $company, 'banner' => $banner]);
     }
 
     /**
@@ -232,6 +241,8 @@ class CompanyController extends Controller
         }
         $galYear = array_unique($galArr);
         $vidYear = array_unique($vidArr);
-        return view('media', ['blog' => $blog, 'galYear' => $galYear, 'gallery' => $gallery, 'vidYear' => $vidYear, 'video' => $video, 'company' => $company]);
+        $banner = Banner::find(1);
+
+        return view('media', ['blog' => $blog, 'galYear' => $galYear, 'gallery' => $gallery, 'vidYear' => $vidYear, 'video' => $video, 'company' => $company, 'banner' => $banner]);
     }
 }

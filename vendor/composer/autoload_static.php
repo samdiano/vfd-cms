@@ -504,6 +504,7 @@ class ComposerStaticInit26b43cdfb3e9d14b4b20da5950a957f5
     );
 
     public static $classMap = array (
+        'App\\Banner' => __DIR__ . '/../..' . '/app/Banner.php',
         'App\\Blog' => __DIR__ . '/../..' . '/app/Blog.php',
         'App\\CareerFaq' => __DIR__ . '/../..' . '/app/CareerFaq.php',
         'App\\Company' => __DIR__ . '/../..' . '/app/Company.php',
@@ -511,6 +512,7 @@ class ComposerStaticInit26b43cdfb3e9d14b4b20da5950a957f5
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Director' => __DIR__ . '/../..' . '/app/Director.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Exports\\SubscriberExport' => __DIR__ . '/../..' . '/app/Exports/SubscriberExport.php',
         'App\\FAQ' => __DIR__ . '/../..' . '/app/FAQ.php',
         'App\\FinancialInformation' => __DIR__ . '/../..' . '/app/FinancialInformation.php',
         'App\\Gallery' => __DIR__ . '/../..' . '/app/Gallery.php',

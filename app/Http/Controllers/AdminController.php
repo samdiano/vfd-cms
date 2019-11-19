@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Company;
 use App\Vacancy;
 use App\Value;
+use App\Banner;
 use App\Service;
 use App\Subscriber;
 use App\Product;
@@ -2667,4 +2668,175 @@ class AdminController extends Controller
     {
         return Excel::download(new SubscriberExport, 'subscribers.csv');
     }
+
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function aboutBanner()
+    {
+        $info = Profile::find(1);
+        return view('admin.banner.about', ['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function portfolioBanner()
+    {
+        $info = Profile::find(1);
+        return view('admin.banner.portfolio', ['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function careerBanner()
+    {
+        $info = Profile::find(1);
+        return view('admin.banner.career', ['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function mediaBanner()
+    {
+        $info = Profile::find(1);
+        return view('admin.banner.media', ['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function investorBanner()
+    {
+        $info = Profile::find(1);
+        return view('admin.banner.investor', ['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contactBanner()
+    {
+        $info = Profile::find(1);
+        return view('admin.banner.contact', ['info' => $info]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postBanner(Request $request)
+    {
+        $validator = $this->validate($request, [
+            // 'cover' => 'required',
+            // 'document' => 'required',
+            'image' => 'required',
+            'type' => 'required',
+            // 'year' => 'required',
+        ]);
+        $banner = Banner::find(1);
+
+        if ($request->type == 'about') {
+            
+            if ($request->hasFile('image')) {
+                $cover = $request->file('image');
+                $img = $cover->store('images', 'public');
+                $banner->about = $img;
+            }
+            if ($banner->save()) {
+                return redirect('admin/banner/about')->with([ 'alert' => 'Image uploaded successfully']);
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
+        }
+
+        if ($request->type == 'portfolio') {
+            
+            if ($request->hasFile('image')) {
+                $cover = $request->file('image');
+                $img = $cover->store('images', 'public');
+                $banner->portfolio = $img;
+            }
+            if ($banner->save()) {
+                return redirect('admin/banner/portfolio')->with([ 'alert' => 'Image uploaded successfully']);
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
+        }
+
+        if ($request->type == 'career') {
+            
+            if ($request->hasFile('image')) {
+                $cover = $request->file('image');
+                $img = $cover->store('images', 'public');
+                $banner->career = $img;
+            }
+            if ($banner->save()) {
+                return redirect('admin/banner/career')->with([ 'alert' => 'Image uploaded successfully']);
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
+        }
+
+        if ($request->type == 'contact') {
+            
+            if ($request->hasFile('image')) {
+                $cover = $request->file('image');
+                $img = $cover->store('images', 'public');
+                $banner->contact = $img;
+            }
+            if ($banner->save()) {
+                return redirect('admin/banner/contact')->with([ 'alert' => 'Image uploaded successfully']);
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
+        }
+
+        if ($request->type == 'media') {
+            
+            if ($request->hasFile('image')) {
+                $cover = $request->file('image');
+                $img = $cover->store('images', 'public');
+                $banner->media = $img;
+            }
+            if ($banner->save()) {
+                return redirect('admin/banner/media')->with([ 'alert' => 'Image uploaded successfully']);
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
+        }
+
+        if ($request->type == 'investor') {
+            
+            if ($request->hasFile('image')) {
+                $cover = $request->file('image');
+                $img = $cover->store('images', 'public');
+                $banner->investor = $img;
+            }
+            if ($banner->save()) {
+                return redirect('admin/banner/investor')->with([ 'alert' => 'Image uploaded successfully']);
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
+        }
+
+    }
+
 }
