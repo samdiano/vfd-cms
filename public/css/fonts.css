@@ -54,7 +54,6 @@
     font-weight: 500;
 }
 
-
 .text_primary{
     color: #164E35 !important;
 }
@@ -100,7 +99,6 @@
 
 }
 
-
 .active-link > a {
     color: #fff !important;
     font-family: Gotham;
@@ -112,6 +110,11 @@
 
 .line-height-5{
     line-height: 9px;
+}
+
+.modal-body p {
+    font-size: 14px !important;
+    color: #212529;
 }
 
 @media (min-width: 320px) and (max-width:720px){

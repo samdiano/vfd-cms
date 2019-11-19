@@ -114,6 +114,11 @@
     line-height: 9px;
 }
 
+.modal-body p {
+    font-size: 14px !important;
+    color: #212529;
+}
+
 @media (min-width: 320px) and (max-width:720px){
     .font-35{
         font-size: 25px;

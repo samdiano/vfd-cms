@@ -146,21 +146,20 @@
                 </ul>
 
                 <ul class="list-unstyled">
-                    <li class="text_primary"><img src="{{asset('assets/img/call.svg')}}" class="img-fluid mr-1"
-                            width="12" />{{$company->phone}}</li>
+                    <li class="text_primary"><a href="tel:{{$company->phone}}" class="service-link text_primary"><img src="{{asset('assets/img/call.svg')}}" class="img-fluid mr-1"
+                            width="12" />{{$company->phone}}</a></li>
                 </ul>
 
                 <ul class="list-unstyled">
                     @if($company->email1)
-                    <li class="text_primary"><img src="{{asset('assets/img/mail.svg')}}" class="img-fluid mr-1"
-                            width="12" />{{$company->email1}}</li>
+                    <li class="text_primary my-2"><a href="mailto:{{$company->email1}}" class="service-link text_primary"><img src="{{asset('assets/img/mail.svg')}}" class="img-fluid mr-1"
+                            width="12" />{{$company->email1}}</a></li>
                     @endif
                     @if($company->email2)
-                    <li class="text_primary"><img src="{{asset('assets/img/mail.svg')}}" class="img-fluid mr-1"
-                            width="12" />{{$company->email2}}</li>
+                    <li class="text_primary my-2"><a href="mailto:{{$company->email2}}" class="service-link text_primary"><img src="{{asset('assets/img/mail.svg')}}" class="img-fluid mr-1"
+                            width="12" />{{$company->email2}}</a></li>
                     @endif
                 </ul>
-
             </div>
         </div>
 
