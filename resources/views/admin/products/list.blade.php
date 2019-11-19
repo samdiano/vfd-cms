@@ -14,7 +14,7 @@
                         <div class="table-rep-plugin">
                             <div class="table-responsive" data-pattern="priority-columns">
                                 @include('partial.alert')
-                                @if(count($services) > 1)
+                                @if(count($products) > 1)
                                 <br><br>
                                 <div class="alert alert-info text-center">
                                     <p>There are no services at the moment</p>
@@ -41,7 +41,7 @@
                                                     class="btn btn-danger">Delete</a>
                                             </td>
                                         </tr>
-                                        <div id="{{$info->id}}" tabindex="-1" role="dialog" style="" class="modal fade">
+                                        <div id="{{$product->id}}" tabindex="-1" role="dialog" style="" class="modal fade">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
