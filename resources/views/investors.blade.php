@@ -164,9 +164,9 @@
                                                                                          background-size: cover;
                                                                                          background-repeat: no-repeat;
                                                                                          height: 150px;">
-                                                                                         <p class="mt-3 mb-0">{{ $info->title }}</p>
-                                                                                         <p class="mb-0 line-height-5">Released: {{ $info->year }}</p>
                                             </div>
+                                            <p class="mt-3 mb-0">{{ $info->title }}</p>
+                                           <p class="mb-0 line-height-5">Released: {{ $info->year }}</p>
                                         </a>
                                     </div>
                                     @endif
@@ -270,10 +270,9 @@
                                                                                             background-size: cover;
                                                                                             background-repeat: no-repeat;
                                                                                             height: 150px;">
-                                                                                            <p class="mt-3 mb-0">{{ $info->title }}</p>
-                                                                                         <p class="mb-0 line-height-5">Released: {{ $info->year }}</p>
-
                                             </div>
+                                            <p class="mt-3 mb-0">{{ $info->title }}</p>
+                                            <p class="mb-0 line-height-5">Released: {{ $info->year }}</p>
                                         </a>
                                     </div>
                                     @endif

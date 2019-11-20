@@ -49,33 +49,31 @@
                         <li class="nav-item px-md-3 my-2 my-md-0">
                                 <a class="nav-link bold  " href="{{url('/')}}">Home</a>
                             </li>
-        
-        
+
                             <li class="nav-item px-md-3 my-2 my-md-0 active-link">
                                 <a class="nav-link bold" href="{{url('/about')}}">About Us</a>
                             </li>
-        
-        
+
                             <li class="nav-item px-md-3 my-2 my-md-0">
                                 <a class="nav-link bold" href="{{url('/portfolio')}}">Our Portfolio</a>
                             </li>
-        
+
                             <li class="nav-item px-md-3 my-2 my-md-0">
                                 <a class="nav-link bold" href="{{url('/investors')}}">Investor Information</a>
                             </li>
-        
+
                             <li class="nav-item px-md-3 my-2 my-md-0">
                                 <a class="nav-link bold" href="{{url('/media')}}">Media</a>
                             </li>
-        
+
                             <li class="nav-item px-md-3 my-2 my-md-0 ">
                                 <a class="nav-link bold" href="{{url('/career')}}">Careers</a>
                             </li>
-        
+
                             <li class="nav-item px-md-3 my-2 my-md-0">
                                 <a class="nav-link bold" href="{{url('/contact_us')}}">Contact Us</a>
                             </li>
-        
+
                             <li class="nav-item pl-md-3 pr-md-5 my-2 my-md-0">
                                 <a class="nav-link bold" href="search"><img src="{{ asset('assets/img/search.svg') }}"
                                         alt="search" class="img-fluid" /></a>
@@ -91,9 +89,12 @@
         <div class="container-fluid mx-md-5">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="text-green gotham-bold my-4 font-weight-bold"> <a
-                            href="{{ url()->previous().'?sub=subsidiary-just' }}"><i
+                    <h3 class="text-green gotham-bold my-4 font-weight-bold"> <a data-previous="{{ url()->previous().'?sub=subsidiary-just' }}"
+                            href="javascript:void(0)" id="setPrev"><i
                                 class="fa fa-angle-left text-dark mr-5"></i></a> {{$profile->role}}</h3>
+                    <!-- <h3 class="text-green gotham-bold my-4 font-weight-bold"> <a
+                            href="{{ url()->previous().'?sub=subsidiary-just' }}" id="setPrev"><i
+                                class="fa fa-angle-left text-dark mr-5"></i></a> {{$profile->role}}</!-->
                 </div>
             </div>
         </div>
@@ -189,5 +190,21 @@
 <script src="{{ asset('assets/js/slick.js') }}"></script>
 <script src="{{ asset('assets/js/mdb.js') }}"></script>
 <script src="{{ asset('assets/js/utility.js') }}"></script>
+<script>
+
+let pathArray = "";
+
+$( document ).ready(function() {
+
+let pathArray = window.location.pathname.split('/');
+
+    $('#setPrev').click(function() {
+        var url = $(this).data('previous');
+        var split = url.split("?");
+        window.location = `${split[0]}?sub=subsidiary-just&sec=${pathArray[3]}`;        
+    });
+});
+
+</script>
 
 </html>

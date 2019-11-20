@@ -73,9 +73,17 @@ function setTab(){
 	var url_string = window.location.search; //window.location.href
 	var url = new URLSearchParams(url_string);
 
-	if(url.get("sub")){
+	if(url.get("sub") && url.get("sec") == 'profile'){
 		let page_target = url.get("sub");
 		$('.nav-tabs a[href="#subsidiary-just"]').tab('show')
+		$('.nav-tabs a[href="#directors-just"]').tab('show')
+	}else if(url.get("sub") && url.get("sec") == 'portfolio'){
+		let page_target = url.get("sub");
+		$('.nav-tabs a[href="#subsidiary-just"]').tab('show')
+		$('.nav-tabs a[href="#portfolios-just"]').tab('show')
+	}else {
+		$('.nav-tabs a[href="#subsidiary-just"]').tab('show')
+		$('.nav-tabs a[href="#management-just"]').tab('show')
 	}
 }
 
