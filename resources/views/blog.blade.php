@@ -125,7 +125,7 @@
                 <div class="card mb-4">
                     <img class="card-img-top" src="{{asset($blogs->image_path)}}" alt="post">
 
-                    <div class="card-body grey-bg px-3">
+                    <div class="card-body grey-bg px-3 cms-content">
 
                         <p class="card-title weight-semi-bold"><a href="{{url('/media/blog', ['$id' => $blogs->id])}}">{!! $blogs->title !!}</a></p>
 

@@ -102,7 +102,7 @@
     </div>
     <div class="container vertical-1">
         <div class="row mt-4 font-17">
-            <div class="col-md-8">
+            <div class="col-md-8 cms-content">
                 {!!$company->portfolio!!}
                 <div class="row">
                     @foreach($services as $service)

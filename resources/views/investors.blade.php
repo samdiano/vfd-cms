@@ -385,7 +385,7 @@
                                                 href="#{{$investor->id}}" aria-expanded="true"
                                                 aria-controls="{{$investor->id}}">
                                                 <h5 class="mb-0 text_secondary">
-                                                    <span class="gotham-bold">{{$career->question}}</span> <i
+                                                    <span class="gotham-bold">{{$investor->question}}</span> <i
                                                         class="fa fa-angle-down rotate-icon"></i>
                                                 </h5>
 
