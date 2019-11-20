@@ -326,6 +326,11 @@ ul {
 	padding: 0;
 }
 
+div.cms-content > ul {
+	list-style: disc !important;
+	margin-left: 30px;
+}
+
 li.custom-list::before {
 	content: "";
 	display: inline-block;

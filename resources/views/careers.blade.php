@@ -110,7 +110,7 @@
 
     <div class="container">
         <div class="row mt-4 mb-3 p-font-17">
-            <div class="col-md-6">
+            <div class="col-md-6 cms-content">
                 <p class="mt-md-">{!!$company->career!!}</p>
                 @if($company->career_quote)
                 <div class="position-relative">

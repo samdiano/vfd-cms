@@ -126,7 +126,7 @@
                 </ul>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 cms-content">
                 <h5 class="font-weight-bold text-md-left text-center" data-toggle="modal"
                     data-target="#{{$profile->name}}">{{$profile->name}}</h5>
                 <p class="text-md-left text-center">{{$profile->role}}</p>

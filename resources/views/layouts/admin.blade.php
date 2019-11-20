@@ -95,8 +95,6 @@
         editor.on('init', function () {
             editor.dom.addClass(tinymce.activeEditor.dom.select('p'), 'text-justify slick_dark');
         });
-        editor.maxChars = 10;
-
 	}
  });
 
