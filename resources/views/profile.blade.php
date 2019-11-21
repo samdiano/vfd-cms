@@ -195,16 +195,13 @@
 let pathArray = "";
 
 $( document ).ready(function() {
-
 let pathArray = window.location.pathname.split('/');
-
     $('#setPrev').click(function() {
         var url = $(this).data('previous');
         var split = url.split("?");
         window.location = `${split[0]}?sub=subsidiary-just&sec=${pathArray[3]}`;        
     });
 });
-
 </script>
 
 </html>
