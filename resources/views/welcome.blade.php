@@ -41,7 +41,7 @@
 
 <body class="landing_page">
 
-    <div class="position-relative index-background">
+    <div class="position-relative index-background" style="background-image: url({{ asset($banner->landing) }}">
 
         <div class="container position-relative z-index-3">
             <div class="row justify-content-center home-logo-top">

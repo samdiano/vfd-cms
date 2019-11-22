@@ -2719,6 +2719,17 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function landingBanner()
+    {
+        $info = Profile::find(1);
+        return view('admin.banner.landing', ['info' => $info]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function investorBanner()
     {
         $info = Profile::find(1);
@@ -2762,6 +2773,20 @@ class AdminController extends Controller
             }
             if ($banner->save()) {
                 return redirect('admin/banner/about')->with([ 'alert' => 'Image uploaded successfully']);
+            } else {
+                return redirect()->back()->withErrors($validator);
+            }
+        }
+
+        if ($request->type == 'landing') {
+            
+            if ($request->hasFile('image')) {
+                $cover = $request->file('image');
+                $img = $cover->store('images', 'public');
+                $banner->about = $img;
+            }
+            if ($banner->save()) {
+                return redirect('admin/banner/landing')->with([ 'alert' => 'Image uploaded successfully']);
             } else {
                 return redirect()->back()->withErrors($validator);
             }

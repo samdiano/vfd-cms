@@ -123,7 +123,8 @@ class CompanyController extends Controller
     public function index()
     {
         $company = Product::all();
-        return view('welcome', ['company' => $company]);
+        $banner = Banner::find(1);
+        return view('welcome', ['company' => $company, 'banner' => $banner]);
     }
 
     /**

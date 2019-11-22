@@ -363,6 +363,8 @@ Route::get('export', 'AdminController@export');
 
 Route::get('/admin/banner/about', 'AdminController@aboutBanner')->name('banner');
 
+Route::get('/admin/banner/landing', 'AdminController@landingBanner')->name('banner');
+
 Route::get('/admin/banner/contact', 'AdminController@contactBanner')->name('banner');
 
 Route::get('/admin/banner/career', 'AdminController@careerBanner')->name('banner');

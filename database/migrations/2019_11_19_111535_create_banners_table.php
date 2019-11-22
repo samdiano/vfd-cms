@@ -21,6 +21,7 @@ class CreateBannersTable extends Migration
             $table->string('investor');
             $table->string('contact');
             $table->string('media');
+            $table->string('landing');
             $table->timestamps();
         });
     }

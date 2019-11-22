@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CompanyTableSeeder extends Seeder
+class BannerTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,6 +18,7 @@ class CompanyTableSeeder extends Seeder
             'investor' => 'assets/img/banner_3.jpg',
             'media' => 'assets/img/banner_1.jpg',
             'portfolio' => 'assets/img/banner_2.jpg',
+            'landing' => 'assets/img/landing_banner.jpg',
         ]);
     }
 }

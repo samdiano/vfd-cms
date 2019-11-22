@@ -208,6 +208,7 @@
                                         class="zmdi zmdi-image"></i><span>Banner Images</span>
                                     <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
+                                    <li><a href="{{ url('admin/banner/landing') }}">Home</a></li>
                                     <li><a href="{{ url('admin/banner/about') }}">About us</a></li>
                                     <li><a href="{{ url('admin//banner/portfolio') }}">Our portfolio</a></li>
                                     <li><a href="{{ url('admin/banner/investor') }}">Investor Information</a></li>
