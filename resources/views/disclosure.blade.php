@@ -1,115 +1,122 @@
 <!DOCTYPE html>
 <html lang="">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="VFD Group |  Global Network &#8211; Worldwide Strength">
-        <meta name="author" content="VFD Group">
-        <title>VFD Group |  Global Network &#8211; Worldwide Strength</title>
-        <!--favicicon-->
-        <link rel="shortcut icon" href="img/favicon.png" />
-        <link rel="apple-touch-icon" href="img/favicon.png" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VFD Group |  Global Network &#8211; Worldwide Strength">
+    <meta name="author" content="VFD Group">
+    <title>VFD Group | Global Network &#8211; Worldwide Strength</title>
+    <!--favicicon-->
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/favicon.png" />
 
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/slick.css">
-        <link rel="stylesheet" href="css/slick-theme.css">
-        <link rel="stylesheet" href="css/hamburger.min.css">
-        <link rel="stylesheet" href="css/fonts.css">
-        <link rel="stylesheet" href="css/Assets/bootstrap.min.css">
-        <link rel="stylesheet" href="css/Assets/mdb.min.css">
-        <link rel="stylesheet" href="css/Assets/mdb-theme.min.css">
-        <link rel="stylesheet" href="css/media-queries.css">
-
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link href="css/Assets/animate.min.css" type="text/css" rel="stylesheet" />
-
-        <style>
-            .card {
-                box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1) !important;
-                border: 2px solid #E0E0E0 !important;
-                border-radius: 8px !important;
-            }
-        </style>
-    </head>
-
-    <body>
-
-        <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar mb-md-5 py-2">
-            <div class="container-fluid">
-                <!-- Navbar brand -->
-
-                <a class="navbar-brand" href="index.html">
-                    <img src="img/VFD%20Group%20Logo%20PNG.png" width="160" class="img-fluid" id="main_logo" alt="VFD Group Logo"></a>
-
-                <!-- Collapse button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-                </button>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/hamburger.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/Assets/bootstrap.min.css">
+    <link rel="stylesheet" href="css/Assets/mdb.min.css">
+    <link rel="stylesheet" href="css/Assets/mdb-theme.min.css">
+    <link rel="stylesheet" href="css/media-queries.css">
 
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="css/Assets/animate.min.css" type="text/css" rel="stylesheet" />
+
+    <style>
+        .card {
+            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1) !important;
+            border: 2px solid #E0E0E0 !important;
+            border-radius: 8px !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar mb-md-5 py-2">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+
+            <a class="navbar-brand" href="index.html">
+                <img src="img/VFD%20Group%20Logo%20PNG.png" width="160" class="img-fluid" id="main_logo"
+                    alt="VFD Group Logo"></a>
+
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span>
+            </button>
 
 
-                        <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold  " href="index.html">Home</a>
-                        </li>
-
-                        <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="about_us.html">About Us</a>
-                        </li>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
 
 
-                        <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="portfolio.html">Our Portfolio</a>
-                        </li>
+                    <li class="nav-item px-md-3 my-2 my-md-0">
+                        <a class="nav-link bold  " href="{{url('/')}}">Home</a>
+                    </li>
 
-                        <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="investor_info.html">Investor Information</a>
-                        </li>
 
-                        <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="media.html">Media</a>
-                        </li>
+                    <li class="nav-item px-md-3 my-2 my-md-0">
+                        <a class="nav-link bold" href="{{url('/about')}}">About Us</a>
+                    </li>
 
-                        <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="career.html">Careers</a>
-                        </li>
 
-                        <li class="nav-item px-md-3 my-2 my-md-0">
-                            <a class="nav-link bold" href="contact_us.html">Contact Us</a>
-                        </li>
+                    <li class="nav-item px-md-3 my-2 my-md-0">
+                        <a class="nav-link bold" href="{{url('/portfolio')}}">Our Portfolio</a>
+                    </li>
 
-                        <li class="nav-item pl-md-3 pr-md-5 my-2 my-md-0">
-                            <a class="nav-link bold" href="javascript.void()" data-toggle="modal" data-target=".bd-example-modal-lg"><img src="img/search.svg" alt="search" class="img-fluid" /></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Collapsible content -->
+                    <li class="nav-item px-md-3 my-2 my-md-0">
+                        <a class="nav-link bold" href="{{url('/investors')}}">Investor Information</a>
+                    </li>
+
+                    <li class="nav-item px-md-3 my-2 my-md-0">
+                        <a class="nav-link bold" href="{{url('/media')}}">Media</a>
+                    </li>
+
+                    <li class="nav-item px-md-3 my-2 my-md-0">
+                        <a class="nav-link bold" href="{{url('/career')}}">Careers</a>
+                    </li>
+
+                    <li class="nav-item px-md-3 my-2 my-md-0">
+                        <a class="nav-link bold" href="{{url('/contact_us')}}">Contact Us</a>
+                    </li>
+
+                    <li class="nav-item pl-md-3 pr-md-5 my-2 my-md-0">
+                        <a class="nav-link bold" href="javascript.void()" data-toggle="modal"
+                            data-target=".bd-example-modal-lg"><img src="img/search.svg" alt="search"
+                                class="img-fluid" /></a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-        <!--/.Navbar-->
-
-        <div class="position-relative career_top_banner" >
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="font-41 text-white vertical-8 weight-semi-bold">Regulatory Disclosure</h3>
-                    </div>
-                </div>
-            </div>
-            <img src="img/insert_subtract.png" class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
+            <!-- Collapsible content -->
         </div>
+    </nav>
+    <!--/.Navbar-->
 
+    <div class="position-relative career_top_banner">
         <div class="container">
-            <div class="row mt-4 mb-3 p-font-17">
+            <div class="row">
                 <div class="col-md-12">
-                    <p class="">    {!! $company->disclosure !!} </p>
+                    <h3 class="font-41 text-white vertical-8 weight-semi-bold">Regulatory Disclosure</h3>
                 </div>
             </div>
         </div>
+        <img src="img/insert_subtract.png"
+            class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
+    </div>
+
+    <div class="container">
+        <div class="row mt-4 mb-3 p-font-17">
+            <div class="col-md-12">
+                <p class=""> {!! $company->disclosure !!} </p>
+            </div>
+        </div>
+    </div>
 
 
     <!--Footer-->
@@ -155,28 +162,30 @@
 
 
 
-        <!-- Search modal -->
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" style="max-width: 95%;">
-                <div class="modal-content">
-                    <form>
-                        <div class="form-group mb-0" style="position: relative">
-                            <input type="text" class="rounded-0 form-control" id="search" placeholder="search">
-                            <img src="img/search_bar_icon.png" alt="search icon" style="position: absolute; right: 10px; top: 10px;"/>
-                        </div>
-                    </form>
-                </div>
+    <!-- Search modal -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="max-width: 95%;">
+            <div class="modal-content">
+                <form>
+                    <div class="form-group mb-0" style="position: relative">
+                        <input type="text" class="rounded-0 form-control" id="search" placeholder="search">
+                        <img src="img/search_bar_icon.png" alt="search icon"
+                            style="position: absolute; right: 10px; top: 10px;" />
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
 
 
-    </body>
+</body>
 
-    <script src='js/jquery.min.js'></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/slick.js"></script>
-    <script src="js/mdb.js"></script>
-    <script src="js/utility.js"></script>
-    <script src="js/modal-video.min.js"></script>
+
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/mdb.js') }}"></script>
+<script src="{{ asset('assets/js/utility.js') }}"></script>
+
 </html>

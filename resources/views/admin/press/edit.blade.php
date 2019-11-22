@@ -66,7 +66,7 @@
                                             Year
                                         </label>
                                         <div class="col-md-8 col-sm-9">
-                                            <input type="text" name="year" value="{{$info->year}}" class="form-control">
+                                            <input type="date" name="year" value="{{$info->year}}" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
