@@ -119,6 +119,9 @@
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
                         <input type="text" class="form-control border rounded" id="phone" name="phone" placeholder="">
+                    <input type="hidden" class="form-control border rounded" id="phone" name="to1" value="{{$company->email1}}" placeholder="">
+                        <input type="hidden" class="form-control border rounded" id="phone" name="to2" value="{{$company->email2}}" placeholder="">
+                        
                     </div>
 
                     <div class="form-group">
