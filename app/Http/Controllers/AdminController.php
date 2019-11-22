@@ -525,7 +525,7 @@ class AdminController extends Controller
         
          moveElement($position, $key, 0);
         $gallery->image_path = json_encode($position);
-        // return view('admin.about.edit',['company' => $company]);
+        
         if ($gallery->save()) {
             return redirect('admin/gallery')->with(['info' => $gallery, 'alert' => ' ']);
         } else {
