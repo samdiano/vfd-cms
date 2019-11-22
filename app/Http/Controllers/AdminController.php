@@ -502,6 +502,38 @@ class AdminController extends Controller
     }
 
 
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function galleryPrimary(Request $request, $id, $key)
+    {
+        $validator = $this->validate($request, [
+            // 'name' => 'required',
+            // 'link' => 'required',
+        ]);
+        $gallery = Gallery::find($id);
+
+        $position = json_decode($gallery->image_path);
+
+        function moveElement(&$array, $a, $b) {
+            $out = array_splice($array, $a, 1);
+            array_splice($array, $b, 0, $out);
+        }
+        
+         moveElement($position, $key, 0);
+        $gallery->image_path = json_encode($position);
+        // return view('admin.about.edit',['company' => $company]);
+        if ($gallery->save()) {
+            return redirect('admin/gallery')->with(['info' => $gallery, 'alert' => ' ']);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+    
     /**
      * Show the company's about page
      *
@@ -2923,7 +2955,7 @@ class AdminController extends Controller
             if ($request->hasFile('image')) {
                 $cover = $request->file('image');
                 $img = $cover->store('images', 'public');
-                $banner->about = $img;
+                $banner->landing = $img;
             }
             if ($banner->save()) {
                 return redirect('admin/banner/landing')->with([ 'alert' => 'Image uploaded successfully']);

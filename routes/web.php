@@ -179,6 +179,9 @@ Route::get('/admin/values/delete/{id}','AdminController@postValueDelete')->name(
 
 
 
+Route::post('/admin/gallery/position/{id}/{key}','AdminController@galleryPrimary')->name('adminServices');
+
+
 
 Route::get('/admin/products','AdminController@products')->name('adminServices');
 

@@ -32,13 +32,23 @@
                                             <tr>
                                                 <td>{{ $info->title }}</td>
                                                 <td style="display:flex">
-                                                    @foreach(json_decode($info->image_path) as $path)
-<div style="position:relative">
-<img height="120" width="120" src="{{ asset($path) }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
-<div style="position:absolute; bottom:10px; left:5%;">
-<button class="btn btn-warning" type="button" style="font-size:14px; padding: 4px 8px !important;">Make Primary</button>
-</div>
-</div>
+                                                    @foreach(json_decode($info->image_path) as $key=> $path)
+                                                    <div style="position:relative">
+                                                        <img height="120" width="120" src="{{ asset($path) }}"
+                                                            class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
+                                                        <div style="position:absolute; bottom:10px; left:5%;">
+                                                            @if($key > 0)
+                                                            <form
+                                                                action="{{ url('admin/gallery/position', ['id' => $info->id, 'key' => $key]) }}"
+                                                                method="post">
+                                                                {{ csrf_field() }}
+                                                                <button class="btn btn-warning" type="submit"
+                                                                    style="font-size:14px; padding: 4px 8px !important;">Make
+                                                                    Primary</button>
+                                                            </form>
+                                                            @endif
+                                                        </div>
+                                                    </div>
                                                     @endforeach
                                                 </td>
                                                 <td>
@@ -46,7 +56,8 @@
                                                     --}}
                                                     {{-- <a class="btn btn-info" href="{{ url('booking/annual/view/') }}">Edit</a>
                                                     --}}
-                                                    <a class="btn btn-info" href="{{ url('admin/gallery/edit', ['id' => $info->id]) }}">Edit</a>
+                                                    <a class="btn btn-info"
+                                                        href="{{ url('admin/gallery/edit', ['id' => $info->id]) }}">Edit</a>
 
                                                     <a data-toggle="modal" data-target="#{{$info->id}}" href="#"
                                                         class="btn btn-danger">Delete</a>
