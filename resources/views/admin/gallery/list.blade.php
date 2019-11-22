@@ -31,11 +31,14 @@
                                             @foreach($info as $info)
                                             <tr>
                                                 <td>{{ $info->title }}</td>
-                                                <td>
+                                                <td style="display:flex">
                                                     @foreach(json_decode($info->image_path) as $path)
-
-                                                    <img height="50" width="50" src="{{ asset($path) }}"
-                                                        class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
+<div style="position:relative">
+<img height="120" width="120" src="{{ asset($path) }}" class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
+<div style="position:absolute; bottom:10px; left:5%;">
+<button class="btn btn-warning" type="button" style="font-size:14px; padding: 4px 8px !important;">Make Primary</button>
+</div>
+</div>
                                                     @endforeach
                                                 </td>
                                                 <td>
