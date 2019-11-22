@@ -81,9 +81,11 @@ function setTab(){
 		let page_target = url.get("sub");
 		$('.nav-tabs a[href="#subsidiary-just"]').tab('show')
 		$('.nav-tabs a[href="#portfolios-just"]').tab('show')
-	}else {
+	}else if(url.get("sub") && url.get("sec") == 'management'){
 		$('.nav-tabs a[href="#subsidiary-just"]').tab('show')
 		$('.nav-tabs a[href="#management-just"]').tab('show')
+	}else {
+		$('.nav-tabs a[href="#subsidiary-just"]').tab('show')
 	}
 }
 
