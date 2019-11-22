@@ -525,7 +525,7 @@ class AdminController extends Controller
         
          moveElement($position, $key, 0);
         $gallery->image_path = json_encode($position);
-        
+
         if ($gallery->save()) {
             return redirect('admin/gallery')->with(['info' => $gallery, 'alert' => ' ']);
         } else {
@@ -1953,7 +1953,10 @@ class AdminController extends Controller
                 $img = $image->store('images', 'public');
                 $data[] = $img;
             }
-            $finInfo->image_path = json_encode($data);
+            $image= json_decode($finInfo->image_path);
+            $finInfo->image_path = json_encode(array_merge($image ,$data)); 
+            
+            // json_encode($data);
         }
 
         $finInfo->title = $request->title;
