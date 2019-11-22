@@ -34,7 +34,7 @@ class ContactMail extends Mailable
         // return $this->view('view.name');
         return $this->subject('New Contact Mail')
                     ->from($this->email->email, $this->email->name, $this->email->phone )
-                    ->to('oc.maleghemi@gmail.com', $this->email->email )
+                    ->to($this->email->email, $this->email->to1, $this->email->to2 )
                     ->view('email.contact');
     }
 }
