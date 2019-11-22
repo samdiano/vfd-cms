@@ -35,13 +35,13 @@
 
                                         <div
                                             class="input-group control-group increment">
-                                            <input type="file" name="cover[]" class="form-control">
+                                            <input type="file" name="cover[]" class="form-control" multiple>
                                             <div class="input-group-btn">
-                                                <button class="btn btn-success" type="button"><i
-                                                        class="glyphicon glyphicon-plus"></i>Add</button>
+                                                {{-- <button class="btn btn-success" type="button"><i
+                                                        class="glyphicon glyphicon-plus"></i>Add</button> --}}
                                             </div>
                                         </div>
-                                        <div class="clone hide">
+                                        {{-- <div class="clone hide">
                                             <div class="control-group input-group" style="margin-top:10px">
                                                 <input type="file" name="cover[]" class="form-control">
                                                 <div class="input-group-btn">
@@ -49,7 +49,7 @@
                                                             class="glyphicon glyphicon-remove"></i> Remove</button>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3">
