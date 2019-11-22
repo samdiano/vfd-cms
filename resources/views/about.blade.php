@@ -695,12 +695,12 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-md-1 col-lg-1">
                         <p class="small text-center text-dark text-md-left grey-text font-weight-bold my-3 spacing-2">
-                            <a href="#">Policy</a></p>
+                            <a href="{{url('/policy')}}">Policy</a></p>
                     </div>
 
                     <div class="col-md-3 col-lg-3">
                         <p class="small text-center text-dark text-md-left grey-text font-weight-bold my-3 spacing-2">
-                            <a href="#">Regulatory Disclosure</a></p>
+                            <a href="{{url('/disclosure')}}">Regulatory Disclosure</a></p>
                     </div>
 
                     <div class="col-md-2 col-lg-2">
@@ -710,7 +710,7 @@
 
                     <div class="col-md-3 col-lg-3">
                         <p class="small text-center text-dark text-md-left grey-text font-weight-bold my-3 spacing-2">
-                            <a href="#">Terms and Conditions</a></p>
+                            <a href="{{url('/terms')}}">Terms and Conditions</a></p>
                     </div>
 
                     <div class="col-md-3 col-lg-3">

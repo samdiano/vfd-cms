@@ -18,6 +18,12 @@ Route::get('/', 'CompanyController@index')->name('welcome');
 
 Route::get('/about', 'CompanyController@about')->name('about');
 
+Route::get('/terms', 'CompanyController@terms')->name('terms');
+
+Route::get('/policy', 'CompanyController@policy')->name('policy');
+
+Route::get('/disclosure', 'CompanyController@disclosure')->name('disclosure');
+
 Route::post('/about', 'CompanyController@getDownload')->name('downlaod');
 
 Route::get('/career', 'CompanyController@career')->name('career');
@@ -75,6 +81,20 @@ Route::post('/contact_us', function (Request $request) {
 Route::get('/admin/about', 'AdminController@about')->name('adminAbout');
 
 Route::post('/admin/about','AdminController@aboutEdit')->name('adminAboutPost');
+
+
+Route::get('/admin/terms', 'AdminController@terms')->name('adminAbout');
+
+Route::post('/admin/terms','AdminController@termsEdit')->name('adminAboutPost');
+
+Route::get('/admin/disclosure', 'AdminController@disclosure')->name('adminAbout');
+
+Route::post('/admin/disclosure','AdminController@disclosureEdit')->name('adminAboutPost');
+
+Route::get('/admin/policy', 'AdminController@policy')->name('adminAbout');
+
+Route::post('/admin/policy','AdminController@policyEdit')->name('adminAboutPost');
+
 
 Route::get('/admin/profile', 'AdminController@profile')->name('profile');
 

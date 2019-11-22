@@ -38,6 +38,9 @@ class CompanyTableSeeder extends Seeder
             'vision' => '',
             'quote' => '',
             'mission' => '',
+            'terms' => '',
+            'policy' => '',
+            'disclosure' => '',
             'youtube_link' => 'https://www.youtube.com/embed/ig5-vVlPQ_U?controls=0',
         ]);
     }

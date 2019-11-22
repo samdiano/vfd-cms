@@ -108,8 +108,9 @@
             <div class="topbar-left">
                 {{-- <i href="/" class="logo"><span>VFD Group</span><i class="zmdi zmdi-layers"></i></i> --}}
                 <a class="navbar-brand" href="/">
-                    <img src="{{ asset('assets/img/VFD%20Group%20Logo%20PNG.png') }}" width="160" class="img-fluid hidden-xs hidden-sm visible-md visible-lg"
-                        id="main_logo" alt="VFD Group Logo"></a>
+                    <img src="{{ asset('assets/img/VFD%20Group%20Logo%20PNG.png') }}" width="160"
+                        class="img-fluid hidden-xs hidden-sm visible-md visible-lg" id="main_logo"
+                        alt="VFD Group Logo"></a>
             </div>
 
             <!-- Button mobile view to collapse sidebar menu -->
@@ -204,20 +205,20 @@
                         </li>
 
                         <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i
-                                        class="zmdi zmdi-image"></i><span>Banner Images</span>
-                                    <span class="menu-arrow"></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="{{ url('admin/banner/landing') }}">Home</a></li>
-                                    <li><a href="{{ url('admin/banner/about') }}">About us</a></li>
-                                    <li><a href="{{ url('admin//banner/portfolio') }}">Our portfolio</a></li>
-                                    <li><a href="{{ url('admin/banner/investor') }}">Investor Information</a></li>
-                                    <li><a href="{{ url('admin/banner/media') }}">Media</a></li>
-                                    <li><a href="{{ url('admin/banner/career') }}">Career</a></li>
-                                    <li><a href="{{ url('admin/banner/contact') }}">Contact us</a></li>
-                                </ul>
-    
-                            </li>
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="zmdi zmdi-image"></i><span>Banner Images</span>
+                                <span class="menu-arrow"></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{ url('admin/banner/landing') }}">Home</a></li>
+                                <li><a href="{{ url('admin/banner/about') }}">About us</a></li>
+                                <li><a href="{{ url('admin//banner/portfolio') }}">Our portfolio</a></li>
+                                <li><a href="{{ url('admin/banner/investor') }}">Investor Information</a></li>
+                                <li><a href="{{ url('admin/banner/media') }}">Media</a></li>
+                                <li><a href="{{ url('admin/banner/career') }}">Career</a></li>
+                                <li><a href="{{ url('admin/banner/contact') }}">Contact us</a></li>
+                            </ul>
+
+                        </li>
 
                         <li class="text-muted menu-title">Pages</li>
 
@@ -284,6 +285,20 @@
                             </ul>
 
                         </li>
+
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="zmdi zmdi-layers"></i><span>Footer </span>
+                                <span class="menu-arrow"></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{ url('admin/terms') }}">Terms</a></li>
+                                <li><a href="{{ url('admin/disclosure') }}">Disclosure</a></li>
+                                <li><a href="{{ url('admin/policy') }}">Policy</a></li>
+                            </ul>
+
+                        </li>
+
                         <li>
                             <a href="/admin/profile" class="waves-effect"><i class="zmdi zmdi-layers"></i>
                                 <span> VFD Profile </span> </a>

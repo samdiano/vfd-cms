@@ -77,6 +77,107 @@ class AdminController extends Controller
         }
     }
 
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function terms()
+    {
+        $company = Company::find(1);
+        return view('admin.footer.terms', ['company' => $company]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function termsEdit(Request $request)
+    {
+        $validator = $this->validate($request, [
+            'terms' => 'required',
+        ]);
+        $company = Company::find(1);
+        $company->terms = $request->terms;
+        
+        $company->save;
+        // return view('admin.about.edit',['company' => $company]);
+        if ($company->save()) {
+            return redirect('admin/terms')->with(['company' => $company, 'alert' => ' ']);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function policy()
+    {
+        $company = Company::find(1);
+        return view('admin.footer.policy', ['company' => $company]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function policyEdit(Request $request)
+    {
+        $validator = $this->validate($request, [
+            'policy' => 'required',
+        ]);
+        $company = Company::find(1);
+        $company->policy = $request->policy;
+       
+        $company->save;
+        // return view('admin.about.edit',['company' => $company]);
+        if ($company->save()) {
+            return redirect('admin/policy')->with(['company' => $company, 'alert' => ' ']);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function disclosure()
+    {
+        $company = Company::find(1);
+        return view('admin.footer.disclosure', ['company' => $company]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function disclosureEdit(Request $request)
+    {
+        $validator = $this->validate($request, [
+            'disclosure' => 'required',
+        ]);
+        $company = Company::find(1);
+        $company->disclosure = $request->disclosure;
+       
+        $company->save;
+        // return view('admin.about.edit',['company' => $company]);
+        if ($company->save()) {
+            return redirect('admin/disclosure')->with(['company' => $company, 'alert' => ' ']);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
     /**
      * Show the company's about page
      *

@@ -128,6 +128,43 @@ class CompanyController extends Controller
     }
 
     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function terms()
+    {
+        $company = Company::find(1);
+        $banner = Banner::find(1);
+        return view('terms', ['company' => $company, 'banner' => $banner]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function policy()
+    {
+        $company = Company::find(1);
+        $banner = Banner::find(1);
+        return view('policy', ['company' => $company, 'banner' => $banner]);
+    }
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function disclosure()
+    {
+        $company = Company::find(1);
+        $banner = Banner::find(1);
+        return view('disclosure', ['company' => $company, 'banner' => $banner]);
+    }
+
+
+    /**
      * Show the company's career page
      *
      * @return \Illuminate\Contracts\Support\Renderable
