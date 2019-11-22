@@ -32,8 +32,8 @@
                                                 <td>{{ $service->name }}</td>
 
                                                 <td>
-                                                    {{-- <a class="btn btn-info" href="{{ url('booking/annual/view/') }}">Edit</a>
-                                                    --}}
+                                                    <a class="btn btn-info" href="{{ url('admin/services/edit' , ['id' => $service->id]) }}">Edit</a>
+                                                   
                                                     <a data-toggle="modal" data-target="#{{$service->id}}" href="#"
                                                         class="btn btn-danger">Delete</a>
                                                 </td>

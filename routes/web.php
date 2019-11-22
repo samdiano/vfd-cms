@@ -162,6 +162,10 @@ Route::get('/admin/services/new','AdminController@newService')->name('adminServi
 
 Route::post('/admin/services/new','AdminController@addService')->name('adminServices');
 
+Route::get('/admin/services/edit/{id}','AdminController@serviceEdit')->name('adminServices');
+
+Route::post('/admin/services/edit/{id}','AdminController@postServiceEdit')->name('adminServices');
+
 Route::get('/admin/services/delete/{id}','AdminController@postServiceDelete')->name('postFaqDelete');
 
 

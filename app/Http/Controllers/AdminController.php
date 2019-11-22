@@ -468,6 +468,45 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function serviceEdit($id)
+    {
+        $service = Service::find($id);
+        return view('admin.services.edit', ['service' => $service]);
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postServiceEdit(Request $request, $id)
+    {
+        $validator = $this->validate($request, [
+            'name' => 'required',
+            'link' => 'required',
+        ]);
+        $service = Service::find($id);
+
+        $service->name = $request->name;
+        $service->link = $request->link;
+        $service->save;
+        $services = Service::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($service->save()) {
+            return redirect('admin/services')->with(['services' => $services, 'alert' => ' ']);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function addService(Request $request)
     {
         $validator = $this->validate($request, [
