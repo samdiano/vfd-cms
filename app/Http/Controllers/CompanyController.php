@@ -201,7 +201,7 @@ class CompanyController extends Controller
             array_push($finArr, $year);
         }
         $finYear = array_unique($finArr);
-
+        rsort($finYear);
         $conInfo = ConferenceCall::all();
         $conArr = [];
         foreach ($conInfo as $con) {
@@ -209,6 +209,7 @@ class CompanyController extends Controller
             array_push($conArr, $year);
         }
         $conYear = array_unique($conArr);
+        rsort($conYear);
 
         $pressInfo = PressRelease::all();
         $pressArr = [];
@@ -217,6 +218,8 @@ class CompanyController extends Controller
             array_push($pressArr, $year);
         }
         $pressYear = array_unique($pressArr);
+        rsort($pressYear);
+
         $banner = Banner::find(1);
 
         return view('investors', ['generalFaq' => $generalFaq, 'investorFaq' => $investorFaq, 'careerFaq' => $careerFaq, 'finYear' => $finYear, 'finInfo' => $finInfo, 'conYear' => $conYear, 'conInfo' => $conInfo, 'pressYear' => $pressYear, 'pressInfo' => $pressInfo, 'banner' => $banner]);

@@ -145,7 +145,7 @@
                 </div>
 
                 <div class="col-md-4">
-						<a href="{{$company->career_quote_side}}" class="btn vfd-btn-red float-md-right">{{$company->button1}}</a>
+						<a href="{{$company->career_quote_side}}" class="btn vfd-btn-red float-md-right">{{$company->button2}}</a>
 					</div>
             </div>
         </div>
