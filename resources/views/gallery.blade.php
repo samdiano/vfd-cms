@@ -117,7 +117,7 @@
         <div class="row mt-4">
             <div class="col-md-8">
                 <div class="row">
-                    @foreach(json_decode($gallery->image_path) as $path)
+                    @foreach(json_decode($gallery->image_path, true) as $path)
                     <div class="col-md-4 my-3">
                         <a href="{{ asset($path)}}" data-lightbox="{{$gallery->title}}" data-title="{{$gallery->title}}">
                             <img class="img-fluid rounded shadow img-bg" src="{{ asset($path) }}"

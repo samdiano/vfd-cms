@@ -206,7 +206,7 @@
                                         {{-- @foreach(json_decode($info->image_path) as $path) --}}
                                         <div class="col-md-3">
                                             <a href="{{url('gallery', ['id'=> $info->id])}}">
-                                                <img src="{{ asset(json_decode($info->image_path)[0]) }}" width="200" height="200"
+                                                <img src="{{ asset(json_decode($info->image_path,true)[0]) }}" width="200" height="200"
                                                     alt="{{$info->title}}" class="img img-fluid" />
                                             </a>
                                         </div>
@@ -334,7 +334,7 @@
 
     </footer>
     <!--/.Footer-->
-    
+
 </body>
 
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
