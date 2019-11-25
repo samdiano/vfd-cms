@@ -121,7 +121,9 @@
                 @endif
                 <p class="">
                     {!!$company->career_text!!}</p>
-                    <a href="https://vfdgroup.seamlesshiring.com/" class="btn vfd-btn-red btn-sm">Apply Now</a>
+                    @if($company->career_quote_side)
+                    <a href="{{$company->career_quote_side}}" class="btn vfd-btn-red btn-sm">Apply Now</a>
+                    @endif
             </div>
 
             <div class="col-md-6">
@@ -134,7 +136,7 @@
         </div>
 
     </div>
-
+    @if($company->career_quote_side)
     <div class="career-bg-2 mt-5">
         <div class="container">
             <div class="row py-3">
@@ -144,12 +146,12 @@
                 </div>
 
                 <div class="col-md-4">
-						<a href="https://vfdgroup.seamlesshiring.com/" class="btn vfd-btn-red float-md-right">Learn More</a>
+						<a href="{{$company->career_quote_side}}" class="btn vfd-btn-red float-md-right">Learn More</a>
 					</div>
             </div>
         </div>
     </div>
-
+@endif
     <div class="containers d-none">
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -456,7 +458,7 @@
 
     </footer>
     <!--/.Footer-->
-    
+
     <!--Job Modal -->
     {{-- @foreach ($vacancies as $vacancy )
     
