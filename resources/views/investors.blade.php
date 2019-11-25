@@ -166,7 +166,7 @@
 
                                                                             background-repeat: no-repeat;
                                                                             height: 180px !important;
-                                                                            width: 320px !important;
+                                                                            width: 300px !important;
                                                                             background-position: center center;
                                                                                          ">
                                             </div>
