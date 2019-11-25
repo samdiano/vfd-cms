@@ -61,7 +61,7 @@
                     </li>
 
 
-                    <li class="nav-item px-md-3 my-2 my-md-0 active-link">
+                    <li class="nav-item px-md-3 my-2 my-md-0">
                         <a class="nav-link bold" href="{{url('/about')}}">About Us</a>
                     </li>
 
@@ -70,7 +70,7 @@
                         <a class="nav-link bold" href="{{url('/portfolio')}}">Our Portfolio</a>
                     </li>
 
-                    <li class="nav-item px-md-3 my-2 my-md-0">
+                    <li class="nav-item px-md-3 my-2 my-md-0 active-link">
                         <a class="nav-link bold" href="{{url('/investors')}}">Investor Information</a>
                     </li>
 

@@ -25,8 +25,7 @@
                                                     First name
                                                 </label> --}}
                                     <div class="col-md-offset-2 col-md-9 col-sm-9">
-                                        <textarea class="form-control"
-                                            name="career">{!!$company->career !!}</textarea>
+                                        <textarea class="form-control" name="career">{!!$company->career !!}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -50,14 +49,43 @@
                                 </div>
 
                                 <div class="form-group">
-                                        <label class="control-label col-md-2 col-sm-3">
-                                                Application URL
-                                        </label>
-                                        <div class="col-md-9 col-sm-9">
-                                            <input type="url" class="form-control" name="career_quote_side"
-                                                value="{!!$company->career_quote_side!!}" />
-                                        </div>
+                                    <label class="control-label col-md-2 col-sm-3">
+                                        Application URL
+                                    </label>
+                                    <div class="col-md-9 col-sm-9">
+                                        <input type="url" class="form-control" name="career_quote_side"
+                                            value="{!!$company->career_quote_side!!}" />
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2 col-sm-3">
+                                        Button 1
+                                    </label>
+                                    <div class="col-md-9 col-sm-9">
+                                        <input type="text" class="form-control" name="button1"
+                                            value="{!!$company->button1!!}" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2 col-sm-3">
+                                        Button 2
+                                    </label>
+                                    <div class="col-md-9 col-sm-9">
+                                        <input type="text" class="form-control" name="button2"
+                                            value="{!!$company->button2!!}" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2 col-sm-3">
+                                        Small Banner Text
+                                    </label>
+                                    <div class="col-md-9 col-sm-9">
+                                        <input type="text" class="form-control" name="career_internship"
+                                            value="{!!$company->career_internship!!}" />
+                                    </div>
+                                </div>
+
+
 
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-9">

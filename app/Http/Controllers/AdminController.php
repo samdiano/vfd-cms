@@ -389,6 +389,9 @@ class AdminController extends Controller
         $company->career_quote = $request->career_quote;
         $company->career_quote_side = $request->career_quote_side;
         $company->career_text = $request->career_text;
+        $company->button1 = $request->button1;
+        $company->button2 = $request->button2;
+        $company->career_internship = $request->career_internship;
         $company->save;
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {

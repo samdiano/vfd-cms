@@ -39,6 +39,9 @@ class CreateCompaniesTable extends Migration
             $table->string('quote');
             $table->string('email1');
             $table->string('email2');
+            $table->string('button1');
+            $table->string('button2');
+            $table->string('career_internship');
             $table->string('address');
             $table->string('phone');
             $table->string('terms');

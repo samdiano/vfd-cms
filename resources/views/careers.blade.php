@@ -122,7 +122,7 @@
                 <p class="">
                     {!!$company->career_text!!}</p>
                     @if($company->career_quote_side)
-                    <a href="{{$company->career_quote_side}}" class="btn vfd-btn-red btn-sm">Apply Now</a>
+                    <a href="{{$company->career_quote_side}}" class="btn vfd-btn-red btn-sm">{{$company->button1}}</a>
                     @endif
             </div>
 
@@ -141,12 +141,11 @@
         <div class="container">
             <div class="row py-3">
                 <div class="col-md-6">
-                    <h5 class="text-white gotham-bold mt-2">Apply for Our Internship/<br />
-                        Graduate Trainee Program</h5>
+                    <h5 class="text-white gotham-bold mt-2">{{$company->career_internship}}
                 </div>
 
                 <div class="col-md-4">
-						<a href="{{$company->career_quote_side}}" class="btn vfd-btn-red float-md-right">Learn More</a>
+						<a href="{{$company->career_quote_side}}" class="btn vfd-btn-red float-md-right">{{$company->button1}}</a>
 					</div>
             </div>
         </div>
