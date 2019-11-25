@@ -516,7 +516,7 @@ class AdminController extends Controller
         ]);
         $gallery = Gallery::find($id);
 
-        $position = json_decode($gallery->image_path);
+        $position = json_decode($gallery->image_path, true);
 
         function moveElement(&$array, $a, $b) {
             $out = array_splice($array, $a, 1);
@@ -1953,7 +1953,7 @@ class AdminController extends Controller
                 $img = $image->store('images', 'public');
                 $data[] = $img;
             }
-            $image= json_decode($finInfo->image_path);
+            $image= json_decode($finInfo->image_path, true);
             $finInfo->image_path = json_encode(array_merge($image ,$data)); 
             
             // json_encode($data);
@@ -2004,6 +2004,32 @@ class AdminController extends Controller
     }
 
 
+
+    /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function postGalleryDeleteOne(Request $request, $id, $key)
+    {
+        $validator = $this->validate($request, [
+            // 'name' => 'required',
+            // 'link' => 'required',
+        ]);
+        $gallery = Gallery::find($id);
+
+        $position = json_decode($gallery->image_path, true);
+        unset($position[$key]);
+        $gallery->image_path = json_encode($position);
+
+        if ($gallery->save()) {
+            return redirect('admin/gallery')->with(['info' => $gallery, 'alert' => ' ']);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
+    
 
     /**
      * Show the company's about page

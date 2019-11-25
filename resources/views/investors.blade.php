@@ -57,34 +57,35 @@
 
 
                     <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold  " href="/">Home</a>
+                        <a class="nav-link bold  " href="{{url('/')}}">Home</a>
                     </li>
 
-
-                    <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold" href="about">About Us</a>
-                    </li>
-
-
-                    <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold" href="portfolio">Our Portfolio</a>
-                    </li>
 
                     <li class="nav-item px-md-3 my-2 my-md-0 active-link">
-                        <a class="nav-link bold" href="investors">Investor Information</a>
+                        <a class="nav-link bold" href="{{url('/about')}}">About Us</a>
+                    </li>
+
+
+                    <li class="nav-item px-md-3 my-2 my-md-0">
+                        <a class="nav-link bold" href="{{url('/portfolio')}}">Our Portfolio</a>
                     </li>
 
                     <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold" href="media">Media</a>
+                        <a class="nav-link bold" href="{{url('/investors')}}">Investor Information</a>
                     </li>
 
                     <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold" href="career">Careers</a>
+                        <a class="nav-link bold" href="{{url('/media')}}">Media</a>
                     </li>
 
                     <li class="nav-item px-md-3 my-2 my-md-0">
-                        <a class="nav-link bold" href="contact_us.html">Contact Us</a>
+                        <a class="nav-link bold" href="{{url('/career')}}">Careers</a>
                     </li>
+
+                    <li class="nav-item px-md-3 my-2 my-md-0">
+                        <a class="nav-link bold" href="{{url('/contact_us')}}">Contact Us</a>
+                    </li>
+
 
                     <li class="nav-item pl-md-3 pr-md-5 my-2 my-md-0">
                         <a class="nav-link bold" href="search.html"><img
@@ -166,7 +167,7 @@
                                                                                          height: 150px;">
                                             </div>
                                             <p class="mt-3 mb-0">{{ $info->title }}</p>
-                                           <p class="mb-0 line-height-5">Released: {{ $info->year }}</p>
+                                            <p class="mb-0 line-height-5">Released: {{ $info->year }}</p>
                                         </a>
                                     </div>
                                     @endif
@@ -212,8 +213,7 @@
                                     @foreach($conInfo as $info)
                                     @if($con == date('Y', strtotime($info->year)))
                                     <div class="col-md-4 my-2">
-                                        <a href="{{ asset($info->document) }}"
-                                            target="_blank">
+                                        <a href="{{ asset($info->document) }}" target="_blank">
                                             <div class="investor-info-images" style="background-image: url({{ asset($info->image_path) }});
                                                                                          background-size: cover;
                                                                                          background-repeat: no-repeat;
@@ -286,7 +286,7 @@
                     </div>
 
                 </div>
-                @endforeach 
+                @endforeach
             </div>
 
             <div class="tab-pane fade" id="faq-just" role="tabpanel" aria-labelledby="faq-tab-just">
@@ -423,7 +423,7 @@
 
 
 
- 
+
     <!--Footer-->
     <footer class="mt-5 pt-2 font-small landing_footer border border-grey border-right-0 border-bottom-0 border-left-0">
 

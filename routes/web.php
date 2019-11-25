@@ -179,7 +179,6 @@ Route::get('/admin/values/delete/{id}','AdminController@postValueDelete')->name(
 
 
 
-Route::post('/admin/gallery/position/{id}/{key}','AdminController@galleryPrimary')->name('adminServices');
 
 
 
@@ -252,7 +251,11 @@ Route::get('/admin/gallery/edit/{id}','AdminController@galleryEdit')->name('admi
 
 Route::post('/admin/gallery/edit/{id}','AdminController@postGalleryEdit')->name('adminVacancyPost'); 
 
+Route::post('/admin/gallery/position/{id}/{key}','AdminController@galleryPrimary')->name('adminServices');
+
 Route::get('/admin/gallery/delete/{id}','AdminController@postGalleryDelete')->name('postFaqDelete');
+
+Route::post('/admin/gallery/delete/single/{id}/{key}','AdminController@postGalleryDeleteOne')->name('postFaqDelete');
 
 
 

@@ -37,16 +37,33 @@
                                                         <img height="120" width="120" src="{{ asset($path) }}"
                                                             class="img-fluid position-absolute global-image-subtract d-none d-md-block" />
                                                         <div style="position:absolute; bottom:10px; left:5%;">
-                                                            @if($key > 0)
-                                                            <form
-                                                                action="{{ url('admin/gallery/position', ['id' => $info->id, 'key' => $key]) }}"
-                                                                method="post">
-                                                                {{ csrf_field() }}
-                                                                <button class="btn btn-warning" type="submit"
-                                                                    style="font-size:14px; padding: 4px 8px !important;">Make
-                                                                    Primary</button>
-                                                            </form>
-                                                            @endif
+                                                            <div class="row">
+                                                                @if($key > 0)
+                                                                <div class="col-md-6">
+
+                                                                    <form
+                                                                        action="{{ url('admin/gallery/position', ['id' => $info->id, 'key' => $key]) }}"
+                                                                        method="post">
+                                                                        {{ csrf_field() }}
+                                                                        <button class="btn btn-warning" type="submit"
+                                                                            style="font-size:10px; padding: 6px !important;">Make
+                                                                            Primary</button>
+                                                                    </form>
+                                                                </div>
+                                                                @endif
+                                                                <div class="col-md-6">
+
+                                                                    <form
+                                                                        action="{{ url('admin/gallery/delete/single', ['id' => $info->id, 'key' => $key]) }}"
+                                                                        method="post">
+                                                                        {{ csrf_field() }}
+                                                                        <button class="btn btn-danger" type="submit"
+                                                                            style="font-size:10px; padding: 6px 8px !important; margin-left: 25%"><i
+                                                                                class="zmdi zmdi-delete"></i></button>
+                                                                    </form>
+                                                                </div>
+
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     @endforeach
