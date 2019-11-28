@@ -85,7 +85,7 @@ function setTab(){
 		$('.nav-tabs a[href="#subsidiary-just"]').tab('show')
 		$('.nav-tabs a[href="#management-just"]').tab('show')
 	}else {
-		$('.nav-tabs a[href="#subsidiary-just"]').tab('show')
+		$('.nav-tabs a[href="#home-just"]').tab('show')
 	}
 }
 

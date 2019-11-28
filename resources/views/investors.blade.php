@@ -162,9 +162,13 @@
                                     <div class="col-md-4 my-2">
                                         <a href="{{ asset($info->document) }}" target="_blank">
                                             <div class="investor-info-images" style="background-image: url({{ asset($info->image_path) }});
-                                                                                         background-size: cover;
-                                                                                         background-repeat: no-repeat;
-                                                                                         height: 150px;">
+                                                                                         background-size: cover !important;
+
+                                                                            background-repeat: no-repeat;
+                                                                            height: 180px !important;
+                                                                            width: 300px !important;
+                                                                            background-position: center center;
+                                                                                         ">
                                             </div>
                                             <p class="mt-3 mb-0">{{ $info->title }}</p>
                                             <p class="mb-0 line-height-5">Released: {{ $info->year }}</p>
@@ -186,7 +190,7 @@
             </div>
 
 
-            {{--                 
+            {{--
             Confernce
             Call     --}}
             <div class="tab-pane fade" id="conference-just" role="tabpanel" aria-labelledby="conference-tab-just">
@@ -215,10 +219,11 @@
                                     <div class="col-md-4 my-2">
                                         <a href="{{ asset($info->document) }}" target="_blank">
                                             <div class="investor-info-images" style="background-image: url({{ asset($info->image_path) }});
-                                                                                         background-size: cover;
+                                                                                         background-size: cover !important;
                                                                                          background-repeat: no-repeat;
-                                                                                         background-position: center center;
-                                                                                         height: 150px;">
+                                height: 180px !important;
+                                width: 300px !important;
+                                background-position: center center;">
                                             </div>
                                             <p class="mt-3 mb-0">{{ $info->title }}</p>
                                             <p class="mb-0 line-height-5">Released: {{ $info->year }}</p>
@@ -267,9 +272,11 @@
                                     <div class="col-md-4 my-2">
                                         <a href="{{ asset($info->document) }}" target="_blank">
                                             <div class="investor-info-images" style="background-image: url({{ asset($info->image_path) }});
-                                                                                            background-size: cover;
+                                                                                            background-size: cover !important;
                                                                                             background-repeat: no-repeat;
-                                                                                            height: 150px;">
+                                height: 180px !important;
+                                width: 300px !important;
+                                background-position: center center;">
                                             </div>
                                             <p class="mt-3 mb-0">{{ $info->title }}</p>
                                             <p class="mb-0 line-height-5">Released: {{ $info->year }}</p>
