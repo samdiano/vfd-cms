@@ -132,8 +132,6 @@
                     data-target="#{{$profile->name}}">{{$profile->name}}</h5>
                 <p class="text-md-left text-center">{{$profile->role}}</p>
 
-                {!! $profile->brief!!}
-
                 {!! $profile->description!!}
 
             </div>

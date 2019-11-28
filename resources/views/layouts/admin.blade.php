@@ -211,7 +211,7 @@
                             <ul class="list-unstyled">
                                 <li><a href="{{ url('admin/banner/landing') }}">Home</a></li>
                                 <li><a href="{{ url('admin/banner/about') }}">About us</a></li>
-                                <li><a href="{{ url('admin//banner/portfolio') }}">Our portfolio</a></li>
+                                <li><a href="{{ url('admin/banner/portfolio') }}">Our portfolio</a></li>
                                 <li><a href="{{ url('admin/banner/investor') }}">Investor Information</a></li>
                                 <li><a href="{{ url('admin/banner/media') }}">Media</a></li>
                                 <li><a href="{{ url('admin/banner/career') }}">Career</a></li>
