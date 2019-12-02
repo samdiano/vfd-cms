@@ -423,7 +423,9 @@ class AdminController extends Controller
             'link' => 'required'
         ]);
         $company = Company::find(1);
-        $company->youtube_link = $request->link;
+        $url = $request->link;
+        parse_str(parse_url($url, PHP_URL_QUERY), $my_array_of_vars);
+        $company->youtube_link = $my_array_of_vars['v'];
         // return view('admin.about.edit',['company' => $company]);
         if ($company->save()) {
             return redirect()->back()->with(['company' => $company, 'alert' => ' ']);
