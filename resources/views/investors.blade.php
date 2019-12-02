@@ -139,10 +139,10 @@
         <div class="tab-content px-0 px-md-2" id="myTabContentJust">
             <div class="tab-pane fade active show" id="finance-just" role="tabpanel" aria-labelledby="finance-tab-just">
                 @foreach($finYear as $fin)
-                <div class="accordion md-accordion" id="finance{{$fin}}" role="tablist" aria-multiselectable="true">
+                <div class="accordion md-accordion" id="finance1" role="tablist" aria-multiselectable="true">
                     <div class="card my-3 border-0">
                         <div class="card-header border-0 rounded" role="tab" id="finance_heading_1">
-                            <a data-toggle="collapse" data-parent="#finance{{$fin}}" href="#finance{{$fin}}" aria-expanded="true"
+                            <a data-toggle="collapse" data-parent="#finance1" href="#finance{{$fin}}" aria-expanded="true"
                                 aria-controls="finance1">
                                 <h5 class="mb-0 text_secondary">
                                     <span class="gotham-bold">{{$fin}}</span> <i
@@ -151,7 +151,7 @@
                             </a>
                         </div>
 
-                        <div id="finance1" class="collapse show mb-2" role="tabpanel"
+                        <div id="finance{{$fin}}" class="collapse show mb-2" role="tabpanel"
                     aria-labelledby="finance_heading_1" data-parent="#finance{{$fin}}">
 
                             <div class="card-body pt-0">
@@ -195,11 +195,11 @@
             Call     --}}
             <div class="tab-pane fade" id="conference-just" role="tabpanel" aria-labelledby="conference-tab-just">
                 @foreach($conYear as $con)
-                <div class="accordion md-accordion" id="conference{{$con}}" role="tablist" aria-multiselectable="true">
+                <div class="accordion md-accordion" id="conference1" role="tablist" aria-multiselectable="true">
 
                     <div class="card my-3 border-0">
                         <div class="card-header border-0 rounded" role="tab" id="conference_heading_1">
-                            <a data-toggle="collapse" data-parent="#conference{{$con}}" href="#conference{{$con}}" aria-expanded="true"
+                            <a data-toggle="collapse" data-parent="#conference1" href="#conference{{$con}}" aria-expanded="true"
                                 aria-controls="conference1">
                                 <h5 class="mb-0 text_secondary">
                                     <span class="gotham-bold">{{$con}}</span> <i
@@ -208,7 +208,7 @@
                             </a>
                         </div>
 
-                        <div id="conference1" class="collapse show mb-2" role="tabpanel"
+                        <div id="conference{{$con}}" class="collapse show mb-2" role="tabpanel"
                     aria-labelledby="conference_heading_1" data-parent="#conference{{$con}}">
 
                             <div class="card-body pt-2">
@@ -248,11 +248,11 @@
             <div class="tab-pane fade" id="press-just" role="tabpanel" aria-labelledby="press-tab-just">
                 @foreach($pressYear as $press)
 
-                <div class="accordion md-accordion" id="presstab{{$press}}" role="tablist" aria-multiselectable="true">
+                <div class="accordion md-accordion" id="presstab1" role="tablist" aria-multiselectable="true">
 
                     <div class="card my-3 border-0">
                         <div class="card-header border-0 rounded" role="tab" id="press_head_1">
-                            <a data-toggle="collapse" data-parent="#presstab{{$press}}" href="#presstab{{$press}}" aria-expanded="true"
+                            <a data-toggle="collapse" data-parent="#presstab1" href="#press{{$press}}" aria-expanded="true"
                                 aria-controls="press1">
                                 <h5 class="mb-0 text_secondary">
                                     <span class="gotham-bold">{{$press}}</span> <i
@@ -261,7 +261,7 @@
                             </a>
                         </div>
 
-                        <div id="press1" class="collapse show mb-2" role="tabpanel" aria-labelledby="press_head_1"
+                        <div id="press{{$press}}" class="collapse show mb-2" role="tabpanel" aria-labelledby="press_head_1"
                             data-parent="#presstab{{$press}}">
 
                             <div class="card-body pt-0">
