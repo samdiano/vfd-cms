@@ -281,7 +281,9 @@ class CompanyController extends Controller
             array_push($vidArr, $year);
         }
         $galYear = array_unique($galArr);
+        rsort($galYear);
         $vidYear = array_unique($vidArr);
+        rsort($vidYear);
         $banner = Banner::find(1);
 
         return view('media', ['blog' => $blog, 'galYear' => $galYear, 'gallery' => $gallery, 'vidYear' => $vidYear, 'video' => $video, 'company' => $company, 'banner' => $banner]);
