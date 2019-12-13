@@ -188,7 +188,7 @@
                     {!! $product->description !!}
                 </div>
                 <div class="modal-footer px-5 py-4 border-0">
-                    <a class="vfd-text-red" href="https://everdonbdc.com/about-us/" target="_blank">Visit Website</a>
+                    <a class="vfd-text-red" href="{{url($product->link)}}" target="_blank">Visit Website</a>
                 </div>
             </div>
         </div>
