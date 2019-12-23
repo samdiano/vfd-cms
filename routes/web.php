@@ -177,6 +177,8 @@ Route::post('/admin/values/new','AdminController@addValue')->name('adminServices
 
 Route::get('/admin/values/delete/{id}','AdminController@postValueDelete')->name('postFaqDelete');
 
+Route::post('/admin/values/edit/{id}','AdminController@editValue')->name('postFaqDelete');
+
 
 
 

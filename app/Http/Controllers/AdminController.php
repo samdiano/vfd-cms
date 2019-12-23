@@ -641,6 +641,32 @@ class AdminController extends Controller
         }
     }
 
+     /**
+     * Show the company's about page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function editvalue(Request $request, $id)
+    {
+        $validator = $this->validate($request, [
+            'value' => 'required',
+            'description' => 'required',
+        ]);
+        $service = Value::find($id);
+
+        $service->value = $request->value;
+        $service->description = $request->description;
+        $service->save;
+        $services = Value::all();
+
+        // return view('admin.about.edit',['company' => $company]);
+        if ($service->save()) {
+            return redirect('admin/values')->with(['services' => $services, 'alert' => ' ']);
+        } else {
+            return redirect()->back()->withErrors($validator);
+        }
+    }
+
     /**
      * Show the company's about page
      *
