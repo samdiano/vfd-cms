@@ -1,10 +1,11 @@
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap";
 
 @font-face {
 	font-family: Gotham;
 	src: url("fonts/gotham/gotham-black-webfont.eot") format("woff");
 	src: url("fonts/gotham/gotham-black-webfont.woff") format("woff"),
 		url("fonts/gotham/Gotham-Black.ttf") format("ttf");
+	font-display:swap
 }
 
 
